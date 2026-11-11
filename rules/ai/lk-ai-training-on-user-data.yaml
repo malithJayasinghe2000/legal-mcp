@@ -2,6 +2,7 @@ id: lk-ai-training-on-user-data
 jurisdiction: LK
 area: ai
 title: Training AI on users' data is a new purpose - tell users and have a legal ground
+duty_of: controller
 severity: must
 triggers:
   all:

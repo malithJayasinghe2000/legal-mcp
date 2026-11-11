@@ -18,6 +18,11 @@ DISCLAIMER = (
 )
 
 
+FOR_CLIENT = "builds_for_client"
+CLIENT_NOTE = (
+    "You build or run this for a client, so these are your client's duties as the "
+    "'controller' under the PDPA. Tell your client; you may help them do it."
+)
 DEFAULT_DONE_CHECK = "The tool cannot verify this. Check it is really done."
 
 
@@ -101,7 +106,21 @@ def check(library: Library, facts: set[str], done: set[str] | None = None) -> di
 
     hits = [r for r in library.rules.values() if matches(r["triggers"], facts)]
     hits.sort(key=lambda r: (SEVERITY_ORDER[r["severity"]], not r["in_force"], r["id"]))
+    # Building for a client: the client's (controller's) duties go to a separate
+    # list, so the builder sees their own duties without losing the client's.
+    for_client = FOR_CLIENT in facts
+    client_hits = [r for r in hits if for_client and r.get("duty_of") == "controller"]
+    hits = [r for r in hits if r not in client_hits]
     warnings = [warning(r, facts) for r in hits if r["id"] not in done]
+    client_duties = [
+        {
+            "rule_id": r["id"],
+            "title": r["title"],
+            "severity": SEVERITY_LABEL[r["severity"]],
+            "law": f"{r['law']['name']}, {r['law']['section']}",
+        }
+        for r in client_hits
+    ]
     done_items = [
         {
             "rule_id": r["id"],
@@ -136,6 +155,11 @@ def check(library: Library, facts: set[str], done: set[str] | None = None) -> di
             "No issues found in the areas we cover. This does not mean the product is "
             "compliant: see the areas and countries not covered."
         )
+    if client_duties:
+        summary += (
+            f" {len(client_duties)} more item(s) are your client's duties, listed under "
+            "'client_duties'."
+        )
     if done_items:
         summary += f" {len(done_items)} item(s) marked done by you are listed under 'done'."
     if not countries & jurisdictions:
@@ -147,6 +171,7 @@ def check(library: Library, facts: set[str], done: set[str] | None = None) -> di
         "summary": summary,
         "warnings": warnings,
         "done": done_items,
+        "client_duties": {"note": CLIENT_NOTE, "items": client_duties} if client_duties else None,
         "areas_covered": [f"{v['label']} ({v['gaps']})" for v in covered.values()],
         "areas_not_covered": areas.get("not_covered", []),
         "countries_not_covered": sorted(countries - jurisdictions),

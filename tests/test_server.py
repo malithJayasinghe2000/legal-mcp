@@ -42,6 +42,8 @@ def test_case(case):
     ids = [w["rule_id"] for w in result["warnings"]]
     assert [r for r in case.get("must_include", []) if r not in ids] == []
     assert [r for r in case.get("must_exclude", []) if r in ids] == []
+    client = [d["rule_id"] for d in (result["client_duties"] or {}).get("items", [])]
+    assert [r for r in case.get("client_duties_include", []) if r not in client] == []
     not_covered = result["areas_not_covered"]
     assert [a for a in case.get("not_covered_includes", []) if a not in not_covered] == []
     if "countries_not_covered" in case:
@@ -130,3 +132,9 @@ def test_tool_accepts_done():
                   done=["lk-pdpa-privacy-notice"])  # fmt: skip
     assert not result.is_error
     assert result.structured_content["done"][0]["rule_id"] == "lk-pdpa-privacy-notice"
+
+
+def test_own_app_has_no_client_duties():
+    result = check(LIB, build_facts(["LK"], ["collects_personal_data"]))
+    assert result["client_duties"] is None
+    assert "lk-pdpa-privacy-notice" in [w["rule_id"] for w in result["warnings"]]

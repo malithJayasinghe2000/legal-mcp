@@ -189,13 +189,25 @@
   must_include: [lk-bar-online-legal-advice, lk-payments-card-gateway]
   must_exclude: [lk-bar-directory-allowed-details, lk-intermeddlers-payment-for-clients]
 
-- name: "#24 Sri Lankan dev team building an app for an Australian client"
+- name: "#24 Sri Lankan dev team building and running an app for an Australian client"
   users_in: [AU]
   company_in: LK
   processing_in: [AU]
-  facts: [collects_personal_data, data:contact, uses_processors]
-  must_include: [lk-pdpa-scope]
+  facts: [collects_personal_data, data:contact, uses_processors, builds_for_client]
+  must_include: [lk-pdpa-scope, lk-pdpa-processor-duties]
+  must_exclude: [lk-pdpa-privacy-notice, lk-pdpa-lawful-basis]
+  client_duties_include: [lk-pdpa-privacy-notice, lk-pdpa-lawful-basis, lk-pdpa-security]
   countries_not_covered: [AU]
+
+- name: "#24b same team, building a hospital app in Sri Lanka (health data, data abroad)"
+  users_in: [LK]
+  company_in: LK
+  processing_in: [SG]
+  facts: [collects_personal_data, data:health, builds_for_client, data_sent_abroad]
+  # The processor still has its own duties for transfers abroad (s.26: "controller or processor").
+  must_include: [lk-pdpa-processor-duties, lk-pdpa-cross-border, lk-pdpa-dpo]
+  must_exclude: [lk-pdpa-special-categories]
+  client_duties_include: [lk-pdpa-special-categories, lk-pdpa-privacy-notice]
 
 - name: "#25 static portfolio website, no data collected"
   users_in: [LK]

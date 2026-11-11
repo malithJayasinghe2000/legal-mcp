@@ -2,6 +2,7 @@ id: lk-pdpa-retention
 jurisdiction: LK
 area: personal-data
 title: Don't keep personal data longer than needed
+duty_of: controller
 severity: must
 triggers:
   all:

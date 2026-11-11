@@ -2,6 +2,7 @@ id: lk-pdpa-impact-assessment
 jurisdiction: LK
 area: personal-data
 title: Do a data protection impact assessment before profiling or monitoring
+duty_of: controller
 severity: must
 triggers:
   all:

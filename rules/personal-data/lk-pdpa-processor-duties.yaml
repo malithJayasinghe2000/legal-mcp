@@ -1,0 +1,45 @@
+id: lk-pdpa-processor-duties
+jurisdiction: LK
+area: personal-data
+title: As a builder or operator for a client, you have processor duties
+duty_of: processor
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - builds_for_client
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  When you handle personal data for a client who decides how it is used, the PDPA
+  makes you a "processor". You must act only on the client's written instructions,
+  bind your staff to confidentiality with proper security, help the client's audits,
+  and delete or return the data when the work ends. Most other data protection
+  duties belong to the client (the "controller").
+what_to_do:
+  - Get the client's instructions in writing (a contract or data processing agreement).
+  - Make staff and contractors sign confidentiality terms; secure the data.
+  - Allow the client's compliance audits, and delete or return all data when the work ends.
+  - Put the same terms on services you use for the client's data (cloud, email) (s.22(3)).
+  - Don't use the data for your own purposes; if you decide how it is used, you become a controller (s.22(2)).
+lawyer_questions:
+  - Does our contract with the client cover everything in s.21(1)(b) and s.22?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.22(1)"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    Where a processor is engaged in processing activities on behalf of the controller, the
+    processor shall- (a) ensure that processing activities are carried out only on the
+    written instructions of the controller; (b) ensure that its personnel are bound by
+    contractual obligations on confidentiality and secrecy by the implementation of
+    appropriate technical and organizational measures;
+done_check: Check the client contract covers written instructions, confidentiality, audits and deletion at the end.
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Part III, starts 1 January 2027. If you only write code and never touch the live
+  data, you may not be a processor at all; your client still needs the full list.

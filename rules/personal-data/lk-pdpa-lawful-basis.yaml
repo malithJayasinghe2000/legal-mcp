@@ -2,6 +2,7 @@ id: lk-pdpa-lawful-basis
 jurisdiction: LK
 area: personal-data
 title: You need a legal ground (such as consent or a contract) for each use of personal data
+duty_of: controller
 severity: must
 triggers:
   all:

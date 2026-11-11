@@ -2,6 +2,7 @@ id: lk-pdpa-processors
 jurisdiction: LK
 area: personal-data
 title: Have a written contract with services that handle personal data for you
+duty_of: controller
 severity: must
 triggers:
   all:

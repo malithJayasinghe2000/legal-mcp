@@ -99,6 +99,8 @@ def load_library(rules_dir: Path | None = None) -> Library:
             problems.append(f"{name}: area {rule['area']!r} not in areas.yaml")
         if rule["severity"] not in SEVERITIES:
             problems.append(f"{name}: bad severity {rule['severity']!r}")
+        if rule.get("duty_of", "both") not in ("controller", "processor", "both"):
+            problems.append(f"{name}: bad duty_of {rule['duty_of']!r}")
         if rule["review_status"] not in REVIEW_STATUSES:
             problems.append(f"{name}: bad review_status {rule['review_status']!r}")
         facts = trigger_facts(rule["triggers"] or {})

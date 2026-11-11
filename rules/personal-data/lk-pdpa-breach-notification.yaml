@@ -2,6 +2,7 @@ id: lk-pdpa-breach-notification
 jurisdiction: LK
 area: personal-data
 title: Be ready to report data breaches to the Data Protection Authority
+duty_of: controller
 severity: must
 triggers:
   all:

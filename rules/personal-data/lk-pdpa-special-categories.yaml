@@ -2,6 +2,7 @@ id: lk-pdpa-special-categories
 jurisdiction: LK
 area: personal-data
 title: Sensitive data (health, biometric, children's and more) needs a stricter legal ground
+duty_of: controller
 severity: must
 triggers:
   all:

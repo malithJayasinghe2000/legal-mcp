@@ -2,6 +2,7 @@ id: lk-pdpa-children
 jurisdiction: LK
 area: personal-data
 title: Children under 16 need a parent's or guardian's consent
+duty_of: controller
 severity: must
 triggers:
   all:

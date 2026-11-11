@@ -2,6 +2,7 @@ id: lk-pdpa-data-minimisation
 jurisdiction: LK
 area: personal-data
 title: Collect only the personal data you need
+duty_of: controller
 severity: must
 triggers:
   all:

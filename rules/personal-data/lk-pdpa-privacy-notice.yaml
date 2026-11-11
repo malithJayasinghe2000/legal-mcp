@@ -2,6 +2,7 @@ id: lk-pdpa-privacy-notice
 jurisdiction: LK
 area: personal-data
 title: Tell users what you collect and why (privacy notice)
+duty_of: controller
 severity: must
 triggers:
   all:

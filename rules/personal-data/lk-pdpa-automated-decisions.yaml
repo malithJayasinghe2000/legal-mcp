@@ -2,6 +2,7 @@ id: lk-pdpa-automated-decisions
 jurisdiction: LK
 area: personal-data
 title: People can ask for a review of decisions made only by software
+duty_of: controller
 severity: should
 triggers:
   all:

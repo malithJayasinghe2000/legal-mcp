@@ -10,6 +10,7 @@ jurisdiction: LK                 # the country whose law this is
 area: personal-data
 title: Health, biometric and other sensitive data need extra care
 severity: must                   # must | should | lawyer   (Must / Should / Check with a lawyer)
+duty_of: controller              # optional: controller | processor | both (default both)
 
 # When does this rule apply? Every item in `all` must be true.
 # An item that is a list means "at least one of these".
@@ -52,6 +53,9 @@ Rules for writing rules:
   source's official `url` (brief D14). Quote the law **as amended**: if an
   amendment replaced the section, quote the amending Act and say so in `section`.
 - Every rule has a `last_checked` date.
+- `duty_of: controller` marks a duty of the one who decides how data is used. If the user
+  builds or runs the product for a client (fact `builds_for_client`), these go to a separate
+  "client_duties" list instead of the builder's warnings.
 - `done_check` (optional) is the reminder shown when a user marks the warning as done
   (tool input `done`). The tool never verifies "done"; it lists those items separately.
 - A rule with `review_status: draft` is shown to users as "not yet reviewed by a lawyer".

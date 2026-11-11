@@ -24,6 +24,7 @@ personal_data:
   data:sex_life: Sex life or sexual orientation
   data:criminal: Offences, criminal proceedings or convictions
   users:children: Are any users (or people whose data you hold) under 16?
+  builds_for_client: Are you building or running this for a client who decides how the data is used (you follow their instructions)?
   uses_processors: Do outside services handle the personal data for you (cloud hosting, analytics, email/SMS providers, AI APIs)?
   data_sent_abroad: Is personal data sent or stored outside Sri Lanka (foreign cloud region, foreign AI API)?
   profiling: Do you analyse or predict people's behaviour, interests, health, finances, location or performance?

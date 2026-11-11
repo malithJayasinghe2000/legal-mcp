@@ -2,6 +2,7 @@ id: lk-pdpa-data-subject-rights
 jurisdiction: LK
 area: personal-data
 title: Users can ask to see, correct or delete their data - answer within one month
+duty_of: controller
 severity: must
 triggers:
   all:

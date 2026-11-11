@@ -2,6 +2,7 @@ id: lk-pdpa-security
 jurisdiction: LK
 area: personal-data
 title: Protect personal data with proper security
+duty_of: controller
 severity: must
 triggers:
   all:

@@ -126,8 +126,10 @@ Findings to decide:
   - **Noise (decided 2026-11-11: keep separate).** Every app with personal data gets the same
     8 basic PDPA warnings. Malith found a grouped "basics" item harder to understand, and in
     real sessions Claude already groups them when explaining. So each stays its own warning.
-  - **Gap:** a team building for a client is a "processor" (s.22), not the controller; add a fact
-    `acts_as_processor` and processor-specific rules.
+  - **Done 2026-11-11: building for a client.** Fact `builds_for_client`; rules have
+    `duty_of: controller | processor | both`. Controller duties move to a separate
+    "client_duties" list (not hidden), and the builder gets `lk-pdpa-processor-duties`
+    (s.22). Verified in a real session (Colombo company building a hospital app).
   - **Gap:** lending licences (#12), crypto, foreign exchange.
   - Not tested yet: whether Claude picks the right facts from idea text (needs headless sessions). Case #1 (law-finder, original and fixed design) passes, and **passed in a
 real Claude Code session** (2026-11-11): it flagged the per-enquiry fee (Rule 39(1) +

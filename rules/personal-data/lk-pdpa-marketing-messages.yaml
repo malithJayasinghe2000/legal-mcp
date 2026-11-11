@@ -2,6 +2,7 @@ id: lk-pdpa-marketing-messages
 jurisdiction: LK
 area: personal-data
 title: Promotional messages need consent and an easy opt-out
+duty_of: controller
 severity: must
 triggers:
   all:
