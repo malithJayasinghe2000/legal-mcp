@@ -118,9 +118,9 @@ school system, HR SaaS, loan app, AI symptom checker, telemedicine, clinic direc
 training, news bot, CCTV face recognition, ride-hailing, SMS marketing, remittance, US company,
 AI legal drafting, outsourcing team, static site). All 26 pass; no wrong-area warnings.
 Findings to decide:
-  - **Noise:** every app with personal data gets the same 8 basic PDPA warnings (scope, lawful
-    basis, notice, security, minimisation, retention, breach, rights). Proposal: group them as one
-    "PDPA basics" checklist item, keep the specific ones (special data, abroad, children...) separate.
+  - **Noise (decided 2026-11-11: keep separate).** Every app with personal data gets the same
+    8 basic PDPA warnings. Malith found a grouped "basics" item harder to understand, and in
+    real sessions Claude already groups them when explaining. So each stays its own warning.
   - **Gap:** a team building for a client is a "processor" (s.22), not the controller; add a fact
     `acts_as_processor` and processor-specific rules.
   - **Gap:** lending licences (#12), crypto, foreign exchange.
