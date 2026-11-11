@@ -1,0 +1,39 @@
+id: lk-pdpa-impact-assessment
+jurisdiction: LK
+area: personal-data
+title: Do a data protection impact assessment before profiling or monitoring
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+  any: [profiling, automated_decisions, monitors_public_places]
+why: >
+  Before systematic and extensive evaluation of people (including profiling) or
+  systematic monitoring of public areas or telecom networks, the PDPA requires a
+  personal data protection impact assessment.
+what_to_do:
+  - Do the assessment before building or launching the feature, and redo it when the method or technology changes (s.24(4)).
+  - Record the risks and the safeguards you add; reduce the risks before processing (s.25).
+  - Keep it ready: the Authority can ask for it (s.24(5) as amended in 2025).
+lawyer_questions:
+  - Is our processing "systematic and extensive" enough to need an assessment?
+  - Has the Authority prescribed the form of the assessment?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.24(1)"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    Where a Controller intends to carry out any processing which involves- (a) a
+    systematic and extensive evaluation of personal data or special categories of
+    personal data including profiling; (b) a systematic monitoring of publicly
+    accessible areas or telecommunication networks; or
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Act No. 22 of 2025 replaced s.24(5) (submit on the Authority's written request)
+  and removed prior consultation in s.25(2)-(6).

@@ -1,0 +1,34 @@
+id: lk-payments-marketplace-payouts
+jurisdiction: LK
+area: payments
+title: Collecting money for other sellers may need a licence
+severity: lawyer
+triggers:
+  all:
+    - collects_payments_for_others
+    - [users_in:LK, company_in:LK]
+why: >
+  If you accept card payments for other sellers and then pay them, you may be acting
+  as a "Financial Acquirer" (licensed by the Central Bank) or doing money
+  transmission. Whether a marketplace falls inside depends on how the money flows.
+what_to_do:
+  - Prefer a setup where the licensed bank or gateway pays each seller directly (split or marketplace payouts), so money doesn't pass through your own account.
+  - Don't hold sellers' money longer than needed, and write down the money flow for a lawyer.
+lawyer_questions:
+  - With our money flow, are we a Financial Acquirer or doing money transmission?
+  - Is a gateway's marketplace payout product enough to keep us outside licensing?
+law:
+  name: Payment Cards and Mobile Payment Systems Regulations No. 1 of 2013
+  section: "reg 5(b)(ii); definition of Financial Acquirer"
+  source_id: lk-cbsl-payment-cards-mobile-regs-2013
+  source_url: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/Reg_2013_1_e_0.pdf
+  quote: >-
+    "Financial Acquirer" means, any person who makes arrangements with third parties to
+    accept payment cards of cardholders as a means of payment and reimburses those third
+    parties with the value of the goods or services purchased by the cardholder
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "Related: Payment and Settlement Systems Act s.18 definition of money transmission."

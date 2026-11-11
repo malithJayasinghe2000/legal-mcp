@@ -1,0 +1,41 @@
+id: lk-pdpa-dpo
+jurisdiction: LK
+area: personal-data
+title: You may need a Data Protection Officer
+severity: lawyer
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+  any: [profiling, monitors_public_places, data:health, data:biometric, data:genetic,
+        data:ethnicity, data:political, data:religion, data:sex_life, data:criminal,
+        users:children]
+why: >
+  A Data Protection Officer is required when your core activities involve regular
+  and systematic monitoring of people, or special categories of data, on a scale
+  the Authority will prescribe, or processing that risks harm to people's rights.
+  The scale thresholds are not set yet, so this needs a lawyer's view.
+what_to_do:
+  - Name a person responsible for data protection now, even if not yet required.
+  - If you appoint a DPO, publish their contact details and tell the Authority (s.20(4)).
+lawyer_questions:
+  - Has the Authority prescribed the scale that triggers the DPO requirement, and are we above it?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.20(1)(b)"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    where the core activities of processing carried out by the controller or processor
+    consist of the following:- (i) operations which, by virtue of their nature, their
+    scope or their purposes, require regular and systematic monitoring of data subjects
+    on a scale and magnitude as may be prescribed; or (ii) processing of special
+    categories of personal data on a scale and magnitude as may be prescribed; or
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Act No. 22 of 2025 replaced s.20(1)(b)(iii): risk-of-harm processing "as may be
+  determined by the Authority by way of guidelines".

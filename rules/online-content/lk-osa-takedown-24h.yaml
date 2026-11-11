@@ -1,0 +1,38 @@
+id: lk-osa-takedown-24h
+jurisdiction: LK
+area: online-content
+title: Be able to remove or block content within 24 hours of an official notice
+severity: must
+triggers:
+  all:
+    - hosts_user_content
+    - [users_in:LK, company_in:LK]
+why: >
+  Under the Online Safety Act, if a user does not remove a "prohibited statement"
+  after a notice, the Online Safety Commission can order the platform (an "internet
+  intermediary") to remove it or block it for users in Sri Lanka, and the platform
+  must comply within 24 hours. A Magistrate's Court can also order platforms to stop
+  circulation (s.24).
+what_to_do:
+  - Build moderation tools to remove a post or block it for Sri Lankan users quickly.
+  - Publish a contact (email) where notices and court orders can reach you, and have someone check it daily.
+  - Keep a record of notices received and what you did.
+lawyer_questions:
+  - Has the Online Safety Commission been appointed and issued any rules or codes of practice yet?
+law:
+  name: Online Safety Act, No. 9 of 2024
+  section: "s.23(7)-(8)"
+  source_id: lk-osa-2024
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6311.pdf
+  quote: >-
+    The internet service provider or internet intermediary to whom a notice has been
+    issued under subsection (7) shall comply with such notice within twenty four hours
+    from the issuance of such notice.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Act in force since 2024. News reports say the Commission's members were not yet
+  appointed (check). Online Safety (Repeal) Bill pending for 2nd reading.

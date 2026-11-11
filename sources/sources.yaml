@@ -1,0 +1,183 @@
+# Official law sources for the first 5 areas (ROADMAP Phase 1, Step 1).
+#
+# One entry per document. `url` is the official copy we use; `alt_urls` are
+# tried in order if it fails. Download with:
+#   uv run --group sources python scripts/fetch_sources.py
+# Results (date, sha256) go to sources/fetched.json. Files go to sources/raw/ (not in git).
+#
+# `verified`: what was confirmed by opening the downloaded document itself
+# (title, number, date as printed), and when. Anything without it is still a lead.
+#
+# `url` must be an OFFICIAL copy (brief D14): parliament.lk (Acts and
+# amendments), CommonLII (government 1980 revised text of old laws, by hand),
+# the regulator itself (cbsl.gov.lk, dpa.gov.lk, slmc.gov.lk, supremecourt.lk),
+# lawnet.gov.lk, documents.gov.lk. Rules quote and link only these.
+# `research_copy` = private site copy, for reading only (not downloaded, never
+# quoted or linked in a rule).
+# Note (2026-11-11): documents.gov.lk was rebuilt as a JavaScript app and its old
+# /view/... PDF links now return 404, so we don't rely on it.
+# `url: null` + `manual:` = no official copy we can download by script; see note.
+
+# ---------- 1. Personal data ----------
+- id: lk-pdpa-2022
+  parliament_name: Personal Data Protection
+  area: personal-data
+  kind: act
+  title: Personal Data Protection Act, No. 9 of 2022
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  alt_urls:
+    - https://www.dpa.gov.lk/acts/Data%20Protection%20Act%20SL%20-%20English%20(2).pdf
+  verified: "2026-11-11: certified 19 March 2022, Gazette supplement of 25 March 2022"
+
+- id: lk-pdpa-amendment-2025
+  area: personal-data
+  kind: act
+  title: Personal Data Protection (Amendment) Act, No. 22 of 2025
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6384.pdf
+  alt_urls:
+    - https://www.dpa.gov.lk/acts/22-2025_E_251104_201549%20(1).pdf
+  verified: >
+    2026-11-11: certified 30 October 2025. Section 2 replaces s.1(3): all other
+    provisions start "on such date or dates as the Minister may appoint, by
+    Order published in the Gazette" (the Minister, not the President).
+
+- id: lk-pdpa-commencement-2498-16
+  area: personal-data
+  kind: gazette
+  title: PDPA commencement order, Gazette Extraordinary No. 2498/16 of 22 July 2026
+  url: null
+  manual: >
+    No official copy found that we can download. Secondary sources (law firms)
+    agree: sections 2-3, Part I and Part III start on 1 January 2027; Part II
+    (data subject rights), Part IV (direct marketing) and Part VII (penalties)
+    still need a further order. Get the Gazette from documents.gov.lk in a
+    browser, or ask the DPA, before any rule relies on these dates.
+
+# ---------- 2. Payments and finance ----------
+- id: lk-pssa-2005
+  parliament_name: Payments and Settlement Systems  # Parliament spells it "Payments"
+  area: payments
+  kind: act
+  title: Payment and Settlement Systems Act, No. 28 of 2005
+  url: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/acts/en/Payment_setttlement_sys_act.pdf
+  verified: "2026-11-11: certified 20 September 2005 (CBSL copy)"
+
+- id: lk-cbsl-payment-cards-mobile-regs-2013
+  area: payments
+  kind: regulation
+  title: Payment Cards and Mobile Payment Systems Regulations No. 1 of 2013
+  url: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/Reg_2013_1_e_0.pdf
+  verified: "2026-11-11: Gazette Extraordinary No. 1813/25 of 07.06.2013; citation in regulation 1 matches the title"
+
+- id: lk-cbsl-ecommerce-acquiring-direction-2018
+  area: payments
+  kind: direction
+  title: "Direction No. 01/2018: Acquiring Payment Card based Electronic Commerce Transactions through Service Providers"
+  # Issued under the 2013 Regulations; addressed to licensed financial acquirers (banks).
+  # Scanned PDF (no text): typed copy in sources/transcripts/ - check it against the PDF.
+  url: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/Payment_Cards_%26_Mobile_Payment_Systems_Regulations_Direction_No_1_of_2018_e.pdf
+
+- id: lk-cbsl-mvts-regs-2024
+  area: payments
+  kind: regulation
+  title: Money or Value Transfer Service Providers Regulations No. 1 of 2024 (Gazette Extraordinary No. 2382/11 of 30 April 2024)
+  # Amended by lk-cbsl-mvts-regs-2025 (regs 3, 5(a), 5(c), 7(d), 12, 13, 14), from 31 December 2025.
+  url: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/psd_reg_2024__1_e.pdf
+
+- id: lk-cbsl-mvts-regs-2025
+  area: payments
+  kind: regulation
+  title: Money or Value Transfer Service Providers Regulations No. 01 of 2025 (Gazette Extraordinary No. 2468/06 of 23 December 2025)
+  url: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/psd_reg_2025__1_e.pdf
+  verified: "2026-11-11: Gazette Extraordinary No. 2468/06, 23 December 2025, under Act No. 28 of 2005"
+
+# ---------- 3. AI features ----------
+# Sri Lanka has no AI-specific law (as of 2026-11-11). AI rules come from the
+# PDPA (automated decisions, profiling), the professional rules (AI giving legal
+# or medical advice) and the Online Safety Act. No separate source needed yet.
+
+# ---------- 4. Online content ----------
+- id: lk-osa-2024
+  parliament_name: Online Safety
+  area: online-content
+  kind: act
+  title: Online Safety Act, No. 9 of 2024
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6311.pdf
+  verified: "2026-11-11: certified 1 February 2024, Gazette supplement of 2 February 2024"
+
+- id: lk-osa-repeal-bill
+  area: online-content
+  kind: bill
+  title: Online Safety (Repeal) Bill (private member's bill, presented 8 May 2025)
+  url: https://www.parliament.lk/en/business-of-parliament/bill-details/P1585
+  verified: "2026-11-11: Parliament page says 'Pending for 2nd reading' (first reading 2025-05-08). Not law. The Act stays in force."
+
+# ---------- 5. Regulated professions ----------
+- id: lk-sc-attorneys-rules-1988
+  area: regulated-professions
+  kind: rules
+  title: Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules, 1988 (Gazette Extraordinary No. 535/7 of 07.12.1988)
+  url: null
+  manual: >
+    Official copy: https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf
+    The site blocks scripts (HTTP 403). Download it in a browser and save as
+    sources/raw/lk-sc-attorneys-rules-1988.pdf.
+
+- id: lk-intermeddlers-ordinance
+  parliament_name: Intermeddlers with Suitors
+  area: regulated-professions
+  kind: ordinance
+  title: Intermeddlers with Suitors Ordinance (Cap. 40; Ordinances Nos. 11 of 1894 and 35 of 1917)
+  url: null
+  research_copy: https://lankalaw.net/wp-content/uploads/2024/03/iws40367.pdf
+  manual: >
+    Official copy: CommonLII (government 1980 Revised Edition text),
+    http://www.commonlii.org/lk/legis/consol_act/iws40367 - click "PDF version".
+    CommonLII blocks scripts, so download in a browser and save as
+    sources/raw/lk-intermeddlers-ordinance.pdf. Then check Parliament's acts
+    listing for amendments after 1980. (A lankalaw.net copy was used by mistake
+    on 2026-11-11 and removed; its header read "Cap.40, Ordinances Nos. 11 of
+    1894, 35 of 1917" - confirm on the official copy.)
+
+- id: lk-basl-note-2021
+  area: regulated-professions
+  kind: professional-body-note
+  title: BASL cautionary note on legal advice through non-lawyer online platforms (June 2021)
+  url: null
+  manual: >
+    No official copy found online. Only a secondary report: counterpoint.lk,
+    15 September 2021 ("Is advertising blitz in social media tabooed for
+    lawyers?"). Ask BASL for the note, or ask the lawyer reviewer.
+
+- id: lk-medical-ordinance
+  parliament_name: Medical
+  area: regulated-professions
+  kind: ordinance
+  title: Medical Ordinance (Chapter 105)
+  # SLMC's consolidated text. Contains Act No. 1 of 2017 (s.43A-43B) and No. 28
+  # of 2018 (s.39A-39D, specialists register), but NOT No. 46 of 2024 (s.19E
+  # still has the old wording). So read it together with lk-medical-amendment-2024.
+  consolidated_to: 2018
+  url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1779866826.pdf
+  verified: "2026-11-11: title 'MEDICAL ORDINANCE' (SLMC copy, consolidation date not printed on page 1 - check if it includes Act No. 46 of 2024)"
+
+- id: lk-medical-amendment-2024
+  area: regulated-professions
+  kind: act
+  title: Medical (Amendment) Act, No. 46 of 2024
+  url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783675368.pdf
+  verified: "2026-11-11: certified 15 August 2024, Gazette supplement of 16 August 2024"
+
+- id: lk-slmc-ethical-conduct
+  area: regulated-professions
+  kind: guideline
+  title: SLMC Guidelines on Ethical Conduct for Medical and Dental Practitioners
+  url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679713.pdf
+  verified: "2026-11-11: dated July 2009. SLMC also has newer Social Media Guidelines (web page only, no PDF found)."
+
+- id: lk-slmc-serious-misconduct
+  area: regulated-professions
+  kind: guideline
+  title: SLMC Instructions on Serious Professional Misconduct for Medical Practitioners and Dentists
+  url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679630.pdf
+  verified: "2026-11-11: dated July 2009"

@@ -1,0 +1,39 @@
+id: lk-slmc-no-commission-per-patient
+jurisdiction: LK
+area: regulated-professions
+title: Don't charge doctors per patient or booking
+severity: must
+triggers:
+  all:
+    - profession:medicine
+    - charges_professionals_per_client
+    - [users_in:LK, company_in:LK]
+why: >
+  SLMC ethics forbid a doctor to give any commission or bonus for referring,
+  recommending or procuring patients. A fee the doctor pays you per booking or per
+  patient looks like exactly that, and puts every doctor on your platform at risk.
+what_to_do:
+  - Charge doctors or clinics a flat subscription or software fee, not per patient, booking or lead.
+  - If you charge a booking fee, charge it to the patient openly, and keep it separate from the doctor's fee.
+lawyer_questions:
+  - Is a patient-paid booking fee acceptable, and how should it be shown?
+  - Does a flat monthly fee that varies by number of bookings count as a commission?
+law:
+  name: "Sri Lanka Medical Council, Guidelines on Ethical Conduct for Medical and Dental Practitioners (July 2009)"
+  section: "Code of ethics (gifts, commissions for referral)"
+  source_id: lk-slmc-ethical-conduct
+  source_url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679713.pdf
+  quote: >-
+    A physician shall not give, solicit or receive, nor offer to give, solicit or receive,
+    any gift, gratuity, commission or bonus, in consideration of or return for the
+    referring, recommending or procuring for any patient medical, surgical or other
+    treatment.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Same pattern as lawyers' fee-sharing (law-finder). The guidelines also call "fee
+  splitting" unethical. The source PDF is a scan with a text layer; spacing errors in it
+  are ignored by the quote check.

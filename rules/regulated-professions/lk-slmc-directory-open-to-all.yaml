@@ -1,0 +1,36 @@
+id: lk-slmc-directory-open-to-all
+jurisdiction: LK
+area: regulated-professions
+title: A doctors' directory must be open to all doctors
+severity: should
+triggers:
+  all:
+    - profession:medicine
+    - lists_professionals
+    - [users_in:LK, company_in:LK]
+why: >
+  SLMC rules on professional misconduct allow a doctor's name in a list of doctors
+  only if the list is open to other doctors too. A selective directory can put the
+  listed doctors in breach of their professional rules.
+what_to_do:
+  - Let any SLMC-registered doctor join on the same terms.
+  - Show only factual details (name, SLMC-registered qualifications, specialty, practice times).
+  - Order listings neutrally (for example by distance or name), not by payment.
+lawyer_questions:
+  - Are our profile fields within what SLMC allows doctors to publish?
+law:
+  name: "Sri Lanka Medical Council, Instructions on Serious Professional Misconduct (July 2009)"
+  section: "Part 4 (Advertising, canvassing), item v (Directories)"
+  source_id: lk-slmc-serious-misconduct
+  source_url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679630.pdf
+  quote: >-
+    Directories: a doctor's name can appear in the telephone directory. The name can
+    appear in the list of doctors' names, provided that it is open to other doctors too.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Binds doctors (SLMC can discipline them), not the app directly; that's why "should".
+  Same pattern as Rule 45 for lawyers. SLMC Social Media Guidelines not collected yet.

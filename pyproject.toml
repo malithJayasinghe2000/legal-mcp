@@ -1,0 +1,38 @@
+[project]
+name = "legal-check"
+version = "0.1.0"
+description = "Legal issue-spotting for people who build software (MCP server). Starts with Sri Lankan law."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=2.3.0",
+    "pyyaml>=6.0.3",
+]
+
+[dependency-groups]
+# Tools for collecting and reading law sources (ROADMAP Phase 1, Step 1).
+sources = [
+    "pypdf>=7.0.1",
+]
+dev = [
+    "pypdf>=7.0.1",
+    "pytest>=9.2.0",
+    "ruff>=0.17.4",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/legal_check"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

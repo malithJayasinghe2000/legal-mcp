@@ -1,0 +1,35 @@
+id: lk-pdpa-marketing-messages
+jurisdiction: LK
+area: personal-data
+title: Promotional messages need consent and an easy opt-out
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+    - sends_marketing_messages
+why: >
+  The PDPA allows promotional messages by SMS, email, calls, post or similar means
+  only to people who consented to receive them, with a free opt-out shown when
+  collecting contact details and in every message.
+what_to_do:
+  - Collect separate, opt-in consent for marketing (not hidden in terms).
+  - Put a free opt-out in every message and honour it.
+  - Say in each message who it is from.
+lawyer_questions:
+  - Has the Authority set codes or prefixes for marketing messages (s.27(5))?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.27(1)"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    a controller may use postal services, telecommunication services, electronic means
+    or any other similar means for the purposes of disseminating messages only if a
+    data subject has given consent to receive such messages
+in_force: false
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "Part IV has no start date yet."

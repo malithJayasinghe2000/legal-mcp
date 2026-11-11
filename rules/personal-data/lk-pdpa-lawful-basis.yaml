@@ -1,0 +1,34 @@
+id: lk-pdpa-lawful-basis
+jurisdiction: LK
+area: personal-data
+title: You need a legal ground (such as consent or a contract) for each use of personal data
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  Under the PDPA, processing personal data is only lawful if it meets one of the
+  conditions in Schedule I: consent, a contract with the person, a legal duty, an
+  emergency, a public task, or legitimate interests.
+what_to_do:
+  - For each thing you do with personal data, write down which Schedule I ground you rely on.
+  - If you rely on consent, get it with a clear, separate request in plain language,
+    keep proof of it, and tell users they can withdraw it any time (Schedule III).
+  - Don't make your service conditional on consent to data use the service doesn't need.
+lawyer_questions:
+  - Can we rely on "legitimate interests" (Schedule I item (f)) for analytics or fraud checks?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.5; Schedule I; Schedule III"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    The processing of personal data shall be lawful if a controller is in compliance
+    with- (a) any condition specified in Schedule I hereto;
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: ""

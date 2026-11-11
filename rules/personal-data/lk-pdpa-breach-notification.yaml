@@ -1,0 +1,32 @@
+id: lk-pdpa-breach-notification
+jurisdiction: LK
+area: personal-data
+title: Be ready to report data breaches to the Data Protection Authority
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  The PDPA requires controllers to notify the Data Protection Authority of personal
+  data breaches. The form, timing and when users must be told are set by rules.
+what_to_do:
+  - Have a way to detect leaks (logging, alerts) and a written plan for who reports what.
+  - Watch for the Authority's breach notification rules and follow their deadlines.
+lawyer_questions:
+  - Has the Authority issued breach notification rules yet, and what is the deadline?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.23(1)"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    In the event of a personal data breach, a controller shall notify the Authority,
+    regarding such personal data breach in such form, manner and within such period of
+    time as may be determined by rules made under this Act.
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "Breach rules under s.23(2) not checked yet."

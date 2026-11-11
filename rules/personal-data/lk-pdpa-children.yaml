@@ -1,0 +1,34 @@
+id: lk-pdpa-children
+jurisdiction: LK
+area: personal-data
+title: Children under 16 need a parent's or guardian's consent
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+    - users:children
+why: >
+  Under the PDPA a "child" is under 16, and a child's data is a special category.
+  Where processing relies on consent, it must be the consent of the parent or
+  legal guardian.
+what_to_do:
+  - Ask users' age (or design so under-16s can't sign up).
+  - For under-16s, get and record verifiable consent from a parent or guardian.
+  - Avoid profiling children; legitimate interests are weaker where the person is a child (Schedule I item (f)).
+lawyer_questions:
+  - What counts as adequate proof of parental consent in Sri Lanka?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "Schedule II item (a); s.56 (definition of child)"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    In the case of a child, consent shall mean the consent of the parent or legal
+    guardian of such child;
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "s.56: \"child\" means a natural person who is below the age of sixteen years."

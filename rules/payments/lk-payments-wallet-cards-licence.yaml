@@ -1,0 +1,39 @@
+id: lk-payments-wallet-cards-licence
+jurisdiction: LK
+area: payments
+title: Wallets, stored balances and issuing cards need a Central Bank licence
+severity: must
+triggers:
+  all:
+    - [users_in:LK, company_in:LK]
+  any: [holds_user_funds, issues_payment_cards]
+why: >
+  Holding users' money as an electronic balance is an "e-money system", and issuing
+  debit, credit, charge or stored-value cards makes you an "issuer". Both need a
+  Central Bank licence, and only banks, licensed finance companies, licensed mobile
+  operators and companies with at least Rs. 150 million unimpaired capital may apply.
+what_to_do:
+  - Don't let users keep a money balance in your app unless you are licensed.
+  - Partner with a licensed bank or e-money operator and let them hold the funds and issue the cards.
+  - App credits that can't be cashed out or sent to others may avoid this; get a lawyer's view before relying on that.
+lawyer_questions:
+  - Do our in-app credits or points count as "monetary value" or an e-money system?
+  - Which Central Bank circulars (KYC, transaction limits) apply to our partner model?
+law:
+  name: Payment Cards and Mobile Payment Systems Regulations No. 1 of 2013
+  section: "reg 4; reg 5; definitions of E-money System and Issuer"
+  source_id: lk-cbsl-payment-cards-mobile-regs-2013
+  source_url: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/Reg_2013_1_e_0.pdf
+  quote: >-
+    No person shall engage in the business of or function as a Service Provider except
+    under the authority and in accordance with the terms and conditions of a licence
+    issued by the Central Bank.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Made under the Payment and Settlement Systems Act No. 28 of 2005, s.17. No formal
+  amendment found; later circulars (e.g. e-money limits, mobile app security) not yet
+  collected.

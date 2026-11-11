@@ -7,4 +7,14 @@ what to ask a lawyer. Starts with Sri Lankan law.
 
 It gives legal information, not legal advice.
 
-Status: planning. See [docs/PROJECT-BRIEF.md](docs/PROJECT-BRIEF.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
+## Setup
+
+Needs [uv](https://docs.astral.sh/uv/).
+
+```sh
+uv sync                                                  # install
+uv run pytest                                            # tests
+uv run --group sources python scripts/fetch_sources.py   # download the law sources
+```
+
+Status: Phase 1, collecting law sources. See [docs/PROJECT-BRIEF.md](docs/PROJECT-BRIEF.md) and [docs/ROADMAP.md](docs/ROADMAP.md).

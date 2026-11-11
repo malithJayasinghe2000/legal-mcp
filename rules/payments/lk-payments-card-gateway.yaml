@@ -1,0 +1,37 @@
+id: lk-payments-card-gateway
+jurisdiction: LK
+area: payments
+title: Take card payments through a bank-approved payment gateway, and never handle raw card data
+severity: should
+triggers:
+  all:
+    - takes_payments
+    - [users_in:LK, company_in:LK]
+why: >
+  In Sri Lanka, online card payments are acquired by banks licensed by the Central
+  Bank (Licensed Financial Acquirers). Payment gateways work under agreements with
+  them, and the Central Bank requires that gateways do not get access to card
+  numbers, security codes and expiry dates.
+what_to_do:
+  - Use a payment gateway that is contracted with a Central Bank licensed acquirer (ask the provider which bank).
+  - Use the gateway's hosted page or SDK so card details never reach your servers. Never store card number, CVV or expiry.
+  - Expect the bank to review and approve your business as a merchant.
+lawyer_questions: []
+law:
+  name: "Central Bank of Sri Lanka, Direction No. 01/2018 (Acquiring Payment Card based Electronic Commerce Transactions through Service Providers)"
+  section: "para 2.4"
+  source_id: lk-cbsl-ecommerce-acquiring-direction-2018
+  source_url: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/Payment_Cards_%26_Mobile_Payment_Systems_Regulations_Direction_No_1_of_2018_e.pdf
+  quote: >-
+    LFAs shall maintain the confidentiality of cardholder data and ensure that Service
+    Providers shall not have access to sensitive information of cardholders such as card
+    number, card security code and expiry date.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Quote checked against a typed transcript of a scanned PDF. The Direction binds the
+  banks, not app makers directly; for apps it is a "should". Card scheme rules (PCI DSS)
+  apply too but are contracts, not law.

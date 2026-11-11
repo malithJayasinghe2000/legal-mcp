@@ -88,7 +88,11 @@ artificialintelligenceact.eu, aguardic.com.
 | D8 | **Severity levels on every warning**: Must / Should / Check with a lawyer | Without levels, developers get overwhelmed and ignore everything. |
 | D9 | **Update by automated checking, human changing**: a script watches official sources daily and flags affected rules; a human edits rules | Wrong or outdated rules are the biggest accuracy risk. |
 | D10 | **Free first.** Prove people use it before charging. | Sri Lankan market is small and developers rarely pay. |
-| D11 | **Where the users are decides which laws apply**, not where the company is | That's how the EU AI Act and GDPR work. The tool must ask "where are your users?" |
+| D11 | **Where the users are decides which laws apply** - and also where the company is and where data is processed, when a law says so | That's how the EU AI Act and GDPR work. The tool must ask "where are your users?" **Correction (2026-11-11):** PDPA s.2(1) also applies when processing happens in Sri Lanka, or the company is incorporated, domiciled or resident in Sri Lanka, even if all users are abroad. So the tool also asks where the company is and where data is processed. |
+| D12 | **Python, official MCP Python SDK (v2), managed with `uv`** | Law-processing tools (PDF text, scripts) are Python. The server is small, deterministic matching, so speed doesn't matter. The official SDK v2 includes the old FastMCP as `MCPServer` (`from mcp.server.mcpserver import MCPServer`). TypeScript would only win for a browser extension, which isn't planned. |
+| D13 | **Only software-relevant laws, never all Sri Lankan law** (2026-11-11). MVP: 5 areas, about 15 documents; later 15-20 areas. Land, family and most criminal law are out. | The tool spots risks for apps. Laws are read to **write rules**; they are not fed into an AI or kept as a library. |
+| D14 | **Any site for research; official text for rules** (2026-11-11). Private copies (lankalaw.net etc.) may be used to find and read laws. A rule's `quote` and `source_url` must come from an official copy (Parliament, regulator, Gazette, CommonLII, LawNet). | Unlike law-finder, we don't republish law files, so copyright isn't the issue. But users see the link and quote, so they must be trustworthy; private copies can be old or have scan errors. |
+| D15 | **Automate source collection for the MVP** (2026-11-11). Claude finds and downloads main laws and their amendments by script (Parliament's acts listing), and reads main law + amendments together. Malith only fetches files that sites block or that aren't online, and checks each rule against its source (D5). | No manual library work like law-finder. No government site has an up-to-date consolidated text, so we combine main law + amendments ourselves. |
 
 ## 5. How it works (simple)
 
@@ -224,7 +228,12 @@ Rules for the output:
 
 ## 11. Jurisdiction
 
-- **Where the users are decides the law**, not where the company or server is.
+- **Where the users are decides the law** in most cases.
+- **But some laws also follow the company or the processing.** Sri Lanka's PDPA
+  s.2(1) applies if processing happens in Sri Lanka, or the company is
+  incorporated, domiciled or resident there, even with only foreign users.
+  So the fact questions also ask "where is your company?" and "where is data
+  processed?" (verified in the Act text, 2026-11-11).
 - A Sri Lankan app used only in Sri Lanka gets Sri Lankan law only.
 - A Sri Lankan company selling to EU clients, or whose AI output is used in the EU,
   also gets GDPR and the EU AI Act.
@@ -297,8 +306,6 @@ In priority order:
 ## 15. Open questions (decide in the next chats)
 
 - Product name and domain (`legal-check` is a working name).
-- Language for the server: Python (FastMCP) or TypeScript (official MCP SDK).
-  Leaning Python, since the law-processing tools are Python.
 - Hosting: the same Azure student VM as law-finder (credit until about Feb 2027)
   or separate. Stateless and small either way.
 - Which lawyer reviews the rules, and how they are paid or credited.

@@ -1,0 +1,39 @@
+id: lk-slmc-no-paid-doctor-promotion
+jurisdiction: LK
+area: regulated-professions
+title: Don't sell featured or top spots to individual doctors
+severity: should
+triggers:
+  all:
+    - profession:medicine
+    - sells_promotion_to_professionals
+    - [users_in:LK, company_in:LK]
+why: >
+  SLMC guidelines say doctors may not advertise in newspapers or electronic media.
+  Institutions (hospitals, clinics) may advertise their services online, but without
+  naming the doctors. Paid promotion of a named doctor in an app is likely to be
+  advertising by that doctor.
+what_to_do:
+  - Don't sell featured placement, ads or higher ranking to individual doctors.
+  - Hospitals and clinics may advertise services, without doctors' names.
+  - Keep all health claims factual: no guarantees of cure or claims of superior skill.
+lawyer_questions:
+  - Is a paid subscription for a basic, factual doctor profile "advertising" under SLMC guidelines?
+law:
+  name: "Sri Lanka Medical Council, Guidelines on Ethical Conduct for Medical and Dental Practitioners (July 2009)"
+  section: "Advertising by Doctors and Institutions, para 4.3"
+  source_id: lk-slmc-ethical-conduct
+  source_url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679713.pdf
+  quote: >-
+    4.3.1 Doctors may not advertise in newspapers or the electronic media 4.3.2
+    Institutions may advertise the services they offer in newspapers without the names of
+    service providers. 4.3.3 Institutions may advertise the services they offer in the
+    electronic media without the names of service providers.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Guidelines from 2009. SLMC's November 2025 notice and newer Social Media Guidelines
+  may have changed details; not collected yet.

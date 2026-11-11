@@ -1,0 +1,33 @@
+id: lk-pdpa-security
+jurisdiction: LK
+area: personal-data
+title: Protect personal data with proper security
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  The PDPA requires technical and organisational measures (the Act names
+  encryption, pseudonymisation, anonymisation and access controls) to prevent
+  unauthorised processing, loss or damage of personal data.
+what_to_do:
+  - Encrypt personal data in transit and at rest.
+  - Limit who (staff and systems) can access it, and log access.
+  - Keep backups and a plan for loss or leaks.
+lawyer_questions:
+  - Has the Authority prescribed specific security measures for our type of data?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.10"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    Every controller shall ensure integrity and confidentiality of personal data that
+    is being processed, by using appropriate technical and organizational measures
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: ""

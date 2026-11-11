@@ -1,0 +1,56 @@
+# Facts a rule trigger may use (ROADMAP Phase 1, Step 3 - first draft).
+# Claude on the developer's side fills these in from the idea; the server
+# matches them against rule triggers. Add a fact here before a rule uses it.
+#
+# `users_in:<CC>`, `company_in:<CC>`, `processing_in:<CC>` take an ISO country code.
+
+where:
+  users_in:<CC>: Where are your users? (country codes; default LK)
+  company_in:<CC>: Where is your company incorporated, or where do you live if you have no company?
+  processing_in:<CC>: Where is personal data stored or processed (servers, cloud region, staff)?
+
+personal_data:
+  collects_personal_data: Do you collect or use any information about identifiable people (names, emails, phone numbers, IDs, device IDs, location...)?
+  data:contact: Contact details (name, email, phone, address)
+  data:national_id: NIC, passport or other ID numbers
+  data:financial: Bank, card, income or other financial data
+  data:location: Location data
+  data:health: Health or medical data
+  data:biometric: Biometric data used to identify people (face, fingerprint, voice)
+  data:genetic: Genetic data
+  data:ethnicity: Racial or ethnic origin
+  data:political: Political opinions
+  data:religion: Religious or philosophical beliefs
+  data:sex_life: Sex life or sexual orientation
+  data:criminal: Offences, criminal proceedings or convictions
+  users:children: Are any users (or people whose data you hold) under 16?
+  uses_processors: Do outside services handle the personal data for you (cloud hosting, analytics, email/SMS providers, AI APIs)?
+  data_sent_abroad: Is personal data sent or stored outside Sri Lanka (foreign cloud region, foreign AI API)?
+  profiling: Do you analyse or predict people's behaviour, interests, health, finances, location or performance?
+  automated_decisions: Does software alone make decisions with real effects on people (approve/reject, price, rank, ban)?
+  monitors_public_places: Do you monitor public places or telecom networks (CCTV, Wi-Fi tracking)?
+  sends_marketing_messages: Do you send promotional messages (SMS, email, push, calls)?
+
+payments:
+  takes_payments: Do users pay you online (cards, bank transfer, mobile payments)?
+  collects_payments_for_others: Do you collect money from buyers and pay it out to other sellers or providers (marketplace)?
+  holds_user_funds: Can users keep money or a balance in your app (wallet, top-up, stored value)?
+  issues_payment_cards: Do you issue debit, credit, prepaid or virtual cards?
+  transfers_money: Can users send money to other people through you (P2P, remittance, paying third parties)?
+
+ai:
+  trains_ai_on_user_data: Do you use users' personal data to train or fine-tune AI models?
+  ai_health_advice: Does AI give health information, diagnoses or treatment suggestions to users?
+  ai_legal_advice: Does AI answer users' legal questions or give legal advice?
+  runs_bots: Does software (AI or bots) post or send messages to the public automatically?
+
+online_content:
+  hosts_user_content: Can users post content that others can see or receive (posts, comments, reviews, group chats, uploads)?
+
+regulated_professions:
+  profession:medicine: Does the product involve doctors or dentists (listing, booking, consulting)?
+  profession:law: Does the product involve lawyers (listing, booking, consulting, legal help)?
+  lists_professionals: Do you show profiles or a directory of professionals?
+  sells_promotion_to_professionals: Can professionals pay for better visibility (featured, top ranking, ads)?
+  charges_professionals_per_client: Do you charge professionals per client, booking, lead, enquiry or message?
+  offers_consultations: Can users consult professionals through the product (chat, video, booking)?

@@ -1,0 +1,37 @@
+id: lk-payments-money-transfer
+jurisdiction: LK
+area: payments
+title: Letting users send money to others needs Central Bank registration
+severity: must
+triggers:
+  all:
+    - transfers_money
+    - [users_in:LK, company_in:LK]
+why: >
+  Accepting money and paying a corresponding sum to a beneficiary, within, to or
+  from Sri Lanka, is a Money or Value Transfer Service. It needs a Certificate of
+  Registration from the Central Bank. Transfers to or from abroad are also subject
+  to the Foreign Exchange Act No. 12 of 2017.
+what_to_do:
+  - Don't move money between users yourself unless registered; build on a licensed bank or registered provider instead.
+  - If you plan to register, check the eligibility rules (from 31 December 2025, a Sri Lankan company needs at least Rs. 15 million unimpaired capital).
+lawyer_questions:
+  - Does our flow count as a Money or Value Transfer Service?
+  - What does the Foreign Exchange Act require for our cross-border transfers?
+law:
+  name: Money or Value Transfer Service Providers Regulations No. 1 of 2024
+  section: "reg 4 (definition in reg 3 as replaced by Regulations No. 1 of 2025)"
+  source_id: lk-cbsl-mvts-regs-2024
+  source_url: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/psd_reg_2024__1_e.pdf
+  quote: >-
+    No person shall engage in the business of or function as a MVTS provider except under
+    the authority and in accordance with the terms and conditions of a Certificate of
+    Registration issued by the Central Bank.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Amended by Regulations No. 1 of 2025 (Gazette 2468/06), in effect from 31 December
+  2025. Foreign Exchange Act not collected yet.

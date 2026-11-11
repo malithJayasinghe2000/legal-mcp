@@ -1,0 +1,75 @@
+TRANSCRIPT of a scanned PDF (no text layer). Typed by Claude from the page
+images on 2026-11-11; check against the PDF before relying on it.
+Source: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/Payment_Cards_%26_Mobile_Payment_Systems_Regulations_Direction_No_1_of_2018_e.pdf
+
+Direction No. 01/2018
+
+To: All Licensed Financial Acquirers of Payment Cards
+
+Direction on Acquiring Payment Card based Electronic Commerce Transactions
+through Service Providers
+
+This Direction is issued in terms of the regulation 18 of the Payment Cards and Mobile Payment
+Systems Regulations No.1 of 2013 (Regulations) and shall apply to Financial Acquirers of Payment
+Cards licensed in terms of the Regulations (hereinafter referred to as Licensed Financial Acquirers or
+LFAs).
+
+Licensed Financial Acquirers who make arrangements with third parties to accept payment cards as a
+means of payment and reimburses those third parties with the value of goods or services purchased,
+may acquire payment card based electronic commerce transactions through Institutions facilitating
+initiation of online card payments (hereinafter referred to as Service Providers). LFAs may also
+obtain the assistance of Service Providers to settle payments to merchants for electronic commerce
+transactions carried out through the respective internet payment platform/gateway.
+
+The objective of issuing this Direction is to stipulate conditions on acquiring payment card based
+electronic commerce transactions through Service Providers in order to ensure timely payments to
+merchants and to safeguard the interests of cardholders. This Direction shall come into force with
+effect from 18 January 2018.
+
+LFAs intending to acquire payment card based electronic commerce transactions through Service
+Providers, shall adhere to following conditions;
+
+2.1. LFAs shall take utmost care in assessing the capability of the prospective Service Provider.
+
+2.2. LFAs shall enter into agreements with Service Providers with regard to providing facilities to
+accept payment cards as a means of payment for online purchases of goods and/or services.
+The roles, responsibilities, rights and obligations of each party shall be clearly specified in
+these agreements.
+
+2.3. LFAs shall review merchant applications and grant approval for merchants to register in the
+respective internet based payment platform/gateway. LFAs may consider company profiles
+and details of business operations of merchants provided by Service Providers when
+reviewing merchant applications. LFAs shall maintain a record of all merchants registered in
+each internet based payment platform/gateway.
+
+2.4. LFAs shall maintain the confidentiality of cardholder data and ensure that Service Providers
+shall not have access to sensitive information of cardholders such as card number, card
+security code and expiry date.
+
+2.5. LFAs shall maintain a dedicated account owned by the LFA for each internet payment
+platform /gateway to facilitate payments related to transactions carried out through the
+respective internet payment platform/gateway. Refunds for failed or disputed transactions
+shall also be facilitated through this account.
+
+2.6. LFAs shall ensure that final settlements to the merchants will take place within three (03)
+business days upon receipt of funds.
+
+2.7. LFAs shall develop a dispute resolution mechanism in line with dispute resolution guidelines
+of the relevant payment card scheme for handling of disputes relating to transactions
+effected through internet payment platform/gateway.
+
+2.8. LFAs shall monitor the operations of internet payment platform/gateway.
+
+3. LFAs shall submit a copy of the draft agreement to be entered into by and between the LFA and
+the Service Provider to obtain approval of the Central Bank of Sri Lanka prior to facilitating card
+payments in the internet payment platform/gateway. LFA shall have separate agreements
+with Service Providers for each internet payment platform/gateway.
+
+4. LFAs shall ensure that they adhere to all applicable laws and regulations in acquiring payment card
+based electronic commerce transactions through internet payment platform/gateway.
+
+5. LFAs shall submit an assessment report on each internet payment platform/gateway on a quarterly
+basis to the Payment and Settlement Department of Central Bank of Sri Lanka.
+
+C.J.P. Siriwardena
+Deputy Governor

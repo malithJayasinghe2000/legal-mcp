@@ -1,0 +1,34 @@
+id: lk-osa-intermediary-protection
+jurisdiction: LK
+area: online-content
+title: Selecting or editing users' posts can make you liable for them
+severity: should
+triggers:
+  all:
+    - hosts_user_content
+    - [users_in:LK, company_in:LK]
+why: >
+  The Online Safety Act protects platforms from liability for prohibited statements
+  posted by users, but the protection is lost if the platform started the
+  communication, chose who receives it, selected or changed the content, or did not
+  follow the Act, its rules and the Commission's codes of practice.
+what_to_do:
+  - Don't edit users' posts. If you curate or promote content, know that it may count as "selecting" it.
+  - Follow any code of practice the Commission issues (failing to can also mean paying damages, s.27(4)).
+lawyer_questions:
+  - Does our recommendation feed or featured content count as "selecting" content under s.27(3)?
+law:
+  name: Online Safety Act, No. 9 of 2024
+  section: "s.27(1), (3)"
+  source_id: lk-osa-2024
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6311.pdf
+  quote: >-
+    The exemption from liability granted under subsection (1) shall not apply, if such
+    person - (a) has initiated the communication; (b) has selected the end user of the
+    communication; (c) has selected or modified the content of the communication; or
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "s.27(3)(d): not complying with the Act, regulations, rules or codes of practice."

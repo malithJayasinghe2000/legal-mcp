@@ -1,0 +1,40 @@
+id: lk-ai-medical-advice
+jurisdiction: LK
+area: ai
+title: AI must not act or appear as a doctor
+severity: must
+triggers:
+  all:
+    - ai_health_advice
+    - [users_in:LK, company_in:LK]
+why: >
+  Under the Medical Ordinance, a person who is not a registered medical practitioner
+  must not use a name or title implying they are one, or practise (or claim to
+  practise) medicine for gain. An AI that diagnoses or prescribes in a paid product
+  may count as practising medicine by the company running it.
+what_to_do:
+  - Never call the AI a doctor or imply medical qualifications ("Dr. AI", "your AI physician").
+  - Give general health information only; for diagnosis or treatment, send users to a registered doctor.
+  - If doctors are involved, a registered medical practitioner must make and own the medical decisions.
+lawyer_questions:
+  - Does our AI feature count as "practising medicine for gain" under s.38(b)?
+  - Do SLMC rules on telemedicine apply to our service?
+law:
+  name: Medical Ordinance (Chapter 105)
+  section: "s.38"
+  source_id: lk-medical-ordinance
+  source_url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1779866826.pdf
+  quote: >-
+    No person, not being a medical practitioner, shall- (a) take or use any name, title,
+    or addition implying a qualification to practice medicine or surgery by modem
+    scientific methods, or implying or tending to the belief that he is a medical
+    practitioner registered under this Ordinance,
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  "modem" is a typo in the SLMC consolidated text (should be "modern"); quoted as printed.
+  s.38(b): "practice for gain, or profess to practice, or publish his name as practicing
+  medicine or surgery". Penalty section not checked yet.

@@ -13,6 +13,17 @@ An MCP server (plus a simple website later) that warns developers about the
 When a decision changes or a step finishes, **update those docs in the same
 change**, so the next chat has the right context.
 
+## Code layout and commands
+Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
+- `src/legal_check/` - the server package (MCP server comes in Step 4)
+- `rules/<area>/` - the rule library (YAML, see RULE-FORMAT.md); `rules/facts.yaml` - facts triggers may use
+- `tests/test_rules.py` checks every rule, including that its quote is word for word in the downloaded source
+- `sources/sources.yaml` - official law sources; `sources/fetched.json` - what was downloaded and when
+- `sources/raw/` - downloaded law files (not in git)
+- `scripts/fetch_sources.py` - downloads the sources: `uv run --group sources python scripts/fetch_sources.py`
+- `scripts/find_amendments.py` - checks Parliament for amendments not yet in sources.yaml: `uv run python scripts/find_amendments.py`
+- Tests: `uv run pytest`. Lint/format: `uv run ruff check . && uv run ruff format .`
+
 ## Non-negotiable design rules
 - **Rules first, AI second.** The rule library is the source of legal truth. AI
   only reads the idea, fills in facts and explains. It never invents a law. Plain
@@ -26,7 +37,8 @@ change**, so the next chat has the right context.
 - **Every rule has an official source link, an exact quote, a `last_checked`
   date and a review status.** Drafts are shown as "not yet reviewed by a lawyer".
 - **Severity on every warning**: Must / Should / Check with a lawyer. Must items first.
-- **Where the users are decides the law**, not where the company is.
+- **Where the users are decides the law**, plus where the company is and where
+  data is processed when a law says so (PDPA s.2 does). See brief D11.
 - **Don't help evade laws.** Explain the law and the risk instead.
 - **No referral fees or payment per client** if the product ever links to lawyers
   (Sri Lankan fee-sharing and touting rules; see law-finder).
@@ -42,7 +54,8 @@ change**, so the next chat has the right context.
 - **Don't start long local AI model runs** on his MacBook (it overheats). Ask first, prefer hosted.
 - Launch-deferred features go **behind a one-line switch**, not deleted.
 - In anything users see on the site: use "-", never the long dash "—".
-- Commit only when asked.
+- Git: remote `origin` = https://github.com/malithJayasinghe2000/legal-mcp (branch `main`).
+  Malith allowed committing and pushing there when a piece of work is done (2026-11-11).
 
 ## Related project
 `~/Developer/law-finder` is Malith's live Sri Lankan legal platform

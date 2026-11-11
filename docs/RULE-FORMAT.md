@@ -1,44 +1,56 @@
-# Rule Format (first draft)
+# Rule Format
 
 One rule = one file (YAML), grouped by area: `rules/<area>/<rule-id>.yaml`.
-Rules live in git so every change has a history.
+Rules live in git so every change has a history. Facts that triggers may use are
+listed in [rules/facts.yaml](../rules/facts.yaml).
 
 ```yaml
-id: lk-pdpa-sensitive-health
-jurisdiction: LK                 # where the USERS are, not the company
+id: lk-pdpa-special-categories
+jurisdiction: LK                 # the country whose law this is
 area: personal-data
-title: Health data is a special category of personal data
+title: Health, biometric and other sensitive data need extra care
 severity: must                   # must | should | lawyer   (Must / Should / Check with a lawyer)
 
-# When does this rule apply? All of `all` must be true, and at least one of `any`.
+# When does this rule apply? Every item in `all` must be true.
+# An item that is a list means "at least one of these".
+# `any` is a shortcut for one more "at least one of" item.
 triggers:
-  all: [users_in:LK, collects_personal_data]
-  any: [data:health, data:medical_history]
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+  any: [data:health, data:biometric]
 
 why: >
-  The app stores health information about people in Sri Lanka.
+  The app processes sensitive personal data covered by Sri Lankan law.
 what_to_do:
-  - Get clear consent before collecting health data.
-  - Limit who can see it, and encrypt it.
+  - Get explicit consent for each purpose before collecting it.
 lawyer_questions:
-  - Do we need to register as a controller with the Data Protection Authority?
+  - Is any other legal ground in Schedule II available to us?
 
 law:
-  name: Personal Data Protection Act No. 9 of 2022
-  section: "<section number - fill from the official text>"
-  source_url: "<official link>"
-  quote: "<exact text from the official source>"
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.56 (definition); Schedule II"
+  source_id: lk-pdpa-2022        # an id in sources/sources.yaml
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: "exact text from the official source"
 
+in_force: false                  # false = "coming law" (bill, or Act not started yet)
+starts_on: 2027-01-01            # null if no start date set yet
 last_checked: 2026-11-11
 review_status: draft             # draft | checked_by_owner | lawyer_reviewed
 reviewed_by: null
-in_force: true                   # false for bills: shown as "coming law"
 notes: ""
 ```
 
 Rules for writing rules:
-- `quote` must be copied from the official text, never paraphrased into it.
-- Every rule has a `source_url` and a `last_checked` date.
+- `quote` is copied from the official text, never paraphrased. Dashes may be
+  written as "-" (the site never shows the long dash); everything else is exact.
+  `tests/test_rules.py` checks every quote really appears in the downloaded source.
+  For a scanned PDF (no text), it uses a typed copy in `sources/transcripts/<source_id>.txt`.
+- `source_id` must exist in `sources/sources.yaml`, and `source_url` must be that
+  source's official `url` (brief D14). Quote the law **as amended**: if an
+  amendment replaced the section, quote the amending Act and say so in `section`.
+- Every rule has a `last_checked` date.
 - A rule with `review_status: draft` is shown to users as "not yet reviewed by a lawyer".
-- Triggers use only facts from the fact-question list, so matching stays deterministic.
-- The `<...>` values above are placeholders. Don't ship a rule that still has one.
+- Triggers use only facts from `rules/facts.yaml`, so matching stays deterministic.
+- Placeholders like `<...>` are not allowed in a shipped rule (the test fails).

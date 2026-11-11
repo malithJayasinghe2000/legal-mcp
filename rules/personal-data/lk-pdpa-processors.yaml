@@ -1,0 +1,36 @@
+id: lk-pdpa-processors
+jurisdiction: LK
+area: personal-data
+title: Have a written contract with services that handle personal data for you
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+    - uses_processors
+why: >
+  Cloud hosts, analytics, email/SMS providers and AI APIs that process personal data
+  for you are "processors". The PDPA requires you to use only processors with
+  proper safeguards, bound by a contract covering the processing.
+what_to_do:
+  - Sign (or accept) a data processing agreement with each provider that handles personal data.
+  - Check it covers subject-matter, duration, nature and purpose, data types, categories of people, and your obligations.
+  - Keep a list of your processors.
+lawyer_questions:
+  - Do the standard data processing terms of our providers meet s.21 and s.22?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.21(1)"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    ensure that such processor is bound by a contract or provisions of any written law
+    which sets out the subject-matter and duration of the processing, the nature and
+    purpose of the processing, the type of personal data and categories of the data
+    subjects and the obligations of the controller.
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: ""

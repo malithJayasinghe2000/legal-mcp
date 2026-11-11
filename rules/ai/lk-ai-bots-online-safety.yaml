@@ -1,0 +1,37 @@
+id: lk-ai-bots-online-safety
+jurisdiction: LK
+area: ai
+title: Bots and auto-posting AI must not be used to spread unlawful statements
+severity: should
+triggers:
+  all:
+    - runs_bots
+    - [users_in:LK, company_in:LK]
+why: >
+  The Online Safety Act makes it an offence, for anyone in or outside Sri Lanka, to
+  make or alter a bot intending it to communicate a statement that is an offence
+  under the Act (for example certain false statements). Up to five years in prison
+  or a fine up to Rs. 500,000.
+what_to_do:
+  - Add checks so your bot or AI cannot be easily used to post false or harmful statements about people.
+  - Label automated accounts as bots and keep logs of what they posted.
+  - Don't build features to run many fake accounts (see the Act's rules on inauthentic accounts).
+lawyer_questions:
+  - Could our automated posting be treated as "coordinated inauthentic behaviour" under the Act?
+law:
+  name: Online Safety Act, No. 9 of 2024
+  section: "s.22"
+  source_id: lk-osa-2024
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6311.pdf
+  quote: >-
+    Any person, whether in or outside Sri Lanka, who makes or alters a bot with the
+    intention of communicating or enabling any other person to communicate, by means of a
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  s.52 defines "bot" as "a computer program made or altered for the purpose of running
+  automated tasks". The offence needs intention; that's why this is "should".
+  Online Safety (Repeal) Bill pending, Act still in force.

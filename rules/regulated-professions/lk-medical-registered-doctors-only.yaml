@@ -1,0 +1,36 @@
+id: lk-medical-registered-doctors-only
+jurisdiction: LK
+area: regulated-professions
+title: Only SLMC-registered doctors may give consultations through your platform
+severity: must
+triggers:
+  all:
+    - profession:medicine
+    - offers_consultations
+    - [users_in:LK, company_in:LK]
+why: >
+  Under the Medical Ordinance, a person who is not a registered medical practitioner
+  must not practise medicine for gain, claim to practise, or publish their name as
+  practising. A platform that lets unregistered people consult patients helps them
+  break the law.
+what_to_do:
+  - Check every doctor's SLMC registration before they can consult, and recheck it regularly.
+  - Show only qualifications registered with the SLMC.
+  - Keep records of who gave each consultation.
+lawyer_questions:
+  - Do SLMC rules on telemedicine (2023 amendment of examination regulations) apply to us?
+  - Can doctors registered abroad consult patients in Sri Lanka through us?
+law:
+  name: Medical Ordinance (Chapter 105)
+  section: "s.38(b)"
+  source_id: lk-medical-ordinance
+  source_url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1779866826.pdf
+  quote: >-
+    except as mentioned in section 41, practice for gain, or profess to practice, or
+    publish his name as practicing medicine or surgery.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "s.68 general penalty not checked yet."

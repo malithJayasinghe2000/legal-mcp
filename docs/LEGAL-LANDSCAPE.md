@@ -4,7 +4,34 @@ Research notes from 2026-11-11. **These are starting points, not rules.** Severa
 dates come from news sites and trackers that disagree with each other. Confirm
 every item against the official text before it becomes a rule.
 
-## Sri Lanka - laws to collect
+## Sri Lanka - verified for the first 5 areas (2026-11-11)
+
+Checked by downloading the official copy and reading the title page.
+Links and details: [sources/sources.yaml](../sources/sources.yaml).
+
+| Area | Law (verified name and number) | What we found |
+|---|---|---|
+| Personal data | Personal Data Protection Act, No. 9 of 2022 | Certified 19 March 2022. **s.2(1)** applies when processing is in Sri Lanka, or the company is incorporated / domiciled / resident in Sri Lanka, or it targets or monitors people in Sri Lanka. Key sections for rules: s.18-19 automated decisions, s.20 Data Protection Officer, s.23 data breach, s.24 impact assessment (incl. profiling), s.26 cross-border transfer, s.27 direct marketing. |
+| Personal data | Personal Data Protection (Amendment) Act, No. 22 of 2025 | Certified 30 October 2025. Start dates are now set by **the Minister** by Gazette order (not fixed dates). Check whether it changed the sections above. |
+| Personal data | Commencement order, Gazette Extraordinary No. 2498/16 (22 July 2026) | **Not seen yet** (no downloadable copy). Law firms say: Part I, Part III, s.2-3 start 1 January 2027; Part II (rights), Part IV (marketing), Part VII (penalties) still waiting. |
+| Payments | Payment and Settlement Systems Act, No. 28 of 2005 | Certified 20 September 2005 (CBSL copy). **No amendments** (Parliament's acts listing, checked by script). Parliament lists it as "Payments and Settlement Systems". |
+| Payments | Payment Cards and Mobile Payment Systems Regulations No. 1 of 2013 | Gazette Extraordinary No. 1813/25 of 7 June 2013, under the Act above. |
+| Payments | Money or Value Transfer Service Providers Regulations No. 1 of 2024 | Gazette Extraordinary No. 2382/11 of 30 April 2024. Reg 4: Central Bank registration needed. |
+| Payments | Money or Value Transfer Service Providers Regulations No. 01 of 2025 | Gazette Extraordinary No. 2468/06 of 23 December 2025. **Amends the 2024 Regulations** from 31 December 2025 (definition, eligibility: Rs. 15m capital). |
+| Payments | Central Bank Direction No. 01/2018 (e-commerce card acquiring through service providers) | Scanned PDF; typed copy in `sources/transcripts/`. Gateways must not access card number, CVV, expiry (para 2.4). |
+| AI | (no AI law) | Covered through the PDPA (s.18 automated decisions, s.24 profiling), professional rules and the Online Safety Act. |
+| Online content | Online Safety Act, No. 9 of 2024 | Certified 1 February 2024. Still in force. The Online Safety (Repeal) Bill is "pending for 2nd reading" (Parliament page). The 2024 amendment bill also not passed. |
+| Lawyers | Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules, 1988, Gazette Extraordinary No. 535/7 of 07.12.1988 | Official copy on supremecourt.lk, but it blocks scripts. Needs a manual download. |
+| Lawyers | Intermeddlers with Suitors Ordinance, **Cap. 40, Ordinances Nos. 11 of 1894 and 35 of 1917** | Both earlier names were right ("No. 11 of 1894" and "Cap. 40"). **s.2(c)**: a person not authorised to practise who takes payment for procuring a lawyer's employment commits an offence. Read from an unofficial copy by mistake; **get the official CommonLII copy** and confirm. |
+| Lawyers | BASL cautionary note (June 2021) | **No official copy found.** Only a news report (counterpoint.lk, 15 Sep 2021) quoting it: legal advice through non-lawyer online platforms "constitutes the act and conduct of touting, which is unlawful". |
+| Doctors | Medical Ordinance (Chapter 105) | SLMC consolidated copy, includes amendments up to No. 28 of 2018 (checked). Parliament lists 18 amending Acts 1949-2024. |
+| Doctors | Medical (Amendment) Act, No. 46 of 2024 | **New, wasn't in our list.** Certified 15 August 2024. |
+| Doctors | SLMC Guidelines on Ethical Conduct (July 2009); SLMC Instructions on Serious Professional Misconduct (July 2009) | Advertising and canvassing are misconduct. SLMC also has newer Social Media Guidelines (web page only). |
+
+Note: documents.gov.lk (Government Printer) was rebuilt and its old PDF links
+return 404, so we use Parliament and regulator copies instead.
+
+## Sri Lanka - laws to collect (later areas)
 
 Candidate list for the rule library. Act numbers and years are from memory unless
 marked; **verify each one** on the official source before use.

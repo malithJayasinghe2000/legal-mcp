@@ -1,0 +1,36 @@
+id: lk-pdpa-privacy-notice
+jurisdiction: LK
+area: personal-data
+title: Tell users what you collect and why (privacy notice)
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  The PDPA requires you to give people the information in Schedule V when you
+  collect their data, in a concise, clear and easy-to-find form.
+what_to_do:
+  - "Publish a privacy notice and show it when data is collected. Schedule V lists what it must
+    include: who you are and how to contact you, purposes and legal ground, data categories,
+    who you share with, transfers abroad, how long you keep data, users' rights, the right to
+    complain to the Data Protection Authority, and any automated decision-making."
+  - Tell users again before using their data for a new purpose (Schedule V item 2).
+lawyer_questions:
+  - Does our privacy notice cover every item in Schedule V?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.11; Schedule V"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    A controller shall, provide data subjects- (a) the information referred to in
+    Schedule V; and (b) the information regarding any decision taken pursuant to a
+    request made under PART II of this Act, in writing or by electronic means and in
+    a concise, transparent, intelligible and easily accessible form.
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: ""

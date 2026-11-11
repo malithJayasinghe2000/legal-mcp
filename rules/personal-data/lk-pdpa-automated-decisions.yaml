@@ -1,0 +1,38 @@
+id: lk-pdpa-automated-decisions
+jurisdiction: LK
+area: personal-data
+title: People can ask for a review of decisions made only by software
+severity: should
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+    - automated_decisions
+why: >
+  When a decision is based solely on automated processing and has an irreversible
+  and continuous impact on a person's rights, the PDPA gives them the right to ask
+  for a review, unless the decision is authorised by law, based on consent, or
+  needed for a contract (not for special categories of data).
+what_to_do:
+  - Build a way for a human to review automated decisions on request.
+  - Explain in your privacy notice that automated decisions are made and the logic behind them (Schedule V item (m)).
+lawyer_questions:
+  - Do our automated decisions have an "irreversible and continuous impact" on users' rights?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.18(1)"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    every data subject shall have the right to request a controller to review a
+    decision of such controller based solely on automated processing, which has created
+    or which is likely to create an irreversible and continuous impact on the rights
+    and freedoms of the data subject
+in_force: false
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  Part II (rights) has no start date yet. Act No. 22 of 2025 changed the end of s.18(1)
+  to "under the Constitution or any written law".

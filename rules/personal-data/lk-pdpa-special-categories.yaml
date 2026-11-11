@@ -1,0 +1,40 @@
+id: lk-pdpa-special-categories
+jurisdiction: LK
+area: personal-data
+title: Sensitive data (health, biometric, children's and more) needs a stricter legal ground
+severity: must
+triggers:
+  all:
+    - collects_personal_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+  any: [data:health, data:biometric, data:genetic, data:ethnicity, data:political,
+        data:religion, data:sex_life, data:criminal, users:children]
+why: >
+  These are "special categories of personal data" under the PDPA. They can only be
+  processed on a Schedule II ground, usually explicit consent for stated purposes.
+  Note: in Sri Lanka, children's data (under 16) is a special category too, while
+  financial data and NIC numbers are not.
+what_to_do:
+  - Get explicit consent for each stated purpose, unless another Schedule II ground clearly applies.
+  - Give this data the strongest security and the narrowest access.
+  - You will likely need an impact assessment and a Data Protection Officer (see those warnings).
+lawyer_questions:
+  - Which Schedule II ground applies to us, and does any other law forbid this processing even with consent?
+law:
+  name: Personal Data Protection Act, No. 9 of 2022
+  section: "s.56 (definition); s.5(b); Schedule II"
+  source_id: lk-pdpa-2022
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
+  quote: >-
+    "special categories of personal data" means, the personal data revealing racial or
+    ethnic origin, political opinions, religious or philosophical beliefs, the processing
+    of genetic data, biometric data for the purpose of uniquely identifying a natural
+    person, data concerning health or data concerning a natural person's sex life or
+    sexual orientation, personal data relating to offences, criminal proceedings and
+    convictions, or personal data relating to a child;
+in_force: false
+starts_on: 2027-01-01
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: ""
