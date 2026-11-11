@@ -1,4 +1,4 @@
-"""Neura Guard: legal issue-spotting for software builders (MCP server).
+"""Rulewise: legal issue-spotting for software builders (MCP server).
 
 See docs/ROADMAP.md.
 """

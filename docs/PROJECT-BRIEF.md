@@ -97,7 +97,7 @@ artificialintelligenceact.eu, aguardic.com.
 | D17 | **Website: guided questions, no AI** (2026-11-11). Visitors answer the fact questions instead of typing their idea. | Nothing about the idea reaches our server, no AI cost, same answer every time. AI "describe your idea" can come later behind a switch. |
 | D18 | **Website look: light, calm base with fiveneurals orange `#F57E22` as the signature colour** (2026-11-11). Font from the same family as fiveneurals (Space Grotesk) is a candidate. | Long legal reports read better on light. Orange only for actions/highlights (small orange text fails contrast); severity colours (Must / Should / Lawyer) must stay distinct from the brand orange. |
 | D19 | **Website stack: Next.js + TypeScript, Tailwind CSS (design tokens), shadcn/ui (Radix), React Hook Form + Zod, Lucide icons, self-hosted fonts; ESLint, Prettier, Playwright + axe.** It calls the same Python checker through a small API (D7). | Industry standard, consistent, accessible. Self-hosted fonts and no trackers fit "store nothing". |
-| D20 | **Product name: Neura Guard** (2026-11-11, Malith). | Fits the fiveneurals brand. Name check 2026-11-11: a small cybersecurity startup "NeuraGuard" (neuraguard.space, 2025) and a US trademark filing "NEURALGUARD" (AI energy-grid software, 2025) exist. Different fields, but check the Sri Lanka trademark register (NIPO) and ask the lawyer before launch. |
+| D20 | **Product name: Rulewise** (2026-11-11, Malith; replaced "Neura Guard" the same day). | Says what it does (knows the rules) without sounding like a law firm; no words like "lawyer", "counsel" or "legal advice" (Bar rules risk). Web search 2026-11-11 found no product called Rulewise. "Neura Guard" was dropped: a cybersecurity startup "NeuraGuard" and a US "NEURALGUARD" trademark filing exist. Before launch: check the Sri Lanka trademark register (NIPO) and ask the lawyer. |
 
 ## 5. How it works (simple)
 
@@ -317,7 +317,7 @@ In priority order:
 
 ## 15. Open questions (decide in the next chats)
 
-- Domain for Neura Guard.
+- Domain for Rulewise.
 - Hosting: the same Azure student VM as law-finder (credit until about Feb 2027)
   or separate. Stateless and small either way.
 - Which lawyer reviews the rules, and how they are paid or credited.

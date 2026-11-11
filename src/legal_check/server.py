@@ -1,4 +1,4 @@
-"""Neura Guard MCP server.
+"""Rulewise MCP server.
 
 Run locally (stdio):   uv run legal-check
 Run over HTTP:          uv run legal-check --transport streamable-http --port 8000
@@ -29,7 +29,7 @@ log = logging.getLogger("legal_check")
 logging.getLogger("mcp").setLevel(logging.WARNING)
 
 INSTRUCTIONS = """\
-Neura Guard spots legal issues for software products, starting with Sri Lankan law.
+Rulewise spots legal issues for software products, starting with Sri Lankan law.
 It gives legal information, not legal advice.
 
 When the user plans or builds a feature for a product with users in Sri Lanka, or
@@ -60,7 +60,7 @@ _load_error: str | None = None
 def _get_library() -> Library:
     if _library is None:
         raise ToolError(
-            f"Neura Guard could not load its rule library ({_load_error}). "
+            f"Rulewise could not load its rule library ({_load_error}). "
             "The check did NOT run: this is not a 'no issues found' result."
         )
     return _library
@@ -78,8 +78,8 @@ def load(rules_dir=None) -> None:
 
 
 mcp = MCPServer(
-    name="neura-guard",
-    title="Neura Guard",
+    name="rulewise",
+    title="Rulewise",
     instructions=INSTRUCTIONS,
     version=__version__,
 )
@@ -167,7 +167,7 @@ def get_rule(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(prog="neura-guard", description=__doc__.split("\n")[0])
+    parser = argparse.ArgumentParser(prog="rulewise", description=__doc__.split("\n")[0])
     parser.add_argument("--transport", choices=["stdio", "streamable-http"], default="stdio")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8000)

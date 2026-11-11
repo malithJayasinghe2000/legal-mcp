@@ -25,7 +25,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.scripts]
-neura-guard = "legal_check.server:main"
+rulewise = "legal_check.server:main"
 legal-check = "legal_check.server:main"  # old name, kept so existing setups work
 
 [tool.hatch.build.targets.wheel]

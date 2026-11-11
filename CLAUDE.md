@@ -1,8 +1,8 @@
-# Neura Guard - instructions for Claude
+# Rulewise - instructions for Claude
 
 An MCP server (plus a simple website later) that warns developers about the
 **legal restrictions on what they are building**, starting with **Sri Lankan law**.
-Product name: **Neura Guard** (decided 2026-11-11, brief D20). Code still uses the
+Product name: **Rulewise** (decided 2026-11-11, brief D20). Code still uses the
 old working name in places (`legal_check` package, repo folder `legal-check`); that is fine.
 
 **Read before doing anything:**
