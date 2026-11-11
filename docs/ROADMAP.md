@@ -131,7 +131,13 @@ Findings to decide:
     "client_duties" list (not hidden), and the builder gets `lk-pdpa-processor-duties`
     (s.22). Verified in a real session (Colombo company building a hospital app).
   - **Gap:** lending licences (#12), crypto, foreign exchange.
-  - Not tested yet: whether Claude picks the right facts from idea text (needs headless sessions). Case #1 (law-finder, original and fixed design) passes, and **passed in a
+  - **Trigger test on small coding requests (2026-11-11), real headless sessions** in a small
+    fake project (README: clinic booking app for patients in Sri Lanka). 6 requests:
+    NIC field, diagnosis columns, PayHere payments, OpenAI symptom chat, Friday promo SMS
+    -> all 5 called check_legal_risks with sensible facts; "centre the header CSS" -> no call.
+    The AI symptom chat request was paused for the user's decision (Medical Ordinance s.38)
+    with a safer design; the NIC request was built, with the relevant PDPA warnings.
+    Not tested yet: projects with no hint of Sri Lanka in the files (layer 3 asks then). Case #1 (law-finder, original and fixed design) passes, and **passed in a
 real Claude Code session** (2026-11-11): it flagged the per-enquiry fee (Rule 39(1) +
 Intermeddlers s.2), featured slots (Rule 39(2)), past cases/ratings (Rule 49) and the AI
 legal chat (BASL note), then designed the schema without them. Run: `uv run pytest tests/test_server.py`. Grow it to 20-30.
