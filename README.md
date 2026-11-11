@@ -1,4 +1,4 @@
-# Legal Check (working name)
+# Neura Guard
 
 Legal issue-spotting for people who build software. Connect it to your AI
 coding tool (Claude Code, Cursor, VS Code) as an MCP server. While you build, it
@@ -20,7 +20,7 @@ uv run --group sources python scripts/fetch_sources.py   # download the law sour
 ## Use it in Claude Code (local)
 
 ```sh
-claude mcp add legal-check -- uv run --directory /path/to/legal-check legal-check
+claude mcp add neura-guard -- uv run --directory /path/to/legal-check neura-guard
 ```
 
 Then just describe what you're building. Claude calls the `check_legal_risks` tool

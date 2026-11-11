@@ -1,8 +1,9 @@
-# Legal Check - instructions for Claude
+# Neura Guard - instructions for Claude
 
 An MCP server (plus a simple website later) that warns developers about the
 **legal restrictions on what they are building**, starting with **Sri Lankan law**.
-"Legal Check" is a working name.
+Product name: **Neura Guard** (decided 2026-11-11, brief D20). Code still uses the
+old working name in places (`legal_check` package, repo folder `legal-check`); that is fine.
 
 **Read before doing anything:**
 1. [docs/PROJECT-BRIEF.md](docs/PROJECT-BRIEF.md) - the idea, every decision made, limitations, future plans
