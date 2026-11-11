@@ -1,0 +1,34 @@
+id: lk-bar-no-practice-particulars
+jurisdiction: LK
+area: regulated-professions
+title: Don't publish lawyers' case histories, wins or reviews of their cases
+severity: should
+triggers:
+  all:
+    - profession:law
+    - lists_professionals
+    - [users_in:LK, company_in:LK]
+why: >
+  Rule 49 says an Attorney-at-Law should not cause or permit publication of
+  particulars of their practice, or of matters they were instructed in (beyond what
+  is allowed without confidential details or self-publicity). Profiles with past
+  cases, win rates or client reviews about cases would breach this.
+what_to_do:
+  - No case lists, success rates, "cases won", or client testimonials about cases on lawyer profiles.
+  - No star ratings or "top lawyer" badges.
+lawyer_questions:
+  - Are anonymous user ratings of a lawyer's service (not cases) allowed?
+law:
+  name: Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules, 1988
+  section: "Rule 49"
+  source_id: lk-sc-attorneys-rules-1988
+  source_url: https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf
+  quote: >-
+    An Attorney-at-Law should not cause or permit to be published any particulars of- (1)
+    his practice; (2) any matter in which he has been instructed,
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "law-finder test case #1. Rule 47: attorneys must ensure ads naming them don't offend the rules."

@@ -1,0 +1,37 @@
+id: lk-intermeddlers-payment-for-clients
+jurisdiction: LK
+area: regulated-professions
+title: Taking payment from lawyers for bringing them clients is a criminal offence
+severity: must
+triggers:
+  all:
+    - profession:law
+    - charges_professionals_per_client
+    - [users_in:LK, company_in:LK]
+why: >
+  Under the Intermeddlers with Suitors Ordinance, anyone who asks for or receives any
+  payment from a lawyer for getting them employment (a client) commits an offence.
+  This applies to the platform itself, not only to the lawyer.
+what_to_do:
+  - Don't take any fee, commission or share linked to clients you bring to a lawyer.
+  - Don't take a cut of legal fees paid through your platform.
+lawyer_questions:
+  - Could any part of our pricing be seen as payment for procuring clients under s.2?
+law:
+  name: Intermeddlers with Suitors Ordinance (Cap. 40)
+  section: "s.2(a); see also s.2(c)"
+  source_id: lk-intermeddlers-ordinance
+  source_url: http://www.commonlii.org/lk/legis/consol_act/iws40367/
+  quote: >-
+    solicits or receives from any legal practitioner any gratification in consideration of
+    procuring or having procured him employment as such legal practitioner
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  1980 Revised Edition text (CommonLII); penalty there is a fine up to Rs. 500. No later
+  amendments on Parliament's listing. s.2(c): a person not authorised to practise who
+  takes payment from anyone for procuring a lawyer's employment also commits an offence.
+  law-finder test case #1.

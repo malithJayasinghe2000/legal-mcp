@@ -64,6 +64,24 @@ def main(only: list[str]) -> int:
         if only and sid not in only:
             continue
         urls = [u for u in [src.get("url"), *src.get("alt_urls", [])] if u]
+        if src.get("manual_download"):
+            # Official site blocks scripts: a person downloads it; we only record it.
+            path = RAW / f"{sid}.pdf"
+            if not path.exists():
+                failures += 1
+                print(f"\n== {sid}: MANUAL download needed from {src['url']} -> {path}")
+                continue
+            data = path.read_bytes()
+            log[sid] = {
+                "title": src["title"],
+                "url_used": f"manual browser download from {src['url']}",
+                "downloaded": log.get(sid, {}).get("downloaded", date.today().isoformat()),
+                "sha256": hashlib.sha256(data).hexdigest(),
+                "bytes": len(data),
+                "file": str(path.relative_to(ROOT)),
+            }
+            print(f"\n== {sid}: manual file present ({len(data):,} bytes)")
+            continue
         if not urls:
             print(f"\n== {sid}: no URL in manifest (official copy not found yet)")
             continue

@@ -1,0 +1,36 @@
+id: lk-bar-directory-allowed-details
+jurisdiction: LK
+area: regulated-professions
+title: A lawyer directory is allowed, but only with basic, factual details
+severity: should
+triggers:
+  all:
+    - profession:law
+    - lists_professionals
+    - [users_in:LK, company_in:LK]
+why: >
+  Rule 45 of the Supreme Court rules for Attorneys-at-Law allows a lawyer's or law
+  firm's name, address and description in law lists and directories, limited to the
+  details allowed for a name plate (Rule 40): name or firm, professional and academic
+  qualifications, and office hours.
+what_to_do:
+  - Show only name or firm, address, professional and academic qualifications, and office hours.
+  - Let any Attorney-at-Law join on the same terms, and order listings neutrally (not by payment or ratings).
+  - Show a clear "lawyers are not ranked or recommended" note.
+lawyer_questions:
+  - Are fields like practice areas, languages or photos acceptable under Rules 40 and 45?
+law:
+  name: Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules, 1988
+  section: "Rule 45 (with Rule 40)"
+  source_id: lk-sc-attorneys-rules-1988
+  source_url: https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf
+  quote: >-
+    An Attorney-at-Law or a Law Firm may have his or its name, address and description in
+    any law list or Legal Directory or such other directories, including Telephone
+    Directory as provided in Clause 40.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "law-finder test case #1. Rules bind attorneys; the platform risk is that listed lawyers breach them."

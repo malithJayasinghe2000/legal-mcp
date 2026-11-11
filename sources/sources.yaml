@@ -16,7 +16,9 @@
 # quoted or linked in a rule).
 # Note (2026-11-11): documents.gov.lk was rebuilt as a JavaScript app and its old
 # /view/... PDF links now return 404, so we don't rely on it.
-# `url: null` + `manual:` = no official copy we can download by script; see note.
+# `url: null` + `manual:` = no official copy found yet; see note.
+# `manual_download: true` = official copy exists but blocks scripts; download it in
+# a browser and save as sources/raw/<id>.pdf (fetch_sources.py then records its hash).
 
 # ---------- 1. Personal data ----------
 - id: lk-pdpa-2022
@@ -117,27 +119,19 @@
   area: regulated-professions
   kind: rules
   title: Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules, 1988 (Gazette Extraordinary No. 535/7 of 07.12.1988)
-  url: null
-  manual: >
-    Official copy: https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf
-    The site blocks scripts (HTTP 403). Download it in a browser and save as
-    sources/raw/lk-sc-attorneys-rules-1988.pdf.
+  url: https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf
+  manual_download: true   # site blocks scripts (HTTP 403); downloaded by Malith in a browser
+  verified: "2026-11-11: 18 pages; 'Reproduced from Gazette Extraordinary ... No. 535/7 of 07.12.1988'"
 
 - id: lk-intermeddlers-ordinance
   parliament_name: Intermeddlers with Suitors
   area: regulated-professions
   kind: ordinance
   title: Intermeddlers with Suitors Ordinance (Cap. 40; Ordinances Nos. 11 of 1894 and 35 of 1917)
-  url: null
-  research_copy: https://lankalaw.net/wp-content/uploads/2024/03/iws40367.pdf
-  manual: >
-    Official copy: CommonLII (government 1980 Revised Edition text),
-    http://www.commonlii.org/lk/legis/consol_act/iws40367 - click "PDF version".
-    CommonLII blocks scripts, so download in a browser and save as
-    sources/raw/lk-intermeddlers-ordinance.pdf. Then check Parliament's acts
-    listing for amendments after 1980. (A lankalaw.net copy was used by mistake
-    on 2026-11-11 and removed; its header read "Cap.40, Ordinances Nos. 11 of
-    1894, 35 of 1917" - confirm on the official copy.)
+  # CommonLII: government 1980 Revised Edition text. No amendments on Parliament's listing.
+  url: http://www.commonlii.org/lk/legis/consol_act/iws40367/
+  manual_download: true   # CommonLII blocks scripts; downloaded by Malith in a browser
+  verified: "2026-11-11: header 'Cap.40, Ordinances Nos. 11 of 1894, 35 of 1917' (CommonLII PDF)"
 
 - id: lk-basl-note-2021
   area: regulated-professions

@@ -22,15 +22,11 @@ gets correct warnings. law-finder's story is the first test.
   and sha256, so anyone can re-download the same version.
 - [x] law-finder's `24-2007_E.pdf` is the Computer Crime Act No. 24 of 2007 (checked). Not in the first 5 areas.
 - [ ] **Malith, manual (4 items):**
-  1. Download the Attorneys-at-Law Rules 1988 PDF in a browser (site blocks scripts) and save as
-     `sources/raw/lk-sc-attorneys-rules-1988.pdf`.
-     Link: https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf
+  1. ~~Attorneys-at-Law Rules 1988~~ done 2026-11-11 (manual browser download).
   2. Get PDPA commencement Gazette No. 2498/16 (22 July 2026) from documents.gov.lk
      in a browser, or from the DPA. Needed before any PDPA rule says "in force".
   3. BASL note (June 2021): no copy online. Ask BASL or the lawyer reviewer.
-  4. Intermeddlers Ordinance from CommonLII in a browser ("PDF version"):
-     http://www.commonlii.org/lk/legis/consol_act/iws40367 - save as
-     `sources/raw/lk-intermeddlers-ordinance.pdf`.
+  4. ~~Intermeddlers Ordinance from CommonLII~~ done 2026-11-11 (manual browser download).
 - Official sources only, same rule as law-finder: never lankalaw.net or other private sites.
 - [x] Automatic amendment search: `uv run python scripts/find_amendments.py` searches
   Parliament's acts listing for every main law and fails if an amendment is missing. 2026-11-11 result:
@@ -72,10 +68,12 @@ Progress:
   directory open to all (SLMC misconduct item v), no paid promotion of named doctors (SLMC 4.3),
   no commission per patient (SLMC ethics), registered doctors only (Medical Ordinance s.38(b)).
   Not collected yet: SLMC Social Media Guidelines, Nov 2025 advertising notice, telemedicine gazette.
-- [ ] **Regulated professions - lawyers** (needs the 1988 Rules and Intermeddlers PDFs first):
-  Rule 45 directories, Rule 49 practice details, Rule 39 touting, fee-sharing, Intermeddlers s.2,
-  AI legal advice (BASL note). Reuse facts `profession:law`, `lists_professionals`,
-  `sells_promotion_to_professionals`, `charges_professionals_per_client`, `ai_legal_advice`.
+- [x] **Regulated professions - lawyers: 6 rules** (2026-11-11): directory details (Rule 45/40),
+  no practice particulars (Rule 49), no paid promotion (Rule 39(2)), no fee per client
+  (Rule 39(1)), Intermeddlers s.2(a) (criminal, applies to the platform), online/AI legal advice
+  (Rule 39 + BASL note, "check with a lawyer"). The 1988 Rules have **no separate fee-sharing
+  rule**: law-finder's fee-sharing problem comes from Rule 39(1) and Intermeddlers s.2.
+- **Total: 35 rules in 5 areas.**
 
 ### Step 3. Fact questions (first draft)
 Machine-readable list: [rules/facts.yaml](../rules/facts.yaml) (grows as areas are added).
@@ -116,7 +114,10 @@ Original plan:
 ### Step 5. Test set (started 2026-11-11)
 `tests/cases.yaml` has 5 cases (law-finder #1 marked pending until lawyer rules exist;
 #2 doctor booking, #3 student chatbot, #4 Sri Lankan company with EU users,
-#5 foreign-only). Run: `uv run pytest tests/test_server.py`. Grow it to 20-30.
+#5 foreign-only). Case #1 (law-finder, original and fixed design) passes, and **passed in a
+real Claude Code session** (2026-11-11): it flagged the per-enquiry fee (Rule 39(1) +
+Intermeddlers s.2), featured slots (Rule 39(2)), past cases/ratings (Rule 49) and the AI
+legal chat (BASL note), then designed the schema without them. Run: `uv run pytest tests/test_server.py`. Grow it to 20-30.
 
 Original plan:
 - 20-30 example ideas with expected warnings, run with one command.

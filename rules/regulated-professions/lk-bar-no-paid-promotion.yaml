@@ -1,0 +1,36 @@
+id: lk-bar-no-paid-promotion
+jurisdiction: LK
+area: regulated-professions
+title: Selling featured spots or ads to lawyers can be touting
+severity: must
+triggers:
+  all:
+    - profession:law
+    - sells_promotion_to_professionals
+    - [users_in:LK, company_in:LK]
+why: >
+  Rule 39 forbids Attorneys-at-Law, directly or through another, to tout. Touting
+  includes advertising in any manner to unfairly attract clients. Paid "featured" or
+  top placement for a lawyer is likely advertising to unfairly attract clients.
+what_to_do:
+  - Don't sell featured placement, higher ranking, badges or ads to lawyers.
+  - If you charge lawyers, charge a flat software fee that buys no extra visibility.
+lawyer_questions:
+  - Is a flat paid subscription for a basic profile acceptable under Rule 39?
+law:
+  name: Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules, 1988
+  section: "Rule 39(2)"
+  source_id: lk-sc-attorneys-rules-1988
+  source_url: https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf
+  quote: >-
+    An Attorney-at-Law shall not under any circumstances by himself or through another
+    directly or indirectly resort to the practice of Touting. The expression Touting shall
+    include the following acts or conduct: (1) engaging in any manner for any commission,
+    payment or consideration the services of any person to solicit clientele; (2)
+    advertising in any manner, for the purpose of unfairly attracting clientele for himself.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "law-finder test case #1 (it removed 'featured' slots for this reason)."

@@ -1,0 +1,40 @@
+id: lk-bar-online-legal-advice
+jurisdiction: LK
+area: regulated-professions
+title: Lawyers advising through a non-lawyer online platform can be treated as touting
+severity: lawyer
+# Means: ai_legal_advice, OR (profession:law AND offers_consultations).
+triggers:
+  all:
+    - [users_in:LK, company_in:LK]
+    - [ai_legal_advice, profession:law]
+  any: [ai_legal_advice, offers_consultations]
+why: >
+  The Bar Association of Sri Lanka issued a cautionary note (June 2021, reported in the
+  press; official copy not found) that legal advice by Attorneys-at-Law through online
+  platforms run by non-lawyers can be touting under Rule 39. An AI that answers legal
+  questions raises the same question, and may also be unauthorised legal practice.
+what_to_do:
+  - Give general legal information only; don't let AI tell users what they should do in their own case.
+  - Keep AI answers controlled on the server, with a clear "not legal advice, see a lawyer" message.
+  - If lawyers advise through your platform, get a written opinion from a Sri Lankan lawyer first.
+lawyer_questions:
+  - Does the BASL June 2021 note apply to our platform, and can we see it?
+  - Is our AI's output "legal advice" or general legal information?
+law:
+  name: Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules, 1988
+  section: "Rule 39 (as read in the BASL cautionary note, June 2021)"
+  source_id: lk-sc-attorneys-rules-1988
+  source_url: https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf
+  quote: >-
+    An Attorney-at-Law shall not under any circumstances by himself or through another
+    directly or indirectly resort to the practice of Touting.
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: >
+  BASL note known only from counterpoint.lk (15 Sep 2021). Rules on who may practise law
+  not collected yet. Applies to ai_legal_advice even without profession:law, on purpose.
+  law-finder test case #1 (its AI chat had to be restricted).

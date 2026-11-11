@@ -24,4 +24,6 @@ def test_every_source_is_complete():
         # Either a link we can download, or a note saying how to get it.
         assert s.get("url") or s.get("manual"), s["id"]
         if s.get("url"):
-            assert s["url"].startswith("https://"), s["id"]
+            # https, except CommonLII which only serves http
+            ok = s["url"].startswith(("https://", "http://www.commonlii.org/"))
+            assert ok, s["id"]

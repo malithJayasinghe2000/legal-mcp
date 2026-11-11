@@ -18,7 +18,7 @@ covered:
     gaps: Paid content on declared online locations and user offences not covered.
   regulated-professions:
     label: Regulated professions
-    gaps: Doctors only. Lawyers (Bar rules, touting, fee-sharing) coming soon.
+    gaps: Doctors and lawyers only. BASL note on online legal advice known only from the press.
 
 not_covered:
   - Consumer rights

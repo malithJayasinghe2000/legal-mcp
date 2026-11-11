@@ -31,6 +31,14 @@
     "bytes": 40805,
     "file": "sources/raw/lk-cbsl-payment-cards-mobile-regs-2013.pdf"
   },
+  "lk-intermeddlers-ordinance": {
+    "title": "Intermeddlers with Suitors Ordinance (Cap. 40; Ordinances Nos. 11 of 1894 and 35 of 1917)",
+    "url_used": "manual browser download from http://www.commonlii.org/lk/legis/consol_act/iws40367/",
+    "downloaded": "2026-11-11",
+    "sha256": "ae9f4c235be4869fecb75548da292396e198e12a94e97026e7baac110845c168",
+    "bytes": 22420,
+    "file": "sources/raw/lk-intermeddlers-ordinance.pdf"
+  },
   "lk-medical-amendment-2024": {
     "title": "Medical (Amendment) Act, No. 46 of 2024",
     "url_used": "https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783675368.pdf",
@@ -86,6 +94,14 @@
     "sha256": "60e1c640b5ee622d07834dd8a296ab87615c86eb22680ff26abb216fdb835cb4",
     "bytes": 59294,
     "file": "sources/raw/lk-pssa-2005.pdf"
+  },
+  "lk-sc-attorneys-rules-1988": {
+    "title": "Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules, 1988 (Gazette Extraordinary No. 535/7 of 07.12.1988)",
+    "url_used": "manual browser download from https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf",
+    "downloaded": "2026-11-11",
+    "sha256": "15d84eb2e6e00e5f5fa969322aaf59d397dba60af1d239e5bef1247c4398fb6d",
+    "bytes": 514282,
+    "file": "sources/raw/lk-sc-attorneys-rules-1988.pdf"
   },
   "lk-slmc-ethical-conduct": {
     "title": "SLMC Guidelines on Ethical Conduct for Medical and Dental Practitioners",

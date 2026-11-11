@@ -1,0 +1,33 @@
+id: lk-bar-no-fee-per-client
+jurisdiction: LK
+area: regulated-professions
+title: Don't charge lawyers per client, enquiry or message (touting)
+severity: must
+triggers:
+  all:
+    - profession:law
+    - charges_professionals_per_client
+    - [users_in:LK, company_in:LK]
+why: >
+  Rule 39(1) counts as touting any payment by an Attorney-at-Law, in any manner, for
+  someone's services to bring them clients. A fee per client, lead, enquiry or
+  message is such a payment, so lawyers on the platform would be touting.
+what_to_do:
+  - Charge lawyers or firms a flat subscription or per-seat software fee only.
+  - Never tie what a lawyer pays to the number of clients, enquiries or messages.
+lawyer_questions:
+  - Does a usage-based fee (e.g. per seat or storage) avoid Rule 39(1)?
+law:
+  name: Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules, 1988
+  section: "Rule 39(1)"
+  source_id: lk-sc-attorneys-rules-1988
+  source_url: https://supremecourt.lk/wp-content/uploads/2025/07/Supreme-Court-English.pdf
+  quote: >-
+    engaging in any manner for any commission, payment or consideration the services of any
+    person to solicit clientele;
+in_force: true
+starts_on: null
+last_checked: 2026-11-11
+review_status: draft
+reviewed_by: null
+notes: "law-finder test case #1: it moved to selling software seats to firms only. See also Intermeddlers s.2."

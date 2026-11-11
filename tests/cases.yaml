@@ -2,13 +2,25 @@
 # `must_include`: rule ids that have to appear. `must_exclude`: rules that must not.
 # `max_warnings`: upper bound, to catch noise. Run: uv run pytest tests/test_cases.py
 
-- name: "#1 law-finder: lawyer directory + client chat + AI legal Q&A + subscriptions"
-  pending: Lawyer rules wait for the 1988 Rules and Intermeddlers PDFs (ROADMAP Step 2).
+- name: "#1 law-finder as first designed: lawyer directory, featured slots, per-enquiry fees, client chat, AI legal Q&A"
   users_in: [LK]
   company_in: LK
   facts: [collects_personal_data, data:contact, profession:law, lists_professionals,
+          sells_promotion_to_professionals, charges_professionals_per_client,
           offers_consultations, ai_legal_advice, takes_payments, uses_processors]
-  must_include: [lk-pdpa-scope, lk-pdpa-privacy-notice, lk-payments-card-gateway]
+  must_include: [lk-bar-directory-allowed-details, lk-bar-no-practice-particulars,
+                 lk-bar-no-paid-promotion, lk-bar-no-fee-per-client,
+                 lk-intermeddlers-payment-for-clients, lk-bar-online-legal-advice,
+                 lk-pdpa-scope, lk-pdpa-privacy-notice]
+
+- name: "#1b law-finder as fixed: seats sold to firms, no featured slots, no per-client fees"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, profession:law, lists_professionals,
+          offers_consultations, ai_legal_advice, uses_processors]
+  must_include: [lk-bar-directory-allowed-details, lk-bar-online-legal-advice]
+  must_exclude: [lk-bar-no-paid-promotion, lk-bar-no-fee-per-client,
+                 lk-intermeddlers-payment-for-clients]
 
 - name: "#2 doctor booking app with online payment and medical history"
   users_in: [LK]
@@ -20,7 +32,8 @@
   must_include: [lk-pdpa-scope, lk-pdpa-special-categories, lk-pdpa-dpo,
                  lk-pdpa-cross-border, lk-pdpa-processors, lk-payments-card-gateway,
                  lk-medical-registered-doctors-only, lk-slmc-directory-open-to-all]
-  must_exclude: [lk-slmc-no-commission-per-patient, lk-payments-wallet-cards-licence]
+  must_exclude: [lk-slmc-no-commission-per-patient, lk-payments-wallet-cards-licence,
+                 lk-bar-online-legal-advice]
 
 - name: "#3 student project chatbot, no personal data"
   users_in: [LK]
