@@ -157,7 +157,9 @@ Original plan:
 - Prove it by **running it from a real Claude Code session**, not just unit tests.
 
 ### Step 6. Simple website
-- **Discuss with Malith before starting** (he asked, 2026-11-11).
+- Discussed 2026-11-11: guided questions, no AI (D17); light base + orange `#F57E22` (D18);
+  Next.js/Tailwind/shadcn stack (D19). Design skill installed: `.claude/skills/frontend-design`.
+  Still open: product name and domain, hosting.
 - Paste an idea, answer the fact questions, get the same report. Same backend.
 - Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.
 
