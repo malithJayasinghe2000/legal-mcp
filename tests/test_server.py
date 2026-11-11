@@ -138,3 +138,16 @@ def test_own_app_has_no_client_duties():
     result = check(LIB, build_facts(["LK"], ["collects_personal_data"]))
     assert result["client_duties"] is None
     assert "lk-pdpa-privacy-notice" in [w["rule_id"] for w in result["warnings"]]
+
+
+def test_logs_never_contain_user_input(caplog):
+    """Store nothing (brief D6): logs may hold counts and errors, never facts or countries."""
+    import logging
+
+    caplog.set_level(logging.DEBUG)
+    secret = ["data:health", "profession:medicine", "builds_for_client"]
+    call("check_legal_risks", users_in=["MV"], facts=secret, company_in="NP")
+    call("check_legal_risks", users_in=["LK"], facts=["secret_unknown_fact"])
+    logged = "\n".join(r.getMessage() for r in caplog.records)
+    for word in [*secret, "MV", "NP", "secret_unknown_fact"]:
+        assert word not in logged, f"{word!r} leaked into logs"

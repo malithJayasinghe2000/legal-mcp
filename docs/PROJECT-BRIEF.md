@@ -186,6 +186,13 @@ warning can be traced to a source.
   needs no big AI model.
 - Clear privacy policy and terms.
 
+**Status (2026-11-11):** no storage at all; the server receives facts and country codes
+only, never idea text or code (D16); runs locally over stdio by default. A test
+(`test_logs_never_contain_user_input`) found the MCP library logging error messages
+that contained user facts; fixed by keeping only its warnings/errors. Real server log
+now holds counts only. Still to do: public repo + licence, privacy policy and terms.
+Limit to tell users: their AI tool (e.g. Claude) sees their idea; we don't.
+
 ## 8. Keeping laws up to date (decided: automate checking, not changing)
 
 - **Official sources to watch**: Parliament of Sri Lanka (acts and **bills**),

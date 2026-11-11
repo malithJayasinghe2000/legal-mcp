@@ -23,6 +23,10 @@ from .checker import FactError, build_facts, check
 from .library import Library, LibraryError, load_library
 
 log = logging.getLogger("legal_check")
+# Store nothing (brief D6): the MCP library logs tool error messages at INFO, and
+# those can contain the user's input. Keep only its warnings and errors.
+# tests/test_server.py::test_logs_never_contain_user_input checks this.
+logging.getLogger("mcp").setLevel(logging.WARNING)
 
 INSTRUCTIONS = """\
 Legal Check spots legal issues for software products, starting with Sri Lankan law.
