@@ -29,7 +29,7 @@ COUNTRY_FACTS = ("users_in:", "company_in:", "processing_in:")
 
 
 def rule_files():
-    return sorted(p for p in RULES_DIR.rglob("*.yaml") if p.name != "facts.yaml")
+    return sorted(RULES_DIR.glob("*/*.yaml"))
 
 
 RULES = {p: yaml.safe_load(p.read_text()) for p in rule_files()}

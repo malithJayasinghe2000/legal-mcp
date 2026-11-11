@@ -91,7 +91,17 @@ Machine-readable list: [rules/facts.yaml](../rules/facts.yaml) (grows as areas a
 - User-generated content or messaging?
 - Data sent outside Sri Lanka? (cloud region, foreign AI APIs)
 
-### Step 4. The MCP server
+### Step 4. The MCP server (done 2026-11-11)
+Built in `src/legal_check/` (`library.py` loads and validates rules, `checker.py` matches,
+`server.py` has the 3 tools). Input is facts + country codes only (brief D16).
+**Verified in a real Claude Code session** (headless, empty folder, prompt about a doctor
+booking app that never mentioned law): Claude called `get_fact_questions` and
+`check_legal_risks` by itself, got 16 warnings, explained Must first with sections, said
+the rules are drafts, listed areas not covered, and flagged the per-booking doctor fee
+(SLMC commission rule) as a business-model problem.
+Not done yet: HTTP hosting (Step 6 / launch), API keys.
+
+Original plan:
 - Tool `check_legal_risks`: input = feature/idea text + facts + users' countries.
   Output = matched warnings (severity, why, law + section + link, what to do,
   lawyer questions), plus areas covered and **areas not covered**.
@@ -103,7 +113,12 @@ Machine-readable list: [rules/facts.yaml](../rules/facts.yaml) (grows as areas a
 - Store nothing. Log counts and errors only.
 - **A failure returns an error, never "no issues found".**
 
-### Step 5. Test set
+### Step 5. Test set (started 2026-11-11)
+`tests/cases.yaml` has 5 cases (law-finder #1 marked pending until lawyer rules exist;
+#2 doctor booking, #3 student chatbot, #4 Sri Lankan company with EU users,
+#5 foreign-only). Run: `uv run pytest tests/test_server.py`. Grow it to 20-30.
+
+Original plan:
 - 20-30 example ideas with expected warnings, run with one command.
 - **Test case #1: law-finder** (lawyer directory + client chat + AI legal Q&A +
   subscriptions, users in Sri Lanka). Must catch:

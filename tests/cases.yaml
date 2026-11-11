@@ -1,0 +1,41 @@
+# Test set (ROADMAP Step 5): example ideas with the warnings they MUST get.
+# `must_include`: rule ids that have to appear. `must_exclude`: rules that must not.
+# `max_warnings`: upper bound, to catch noise. Run: uv run pytest tests/test_cases.py
+
+- name: "#1 law-finder: lawyer directory + client chat + AI legal Q&A + subscriptions"
+  pending: Lawyer rules wait for the 1988 Rules and Intermeddlers PDFs (ROADMAP Step 2).
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, profession:law, lists_professionals,
+          offers_consultations, ai_legal_advice, takes_payments, uses_processors]
+  must_include: [lk-pdpa-scope, lk-pdpa-privacy-notice, lk-payments-card-gateway]
+
+- name: "#2 doctor booking app with online payment and medical history"
+  users_in: [LK]
+  company_in: LK
+  processing_in: [SG]
+  facts: [collects_personal_data, data:contact, data:health, takes_payments,
+          profession:medicine, lists_professionals, offers_consultations,
+          uses_processors, data_sent_abroad]
+  must_include: [lk-pdpa-scope, lk-pdpa-special-categories, lk-pdpa-dpo,
+                 lk-pdpa-cross-border, lk-pdpa-processors, lk-payments-card-gateway,
+                 lk-medical-registered-doctors-only, lk-slmc-directory-open-to-all]
+  must_exclude: [lk-slmc-no-commission-per-patient, lk-payments-wallet-cards-licence]
+
+- name: "#3 student project chatbot, no personal data"
+  users_in: [LK]
+  facts: []
+  max_warnings: 0
+
+- name: "#4 Sri Lankan company, users only in the EU (PDPA still applies)"
+  users_in: [DE, FR]
+  company_in: LK
+  facts: [collects_personal_data, data:contact]
+  must_include: [lk-pdpa-scope, lk-pdpa-lawful-basis]
+
+- name: "#5 foreign company, foreign users: no Sri Lankan rules"
+  users_in: [US]
+  company_in: US
+  processing_in: [US]
+  facts: [collects_personal_data, takes_payments]
+  max_warnings: 0

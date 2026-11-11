@@ -15,7 +15,11 @@ change**, so the next chat has the right context.
 
 ## Code layout and commands
 Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
-- `src/legal_check/` - the server package (MCP server comes in Step 4)
+- `src/legal_check/` - the MCP server: `library.py` (load/validate rules), `checker.py` (match, report), `server.py` (tools; run `uv run legal-check`)
+- `rules/areas.yaml` - areas covered / not covered (shown in every result)
+- `tests/cases.yaml` - the test set of example ideas (ROADMAP Step 5)
+- Real-session check: headless Claude Code with `--mcp-config` (see ROADMAP Step 4). The CLI is at
+  `~/.vscode/extensions/anthropic.claude-code-*/resources/native-binary/claude` (not on PATH)
 - `rules/<area>/` - the rule library (YAML, see RULE-FORMAT.md); `rules/facts.yaml` - facts triggers may use
 - `tests/test_rules.py` checks every rule, including that its quote is word for word in the downloaded source
 - `sources/sources.yaml` - official law sources; `sources/fetched.json` - what was downloaded and when

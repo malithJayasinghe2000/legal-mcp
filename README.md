@@ -17,4 +17,16 @@ uv run pytest                                            # tests
 uv run --group sources python scripts/fetch_sources.py   # download the law sources
 ```
 
-Status: Phase 1, collecting law sources. See [docs/PROJECT-BRIEF.md](docs/PROJECT-BRIEF.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
+## Use it in Claude Code (local)
+
+```sh
+claude mcp add legal-check -- uv run --directory /path/to/legal-check legal-check
+```
+
+Then just describe what you're building. Claude calls the `check_legal_risks` tool
+when you plan a feature for a product used in Sri Lanka. The server receives only
+facts and country codes, never your idea text or code, and stores nothing.
+
+Tools: `check_legal_risks`, `get_fact_questions`, `get_rule` (exact law quote + link).
+
+Status: Phase 1. 29 draft rules in 5 areas (not yet reviewed by a lawyer). See [docs/PROJECT-BRIEF.md](docs/PROJECT-BRIEF.md) and [docs/ROADMAP.md](docs/ROADMAP.md).

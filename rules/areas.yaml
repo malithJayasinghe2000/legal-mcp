@@ -1,0 +1,35 @@
+# Legal areas: what the rule library covers, and what it does not.
+# Every check result lists both, so "no issues found" is never read as "all clear".
+
+jurisdictions_covered: [LK]
+
+covered:
+  personal-data:
+    label: Personal data (Personal Data Protection Act)
+    gaps: Authority rules and guidelines not collected yet.
+  payments:
+    label: Payments
+    gaps: Lending, crypto, foreign exchange and Central Bank circulars not covered yet.
+  ai:
+    label: AI features
+    gaps: Sri Lanka has no AI law; foreign AI laws (EU AI Act) not covered.
+  online-content:
+    label: Online content (Online Safety Act)
+    gaps: Paid content on declared online locations and user offences not covered.
+  regulated-professions:
+    label: Regulated professions
+    gaps: Doctors only. Lawyers (Bar rules, touting, fee-sharing) coming soon.
+
+not_covered:
+  - Consumer rights
+  - E-commerce and electronic contracts
+  - Copyright and intellectual property
+  - Cybercrime and cyber security
+  - Telecommunications
+  - Employment
+  - Education
+  - Gambling
+  - Crypto and virtual assets
+  - Tax
+  - Transport
+  - Advertising (general)
