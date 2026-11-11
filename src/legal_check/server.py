@@ -38,9 +38,12 @@ made by a Sri Lankan company or person:
 4. Explain only what the tool returns, Must items first, with the law and section.
    Never add laws of your own, and never say the product is "compliant" or
    "all clear": say "no issues found in the areas we cover" and list what isn't covered.
-5. Say that draft rules are not yet reviewed by a lawyer. If the tool returns an
+5. If the user says a warning is already handled, pass its rule_id in `done` on
+   later checks. Done items are listed separately, not verified: remind the user
+   to check them. Never mark something done unless the user said so.
+6. Say that draft rules are not yet reviewed by a lawyer. If the tool returns an
    error, tell the user the check failed; do not treat it as "no issues".
-6. If the user asks how to avoid or get around a law, explain the law and the
+7. If the user asks how to avoid or get around a law, explain the law and the
    risk instead of helping to evade it.
 """
 
@@ -100,11 +103,18 @@ def check_legal_risks(
     processing_in: Annotated[
         list[str] | None, Field(description="ISO country codes where data is stored or processed")
     ] = None,
+    done: Annotated[
+        list[str] | None,
+        Field(
+            description="rule_id values of warnings the user says are already handled. "
+            "Only when the user says so; they are listed as 'done', not verified."
+        ),
+    ] = None,
 ) -> dict[str, Any]:
     library = _get_library()
     all_facts = build_facts(users_in, facts, company_in, processing_in)
     try:
-        result = check(library, all_facts)
+        result = check(library, all_facts, set(done or []))
     except FactError as exc:
         log.info("check rejected: %d unknown fact(s)", str(exc).count("'") // 2)
         raise ToolError(str(exc)) from exc

@@ -32,6 +32,7 @@ law:
     person, data concerning health or data concerning a natural person's sex life or
     sexual orientation, personal data relating to offences, criminal proceedings and
     convictions, or personal data relating to a child;
+done_check: Check explicit consent (or another Schedule II ground) is recorded for each purpose.
 in_force: false
 starts_on: 2027-01-01
 last_checked: 2026-11-11

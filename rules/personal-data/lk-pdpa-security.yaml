@@ -25,6 +25,7 @@ law:
   quote: >-
     Every controller shall ensure integrity and confidentiality of personal data that
     is being processed, by using appropriate technical and organizational measures
+done_check: Check encryption, access limits and backups are in place for all personal data, including backups and logs.
 in_force: false
 starts_on: 2027-01-01
 last_checked: 2026-11-11

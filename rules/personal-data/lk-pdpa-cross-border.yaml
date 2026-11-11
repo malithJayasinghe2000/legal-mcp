@@ -29,6 +29,7 @@ law:
     A controller or processor may engage in cross-border data flows, only where such
     controller or processor, ensures compliance with the provisions of Part I, Part II
     and sections 20, 21, 22, 23, 24 and 25, as the case may be.
+done_check: Check every foreign recipient is bound by contract terms the Authority accepts.
 in_force: false
 starts_on: 2027-01-01
 last_checked: 2026-11-11

@@ -26,6 +26,7 @@ law:
   quote: >-
     In the case of a child, consent shall mean the consent of the parent or legal
     guardian of such child;
+done_check: Check parental consent is recorded for every user under 16.
 in_force: false
 starts_on: 2027-01-01
 last_checked: 2026-11-11

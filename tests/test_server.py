@@ -98,3 +98,35 @@ def test_tool_get_rule_has_quote():
 def test_no_long_dash_in_output():
     facts = build_facts(["LK"], sorted(LIB.facts - {"users:children"}))
     assert "—" not in str(check(LIB, facts))
+
+
+def test_done_moves_warning_to_done_list():
+    facts = build_facts(["LK"], ["collects_personal_data"])
+    before = [w["rule_id"] for w in check(LIB, facts)["warnings"]]
+    result = check(LIB, facts, {"lk-pdpa-privacy-notice"})
+    after = [w["rule_id"] for w in result["warnings"]]
+    assert "lk-pdpa-privacy-notice" in before and "lk-pdpa-privacy-notice" not in after
+    assert len(after) == len(before) - 1  # only that one warning goes
+    assert [d["rule_id"] for d in result["done"]] == ["lk-pdpa-privacy-notice"]
+    assert "Schedule V" in result["done"][0]["check"]
+    assert "marked done" in result["summary"]
+
+
+def test_all_done_never_says_no_issues():
+    facts = build_facts(["LK"], ["runs_bots"])
+    result = check(LIB, facts, {"lk-ai-bots-online-safety"})
+    assert result["warnings"] == [] and result["done"]
+    assert "No issues found" not in result["summary"]
+    assert "not verified" in result["summary"]
+
+
+def test_unknown_done_id_is_error():
+    with pytest.raises(FactError):
+        check(LIB, build_facts(["LK"], []), {"lk-made-up"})
+
+
+def test_tool_accepts_done():
+    result = call("check_legal_risks", users_in=["LK"], facts=["collects_personal_data"],
+                  done=["lk-pdpa-privacy-notice"])  # fmt: skip
+    assert not result.is_error
+    assert result.structured_content["done"][0]["rule_id"] == "lk-pdpa-privacy-notice"

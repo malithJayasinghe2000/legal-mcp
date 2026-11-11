@@ -96,6 +96,11 @@ booking app that never mentioned law): Claude called `get_fact_questions` and
 `check_legal_risks` by itself, got 16 warnings, explained Must first with sections, said
 the rules are drafts, listed areas not covered, and flagged the per-booking doctor fee
 (SLMC commission rule) as a business-model problem.
+**"Done" items (2026-11-11):** `check_legal_risks` takes `done` (rule ids the user says are
+handled). They move to a "done" list with a `done_check` reminder; never verified, never
+"no issues". Real session: user said the privacy notice was done; Claude listed it as
+"already handled (not checked)" with what to double-check, and kept the other 7. (It did
+this in its answer; `done` is used on later checks once rule ids are known.)
 Not done yet: HTTP hosting (Step 6 / launch), API keys.
 
 Original plan:

@@ -27,6 +27,7 @@ law:
     a controller may use postal services, telecommunication services, electronic means
     or any other similar means for the purposes of disseminating messages only if a
     data subject has given consent to receive such messages
+done_check: Check marketing consent is opt-in and every message has a free opt-out.
 in_force: false
 starts_on: null
 last_checked: 2026-11-11

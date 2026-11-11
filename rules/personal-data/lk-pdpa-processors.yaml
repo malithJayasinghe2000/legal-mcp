@@ -28,6 +28,7 @@ law:
     which sets out the subject-matter and duration of the processing, the nature and
     purpose of the processing, the type of personal data and categories of the data
     subjects and the obligations of the controller.
+done_check: Check every provider that handles personal data has a signed data processing agreement.
 in_force: false
 starts_on: 2027-01-01
 last_checked: 2026-11-11

@@ -26,6 +26,7 @@ law:
   quote: >-
     The processing of personal data shall be lawful if a controller is in compliance
     with- (a) any condition specified in Schedule I hereto;
+done_check: Check each use of data has a written Schedule I ground, and consent (if used) meets Schedule III.
 in_force: false
 starts_on: 2027-01-01
 last_checked: 2026-11-11

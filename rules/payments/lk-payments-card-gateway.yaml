@@ -26,6 +26,7 @@ law:
     LFAs shall maintain the confidentiality of cardholder data and ensure that Service
     Providers shall not have access to sensitive information of cardholders such as card
     number, card security code and expiry date.
+done_check: Check card details never reach your servers or logs.
 in_force: true
 starts_on: null
 last_checked: 2026-11-11

@@ -26,6 +26,7 @@ law:
     Where a controller receives a written request from a data subject under section
     13, 14, 15, 16 or 18, such controller shall inform in writing to the data subject,
     without undue delay and within one month of the receipt of such request, whether-
+done_check: Check you can export, correct and delete one user's data and answer within one month.
 in_force: false
 starts_on: null
 last_checked: 2026-11-11

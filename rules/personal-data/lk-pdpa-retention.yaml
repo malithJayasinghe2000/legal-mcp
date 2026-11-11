@@ -24,6 +24,7 @@ law:
     kept in a form which permits identification of data subjects only for such period
     as may be necessary or required for the purposes for which such personal data is
     processed
+done_check: Check deletion really runs, including backups and logs.
 in_force: false
 starts_on: 2027-01-01
 last_checked: 2026-11-11

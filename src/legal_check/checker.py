@@ -18,8 +18,11 @@ DISCLAIMER = (
 )
 
 
+DEFAULT_DONE_CHECK = "The tool cannot verify this. Check it is really done."
+
+
 class FactError(ValueError):
-    """The caller sent facts the library doesn't know."""
+    """The caller sent facts (or done rule ids) the library doesn't know."""
 
 
 def build_facts(
@@ -79,17 +82,36 @@ def warning(rule: dict[str, Any], facts: set[str]) -> dict[str, Any]:
     }
 
 
-def check(library: Library, facts: set[str]) -> dict[str, Any]:
+def check(library: Library, facts: set[str], done: set[str] | None = None) -> dict[str, Any]:
+    """`done`: rule ids the user says are already handled. They move to a "done"
+    list (with a reminder to check them) instead of being dropped silently."""
+    done = done or set()
     unknown = sorted(f for f in facts if not library.is_known_fact(f))
     if unknown:
         raise FactError(
             f"Unknown facts: {unknown}. Use only facts from get_fact_questions; "
             "an unknown fact could hide a law, so the check was not run."
         )
+    unknown_done = sorted(d for d in done if d not in library.rules)
+    if unknown_done:
+        raise FactError(
+            f"Unknown rule ids in done: {unknown_done}. Use rule_id values from a "
+            "previous check_legal_risks result."
+        )
 
     hits = [r for r in library.rules.values() if matches(r["triggers"], facts)]
     hits.sort(key=lambda r: (SEVERITY_ORDER[r["severity"]], not r["in_force"], r["id"]))
-    warnings = [warning(r, facts) for r in hits]
+    warnings = [warning(r, facts) for r in hits if r["id"] not in done]
+    done_items = [
+        {
+            "rule_id": r["id"],
+            "title": r["title"],
+            "severity": SEVERITY_LABEL[r["severity"]],
+            "check": " ".join((r.get("done_check") or DEFAULT_DONE_CHECK).split()),
+        }
+        for r in hits
+        if r["id"] in done
+    ]
 
     areas = library.areas
     covered = areas["covered"]
@@ -103,11 +125,19 @@ def check(library: Library, facts: set[str]) -> dict[str, Any]:
             f"{len(warnings)} issue(s) found: {counts['must']} Must, {counts['should']} Should, "
             f"{counts['lawyer']} Check with a lawyer. Must items are listed first."
         )
+    elif done_items:
+        summary = (
+            "No open issues in the areas we cover, apart from items you marked done "
+            "(not verified by this tool). This does not mean the product is compliant: "
+            "see the areas and countries not covered."
+        )
     else:
         summary = (
             "No issues found in the areas we cover. This does not mean the product is "
             "compliant: see the areas and countries not covered."
         )
+    if done_items:
+        summary += f" {len(done_items)} item(s) marked done by you are listed under 'done'."
     if not countries & jurisdictions:
         summary += (
             " None of the given countries are covered (this tool covers Sri Lankan law only)."
@@ -116,6 +146,7 @@ def check(library: Library, facts: set[str]) -> dict[str, Any]:
     return {
         "summary": summary,
         "warnings": warnings,
+        "done": done_items,
         "areas_covered": [f"{v['label']} ({v['gaps']})" for v in covered.values()],
         "areas_not_covered": areas.get("not_covered", []),
         "countries_not_covered": sorted(countries - jurisdictions),

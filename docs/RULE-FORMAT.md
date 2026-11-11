@@ -34,6 +34,7 @@ law:
   source_url: https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf
   quote: "exact text from the official source"
 
+done_check: Check the notice covers every item in Schedule V.   # optional
 in_force: false                  # false = "coming law" (bill, or Act not started yet)
 starts_on: 2027-01-01            # null if no start date set yet
 last_checked: 2026-11-11
@@ -51,6 +52,8 @@ Rules for writing rules:
   source's official `url` (brief D14). Quote the law **as amended**: if an
   amendment replaced the section, quote the amending Act and say so in `section`.
 - Every rule has a `last_checked` date.
+- `done_check` (optional) is the reminder shown when a user marks the warning as done
+  (tool input `done`). The tool never verifies "done"; it lists those items separately.
 - A rule with `review_status: draft` is shown to users as "not yet reviewed by a lawyer".
 - Triggers use only facts from `rules/facts.yaml`, so matching stays deterministic.
 - Placeholders like `<...>` are not allowed in a shipped rule (the test fails).
