@@ -32,15 +32,20 @@ def loaded_server():
     server.load()
 
 
-@pytest.mark.parametrize("case", CASES, ids=[c["name"][:3] for c in CASES])
+@pytest.mark.parametrize("case", CASES, ids=[c["name"].split()[0] for c in CASES])
 def test_case(case):
     if case.get("pending"):
         pytest.xfail(case["pending"])
     facts = build_facts(case["users_in"], case["facts"], case.get("company_in"),
                         case.get("processing_in"))  # fmt: skip
-    ids = [w["rule_id"] for w in check(LIB, facts)["warnings"]]
+    result = check(LIB, facts)
+    ids = [w["rule_id"] for w in result["warnings"]]
     assert [r for r in case.get("must_include", []) if r not in ids] == []
     assert [r for r in case.get("must_exclude", []) if r in ids] == []
+    not_covered = result["areas_not_covered"]
+    assert [a for a in case.get("not_covered_includes", []) if a not in not_covered] == []
+    if "countries_not_covered" in case:
+        assert result["countries_not_covered"] == sorted(case["countries_not_covered"])
     if "max_warnings" in case:
         assert len(ids) <= case["max_warnings"], ids
 

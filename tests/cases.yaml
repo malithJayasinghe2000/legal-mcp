@@ -52,3 +52,152 @@
   processing_in: [US]
   facts: [collects_personal_data, takes_payments]
   max_warnings: 0
+
+# ---- More ideas (added 2026-11-11). Expectations come from the law, not from the rules. ----
+
+- name: "#6 online shop: card payments, customer accounts, newsletter, AWS Singapore"
+  users_in: [LK]
+  company_in: LK
+  processing_in: [SG]
+  facts: [collects_personal_data, data:contact, takes_payments, uses_processors,
+          data_sent_abroad, sends_marketing_messages]
+  must_include: [lk-pdpa-scope, lk-pdpa-privacy-notice, lk-payments-card-gateway,
+                 lk-pdpa-marketing-messages, lk-pdpa-cross-border, lk-pdpa-processors]
+  must_exclude: [lk-payments-wallet-cards-licence, lk-pdpa-special-categories, lk-pdpa-children]
+  not_covered_includes: [Consumer rights, E-commerce and electronic contracts]
+
+- name: "#7 mobile wallet: top-up balance and send money to friends, NIC for sign-up"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:national_id, data:financial, holds_user_funds,
+          transfers_money]
+  must_include: [lk-pdpa-scope, lk-payments-wallet-cards-licence, lk-payments-money-transfer]
+  # In Sri Lanka NIC numbers and financial data are NOT special categories.
+  must_exclude: [lk-pdpa-special-categories]
+
+- name: "#8 marketplace: buyers pay us, we pay sellers; buyers post reviews"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, takes_payments, collects_payments_for_others,
+          hosts_user_content]
+  must_include: [lk-payments-marketplace-payouts, lk-payments-card-gateway,
+                 lk-osa-takedown-24h, lk-osa-intermediary-protection]
+
+- name: "#9 social app for teenagers with a personalised feed"
+  users_in: [LK]
+  facts: [collects_personal_data, data:contact, users:children, hosts_user_content, profiling]
+  must_include: [lk-pdpa-children, lk-pdpa-special-categories, lk-pdpa-impact-assessment,
+                 lk-pdpa-dpo, lk-osa-takedown-24h]
+
+- name: "#10 school management system with students' marks"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, users:children, uses_processors]
+  must_include: [lk-pdpa-children, lk-pdpa-special-categories, lk-pdpa-processors]
+  not_covered_includes: [Education]
+
+- name: "#11 HR and payroll SaaS for Sri Lankan companies"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, data:national_id, data:financial,
+          uses_processors]
+  must_include: [lk-pdpa-scope, lk-pdpa-security, lk-pdpa-processors, lk-pdpa-retention]
+  must_exclude: [lk-pdpa-special-categories, lk-pdpa-children]
+  not_covered_includes: [Employment]
+
+- name: "#12 loan app with AI credit scoring"
+  # Known gap: lending licences (Finance Business Act, Microfinance) not covered yet.
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:national_id, data:financial, profiling,
+          automated_decisions, takes_payments]
+  must_include: [lk-pdpa-automated-decisions, lk-pdpa-impact-assessment, lk-payments-card-gateway]
+
+- name: "#13 AI symptom checker using a foreign AI API"
+  users_in: [LK]
+  facts: [collects_personal_data, data:health, ai_health_advice, uses_processors,
+          data_sent_abroad]
+  must_include: [lk-ai-medical-advice, lk-pdpa-special-categories, lk-pdpa-cross-border]
+  must_exclude: [lk-medical-registered-doctors-only]
+
+- name: "#14 telemedicine video consultations, patient pays per consultation"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:health, profession:medicine, offers_consultations,
+          takes_payments, lists_professionals]
+  must_include: [lk-medical-registered-doctors-only, lk-pdpa-special-categories,
+                 lk-slmc-directory-open-to-all]
+  must_exclude: [lk-slmc-no-commission-per-patient, lk-bar-online-legal-advice]
+
+- name: "#15 clinic directory where doctors can pay to be featured"
+  users_in: [LK]
+  facts: [profession:medicine, lists_professionals, sells_promotion_to_professionals]
+  must_include: [lk-slmc-no-paid-doctor-promotion, lk-slmc-directory-open-to-all]
+  must_exclude: [lk-bar-no-paid-promotion]
+
+- name: "#16 customer-support chatbot that trains on past customer chats"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, trains_ai_on_user_data, uses_processors]
+  must_include: [lk-ai-training-on-user-data, lk-pdpa-lawful-basis, lk-pdpa-privacy-notice]
+
+- name: "#17 news bot that auto-posts AI summaries, no user accounts"
+  users_in: [LK]
+  facts: [runs_bots]
+  must_include: [lk-ai-bots-online-safety]
+  must_exclude: [lk-pdpa-scope]
+
+- name: "#18 shop CCTV analytics with face recognition"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:biometric, monitors_public_places, profiling]
+  must_include: [lk-pdpa-impact-assessment, lk-pdpa-special-categories, lk-pdpa-dpo]
+
+- name: "#19 ride-hailing app: location, card payments, automatic pricing and driver bans"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, data:location, takes_payments,
+          automated_decisions, profiling]
+  must_include: [lk-pdpa-automated-decisions, lk-payments-card-gateway, lk-pdpa-impact-assessment]
+  not_covered_includes: [Transport]
+
+- name: "#20 bulk SMS marketing platform"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, sends_marketing_messages, uses_processors]
+  must_include: [lk-pdpa-marketing-messages, lk-pdpa-processors]
+  not_covered_includes: [Telecommunications]
+
+- name: "#21 remittance app: workers abroad send money home"
+  users_in: [AE, LK]
+  company_in: LK
+  facts: [collects_personal_data, data:national_id, data:financial, transfers_money]
+  must_include: [lk-payments-money-transfer, lk-pdpa-scope]
+  countries_not_covered: [AE]
+
+- name: "#22 US company with users in Sri Lanka, data in the US"
+  users_in: [LK]
+  company_in: US
+  processing_in: [US]
+  facts: [collects_personal_data, data:contact, data_sent_abroad]
+  must_include: [lk-pdpa-scope, lk-pdpa-cross-border]
+  countries_not_covered: [US]
+
+- name: "#23 AI legal document drafting site, no lawyers involved"
+  users_in: [LK]
+  facts: [ai_legal_advice, takes_payments]
+  must_include: [lk-bar-online-legal-advice, lk-payments-card-gateway]
+  must_exclude: [lk-bar-directory-allowed-details, lk-intermeddlers-payment-for-clients]
+
+- name: "#24 Sri Lankan dev team building an app for an Australian client"
+  users_in: [AU]
+  company_in: LK
+  processing_in: [AU]
+  facts: [collects_personal_data, data:contact, uses_processors]
+  must_include: [lk-pdpa-scope]
+  countries_not_covered: [AU]
+
+- name: "#25 static portfolio website, no data collected"
+  users_in: [LK]
+  facts: []
+  max_warnings: 0

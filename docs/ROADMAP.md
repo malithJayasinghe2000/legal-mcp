@@ -113,7 +113,18 @@ Original plan:
 ### Step 5. Test set (started 2026-11-11)
 `tests/cases.yaml` has 5 cases (law-finder #1 marked pending until lawyer rules exist;
 #2 doctor booking, #3 student chatbot, #4 Sri Lankan company with EU users,
-#5 foreign-only). Case #1 (law-finder, original and fixed design) passes, and **passed in a
+#5 foreign-only), plus #6-#25 added 2026-11-11 (shop, wallet, marketplace, teen social app,
+school system, HR SaaS, loan app, AI symptom checker, telemedicine, clinic directory, chatbot
+training, news bot, CCTV face recognition, ride-hailing, SMS marketing, remittance, US company,
+AI legal drafting, outsourcing team, static site). All 26 pass; no wrong-area warnings.
+Findings to decide:
+  - **Noise:** every app with personal data gets the same 8 basic PDPA warnings (scope, lawful
+    basis, notice, security, minimisation, retention, breach, rights). Proposal: group them as one
+    "PDPA basics" checklist item, keep the specific ones (special data, abroad, children...) separate.
+  - **Gap:** a team building for a client is a "processor" (s.22), not the controller; add a fact
+    `acts_as_processor` and processor-specific rules.
+  - **Gap:** lending licences (#12), crypto, foreign exchange.
+  - Not tested yet: whether Claude picks the right facts from idea text (needs headless sessions). Case #1 (law-finder, original and fixed design) passes, and **passed in a
 real Claude Code session** (2026-11-11): it flagged the per-enquiry fee (Rule 39(1) +
 Intermeddlers s.2), featured slots (Rule 39(2)), past cases/ratings (Rule 49) and the AI
 legal chat (BASL note), then designed the schema without them. Run: `uv run pytest tests/test_server.py`. Grow it to 20-30.
@@ -133,7 +144,9 @@ Original plan:
 - Prove it by **running it from a real Claude Code session**, not just unit tests.
 
 ### Step 6. Simple website
+- **Discuss with Malith before starting** (he asked, 2026-11-11).
 - Paste an idea, answer the fact questions, get the same report. Same backend.
+- Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.
 
 ### Step 7. Before public launch
 - A lawyer reviews the Must rules in the 5 areas.
