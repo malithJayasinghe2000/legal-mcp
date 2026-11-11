@@ -47,13 +47,7 @@
   area: personal-data
   kind: gazette
   title: PDPA commencement order, Gazette Extraordinary No. 2498/16 of 22 July 2026
-  url: null
-  manual: >
-    No official copy found that we can download. Secondary sources (law firms)
-    agree: sections 2-3, Part I and Part III start on 1 January 2027; Part II
-    (data subject rights), Part IV (direct marketing) and Part VII (penalties)
-    still need a further order. Get the Gazette from documents.gov.lk in a
-    browser, or ask the DPA, before any rule relies on these dates.
+  url: https://www.dpa.gov.lk/Gazet/2498-16_E.pdf
 
 # ---------- 2. Payments and finance ----------
 - id: lk-pssa-2005

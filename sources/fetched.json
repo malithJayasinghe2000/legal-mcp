@@ -87,6 +87,14 @@
     "bytes": 240773,
     "file": "sources/raw/lk-pdpa-amendment-2025.pdf"
   },
+  "lk-pdpa-commencement-2498-16": {
+    "title": "PDPA commencement order, Gazette Extraordinary No. 2498/16 of 22 July 2026",
+    "url_used": "https://www.dpa.gov.lk/Gazet/2498-16_E.pdf",
+    "downloaded": "2026-11-11",
+    "sha256": "f25195fe858458a92963951d6661e1f5c0800ab747d884102c2296fcf1eda276",
+    "bytes": 182536,
+    "file": "sources/raw/lk-pdpa-commencement-2498-16.pdf"
+  },
   "lk-pssa-2005": {
     "title": "Payment and Settlement Systems Act, No. 28 of 2005",
     "url_used": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/acts/en/Payment_setttlement_sys_act.pdf",

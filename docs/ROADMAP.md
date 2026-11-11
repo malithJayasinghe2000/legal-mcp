@@ -23,8 +23,7 @@ gets correct warnings. law-finder's story is the first test.
 - [x] law-finder's `24-2007_E.pdf` is the Computer Crime Act No. 24 of 2007 (checked). Not in the first 5 areas.
 - [ ] **Malith, manual (4 items):**
   1. ~~Attorneys-at-Law Rules 1988~~ done 2026-11-11 (manual browser download).
-  2. Get PDPA commencement Gazette No. 2498/16 (22 July 2026) from documents.gov.lk
-     in a browser, or from the DPA. Needed before any PDPA rule says "in force".
+  2. ~~PDPA commencement Gazette No. 2498/16~~ done 2026-11-11 (found on dpa.gov.lk; start date verified).
   3. BASL note (June 2021): no copy online. Ask BASL or the lawyer reviewer.
   4. ~~Intermeddlers Ordinance from CommonLII~~ done 2026-11-11 (manual browser download).
 - Official sources only, same rule as law-finder: never lankalaw.net or other private sites.
@@ -49,7 +48,7 @@ Every rule starts as `review_status: draft`. Format: [RULE-FORMAT.md](RULE-FORMA
 Progress:
 - [x] **Personal data: 16 rules** in `rules/personal-data/` (2026-11-11). Quotes checked
   word for word against the downloaded Act by `tests/test_rules.py`. All `in_force: false`:
-  Part I/III start 1 Jan 2027 (Gazette not seen yet); Part II rights and Part IV marketing have no date.
+  Part I/III start 1 Jan 2027 (verified in Gazette 2498/16); Part II rights and Part IV marketing have no date.
 - [ ] Malith: check the 16 personal data rules against the Act, set `review_status: checked_by_owner`.
 - [x] **Payments: 4 rules** in `rules/payments/` (2026-11-11): card gateway, wallet/cards licence,
   marketplace payouts, money transfer. Not covered yet: lending (Finance Business Act),
