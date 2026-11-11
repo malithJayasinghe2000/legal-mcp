@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Node
+node_modules/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Downloaded law sources and generated data (keep out of git; see ROADMAP step 1)
+sources/raw/
+data/generated/
+
+.DS_Store
