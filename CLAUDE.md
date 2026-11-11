@@ -19,6 +19,9 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
 - `src/legal_check/` - the MCP server: `library.py` (load/validate rules), `checker.py` (match, report), `server.py` (tools; run `uv run legal-check`)
 - `rules/areas.yaml` - areas covered / not covered (shown in every result)
 - `tests/cases.yaml` - the test set of example ideas (ROADMAP Step 5)
+- `rules/questionnaire.yaml` - the website's guided questions (every fact must be asked; tested)
+- `web/` - the website (Next.js 16; read `web/AGENTS.md` and `web/README.md` first). Design: `docs/WEBSITE-DESIGN.md`
+- `src/legal_check/web_api.py` - JSON API for the website, same process as the MCP server
 - Real-session check: headless Claude Code with `--mcp-config` (see ROADMAP Step 4). The CLI is at
   `~/.vscode/extensions/anthropic.claude-code-*/resources/native-binary/claude` (not on PATH)
 - `rules/<area>/` - the rule library (YAML, see RULE-FORMAT.md); `rules/facts.yaml` - facts triggers may use

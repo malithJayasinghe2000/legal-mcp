@@ -29,4 +29,8 @@ facts and country codes, never your idea text or code, and stores nothing.
 
 Tools: `check_legal_risks`, `get_fact_questions`, `get_rule` (exact law quote + link).
 
-Status: Phase 1. 29 draft rules in 5 areas (not yet reviewed by a lawyer). See [docs/PROJECT-BRIEF.md](docs/PROJECT-BRIEF.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
+## Website
+
+See [web/README.md](web/README.md): guided questions, same checker, nothing stored.
+
+Status: Phase 1. 36 draft rules in 5 areas (not yet reviewed by a lawyer). Website runs locally; not hosted yet. See [docs/PROJECT-BRIEF.md](docs/PROJECT-BRIEF.md) and [docs/ROADMAP.md](docs/ROADMAP.md).

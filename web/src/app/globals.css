@@ -1,0 +1,141 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Rulewise design tokens. Source of truth: docs/WEBSITE-DESIGN.md.
+   Light only (brief D18). Contrast ratios are noted against Paper. */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Rulewise names */
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-orange: var(--orange);
+  --color-orange-deep: var(--orange-deep);
+  --color-orange-wash: var(--orange-wash);
+  --color-must: var(--must);
+  --color-should: var(--should);
+  --color-lawyer: var(--lawyer);
+
+  --font-sans: var(--font-grotesk);
+  --font-heading: var(--font-grotesk);
+  --font-serif: var(--font-serif-law);
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  /* Type scale 1.25 */
+  --text-xs: 0.875rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5625rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+  --text-4xl: 3.052rem;
+}
+
+:root {
+  --paper: #f7f7f4;
+  --surface: #ffffff;
+  --ink: #1a1f2b; /* 15.4:1 */
+  --ink-muted: #5b6170; /* 5.8:1 */
+  --rule: #e2e3df;
+  --orange: #f57e22; /* fiveneurals signature. Only as a fill with ink text (6.2:1) */
+  --orange-deep: #b54a00; /* orange text and links, 5.0:1 */
+  --orange-wash: #fdeedf;
+  --must: #b42318; /* 6.1:1 */
+  --should: #1f5fa6; /* 6.0:1 */
+  --lawyer: #6b3fb5; /* 6.5:1 */
+
+  /* shadcn variables mapped onto the palette */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--orange);
+  --primary-foreground: var(--ink);
+  --secondary: #eeefeb;
+  --secondary-foreground: var(--ink);
+  --muted: #eeefeb;
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--orange-wash);
+  --accent-foreground: var(--ink);
+  --destructive: var(--must);
+  --border: var(--rule);
+  --input: #c9cbc5;
+  --ring: var(--orange);
+  --radius: 8px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--orange-wash);
+  }
+  a {
+    text-underline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}

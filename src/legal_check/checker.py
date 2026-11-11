@@ -141,7 +141,8 @@ def check(library: Library, facts: set[str], done: set[str] | None = None) -> di
 
     if warnings:
         summary = (
-            f"{len(warnings)} issue(s) found: {counts['must']} Must, {counts['should']} Should, "
+            f"{len(warnings)} {'issue' if len(warnings) == 1 else 'issues'} found: "
+            f"{counts['must']} Must, {counts['should']} Should, "
             f"{counts['lawyer']} Check with a lawyer. Must items are listed first."
         )
     elif done_items:

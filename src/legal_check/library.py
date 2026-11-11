@@ -33,6 +33,7 @@ class Library:
     rules: dict[str, dict[str, Any]]
     questions: dict[str, dict[str, str]]  # group -> fact -> question
     areas: dict[str, Any]
+    questionnaire: dict[str, Any] | None = None  # website guided questions
     facts: set[str] = field(init=False)
 
     def __post_init__(self) -> None:
@@ -80,6 +81,8 @@ def load_library(rules_dir: Path | None = None) -> Library:
     if not isinstance(questions, dict) or not isinstance(areas, dict):
         raise LibraryError("facts.yaml or areas.yaml is empty or malformed")
     library = Library(rules={}, questions=questions, areas=areas)
+    if (rules_dir / "questionnaire.yaml").exists():
+        library.questionnaire = _read_yaml(rules_dir / "questionnaire.yaml")
     covered = areas.get("covered") or {}
 
     problems: list[str] = []

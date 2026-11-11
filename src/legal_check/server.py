@@ -175,6 +175,8 @@ def main() -> None:
     # stderr only: stdout is the MCP channel in stdio mode.
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     load()
+    from . import web_api  # noqa: F401  registers /api/* routes for HTTP mode
+
     if args.transport == "stdio":
         mcp.run("stdio")
     else:

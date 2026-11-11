@@ -1,0 +1,126 @@
+# Guided questions for the website (brief D17). Every fact in facts.yaml must appear
+# here exactly once (tests/test_questionnaire.py), or a law could never be reached.
+#
+# Question kinds:
+#   yesno   - one fact, set when the answer is yes
+#   choose  - several facts, tick all that apply
+#   country - ISO country codes (users_in, company_in, processing_in)
+# `show_if`: only ask when that fact is set.
+
+sections:
+  - id: where
+    title: Where
+    intro: Laws depend on where your users are, where your company is, and where data is kept.
+    questions:
+      - id: users_in
+        kind: country
+        multiple: true
+        label: Where are your users?
+        default: [LK]
+      - id: company_in
+        kind: country
+        multiple: false
+        label: Where is your company registered, or where do you live if there's no company?
+        default: LK
+      - id: processing_in
+        kind: country
+        multiple: true
+        label: Where is the data stored or processed? (servers, cloud region)
+        help: Leave empty if you don't know yet.
+      - id: builds_for_client
+        kind: yesno
+        label: Are you building or running this for a client who decides how the data is used?
+
+  - id: data
+    title: Personal data
+    intro: Anything that can identify a person counts, even an email or a device ID.
+    questions:
+      - id: collects_personal_data
+        kind: yesno
+        label: Does the product collect or use information about people?
+      - id: data_kinds
+        kind: choose
+        show_if: collects_personal_data
+        label: Which kinds?
+        options:
+          - {fact: "data:contact", label: "Contact details (name, email, phone, address)"}
+          - {fact: "data:national_id", label: "NIC, passport or other ID numbers"}
+          - {fact: "data:financial", label: "Bank, card or income details"}
+          - {fact: "data:location", label: "Location"}
+          - {fact: "data:health", label: "Health or medical information"}
+          - {fact: "data:biometric", label: "Face, fingerprint or voice used to identify people"}
+          - {fact: "data:genetic", label: "Genetic data"}
+          - {fact: "data:ethnicity", label: "Race or ethnic origin"}
+          - {fact: "data:religion", label: "Religious or philosophical beliefs"}
+          - {fact: "data:political", label: "Political opinions"}
+          - {fact: "data:sex_life", label: "Sex life or sexual orientation"}
+          - {fact: "data:criminal", label: "Offences, court cases or convictions"}
+      - id: users_children
+        kind: yesno
+        fact: "users:children"
+        show_if: collects_personal_data
+        label: Could any users, or people whose data you hold, be under 16?
+      - id: data_handling
+        kind: choose
+        show_if: collects_personal_data
+        label: Which of these are true?
+        options:
+          - {fact: uses_processors, label: "Outside services handle the data (cloud, email or SMS provider, analytics, AI API)"}
+          - {fact: data_sent_abroad, label: "Data is sent or stored outside Sri Lanka"}
+          - {fact: profiling, label: "We analyse or predict people's behaviour, interests, health or finances"}
+          - {fact: automated_decisions, label: "Software alone makes decisions that affect people (approve, reject, price, ban)"}
+          - {fact: monitors_public_places, label: "We monitor public places or networks (CCTV, Wi-Fi tracking)"}
+          - {fact: sends_marketing_messages, label: "We send promotional SMS, emails, calls or push messages"}
+
+  - id: money
+    title: Money
+    intro: Payments in Sri Lanka are regulated by the Central Bank.
+    questions:
+      - id: money_flows
+        kind: choose
+        label: Which of these does the product do?
+        options:
+          - {fact: takes_payments, label: "Users pay us online"}
+          - {fact: collects_payments_for_others, label: "We collect money for other sellers and pay them out"}
+          - {fact: holds_user_funds, label: "Users can keep a balance or wallet with us"}
+          - {fact: issues_payment_cards, label: "We issue debit, credit, prepaid or virtual cards"}
+          - {fact: transfers_money, label: "Users can send money to other people"}
+
+  - id: ai
+    title: AI and automation
+    questions:
+      - id: ai_features
+        kind: choose
+        label: Which of these does the product do?
+        options:
+          - {fact: ai_health_advice, label: "AI gives health information, diagnoses or treatment ideas"}
+          - {fact: ai_legal_advice, label: "AI answers legal questions"}
+          - {fact: trains_ai_on_user_data, label: "We train or fine-tune AI on users' data"}
+          - {fact: runs_bots, label: "Bots or AI post or send messages to the public automatically"}
+
+  - id: content
+    title: Content
+    questions:
+      - id: hosts_user_content
+        kind: yesno
+        label: Can users post things that others see (posts, comments, reviews, group chats, uploads)?
+
+  - id: professions
+    title: Professions
+    intro: Doctors and lawyers have their own rules, and some of them limit what platforms can do.
+    questions:
+      - id: profession
+        kind: choose
+        label: Does the product involve any of these?
+        options:
+          - {fact: "profession:medicine", label: "Doctors or dentists"}
+          - {fact: "profession:law", label: "Lawyers"}
+      - id: profession_features
+        kind: choose
+        show_if_any: ["profession:medicine", "profession:law"]
+        label: Which of these does the product do?
+        options:
+          - {fact: lists_professionals, label: "Shows profiles or a directory of them"}
+          - {fact: sells_promotion_to_professionals, label: "They can pay for better visibility (featured, top ranking, ads)"}
+          - {fact: charges_professionals_per_client, label: "They pay us per client, booking, lead, enquiry or message"}
+          - {fact: offers_consultations, label: "Users consult them through the product (chat, video, booking)"}

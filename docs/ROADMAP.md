@@ -159,7 +159,13 @@ Original plan:
 ### Step 6. Simple website
 - Discussed 2026-11-11: guided questions, no AI (D17); light base + orange `#F57E22` (D18);
   Next.js/Tailwind/shadcn stack (D19). Design skill installed: `.claude/skills/frontend-design`.
-  Still open: product name and domain, hosting.
+  Product name: Rulewise (D20). Still open: domain, hosting.
+- **Built 2026-11-12 (first version, local):** `web/` (Next.js 16). Home page; `/check` guided
+  questions (6 steps, from `rules/questionnaire.yaml`); report with marginal-note layout,
+  "at a glance" list, exact law quote on demand, mark as done, client duties, coverage,
+  print/PDF. Python serves the JSON API (`/api/*`, `src/legal_check/web_api.py`) next to `/mcp`.
+  Tests: Python API tests (errors are errors, no input in logs) + Playwright e2e on desktop and
+  mobile with axe accessibility checks (0 violations). Not done: hosting, domain.
 - Paste an idea, answer the fact questions, get the same report. Same backend.
 - Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.
 
