@@ -169,3 +169,20 @@
   title: SLMC Instructions on Serious Professional Misconduct for Medical Practitioners and Dentists
   url: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679630.pdf
   verified: "2026-11-11: dated July 2009"
+
+# ---------- 6. Consumer rights ----------
+- id: lk-caa-2003
+  parliament_name: Consumer Affairs Authority
+  area: consumer
+  kind: act
+  title: Consumer Affairs Authority Act, No. 9 of 2003
+  url: https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf
+  # Scanned PDF (no text layer): rules quote the typed copy in sources/transcripts/.
+  verified: "2026-11-12: certified 17th March, 2003 (page images)"
+
+- id: lk-caa-amendment-2021
+  area: consumer
+  kind: act
+  title: Consumer Affairs Authority (Amendment) Act, No. 20 of 2021
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6225.pdf
+  verified: "2026-11-12: certified 22 September 2021; only amends s.60 (penalties)"

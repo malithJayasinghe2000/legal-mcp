@@ -72,7 +72,14 @@ Progress:
   (Rule 39(1)), Intermeddlers s.2(a) (criminal, applies to the platform), online/AI legal advice
   (Rule 39 + BASL note, "check with a lawyer"). The 1988 Rules have **no separate fee-sharing
   rule**: law-finder's fee-sharing problem comes from Rule 39(1) and Intermeddlers s.2.
-- **Total: 35 rules in 5 areas.**
+- [x] **Consumer rights: 6 rules** in `rules/consumer/` (2026-11-12): misleading conduct (s.30),
+  false claims and fake discounts (s.31), implied warranty and refunds (s.32), receipts (s.28),
+  tied selling (s.16(b)), trader registration (s.27, "check with a lawyer"). New facts
+  `sells_to_consumers`, `sells_goods`. The 2003 Act on parliament.lk is a scanned PDF: quotes come
+  from a typed copy `sources/transcripts/lk-caa-2003.txt`. Amendment No. 20 of 2021 only changes
+  penalties (s.60). Not covered yet: CAA directions and gazetted price controls.
+- [ ] Malith: check the typed copy of the CAA Act against the scanned PDF, then the 6 rules.
+- **Total: 42 rules in 6 areas.**
 
 ### Step 3. Fact questions (first draft)
 Machine-readable list: [rules/facts.yaml](../rules/facts.yaml) (grows as areas are added).
@@ -171,8 +178,8 @@ Original plan:
   setup for Claude Code, Cursor, Codex and VS Code; example is an online shop (promo SMS,
   privacy notice). Later: bring the site check back as "describe your idea" (our LLM) and/or
   questions that depend on the product type.
-- **Next for the MCP server (agreed 2026-11-12):** (1) more general areas: consumer rights,
-  e-commerce and online contracts, cybercrime and security, copyright; (2) Malith reviews the
+- **Next for the MCP server (agreed 2026-11-12):** (1) more general areas: consumer rights (done
+  2026-11-12), e-commerce and online contracts, cybercrime and security, copyright; (2) Malith reviews the
   36 draft rules; (3) remote hosting with a usage limit, so it works by web address in
   Claude, ChatGPT, Cursor, Codex; (4) setup guide per tool; (5) lawyer review before launch.
 - Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.

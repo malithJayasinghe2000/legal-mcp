@@ -86,6 +86,13 @@ sections:
           - {fact: issues_payment_cards, label: "We issue debit, credit, prepaid or virtual cards"}
           - {fact: transfers_money, label: "Users can send money to other people"}
 
+      - id: consumer_sales
+        kind: choose
+        label: Do you sell to the public?
+        options:
+          - {fact: sells_to_consumers, label: "We sell goods or paid services to the public (shop, subscriptions, bookings, paid features)"}
+          - {fact: sells_goods, label: "We sell physical goods (delivered or picked up)"}
+
   - id: ai
     title: AI and automation
     questions:

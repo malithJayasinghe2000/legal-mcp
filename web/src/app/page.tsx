@@ -45,6 +45,7 @@ const AREAS = [
   ],
   ["AI features", "Training on user data, bots, AI giving medical advice"],
   ["Online content", "Online Safety Act No. 9 of 2024"],
+  ["Consumer rights", "Consumer Affairs Authority Act No. 9 of 2003"],
   ["Professions", "Rules that limit platforms for doctors and lawyers"],
 ];
 

@@ -60,11 +60,13 @@
   company_in: LK
   processing_in: [SG]
   facts: [collects_personal_data, data:contact, takes_payments, uses_processors,
-          data_sent_abroad, sends_marketing_messages]
+          data_sent_abroad, sends_marketing_messages, sells_to_consumers, sells_goods]
   must_include: [lk-pdpa-scope, lk-pdpa-privacy-notice, lk-payments-card-gateway,
-                 lk-pdpa-marketing-messages, lk-pdpa-cross-border, lk-pdpa-processors]
+                 lk-pdpa-marketing-messages, lk-pdpa-cross-border, lk-pdpa-processors,
+                 lk-caa-misleading-conduct, lk-caa-false-claims, lk-caa-implied-warranty,
+                 lk-caa-receipts, lk-caa-tied-selling]
   must_exclude: [lk-payments-wallet-cards-licence, lk-pdpa-special-categories, lk-pdpa-children]
-  not_covered_includes: [Consumer rights, E-commerce and electronic contracts]
+  not_covered_includes: [E-commerce and electronic contracts]
 
 - name: "#7 mobile wallet: top-up balance and send money to friends, NIC for sign-up"
   users_in: [LK]
@@ -213,3 +215,18 @@
   users_in: [LK]
   facts: []
   max_warnings: 0
+
+- name: "#C1 paid subscription app (no physical goods), Sri Lankan users"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, takes_payments, sells_to_consumers]
+  must_include: [lk-caa-misleading-conduct, lk-caa-false-claims, lk-caa-implied-warranty]
+  # Receipts (s.28) and tied selling (s.16) are about goods only.
+  must_exclude: [lk-caa-receipts, lk-caa-tied-selling]
+
+- name: "#C2 free app, nothing sold: consumer law does not apply"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact]
+  must_exclude: [lk-caa-misleading-conduct, lk-caa-false-claims, lk-caa-implied-warranty,
+                 lk-caa-receipts, lk-caa-tied-selling, lk-caa-trader-registration]

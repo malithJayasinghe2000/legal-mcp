@@ -1,0 +1,85 @@
+TRANSCRIPT of a scanned PDF (no text layer). Typed by Claude from the page
+images on 2026-11-12; check against the PDF before relying on it.
+Only the sections quoted by rules are typed here.
+Source: https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf
+
+Consumer Affairs Authority Act, No. 9 of 2003
+[Certified on 17th March, 2003]
+
+16. No trader who has in his possession or custody or under his control any goods
+for purpose of trade within Sri Lanka, shall -
+(a) deny the possession of such goods ; or
+(b) offer such goods for sale subject to a condition requiring the purchase of any
+other goods or the making of any payment in respect of any service or to any other
+condition, other than the condition that the buyer shall pay the price of such goods
+forthwith.
+
+27. Every trader shall, register with the Authority on payment of an annual fee of a
+sum not exceeding rupees one hundred thousand as may be determined by the Minister,
+in consultation with the Minister in charge of the subject of Finance.
+
+28. Every trader who sells any goods shall on demand, issue to the purchaser thereof,
+a receipt setting out -
+(a) the date of the sale;
+(b) the quantity of goods sold ;
+(c) the price paid for such quantity;
+(d) nature of the transaction, that is to say, whether the sale was wholesale or retail; and
+(e) any other requirements that may be imposed under any law relating to the issue of
+receipts by a trader.
+
+30. No trader shall, in the course of a trade or business, engage in any type of
+conduct that is misleading or deceptive or is likely to mislead or deceive the
+consumer or any other trader.
+
+31. Any trader who, in the course of a trade or business, in connection with the
+supply or possible supply of goods or services or in connection with the promotion
+by any means of the supply or use of goods or services -
+(a) falsely represents that goods or services are of a particular standard, quality
+or grade, or that goods are of a particular style or model ;
+(b) falsely represents that goods are new ;
+(c) represents that goods or services have sponsorship, approval, performance,
+characteristics accessories, uses or benefits they do not have ;
+(d) represents that such trader has a sponsorship approval or affiliation he does not have ;
+(e) makes false or misleading statements concerning the existence of, or amounts of
+price reduction or price increase ;
+(f) makes false or misleading statements concerning the need for any goods, services,
+replacements or repairs ; or
+(g) makes false or misleading statements concerning the existence or effect of any
+warranty or guarantee,
+shall be guilty of an offence under this Act.
+
+32. (1) In every contract for the supply of goods or for the provision of services by
+any person in the course of a business of supply of such goods or provisions of such
+services to a consumer, there is an implied warranty that -
+(a) the services will be provided with due care and skill ;
+(b) that any materials supplied in connection with provision of such services will be
+reasonably fit for the purpose for which they are supplied ;
+(c) the goods supplied or services provided will be in conformity with the standards
+and specifications determined under section 12 of this Act ; and
+(d) the goods supplied will be reasonably fit for the purpose for which they are supplied.
+
+(3) A consumer aggrieved by the breach of an implied warranty as provided for in
+subsection (1) or (2) may make a complaint to the Authority in writing against such
+breach within one month of the supply of such goods or the provision of such services
+as the case may be, or the supply of materials supplied in connection with the
+provision of those services.
+
+(5) Where after the inquiry the Authority is of opinion that a breach of an implied
+warranty has taken place, it shall order the trader or other person to pay
+compensation to the aggrieved party or refund the amount paid for the supply of such
+goods or provision of such services as the case may be, and for the supply of any
+materials in connection with the provision of those services, within such period as
+shall be specified in the order.
+
+75. In this Act, unless the context otherwise requires -
+"consumer" means any actual or potential user of any goods or services made available
+for a consideration by any trader or manufacturer ;
+"goods" means any food, drink, pharmaceutical, fuel and all other merchandise ;
+"service" means service of any description which is made available to actual or
+potential users, and includes -
+(g) the provision of information technology and communications ;
+"trader" means any person who -
+(a) sells or supplies goods wholesale to other persons ;
+(b) sells or supplies goods at retail rates to consumers ;
+(c) imports goods for the purpose of sale or supply ;
+(d) provides services for a consideration.

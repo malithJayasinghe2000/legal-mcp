@@ -1,0 +1,35 @@
+id: lk-caa-implied-warranty
+jurisdiction: LK
+area: consumer
+title: What you sell must be fit for purpose - customers can claim a refund or compensation
+severity: should
+triggers:
+  all:
+    - sells_to_consumers
+    - [users_in:LK, company_in:LK]
+why: >
+  By law, every sale to a consumer includes a promise that services are given with due
+  care and skill and that goods are reasonably fit for their purpose. Terms like "no
+  refunds" don't remove this. A customer can complain to the Consumer Affairs
+  Authority within one month, and it can order a refund or compensation.
+what_to_do:
+  - Have a clear way for customers to complain and ask for a refund.
+  - Don't write "no refunds under any condition" in your terms.
+  - Keep order records, so you can answer a complaint.
+lawyer_questions:
+  - What should our refund and returns policy say to match s.32?
+law:
+  name: Consumer Affairs Authority Act, No. 9 of 2003
+  source_id: lk-caa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf
+  section: "s.32(1), (3), (5)"
+  quote: >-
+    there is an implied warranty that - (a) the services will be provided with due
+    care and skill ;
+done_check: Check there is a working complaint and refund process, and the terms don't say "no refunds" outright.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: "Quote from the typed copy of the scanned Act."

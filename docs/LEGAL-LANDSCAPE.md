@@ -48,7 +48,7 @@ marked; **verify each one** on the official source before use.
 | Lending / finance | Banking Act, Finance Business Act; Central Bank directions | Lending apps, holding money |
 | Foreign exchange | Foreign Exchange Act No. 12 of 2017 | Foreign payments, crypto |
 | Crypto | Central Bank public warnings on virtual currencies; proposed Virtual Asset Service Providers Bill | |
-| Consumer | Consumer Affairs Authority Act No. 9 of 2003 | Misleading claims, pricing |
+| Consumer | Consumer Affairs Authority Act No. 9 of 2003 (amended by No. 20 of 2021, penalties only) | Misleading claims, pricing. **Rules written 2026-11-12** (`rules/consumer/`) |
 | Copyright / IP | Intellectual Property Act No. 36 of 2003 | Training data, content ownership |
 | Telecom | Sri Lanka Telecommunications Act No. 25 of 1991 | SMS, calls, telecom services |
 | Lawyers | Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules 1988 (Gazette 535/7): Rules 39, 40, 45, 49; Intermeddlers with Suitors Ordinance (Cap. 40) s.2; BASL note June 2021 | Already researched in law-finder (`law-finder/lawyer-finder-web/docs/`) |

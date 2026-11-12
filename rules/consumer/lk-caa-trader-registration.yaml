@@ -1,0 +1,32 @@
+id: lk-caa-trader-registration
+jurisdiction: LK
+area: consumer
+title: Ask whether you must register with the Consumer Affairs Authority
+severity: lawyer
+triggers:
+  all:
+    - sells_to_consumers
+    - [users_in:LK, company_in:LK]
+why: >
+  The Act says every trader shall register with the Consumer Affairs Authority and pay
+  an annual fee set by the Minister. It is not clear how this applies to online
+  businesses today, so check before launch.
+what_to_do:
+  - Ask a lawyer or the Consumer Affairs Authority whether your business must register.
+lawyer_questions:
+  - Does s.27 registration apply to us, and is a fee set for our kind of business?
+law:
+  name: Consumer Affairs Authority Act, No. 9 of 2003
+  source_id: lk-caa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf
+  section: "s.27"
+  quote: >-
+    Every trader shall, register with the Authority on payment of an annual fee of a
+    sum not exceeding rupees one hundred thousand
+done_check: Check you asked whether CAA registration applies and kept the answer.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: "How s.27 is applied in practice is not known yet. Quote from the typed copy of the scanned Act."

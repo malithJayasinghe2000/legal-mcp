@@ -1,0 +1,36 @@
+id: lk-caa-tied-selling
+jurisdiction: LK
+area: consumer
+title: Don't force customers to buy something else to get the product they want
+severity: must
+triggers:
+  all:
+    - sells_goods
+    - [users_in:LK, company_in:LK]
+why: >
+  A trader must not sell goods only on condition that the buyer also buys other goods,
+  pays for a service, or meets any other condition besides paying the price. In an
+  online shop this covers forced bundles, a required paid membership to buy an item,
+  or a must-buy add-on.
+what_to_do:
+  - Let customers buy each item on its own at its price.
+  - Offer bundles and memberships as an option, never as the only way to buy.
+lawyer_questions:
+  - Is our membership or bundle offer a "condition" under s.16(b)?
+law:
+  name: Consumer Affairs Authority Act, No. 9 of 2003
+  source_id: lk-caa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf
+  section: "s.16(b)"
+  quote: >-
+    offer such goods for sale subject to a condition requiring the purchase of any
+    other goods or the making of any payment in respect of any service or to any other
+    condition, other than the condition that the buyer shall pay the price of such
+    goods forthwith.
+done_check: Check every product can be bought on its own.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: "Quote from the typed copy of the scanned Act."

@@ -1,0 +1,37 @@
+id: lk-caa-misleading-conduct
+jurisdiction: LK
+area: consumer
+title: Don't mislead customers - in ads, prices, the app screens or the checkout
+severity: must
+triggers:
+  all:
+    - sells_to_consumers
+    - [users_in:LK, company_in:LK]
+why: >
+  Anyone who sells goods or provides services for payment is a "trader" under the
+  Consumer Affairs Authority Act (s.75), and that includes IT services. A trader must not
+  do anything that misleads, or is likely to mislead, a consumer. In an app this covers
+  hidden fees that appear only at checkout, fake "only 2 left" or countdown timers,
+  pre-ticked add-ons, and subscriptions that are hard to see or cancel.
+what_to_do:
+  - Show the full price, including fees and delivery, before the customer pays.
+  - Don't use fake scarcity, fake timers or pre-ticked extras.
+  - For subscriptions, say clearly how much, how often, and how to cancel.
+lawyer_questions:
+  - Are our checkout and subscription screens clear enough under s.30?
+law:
+  name: Consumer Affairs Authority Act, No. 9 of 2003
+  source_id: lk-caa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf
+  section: "s.30"
+  quote: >-
+    No trader shall, in the course of a trade or business, engage in any type of
+    conduct that is misleading or deceptive or is likely to mislead or deceive the
+    consumer or any other trader.
+done_check: Check the full price is shown before payment, and there are no fake timers or pre-ticked extras.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: "Quote from the typed copy of the scanned Act (sources/transcripts/lk-caa-2003.txt)."

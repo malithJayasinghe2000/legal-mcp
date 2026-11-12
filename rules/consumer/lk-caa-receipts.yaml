@@ -1,0 +1,33 @@
+id: lk-caa-receipts
+jurisdiction: LK
+area: consumer
+title: Give a receipt with the date, quantity and price when a buyer asks
+severity: should
+triggers:
+  all:
+    - sells_goods
+    - [users_in:LK, company_in:LK]
+why: >
+  A trader who sells goods must, when asked, give the buyer a receipt showing the date,
+  quantity, price paid and whether the sale was wholesale or retail.
+what_to_do:
+  - Send an order receipt (email or in the app) with date, items, quantity and price.
+  - Mark whether the sale is retail or wholesale.
+lawyer_questions:
+  - Is an e-mailed or in-app receipt enough, or are other receipt rules (such as tax) also needed?
+law:
+  name: Consumer Affairs Authority Act, No. 9 of 2003
+  source_id: lk-caa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf
+  section: "s.28"
+  quote: >-
+    Every trader who sells any goods shall on demand, issue to the purchaser thereof,
+    a receipt setting out - (a) the date of the sale; (b) the quantity of goods sold ;
+    (c) the price paid for such quantity;
+done_check: Check every order sends a receipt with date, quantity and price.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: "Quote from the typed copy of the scanned Act."

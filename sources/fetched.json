@@ -1,4 +1,20 @@
 {
+  "lk-caa-2003": {
+    "title": "Consumer Affairs Authority Act, No. 9 of 2003",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf",
+    "downloaded": "2026-11-12",
+    "sha256": "f138e4ee0c4797592dcc83cb11fd9ebc0c99093abf77a098c9a3ad2cebd75000",
+    "bytes": 95135015,
+    "file": "sources/raw/lk-caa-2003.pdf"
+  },
+  "lk-caa-amendment-2021": {
+    "title": "Consumer Affairs Authority (Amendment) Act, No. 20 of 2021",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6225.pdf",
+    "downloaded": "2026-11-12",
+    "sha256": "d946a987ff82b063dce8af7e1e0acd7a41b97e25a52539bbd872a8283216a52a",
+    "bytes": 131525,
+    "file": "sources/raw/lk-caa-amendment-2021.pdf"
+  },
   "lk-cbsl-ecommerce-acquiring-direction-2018": {
     "title": "Direction No. 01/2018: Acquiring Payment Card based Electronic Commerce Transactions through Service Providers",
     "url_used": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/Payment_Cards_%26_Mobile_Payment_Systems_Regulations_Direction_No_1_of_2018_e.pdf",

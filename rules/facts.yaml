@@ -48,6 +48,10 @@ ai:
 online_content:
   hosts_user_content: Can users post content that others can see or receive (posts, comments, reviews, group chats, uploads)?
 
+consumer:
+  sells_to_consumers: Do you sell goods or paid services to the public (online shop, subscriptions, bookings, paid features)?
+  sells_goods: Do you sell physical goods (products delivered or picked up)?
+
 regulated_professions:
   profession:medicine: Does the product involve doctors or dentists (listing, booking, consulting)?
   profession:law: Does the product involve lawyers (listing, booking, consulting, legal help)?

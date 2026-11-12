@@ -1,0 +1,35 @@
+id: lk-caa-false-claims
+jurisdiction: LK
+area: consumer
+title: Don't make false claims about discounts, features, quality or approvals
+severity: must
+triggers:
+  all:
+    - sells_to_consumers
+    - [users_in:LK, company_in:LK]
+why: >
+  False claims when selling or promoting goods or services are a criminal offence:
+  for example a "50% off" price that was never the real price, saying a product is
+  approved or certified when it is not, claiming features or benefits it does not
+  have (including "AI-powered" when it is not), or false warranty promises.
+what_to_do:
+  - Show a "was" price only if you really sold at that price.
+  - Make sure every claim about features, quality, approvals or partners is true and can be shown.
+  - Say what any warranty or guarantee really covers.
+lawyer_questions:
+  - Do our discount and "approved by" claims meet s.31?
+law:
+  name: Consumer Affairs Authority Act, No. 9 of 2003
+  source_id: lk-caa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf
+  section: "s.31"
+  quote: >-
+    represents that goods or services have sponsorship, approval, performance,
+    characteristics accessories, uses or benefits they do not have ;
+done_check: Check every discount, feature and approval claim in the app and ads is true.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: "s.31(e) covers false price reductions. Quote from the typed copy of the scanned Act."

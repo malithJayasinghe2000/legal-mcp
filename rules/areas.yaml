@@ -16,12 +16,14 @@ covered:
   online-content:
     label: Online content (Online Safety Act)
     gaps: Paid content on declared online locations and user offences not covered.
+  consumer:
+    label: Consumer rights (Consumer Affairs Authority Act)
+    gaps: Authority directions and gazetted price controls not collected yet.
   regulated-professions:
     label: Regulated professions
     gaps: Doctors and lawyers only. BASL note on online legal advice known only from the press.
 
 not_covered:
-  - Consumer rights
   - E-commerce and electronic contracts
   - Copyright and intellectual property
   - Cybercrime and cyber security
