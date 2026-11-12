@@ -4,8 +4,10 @@ from pathlib import Path
 
 import yaml
 
-MANIFEST = Path(__file__).resolve().parent.parent / "sources" / "sources.yaml"
-AREAS = {"personal-data", "payments", "ai", "online-content", "regulated-professions", "consumer", "e-commerce"}
+ROOT = Path(__file__).resolve().parent.parent
+MANIFEST = ROOT / "sources" / "sources.yaml"
+# Every source belongs to an area the library covers (rules/areas.yaml).
+AREAS = set(yaml.safe_load((ROOT / "rules" / "areas.yaml").read_text())["covered"])
 
 
 def load():
