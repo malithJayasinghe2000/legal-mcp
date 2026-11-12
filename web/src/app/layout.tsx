@@ -15,7 +15,7 @@ const serif = Source_Serif_4({
 export const metadata: Metadata = {
   title: { default: "Rulewise - know the law before you build", template: "%s - Rulewise" },
   description:
-    "Answer a few questions about your product. Rulewise shows which Sri Lankan laws apply, how serious each one is, and what to ask a lawyer.",
+    "Rulewise works inside your AI coding tool. While you plan a product, it shows which Sri Lankan laws apply, how serious each one is, and what to ask a lawyer.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

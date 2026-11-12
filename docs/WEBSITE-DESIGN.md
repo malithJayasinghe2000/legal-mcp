@@ -1,6 +1,10 @@
 # Rulewise website - design plan
 
 Decisions behind it: brief D17 (guided questions), D18 (light base, orange), D19 (stack).
+
+**Now (D21, 2026-11-12):** the guided check (`/check`) is hidden behind `SHOW_SITE_CHECK`
+in `web/src/lib/features.ts`. The home page explains the MCP server; its "How it works",
+privacy text and header button switch with the same flag. Setup section: tabs per AI tool.
 Made with the `frontend-design` skill (plan, review against the brief, then build).
 
 ## Brief

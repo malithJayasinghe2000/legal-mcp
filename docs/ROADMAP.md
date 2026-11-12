@@ -166,7 +166,15 @@ Original plan:
   print/PDF. Python serves the JSON API (`/api/*`, `src/legal_check/web_api.py`) next to `/mcp`.
   Tests: Python API tests (errors are errors, no input in logs) + Playwright e2e on desktop and
   mobile with axe accessibility checks (0 violations). Not done: hosting, domain.
-- Paste an idea, answer the fact questions, get the same report. Same backend.
+- **Changed 2026-11-12 (D21): MCP first.** `/check` is hidden behind `SHOW_SITE_CHECK`
+  (`web/src/lib/features.ts`), not deleted. Home page now explains the MCP server and shows
+  setup for Claude Code, Cursor, Codex and VS Code; example is an online shop (promo SMS,
+  privacy notice). Later: bring the site check back as "describe your idea" (our LLM) and/or
+  questions that depend on the product type.
+- **Next for the MCP server (agreed 2026-11-12):** (1) more general areas: consumer rights,
+  e-commerce and online contracts, cybercrime and security, copyright; (2) Malith reviews the
+  36 draft rules; (3) remote hosting with a usage limit, so it works by web address in
+  Claude, ChatGPT, Cursor, Codex; (4) setup guide per tool; (5) lawyer review before launch.
 - Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.
 
 ### Step 7. Before public launch

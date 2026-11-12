@@ -1,6 +1,7 @@
 # Rulewise website
 
-Guided questions in, a cited legal report out (brief D17). The site has no checker of
+Guided questions in, a cited legal report out (brief D17). **For now (D21) the site is a home
+page for the MCP server; `/check` is hidden by `SHOW_SITE_CHECK` in `src/lib/features.ts`.** The site has no checker of
 its own: it forwards `/api/*` to the Python server, the same one Claude Code uses.
 Design plan: [../docs/WEBSITE-DESIGN.md](../docs/WEBSITE-DESIGN.md).
 
