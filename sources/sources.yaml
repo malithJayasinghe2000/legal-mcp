@@ -186,3 +186,19 @@
   title: Consumer Affairs Authority (Amendment) Act, No. 20 of 2021
   url: https://www.parliament.lk/uploads/acts/gbills/english/6225.pdf
   verified: "2026-11-12: certified 22 September 2021; only amends s.60 (penalties)"
+
+# ---------- 7. E-commerce and electronic contracts ----------
+- id: lk-eta-2006
+  parliament_name: Electronic Transactions
+  area: e-commerce
+  kind: act
+  title: Electronic Transactions Act, No. 19 of 2006
+  url: https://www.parliament.lk/uploads/acts/gbills/english/5722.pdf
+  verified: "2026-11-12: certified 19th May, 2006"
+
+- id: lk-eta-amendment-2017
+  area: e-commerce
+  kind: act
+  title: Electronic Transactions (Amendment) Act, No. 25 of 2017
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6053.pdf
+  verified: "2026-11-12: certified 02nd of November, 2017"

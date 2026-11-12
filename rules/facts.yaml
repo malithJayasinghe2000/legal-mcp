@@ -52,6 +52,10 @@ consumer:
   sells_to_consumers: Do you sell goods or paid services to the public (online shop, subscriptions, bookings, paid features)?
   sells_goods: Do you sell physical goods (products delivered or picked up)?
 
+e_commerce:
+  e_signs_documents: Do users sign agreements or documents electronically in the product (e-signature, click to sign)?
+  automated_contracts: Does software or AI accept orders, quote prices or agree to deals on its own (bots, AI agents)?
+
 regulated_professions:
   profession:medicine: Does the product involve doctors or dentists (listing, booking, consulting)?
   profession:law: Does the product involve lawyers (listing, booking, consulting, legal help)?

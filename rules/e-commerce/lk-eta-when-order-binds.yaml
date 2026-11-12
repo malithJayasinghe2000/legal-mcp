@@ -1,0 +1,37 @@
+id: lk-eta-when-order-binds
+jurisdiction: LK
+area: e-commerce
+title: Say in your terms when an online order becomes a binding contract
+severity: should
+triggers:
+  all:
+    - sells_to_consumers
+    - [users_in:LK, company_in:LK]
+why: >
+  Online contracts are valid in Sri Lanka. A product listing open to everyone is treated
+  as an invitation for customers to make offers, unless it clearly shows you intend to be
+  bound when someone accepts. So your terms decide when a sale is final, which matters
+  for wrong prices and out-of-stock items.
+what_to_do:
+  - State in your terms when an order is accepted (for example, when you send the confirmation).
+  - Make your order confirmation message match those terms.
+lawyer_questions:
+  - Do our terms clearly say when a contract is formed, and how wrong prices are handled?
+law:
+  name: Electronic Transactions (Amendment) Act, No. 25 of 2017
+  source_id: lk-eta-amendment-2017
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6053.pdf
+  section: "s.8 (inserts s.11A into Act No. 19 of 2006)"
+  quote: >-
+    A proposal to conclude a contract made through one or more electronic
+    communications which is not addressed to one or more specific parties, but is
+    generally accessible to parties making use of any information systems, shall be
+    considered as an invitation to make offers, unless it clearly indicates the intention
+    of the party making the proposal to be bound in case of acceptance.
+done_check: Check the terms say when an order is accepted, and the confirmation message matches.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: "Online contracts are valid: s.11 of Act No. 19 of 2006."

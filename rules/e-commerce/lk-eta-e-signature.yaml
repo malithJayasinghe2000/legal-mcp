@@ -1,0 +1,34 @@
+id: lk-eta-e-signature
+jurisdiction: LK
+area: e-commerce
+title: An e-signature must identify the signer and show they agree
+severity: should
+triggers:
+  all:
+    - e_signs_documents
+    - [users_in:LK, company_in:LK]
+why: >
+  Where a law requires a signature, an electronic signature counts only if the method
+  identifies the person and shows their intention, and is reliable enough for the
+  purpose (or is proven to do so). A typed name may not be enough for important documents.
+what_to_do:
+  - Identify the signer (verified login, OTP to their phone or email) before they sign.
+  - Show clearly what they are agreeing to, and record who signed, what, and when.
+  - Keep the signed document unchanged, with an audit trail.
+lawyer_questions:
+  - Is our signing method reliable enough for the documents our users sign?
+law:
+  name: Electronic Transactions (Amendment) Act, No. 25 of 2017
+  source_id: lk-eta-amendment-2017
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6053.pdf
+  section: "s.5 (replaces s.7 of Act No. 19 of 2006)"
+  quote: >-
+    a method is used to identify that person and to indicate that person's intention
+    in respect of the information contained in the electronic communication;
+done_check: Check signers are verified and every signature has an audit record.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: ""

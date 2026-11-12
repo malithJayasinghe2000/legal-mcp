@@ -1,0 +1,34 @@
+id: lk-eta-automated-contracts
+jurisdiction: LK
+area: e-commerce
+title: Deals made by your bot or AI agent bind you, even with no human check
+severity: should
+triggers:
+  all:
+    - automated_contracts
+    - [users_in:LK, company_in:LK]
+why: >
+  A message sent by an automated system programmed by you, or for you, counts as your
+  own message, and a contract made by an automated system is not invalid just because
+  no person reviewed it. So if your bot or AI agent accepts an order, quotes a price or
+  agrees to a deal, you may be bound.
+what_to_do:
+  - Set limits on what the bot or AI agent can agree to (prices, discounts, amounts).
+  - Log every action it takes, and add human approval for large or unusual deals.
+  - Say in your terms what the bot can and cannot agree to.
+lawyer_questions:
+  - Are we bound by a wrong price or promise made by our AI agent, and how do we limit that?
+law:
+  name: Electronic Transactions Act, No. 19 of 2006
+  source_id: lk-eta-2006
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/5722.pdf
+  section: "s.12(1)(c); s.17(d)"
+  quote: >-
+    by an automated information system programmed by, or on behalf of the originator.
+done_check: Check the bot has limits on what it can agree to, and its actions are logged.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: "s.17(d): a contract formed by an automated message system is not invalid solely because no natural person reviewed it."

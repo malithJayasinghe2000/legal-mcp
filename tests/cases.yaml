@@ -64,9 +64,11 @@
   must_include: [lk-pdpa-scope, lk-pdpa-privacy-notice, lk-payments-card-gateway,
                  lk-pdpa-marketing-messages, lk-pdpa-cross-border, lk-pdpa-processors,
                  lk-caa-misleading-conduct, lk-caa-false-claims, lk-caa-implied-warranty,
-                 lk-caa-receipts, lk-caa-tied-selling]
-  must_exclude: [lk-payments-wallet-cards-licence, lk-pdpa-special-categories, lk-pdpa-children]
-  not_covered_includes: [E-commerce and electronic contracts]
+                 lk-caa-receipts, lk-caa-tied-selling, lk-eta-input-errors,
+                 lk-eta-when-order-binds]
+  must_exclude: [lk-payments-wallet-cards-licence, lk-pdpa-special-categories, lk-pdpa-children,
+                 lk-eta-excluded-documents]
+  not_covered_includes: [Copyright and intellectual property]
 
 - name: "#7 mobile wallet: top-up balance and send money to friends, NIC for sign-up"
   users_in: [LK]
@@ -230,3 +232,16 @@
   facts: [collects_personal_data, data:contact]
   must_exclude: [lk-caa-misleading-conduct, lk-caa-false-claims, lk-caa-implied-warranty,
                  lk-caa-receipts, lk-caa-tied-selling, lk-caa-trader-registration]
+
+- name: "#E1 property app: buyers and sellers e-sign sale agreements"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, data:national_id, e_signs_documents]
+  must_include: [lk-eta-excluded-documents, lk-eta-e-signature]
+
+- name: "#E2 AI agent books and pays for services for the user"
+  users_in: [LK]
+  company_in: LK
+  facts: [automated_contracts]
+  must_include: [lk-eta-automated-contracts]
+  must_exclude: [lk-eta-excluded-documents]

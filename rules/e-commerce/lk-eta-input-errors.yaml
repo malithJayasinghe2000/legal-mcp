@@ -1,0 +1,36 @@
+id: lk-eta-input-errors
+jurisdiction: LK
+area: e-commerce
+title: Let people check and correct an order before it is placed
+severity: should
+triggers:
+  all:
+    - sells_to_consumers
+    - [users_in:LK, company_in:LK]
+why: >
+  If a person makes a typing or click error when ordering through your automated system,
+  and the system gave no chance to correct it, the person can withdraw that part of the
+  order (if they tell you quickly and have not used what they got).
+what_to_do:
+  - Show an order summary (items, quantity, price, address) with an edit option before the final "Pay" or "Place order" button.
+  - Have a simple way to report a wrong order soon after it is placed.
+lawyer_questions:
+  - Does our checkout give a fair "opportunity to correct" errors under s.14A?
+law:
+  name: Electronic Transactions (Amendment) Act, No. 25 of 2017
+  source_id: lk-eta-amendment-2017
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6053.pdf
+  section: "s.10 (inserts s.14A into Act No. 19 of 2006)"
+  quote: >-
+    makes an input error in an electronic communication exchanged with the automated
+    message system of another party and the automated message system does not provide
+    the person with an opportunity to correct the error, that person, or the party on
+    whose behalf that person was acting, has the right to withdraw the portion of the
+    electronic communication in which the input error was made
+done_check: Check there is a review-and-edit step before the final order button.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: ""

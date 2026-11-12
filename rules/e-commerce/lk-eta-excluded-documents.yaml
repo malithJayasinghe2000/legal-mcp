@@ -1,0 +1,34 @@
+id: lk-eta-excluded-documents
+jurisdiction: LK
+area: e-commerce
+title: Wills, powers of attorney and land sales can't be done electronically
+severity: must
+triggers:
+  all:
+    - e_signs_documents
+    - [users_in:LK, company_in:LK]
+why: >
+  The Electronic Transactions Act does not apply to wills, powers of attorney, contracts
+  for the sale or transfer of land or other immovable property, bills of exchange,
+  trusts, and some financial transactions. For these, an e-signature or online
+  document is not enough: the usual paper and notary rules still apply.
+what_to_do:
+  - Don't offer e-signing for wills, powers of attorney, land or property sale deeds, cheques or bills of exchange, or trusts.
+  - For property or legal products, use e-signing only for drafts or agreements outside these types, and say so clearly.
+lawyer_questions:
+  - Do any documents in our product fall under s.23, and what formal steps do they need?
+law:
+  name: Electronic Transactions Act, No. 19 of 2006
+  source_id: lk-eta-2006
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/5722.pdf
+  section: "s.23 (as amended by Act No. 25 of 2017)"
+  quote: >-
+    The provisions contained in this Act shall not apply to - (a) the creation or
+    execution of a will,
+done_check: Check none of the excluded document types can be e-signed in the product.
+in_force: true
+starts_on: null
+last_checked: 2026-11-12
+review_status: draft
+reviewed_by: null
+notes: "s.23 also lists (b) telecom licences, (c) bills of exchange, (d) powers of attorney, (e) trusts, (f) contracts for sale or conveyance of immovable property; Act No. 25 of 2017 added (ca) some financial transactions."

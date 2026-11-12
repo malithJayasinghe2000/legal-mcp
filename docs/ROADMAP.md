@@ -79,7 +79,13 @@ Progress:
   from a typed copy `sources/transcripts/lk-caa-2003.txt`. Amendment No. 20 of 2021 only changes
   penalties (s.60). Not covered yet: CAA directions and gazetted price controls.
 - [ ] Malith: check the typed copy of the CAA Act against the scanned PDF, then the 6 rules.
-- **Total: 42 rules in 6 areas.**
+- [x] **E-commerce and online contracts: 5 rules** in `rules/e-commerce/` (2026-11-12), from the
+  Electronic Transactions Act No. 19 of 2006 as amended by No. 25 of 2017 (both have text, quotes
+  checked by test): input errors (s.14A), when an order binds (s.11A), e-signatures (s.7 as
+  replaced), excluded documents like wills and land sales (s.23), contracts made by bots or
+  AI agents (s.12(1)(c), s.17(d)). New facts `e_signs_documents`, `automated_contracts`.
+  Not covered yet: Certification Authority rules, Minister's regulations.
+- **Total: 47 rules in 7 areas.**
 
 ### Step 3. Fact questions (first draft)
 Machine-readable list: [rules/facts.yaml](../rules/facts.yaml) (grows as areas are added).
@@ -179,7 +185,7 @@ Original plan:
   privacy notice). Later: bring the site check back as "describe your idea" (our LLM) and/or
   questions that depend on the product type.
 - **Next for the MCP server (agreed 2026-11-12):** (1) more general areas: consumer rights (done
-  2026-11-12), e-commerce and online contracts, cybercrime and security, copyright; (2) Malith reviews the
+  2026-11-12), e-commerce and online contracts (done 2026-11-12), cybercrime and security, copyright; (2) Malith reviews the
   36 draft rules; (3) remote hosting with a usage limit, so it works by web address in
   Claude, ChatGPT, Cursor, Codex; (4) setup guide per tool; (5) lawyer review before launch.
 - Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.

@@ -47,6 +47,22 @@
     "bytes": 40805,
     "file": "sources/raw/lk-cbsl-payment-cards-mobile-regs-2013.pdf"
   },
+  "lk-eta-2006": {
+    "title": "Electronic Transactions Act, No. 19 of 2006",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/5722.pdf",
+    "downloaded": "2026-11-12",
+    "sha256": "ac0c5fabdea3551c511630ce8c274f2669d3f2b8f23ffca2963fa570bbd87fb0",
+    "bytes": 47444,
+    "file": "sources/raw/lk-eta-2006.pdf"
+  },
+  "lk-eta-amendment-2017": {
+    "title": "Electronic Transactions (Amendment) Act, No. 25 of 2017",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6053.pdf",
+    "downloaded": "2026-11-12",
+    "sha256": "6b38b83a380ab3c3447e535e303853ada6b573de0425873d3b1256e03a27269c",
+    "bytes": 91426,
+    "file": "sources/raw/lk-eta-amendment-2017.pdf"
+  },
   "lk-intermeddlers-ordinance": {
     "title": "Intermeddlers with Suitors Ordinance (Cap. 40; Ordinances Nos. 11 of 1894 and 35 of 1917)",
     "url_used": "manual browser download from http://www.commonlii.org/lk/legis/consol_act/iws40367/",

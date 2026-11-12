@@ -104,6 +104,8 @@ sections:
           - {fact: ai_legal_advice, label: "AI answers legal questions"}
           - {fact: trains_ai_on_user_data, label: "We train or fine-tune AI on users' data"}
           - {fact: runs_bots, label: "Bots or AI post or send messages to the public automatically"}
+          - {fact: automated_contracts, label: "Software or AI accepts orders, quotes prices or agrees to deals on its own"}
+          - {fact: e_signs_documents, label: "Users sign agreements or documents electronically"}
 
   - id: content
     title: Content

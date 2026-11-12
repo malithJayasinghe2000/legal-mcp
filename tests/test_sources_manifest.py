@@ -5,7 +5,7 @@ from pathlib import Path
 import yaml
 
 MANIFEST = Path(__file__).resolve().parent.parent / "sources" / "sources.yaml"
-AREAS = {"personal-data", "payments", "ai", "online-content", "regulated-professions", "consumer"}
+AREAS = {"personal-data", "payments", "ai", "online-content", "regulated-professions", "consumer", "e-commerce"}
 
 
 def load():
