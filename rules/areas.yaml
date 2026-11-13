@@ -22,13 +22,16 @@ covered:
   e-commerce:
     label: E-commerce and electronic contracts (Electronic Transactions Act)
     gaps: Certification Authority rules and Minister's regulations not collected yet.
+  cybercrime:
+    label: Cybercrime (Computer Crime Act)
+    gaps: No Cyber Security Act on Parliament's list (checked 2026-11-13); Sri Lanka CERT guidance and sector security rules not covered.
   regulated-professions:
     label: Regulated professions
     gaps: Doctors and lawyers only. BASL note on online legal advice known only from the press.
 
 not_covered:
   - Copyright and intellectual property
-  - Cybercrime and cyber security
+  - Cyber security (no Act found yet)
   - Telecommunications
   - Employment
   - Education

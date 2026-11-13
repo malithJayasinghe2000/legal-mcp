@@ -85,7 +85,13 @@ Progress:
   replaced), excluded documents like wills and land sales (s.23), contracts made by bots or
   AI agents (s.12(1)(c), s.17(d)). New facts `e_signs_documents`, `automated_contracts`.
   Not covered yet: Certification Authority rules, Minister's regulations.
-- **Total: 47 rules in 7 areas.**
+- [x] **Cybercrime: 5 rules** in `rules/cybercrime/` (2026-11-13), from the Computer Crime Act
+  No. 24 of 2007 (no amendments on Parliament's list): unauthorised access and scraping (s.3),
+  unlawfully obtained data such as bought leaked lists (s.7), interception of messages and calls
+  (s.8), disclosing access credentials (s.10), police preservation notices and confidentiality
+  (s.19, s.24(2)). New facts `accesses_other_systems`, `uses_third_party_data`,
+  `reads_communications`. No Cyber Security Act found on Parliament's list.
+- **Total: 52 rules in 8 areas.**
 
 ### Step 3. Fact questions (first draft)
 Machine-readable list: [rules/facts.yaml](../rules/facts.yaml) (grows as areas are added).
@@ -185,7 +191,7 @@ Original plan:
   privacy notice). Later: bring the site check back as "describe your idea" (our LLM) and/or
   questions that depend on the product type.
 - **Next for the MCP server (agreed 2026-11-12):** (1) more general areas: consumer rights (done
-  2026-11-12), e-commerce and online contracts (done 2026-11-12), cybercrime and security, copyright; (2) Malith reviews the
+  2026-11-12), e-commerce and online contracts (done 2026-11-12), cybercrime (done 2026-11-13), copyright; (2) Malith reviews the
   36 draft rules; (3) remote hosting with a usage limit, so it works by web address in
   Claude, ChatGPT, Cursor, Codex; (4) setup guide per tool; (5) lawyer review before launch.
 - Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.

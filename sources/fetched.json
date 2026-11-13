@@ -47,6 +47,14 @@
     "bytes": 40805,
     "file": "sources/raw/lk-cbsl-payment-cards-mobile-regs-2013.pdf"
   },
+  "lk-cca-2007": {
+    "title": "Computer Crime Act, No. 24 of 2007",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/4684.pdf",
+    "downloaded": "2026-11-13",
+    "sha256": "25d4aaeaf3d641440751587b5e9d2de79ffcdd8608331baa51da6c97f43d12f0",
+    "bytes": 49857,
+    "file": "sources/raw/lk-cca-2007.pdf"
+  },
   "lk-eta-2006": {
     "title": "Electronic Transactions Act, No. 19 of 2006",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/5722.pdf",

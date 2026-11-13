@@ -1,0 +1,35 @@
+id: lk-cca-interception
+jurisdiction: LK
+area: cybercrime
+title: Don't capture other people's messages, calls or network traffic without lawful authority
+severity: must
+triggers:
+  all:
+    - reads_communications
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  Intercepting any communication or traffic data to, from or within a computer without
+  lawful authority is a crime (fine Rs. 100,000 to 300,000 and/or 6 months to 3 years).
+  Apps that read SMS or chats, record calls, or monitor a network, phone or employee
+  need a clear legal basis, usually the informed consent of the people involved.
+what_to_do:
+  - Read or record only communications of people who clearly agreed, and only what you need.
+  - Tell everyone affected (for example, both sides of a recorded call).
+  - For employee or parental monitoring, get legal advice before launch.
+lawyer_questions:
+  - Whose consent do we need for this monitoring or recording to have "lawful authority"?
+law:
+  name: Computer Crime Act, No. 24 of 2007
+  source_id: lk-cca-2007
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/4684.pdf
+  section: "s.8"
+  quote: >-
+    Any person, who, knowingly or without lawful authority intercepts- (a) any subscriber
+    information or traffic data or any communication, to, from or within a computer
+done_check: Check every captured message, call or traffic record has clear consent and a stated purpose.
+in_force: true
+starts_on: null
+last_checked: 2026-11-13
+review_status: draft
+reviewed_by: null
+notes: ""

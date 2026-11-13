@@ -1,0 +1,37 @@
+id: lk-cca-unauthorised-access
+jurisdiction: LK
+area: cybercrime
+title: Only access other systems and accounts you are allowed to
+severity: must
+triggers:
+  all:
+    - accesses_other_systems
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  Getting access to any computer or the information in it, knowing you have no lawful
+  authority, is a crime (fine up to Rs. 100,000 and/or up to 5 years). For a product
+  this covers scraping sites that forbid it or sit behind a login, using someone's
+  password without their permission, and getting around blocks, rate limits or paywalls.
+what_to_do:
+  - Use official APIs, or get written permission, before pulling data from other systems.
+  - Respect logins, terms of use and technical blocks (robots.txt, rate limits, CAPTCHAs).
+  - If users give you access to their accounts, use it only for what they agreed to.
+lawyer_questions:
+  - Is scraping the public pages we need "without lawful authority" under s.3?
+law:
+  name: Computer Crime Act, No. 24 of 2007
+  source_id: lk-cca-2007
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/4684.pdf
+  section: "s.3"
+  quote: >-
+    Any person who intentionally does any act, in order to secure for himself or for any
+    other person, access to- (a) any computer ; or (b) any information held in any
+    computer, knowing or having reason to believe that he has no lawful authority to
+    secure such access, shall be guilty of an offence
+done_check: Check every outside data source is an official API, a permitted use, or has written permission.
+in_force: true
+starts_on: null
+last_checked: 2026-11-13
+review_status: draft
+reviewed_by: null
+notes: "The Act applies to acts done in or outside Sri Lanka (s.2)."

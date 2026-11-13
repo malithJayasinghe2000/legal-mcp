@@ -1,0 +1,35 @@
+id: lk-cca-preservation-notice
+jurisdiction: LK
+area: cybercrime
+title: Be ready to preserve data for police, and keep the request confidential
+severity: should
+triggers:
+  all:
+    - [users_in:LK, company_in:LK, processing_in:LK]
+  any: [collects_personal_data, hosts_user_content]
+why: >
+  During an investigation, police or an expert can order whoever controls a computer
+  system to preserve information for up to 7 days, which a Magistrate can extend to 90.
+  A service provider asked for information, or told to preserve it, must keep the
+  request confidential; breaking this is an offence.
+what_to_do:
+  - Have a way to freeze (not delete) one user's data and logs on request.
+  - Name a person who handles law enforcement requests, and keep a private log of them.
+  - Don't tell the user about a request unless the law allows it.
+lawyer_questions:
+  - How do we check a police request is genuine before acting on it?
+law:
+  name: Computer Crime Act, No. 24 of 2007
+  source_id: lk-cca-2007
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/4684.pdf
+  section: "s.19(1); s.24(2)"
+  quote: >-
+    require the person in control of such computer or computer system to ensure that
+    the information be preserved for such period not exceeding seven (07) days
+done_check: Check you can freeze one user's data and logs, and a named person handles requests.
+in_force: true
+starts_on: null
+last_checked: 2026-11-13
+review_status: draft
+reviewed_by: null
+notes: "s.24(2): every service provider asked for information, or given a preservation notice, must keep strict confidentiality."

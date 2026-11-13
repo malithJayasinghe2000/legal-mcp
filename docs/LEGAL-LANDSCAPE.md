@@ -41,7 +41,7 @@ marked; **verify each one** on the official source before use.
 | Personal data | Personal Data Protection Act No. 9 of 2022 (+ amendments) | Core parts brought into force by commencement order, Gazette 2498/16. Sources disagree on the date (July 2026 vs January 2027). Check the Gazette. No AI-specific clauses, but covers profiling of people in Sri Lanka. |
 | Online content | Online Safety Act No. 9 of 2024 | Platforms, user-generated content, takedowns |
 | Electronic contracts | Electronic Transactions Act No. 19 of 2006 (amended by No. 25 of 2017) | E-signatures, online contracts, AI agents. **Rules written 2026-11-12** (`rules/e-commerce/`) |
-| Cybercrime | Computer Crime Act No. 24 of 2007 | Possibly already in law-finder (`24-2007_E.pdf`) |
+| Cybercrime | Computer Crime Act No. 24 of 2007 | Scraping, leaked data, interception. **Rules written 2026-11-13** (`rules/cybercrime/`) |
 | Cyber security | Cyber Security Bill | **Pending**. Track as "coming law" |
 | Payments | Payment and Settlement Systems Act No. 28 of 2005; Central Bank directions on payment cards / mobile payments | Wallets, payment apps |
 | Payment fraud | Payment Devices Frauds Act No. 30 of 2006 | |

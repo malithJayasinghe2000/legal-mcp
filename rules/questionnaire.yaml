@@ -72,6 +72,14 @@ sections:
           - {fact: monitors_public_places, label: "We monitor public places or networks (CCTV, Wi-Fi tracking)"}
           - {fact: sends_marketing_messages, label: "We send promotional SMS, emails, calls or push messages"}
 
+      - id: data_sources
+        kind: choose
+        label: Which of these are true?
+        options:
+          - {fact: accesses_other_systems, label: "We log in to, scrape or pull data from other websites, apps or accounts"}
+          - {fact: uses_third_party_data, label: "We buy or use datasets from others (lead lists, scraped data)"}
+          - {fact: reads_communications, label: "We read, record or capture other people's messages, calls or network traffic"}
+
   - id: money
     title: Money
     intro: Payments in Sri Lanka are regulated by the Central Bank.

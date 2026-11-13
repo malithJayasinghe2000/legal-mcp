@@ -245,3 +245,19 @@
   facts: [automated_contracts]
   must_include: [lk-eta-automated-contracts]
   must_exclude: [lk-eta-excluded-documents]
+
+- name: "#X1 price comparison app: scrapes shop sites, buys a phone number list for SMS ads"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, data:contact, accesses_other_systems, uses_third_party_data,
+          sends_marketing_messages]
+  must_include: [lk-cca-unauthorised-access, lk-cca-unlawfully-obtained-data,
+                 lk-cca-access-credentials, lk-cca-preservation-notice, lk-pdpa-marketing-messages]
+  must_exclude: [lk-cca-interception]
+
+- name: "#X2 call recording app"
+  users_in: [LK]
+  company_in: LK
+  facts: [collects_personal_data, reads_communications]
+  must_include: [lk-cca-interception, lk-cca-preservation-notice]
+  must_exclude: [lk-cca-unauthorised-access]

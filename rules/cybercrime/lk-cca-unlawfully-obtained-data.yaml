@@ -1,0 +1,36 @@
+id: lk-cca-unlawfully-obtained-data
+jurisdiction: LK
+area: cybercrime
+title: Don't buy, use or share data that was taken from a system without permission
+severity: must
+triggers:
+  all:
+    - uses_third_party_data
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  Buying, keeping, selling, downloading or using information that you know, or have
+  reason to believe, was obtained from a computer without lawful authority is a crime
+  (fine Rs. 100,000 to 300,000 and/or 6 months to 3 years). This covers leaked
+  databases, hacked lead lists and data from unknown sellers.
+what_to_do:
+  - Buy or use data only from sources that can show where it came from and that they had the right to share it.
+  - Get this in writing in the contract with the data seller.
+  - Don't use leaked or "found" data dumps, even for testing or training.
+lawyer_questions:
+  - Is our check of where the data came from enough to show we had no "reason to believe" it was unlawful?
+law:
+  name: Computer Crime Act, No. 24 of 2007
+  source_id: lk-cca-2007
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/4684.pdf
+  section: "s.7"
+  quote: >-
+    knowing or having reason to believe that any other person has without lawful
+    authority obtained information from a computer or a storage medium of a computer,-
+    (a) buys, receives, retains, sells, or in any manner deals with
+done_check: Check every outside dataset has a written source and a right to share it.
+in_force: true
+starts_on: null
+last_checked: 2026-11-13
+review_status: draft
+reviewed_by: null
+notes: "Personal data from others also needs a legal ground under the PDPA."
