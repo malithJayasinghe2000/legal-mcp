@@ -1,0 +1,36 @@
+id: lk-ipa-commissioned-work
+jurisdiction: LK
+area: copyright
+title: The client owns what you build for them, unless your contract says otherwise
+severity: should
+triggers:
+  all:
+    - builds_for_client
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  For work made on commission, the person who commissioned it owns the economic rights
+  unless a contract says otherwise. Work made by employees in the course of their job
+  belongs to the employer. So without a contract, you may not be allowed to reuse code,
+  designs or components you built for a client.
+what_to_do:
+  - Write in the contract who owns the code and designs, and what you keep (your own libraries, templates, tools).
+  - If you reuse your own components, license them to the client instead of handing them over.
+  - Make sure freelancers you hire also sign over or license their work to you.
+lawyer_questions:
+  - Does our contract clearly keep our reusable code and give the client what they paid for?
+law:
+  name: Intellectual Property Act, No. 36 of 2003
+  source_id: lk-ipa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/3726.pdf
+  section: "s.14(4)"
+  quote: >-
+    If the work is created pursuant to a commission, the original owner of economic
+    rights shall be, unless otherwise provided in a contract, the person who
+    commissioned the work.
+done_check: Check the client contract says who owns the code and what you keep.
+in_force: true
+starts_on: null
+last_checked: 2026-11-13
+review_status: draft
+reviewed_by: null
+notes: "Same section: an employee's work in the course of employment belongs to the employer unless a contract says otherwise."

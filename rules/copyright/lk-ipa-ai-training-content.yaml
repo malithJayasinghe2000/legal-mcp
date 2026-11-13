@@ -1,0 +1,35 @@
+id: lk-ipa-ai-training-content
+jurisdiction: LK
+area: copyright
+title: Ask a lawyer before training AI on content made by others
+severity: lawyer
+triggers:
+  all:
+    - trains_ai_on_others_content
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  Training copies the works, and copying is the owner's exclusive right. Sri Lanka has no
+  special rule for AI training. It could be fair use, but commercial use, copying whole
+  works and harm to the owner's market all count against it. No Sri Lankan court has
+  decided this yet.
+what_to_do:
+  - Prefer licensed data, public-domain data, or your own data.
+  - Keep a record of every training data source and its licence.
+  - Respect opt-outs and website terms that forbid AI training.
+lawyer_questions:
+  - Is training our model on this content fair use under s.11, given that our use is commercial?
+law:
+  name: Intellectual Property Act, No. 36 of 2003
+  source_id: lk-ipa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/3726.pdf
+  section: "s.9(1)(a); s.11"
+  quote: >-
+    (a) the purpose and character of the use, including whether such use is of a
+    commercial nature or is for non-profit educational purposes ;
+done_check: Check every training data source is recorded with its licence or legal basis.
+in_force: true
+starts_on: null
+last_checked: 2026-11-13
+review_status: draft
+reviewed_by: null
+notes: "Personal data in training sets is covered separately (lk-ai-training-on-user-data, PDPA)."

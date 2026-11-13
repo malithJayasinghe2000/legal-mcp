@@ -58,8 +58,12 @@ e_commerce:
 
 cybercrime:
   accesses_other_systems: Does the product log in to, scrape or pull data from other websites, apps or accounts (scraping, users' passwords or tokens for other services)?
-  uses_third_party_data: Do you buy or use datasets from others (lead lists, scraped data, data dumps)?
+  uses_third_party_data: Do you buy or receive datasets that someone else collected (lead lists, contact lists, data dumps, data scraped by others)? Not content you download yourself.
   reads_communications: Does the product read, record or capture other people's messages, calls or network traffic (SMS reading, call recording, employee or parental monitoring)?
+
+copyright:
+  uses_others_content: Does the product use or show content made by others (images, music, videos, articles, fonts, code libraries)?
+  trains_ai_on_others_content: Do you train or fine-tune AI on content made by others (scraped text, images, books, music, code)?
 
 regulated_professions:
   profession:medicine: Does the product involve doctors or dentists (listing, booking, consulting)?

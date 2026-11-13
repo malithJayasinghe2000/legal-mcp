@@ -1,0 +1,35 @@
+id: lk-ipa-others-content
+jurisdiction: LK
+area: copyright
+title: Use other people's images, music, text, fonts or code only with permission
+severity: must
+triggers:
+  all:
+    - uses_others_content
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  Copyright protects books, articles, computer programs, music, photos, videos, drawings
+  and databases from the moment they are made, with no registration. Only the owner can
+  copy, adapt, distribute or show them to the public. Using them without a licence can
+  lead to a court order to stop, and damages.
+what_to_do:
+  - Use content you made, content you licensed, or content with a clear free licence (and follow its terms, such as credit).
+  - Keep a list of every outside asset and its licence (images, fonts, music, open-source code).
+  - Check open-source licences fit how you ship (for example, GPL code in a closed app).
+lawyer_questions:
+  - Is our use covered by fair use (s.11), or do we need a licence?
+law:
+  name: Intellectual Property Act, No. 36 of 2003
+  source_id: lk-ipa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/3726.pdf
+  section: "s.6, s.9(1); s.22 (remedies)"
+  quote: >-
+    the owner of copyright of a work shall have the exclusive right to carry out or to
+    authorize the following acts in relation to the work - (a) reproduction of the work ;
+done_check: Check there is a list of outside assets with a licence for each.
+in_force: true
+starts_on: null
+last_checked: 2026-11-13
+review_status: draft
+reviewed_by: null
+notes: "Fair use (s.11) depends on purpose, commercial use, amount used and effect on the market. Copyright lasts the author's life plus 70 years (s.13)."

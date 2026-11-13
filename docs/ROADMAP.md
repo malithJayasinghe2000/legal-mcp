@@ -91,7 +91,15 @@ Progress:
   (s.8), disclosing access credentials (s.10), police preservation notices and confidentiality
   (s.19, s.24(2)). New facts `accesses_other_systems`, `uses_third_party_data`,
   `reads_communications`. No Cyber Security Act found on Parliament's list.
-- **Total: 52 rules in 8 areas.**
+- [x] **Copyright: 5 rules** in `rules/copyright/` (2026-11-13), from the Intellectual Property Act
+  No. 36 of 2003 (amendments 2018 and 2022 are about geographical indications; 2021 adds s.12A,
+  accessible copies for blind readers; none change these rules): others' content needs permission
+  (s.9, s.22), licences in writing (s.16(2)), commissioned work belongs to the client (s.14(4)),
+  AI training on others' content ("check with a lawyer", s.9, s.11), databases vs plain data
+  (s.7(1)(b), s.8). New facts `uses_others_content`, `trains_ai_on_others_content`.
+  Real session showed `uses_third_party_data` was read too widely (own Pinterest downloads);
+  its wording now says "collected by someone else".
+- **Total: 57 rules in 9 areas.**
 
 ### Step 3. Fact questions (first draft)
 Machine-readable list: [rules/facts.yaml](../rules/facts.yaml) (grows as areas are added).
@@ -191,7 +199,7 @@ Original plan:
   privacy notice). Later: bring the site check back as "describe your idea" (our LLM) and/or
   questions that depend on the product type.
 - **Next for the MCP server (agreed 2026-11-12):** (1) more general areas: consumer rights (done
-  2026-11-12), e-commerce and online contracts (done 2026-11-12), cybercrime (done 2026-11-13), copyright; (2) Malith reviews the
+  2026-11-12), e-commerce and online contracts (done 2026-11-12), cybercrime (done 2026-11-13), copyright (done 2026-11-13); (2) Malith reviews the
   36 draft rules; (3) remote hosting with a usage limit, so it works by web address in
   Claude, ChatGPT, Cursor, Codex; (4) setup guide per tool; (5) lawyer review before launch.
 - Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.

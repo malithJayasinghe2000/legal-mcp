@@ -77,7 +77,7 @@ sections:
         label: Which of these are true?
         options:
           - {fact: accesses_other_systems, label: "We log in to, scrape or pull data from other websites, apps or accounts"}
-          - {fact: uses_third_party_data, label: "We buy or use datasets from others (lead lists, scraped data)"}
+          - {fact: uses_third_party_data, label: "We buy or receive datasets someone else collected (lead lists, contact lists, data dumps)"}
           - {fact: reads_communications, label: "We read, record or capture other people's messages, calls or network traffic"}
 
   - id: money
@@ -114,10 +114,14 @@ sections:
           - {fact: runs_bots, label: "Bots or AI post or send messages to the public automatically"}
           - {fact: automated_contracts, label: "Software or AI accepts orders, quotes prices or agrees to deals on its own"}
           - {fact: e_signs_documents, label: "Users sign agreements or documents electronically"}
+          - {fact: trains_ai_on_others_content, label: "We train or fine-tune AI on content made by others (text, images, music, code)"}
 
   - id: content
     title: Content
     questions:
+      - id: uses_others_content
+        kind: yesno
+        label: Does the product use or show content made by others (images, music, videos, articles, fonts, code)?
       - id: hosts_user_content
         kind: yesno
         label: Can users post things that others see (posts, comments, reviews, group chats, uploads)?

@@ -25,12 +25,15 @@ covered:
   cybercrime:
     label: Cybercrime (Computer Crime Act)
     gaps: No Cyber Security Act on Parliament's list (checked 2026-11-13); Sri Lanka CERT guidance and sector security rules not covered.
+  copyright:
+    label: Copyright (Intellectual Property Act)
+    gaps: Trademarks, patents, designs and performers' rights not covered.
   regulated-professions:
     label: Regulated professions
     gaps: Doctors and lawyers only. BASL note on online legal advice known only from the press.
 
 not_covered:
-  - Copyright and intellectual property
+  - Trademarks and patents
   - Cyber security (no Act found yet)
   - Telecommunications
   - Employment

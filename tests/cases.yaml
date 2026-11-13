@@ -68,7 +68,7 @@
                  lk-eta-when-order-binds]
   must_exclude: [lk-payments-wallet-cards-licence, lk-pdpa-special-categories, lk-pdpa-children,
                  lk-eta-excluded-documents]
-  not_covered_includes: [Copyright and intellectual property]
+  not_covered_includes: [Trademarks and patents]
 
 - name: "#7 mobile wallet: top-up balance and send money to friends, NIC for sign-up"
   users_in: [LK]
@@ -261,3 +261,17 @@
   facts: [collects_personal_data, reads_communications]
   must_include: [lk-cca-interception, lk-cca-preservation-notice]
   must_exclude: [lk-cca-unauthorised-access]
+
+- name: "#IP1 software agency builds an app for a client using stock photos"
+  users_in: [LK]
+  company_in: LK
+  facts: [builds_for_client, uses_others_content]
+  must_include: [lk-ipa-commissioned-work, lk-ipa-others-content, lk-ipa-licence-in-writing]
+  must_exclude: [lk-ipa-ai-training-content]
+
+- name: "#IP2 AI image tool trained on scraped art"
+  users_in: [LK]
+  company_in: LK
+  facts: [trains_ai_on_others_content, accesses_other_systems]
+  must_include: [lk-ipa-ai-training-content, lk-ipa-databases-and-data, lk-cca-unauthorised-access]
+  must_exclude: [lk-ipa-commissioned-work]

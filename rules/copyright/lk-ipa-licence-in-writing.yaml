@@ -1,0 +1,36 @@
+id: lk-ipa-licence-in-writing
+jurisdiction: LK
+area: copyright
+title: Get copyright licences and transfers in writing, signed by both sides
+severity: should
+triggers:
+  all:
+    - [users_in:LK, company_in:LK, processing_in:LK]
+  any: [uses_others_content, hosts_user_content, builds_for_client]
+why: >
+  Any licence or transfer of copyright must be in writing and signed by both sides, and it
+  covers only the rights it names. This affects content you license from others, the
+  right to show what users upload, and who owns code built for a client.
+what_to_do:
+  - Use written, signed licences for content you buy or license.
+  - In your terms, get a clear licence from users to store, show and share what they upload.
+  - Name every right you need (copy, adapt, show online, sublicense); anything not named is not included.
+lawyer_questions:
+  - Does a click-to-accept terms page count as "in writing signed" under s.16(2), together with the Electronic Transactions Act?
+law:
+  name: Intellectual Property Act, No. 36 of 2003
+  source_id: lk-ipa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/3726.pdf
+  section: "s.16(2), (3)"
+  quote: >-
+    Any assignment or transfer of an economic right, and any licence to do such an act
+    subject to authorization by the owner of the copyright, shall be in writing signed
+    by the assignor and the assignee, transferor and the transferee or by the licensor
+    and the licensee, as the case may be.
+done_check: Check licences are signed and name every right you use, and the user terms include a content licence.
+in_force: true
+starts_on: null
+last_checked: 2026-11-13
+review_status: draft
+reviewed_by: null
+notes: ""

@@ -1,0 +1,36 @@
+id: lk-ipa-databases-and-data
+jurisdiction: LK
+area: copyright
+title: Facts and plain data are free, but copying an original database or its content is not
+severity: should
+triggers:
+  all:
+    - accesses_other_systems
+    - [users_in:LK, company_in:LK, processing_in:LK]
+why: >
+  Copyright does not protect ideas or mere data (like prices or opening hours). But a
+  database is protected when the choice or arrangement of its contents is original, and
+  texts, photos and reviews inside it are protected works. Copying them from another
+  site can infringe, even when collecting the facts is fine.
+what_to_do:
+  - Take only the facts you need (prices, names, numbers), not descriptions, photos or reviews.
+  - Don't copy the structure of another database as a whole.
+  - Link to the source instead of copying its content.
+lawyer_questions:
+  - Is the source we collect from an original database under s.7(1)(b)?
+law:
+  name: Intellectual Property Act, No. 36 of 2003
+  source_id: lk-ipa-2003
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/3726.pdf
+  section: "s.7(1)(b); s.8(a)"
+  quote: >-
+    collections of works and collections of mere data (data bases), whether in machine
+    readable or other form, provided that such collections are original by reason of the
+    selection, co-ordination or arrangement of their contents.
+done_check: Check only facts are collected, not texts, photos or reviews.
+in_force: true
+starts_on: null
+last_checked: 2026-11-13
+review_status: draft
+reviewed_by: null
+notes: "s.8(a): no protection for any idea, procedure, system, method of operation, concept, principle, discovery or mere data."

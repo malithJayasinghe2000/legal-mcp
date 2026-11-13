@@ -211,3 +211,33 @@
   title: Computer Crime Act, No. 24 of 2007
   url: https://www.parliament.lk/uploads/acts/gbills/english/4684.pdf
   verified: "2026-11-13: certified 09th July, 2007"
+
+# ---------- 9. Copyright ----------
+- id: lk-ipa-2003
+  parliament_name: Intellectual Property
+  area: copyright
+  kind: act
+  title: Intellectual Property Act, No. 36 of 2003
+  url: https://www.parliament.lk/uploads/acts/gbills/english/3726.pdf
+  verified: "2026-11-13: Act No. 36 of 2003 (text PDF)"
+
+- id: lk-ipa-amendment-2018
+  area: copyright
+  kind: act
+  title: Intellectual Property (Amendment) Act, No. 7 of 2018
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6077.pdf
+  verified: "2026-11-13: certified 28th of March, 2018; adds s.161(4A), geographical indications only"
+
+- id: lk-ipa-amendment-2021
+  area: copyright
+  kind: act
+  title: Intellectual Property (Amendment) Act, No. 8 of 2021
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6208.pdf
+  verified: "2026-11-13: adds s.12A (accessible format copies) and s.5 definitions"
+
+- id: lk-ipa-amendment-2022
+  area: copyright
+  kind: act
+  title: Intellectual Property (Amendment) Act, No. 8 of 2022
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6251.pdf
+  verified: "2026-11-13: geographical indications (s.4, 101, 160-172, 186A)"

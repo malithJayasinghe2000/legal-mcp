@@ -79,6 +79,38 @@
     "bytes": 22420,
     "file": "sources/raw/lk-intermeddlers-ordinance.pdf"
   },
+  "lk-ipa-2003": {
+    "title": "Intellectual Property Act, No. 36 of 2003",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/3726.pdf",
+    "downloaded": "2026-11-13",
+    "sha256": "7471b7c40c7eaf6a47e7db9f87d50f2ce9e95fde7dfd6cca6c0affa9730b8b41",
+    "bytes": 429774,
+    "file": "sources/raw/lk-ipa-2003.pdf"
+  },
+  "lk-ipa-amendment-2018": {
+    "title": "Intellectual Property (Amendment) Act, No. 7 of 2018",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6077.pdf",
+    "downloaded": "2026-11-13",
+    "sha256": "ed156b4e6f0f94341f928eadf5d805563b1cd809ec7e285deaafd58468d7358f",
+    "bytes": 83131,
+    "file": "sources/raw/lk-ipa-amendment-2018.pdf"
+  },
+  "lk-ipa-amendment-2021": {
+    "title": "Intellectual Property (Amendment) Act, No. 8 of 2021",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6208.pdf",
+    "downloaded": "2026-11-13",
+    "sha256": "24093acf88d3954cb2b5f150a0cb2b00ff3ccffc8021a4c33ee787585e317d7e",
+    "bytes": 104416,
+    "file": "sources/raw/lk-ipa-amendment-2021.pdf"
+  },
+  "lk-ipa-amendment-2022": {
+    "title": "Intellectual Property (Amendment) Act, No. 8 of 2022",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6251.pdf",
+    "downloaded": "2026-11-13",
+    "sha256": "fe8ecd059440fc62404da3373976964c0b5220cad14f02814412841ed19fd3ec",
+    "bytes": 67002,
+    "file": "sources/raw/lk-ipa-amendment-2022.pdf"
+  },
   "lk-medical-amendment-2024": {
     "title": "Medical (Amendment) Act, No. 46 of 2024",
     "url_used": "https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783675368.pdf",

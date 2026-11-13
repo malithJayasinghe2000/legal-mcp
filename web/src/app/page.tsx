@@ -48,6 +48,7 @@ const AREAS = [
   ["Consumer rights", "Consumer Affairs Authority Act No. 9 of 2003"],
   ["Online contracts", "Electronic Transactions Act No. 19 of 2006, as amended in 2017"],
   ["Cybercrime", "Computer Crime Act No. 24 of 2007"],
+  ["Copyright", "Intellectual Property Act No. 36 of 2003"],
   ["Professions", "Rules that limit platforms for doctors and lawyers"],
 ];
 
