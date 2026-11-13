@@ -98,14 +98,16 @@ mcp = MCPServer(
 )
 def check_legal_risks(
     users_in: Annotated[
-        list[str], Field(description="ISO country codes where users are, e.g. ['LK']")
+        list[str] | str, Field(description="ISO country codes where users are, e.g. ['LK']")
     ],
     facts: Annotated[list[str], Field(description="Facts that are true, from get_fact_questions")],
     company_in: Annotated[
-        str | None, Field(description="ISO country code where the company (or maker) is")
+        str | list[str] | None,
+        Field(description="ISO country code where the company (or maker) is, e.g. 'LK'"),
     ] = None,
     processing_in: Annotated[
-        list[str] | None, Field(description="ISO country codes where data is stored or processed")
+        list[str] | str | None,
+        Field(description="ISO country codes where data is stored or processed"),
     ] = None,
     done: Annotated[
         list[str] | None,

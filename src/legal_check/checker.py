@@ -5,6 +5,7 @@ Deterministic: same facts in, same warnings out. No AI, nothing stored.
 
 from __future__ import annotations
 
+import json
 from typing import Any
 
 from .library import Library, trigger_facts
@@ -30,17 +31,37 @@ class FactError(ValueError):
     """The caller sent facts (or done rule ids) the library doesn't know."""
 
 
+def country_codes(value: str | list[str] | None) -> list[str]:
+    """Country codes from what AI clients really send: "LK", ["LK"], or JSON text
+    such as '["LK"]' or '"LK"'. Anything still not a 2-letter code stays as it is,
+    so the check reports it as an unknown fact (an error), never ignores it."""
+    if value is None:
+        return []
+    items = value if isinstance(value, list) else [value]
+    out: list[str] = []
+    for item in items:
+        text = str(item).strip()
+        if text[:1] in '["':
+            try:
+                parsed = json.loads(text)
+            except ValueError:
+                parsed = text.strip('"[] ')
+            out += country_codes(parsed) if parsed != text else [text]
+        elif text:
+            out.append(text.upper())
+    return out
+
+
 def build_facts(
-    users_in: list[str],
+    users_in: str | list[str],
     facts: list[str],
-    company_in: str | None = None,
-    processing_in: list[str] | None = None,
+    company_in: str | list[str] | None = None,
+    processing_in: str | list[str] | None = None,
 ) -> set[str]:
     out = {f.strip() for f in facts if f.strip()}
-    out |= {f"users_in:{c.strip().upper()}" for c in users_in}
-    if company_in:
-        out.add(f"company_in:{company_in.strip().upper()}")
-    out |= {f"processing_in:{c.strip().upper()}" for c in processing_in or []}
+    out |= {f"users_in:{c}" for c in country_codes(users_in)}
+    out |= {f"company_in:{c}" for c in country_codes(company_in)}
+    out |= {f"processing_in:{c}" for c in country_codes(processing_in)}
     return out
 
 

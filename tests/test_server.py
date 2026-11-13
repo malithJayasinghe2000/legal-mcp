@@ -151,3 +151,19 @@ def test_logs_never_contain_user_input(caplog):
     logged = "\n".join(r.getMessage() for r in caplog.records)
     for word in [*secret, "MV", "NP", "secret_unknown_fact"]:
         assert word not in logged, f"{word!r} leaked into logs"
+
+
+def test_country_codes_accept_what_ai_clients_send():
+    # Seen in a real VS Code session: company_in arrived as '["LK"]', then '"LK"'.
+    for value in ["LK", "lk", ["LK"], '["LK"]', '"LK"', ' "lk" ']:
+        assert build_facts(["LK"], [], value) == {"users_in:LK", "company_in:LK"}, value
+    assert build_facts('["LK", "IN"]', [], None, '["SG"]') == {
+        "users_in:LK",
+        "users_in:IN",
+        "processing_in:SG",
+    }
+
+
+def test_bad_country_is_still_an_error():
+    with pytest.raises(FactError):
+        check(LIB, build_facts(["LK"], [], "Sri Lanka"))
