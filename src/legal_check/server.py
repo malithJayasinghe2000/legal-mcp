@@ -32,10 +32,14 @@ INSTRUCTIONS = """\
 Rulewise spots legal issues for software products, starting with Sri Lankan law.
 It gives legal information, not legal advice.
 
-When the user plans or builds a feature for a product with users in Sri Lanka, or
-made by a Sri Lankan company or person:
-1. If you don't know yet, ask where the users are, where the company is, and what
-   personal data is collected.
+When the user plans or builds a product or feature (an app, website or online service):
+1. Where are the users and the company? Never guess the country.
+   - If the user already said (for example "for Sri Lanka"), go on.
+   - If not, ask one short question before checking, for example: "Rulewise checks
+     Sri Lankan law. Will your users or your company be in Sri Lanka?"
+   - If neither is in Sri Lanka, say Rulewise does not cover that country yet (no
+     check, and never "no issues").
+   If you don't know yet, also ask what personal data is collected.
 2. Call get_fact_questions once to learn the facts you may send.
 3. Call check_legal_risks with the facts that are true for the feature. Send only
    facts and country codes, never the user's idea text or code.
@@ -90,7 +94,9 @@ mcp = MCPServer(
     description=(
         "Check a planned or new feature for legal risks. Call this whenever the user plans "
         "or builds a feature for a product used in Sri Lanka, or made by a Sri Lankan "
-        "company or person, even if they didn't ask about law. Send country codes and "
+        "company or person, even if they didn't ask about law. If the user hasn't said "
+        "where the users or company are, ask them first; never guess the country. "
+        "Send country codes and "
         "facts from get_fact_questions only (no idea text, no code). Returns warnings "
         "with severity (Must / Should / Check with a lawyer), the law and section, what "
         "to do, and the areas NOT covered."
@@ -98,7 +104,8 @@ mcp = MCPServer(
 )
 def check_legal_risks(
     users_in: Annotated[
-        list[str] | str, Field(description="ISO country codes where users are, e.g. ['LK']")
+        list[str] | str,
+        Field(description="ISO country codes where users are, as the user said, e.g. ['LK']"),
     ],
     facts: Annotated[list[str], Field(description="Facts that are true, from get_fact_questions")],
     company_in: Annotated[
