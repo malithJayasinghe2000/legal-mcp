@@ -46,7 +46,10 @@ const AREAS = [
   ["AI features", "Training on user data, bots, AI giving medical advice"],
   ["Online content", "Online Safety Act No. 9 of 2024"],
   ["Consumer rights", "Consumer Affairs Authority Act No. 9 of 2003"],
-  ["Online contracts", "Electronic Transactions Act No. 19 of 2006, as amended in 2017"],
+  [
+    "Online contracts",
+    "Electronic Transactions Act No. 19 of 2006, as amended in 2017",
+  ],
   ["Cybercrime", "Computer Crime Act No. 24 of 2007"],
   ["Copyright", "Intellectual Property Act No. 36 of 2003"],
   ["Professions", "Rules that limit platforms for doctors and lawyers"],
@@ -240,12 +243,19 @@ export default function Home() {
               and explains the result.
             </p>
             <p className="mt-4 max-w-md text-ink-muted">
-              You need{" "}
-              <a href="https://docs.astral.sh/uv/" className="text-orange-deep underline underline-offset-2">
+              First install{" "}
+              <a
+                href="https://docs.astral.sh/uv/getting-started/installation/"
+                className="text-orange-deep underline underline-offset-2"
+              >
                 uv
-              </a>{" "}
-              and a copy of the Rulewise code. Change the path to where you
-              saved it.
+              </a>
+              , a small tool that runs Rulewise. Then add Rulewise to your AI
+              tool. The first start takes about 30 seconds while it downloads.
+            </p>
+            <p className="mt-4 max-w-md text-ink-muted">
+              Then describe what you&apos;re building and where your users are.
+              That&apos;s all.
             </p>
           </div>
           <SetupTabs />

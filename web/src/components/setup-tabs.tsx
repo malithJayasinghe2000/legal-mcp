@@ -1,15 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import { Tabs } from "radix-ui";
 
-const DIR = "/path/to/rulewise";
+// Installs straight from GitHub; the rules ship inside the package (tested 2026-11-13).
+const SOURCE = "git+https://github.com/malithJayasinghe2000/legal-mcp";
+const ARGS = `["--from", "${SOURCE}", "rulewise"]`;
 
 const TOOLS = [
   {
     id: "claude-code",
     name: "Claude Code",
     where: "Run in your terminal:",
-    code: `claude mcp add rulewise -- uv run --directory ${DIR} rulewise`,
+    code: `claude mcp add rulewise -- uvx --from ${SOURCE} rulewise`,
   },
   {
     id: "cursor",
@@ -18,8 +21,8 @@ const TOOLS = [
     code: `{
   "mcpServers": {
     "rulewise": {
-      "command": "uv",
-      "args": ["run", "--directory", "${DIR}", "rulewise"]
+      "command": "uvx",
+      "args": ${ARGS}
     }
   }
 }`,
@@ -29,8 +32,8 @@ const TOOLS = [
     name: "Codex",
     where: "Add to ~/.codex/config.toml:",
     code: `[mcp_servers.rulewise]
-command = "uv"
-args = ["run", "--directory", "${DIR}", "rulewise"]`,
+command = "uvx"
+args = ${ARGS}`,
   },
   {
     id: "vscode",
@@ -40,8 +43,8 @@ args = ["run", "--directory", "${DIR}", "rulewise"]`,
   "servers": {
     "rulewise": {
       "type": "stdio",
-      "command": "uv",
-      "args": ["run", "--directory", "${DIR}", "rulewise"]
+      "command": "uvx",
+      "args": ${ARGS}
     }
   }
 }`,
@@ -68,16 +71,48 @@ export function SetupTabs() {
           value={t.id}
           className="mt-4 focus-visible:outline-none"
         >
-          <p className="text-sm text-ink-muted">{t.where}</p>
+          <div className="flex items-end justify-between gap-3">
+            <p className="text-sm text-ink-muted">{t.where}</p>
+            <CopyButton text={t.code} label={`Copy ${t.name} setup`} />
+          </div>
           <pre
             tabIndex={0}
             aria-label={`${t.name} setup`}
-            className="mt-2 overflow-x-auto rounded-lg bg-ink p-5 text-sm leading-relaxed text-paper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
+            className="mt-2 rounded-lg bg-ink p-5 text-sm leading-relaxed whitespace-pre-wrap text-paper [overflow-wrap:anywhere] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
           >
             <code>{t.code}</code>
           </pre>
         </Tabs.Content>
       ))}
     </Tabs.Root>
+  );
+}
+
+function CopyButton({ text, label }: { text: string; label: string }) {
+  const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(text);
+      setStatus("copied");
+    } catch {
+      setStatus("failed"); // e.g. clipboard blocked: say so, the text is still selectable
+    }
+    setTimeout(() => setStatus("idle"), 2000);
+  }
+  return (
+    <button
+      type="button"
+      onClick={copy}
+      aria-label={label}
+      className="h-8 shrink-0 rounded-md border border-rule bg-surface px-3 text-sm text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
+    >
+      <span aria-live="polite">
+        {status === "copied"
+          ? "Copied"
+          : status === "failed"
+            ? "Select and copy"
+            : "Copy"}
+      </span>
+    </button>
   );
 }
