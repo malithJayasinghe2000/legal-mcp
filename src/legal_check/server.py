@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
 from typing import Annotated, Any
 
 from mcp.server.mcpserver import MCPServer
@@ -178,18 +179,39 @@ def get_rule(
     }
 
 
+def public_app(per_minute: int):
+    """The hosted server: stateless HTTP (works across restarts and copies) behind a
+    per-client request limit. Used by `rulewise --public`."""
+    from .ratelimit import RateLimit
+
+    app = mcp.streamable_http_app(stateless_http=True, json_response=True, host="0.0.0.0")
+    return RateLimit(app, per_minute=per_minute)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="rulewise", description=__doc__.split("\n")[0])
     parser.add_argument("--transport", choices=["stdio", "streamable-http"], default="stdio")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8000)
+    parser.add_argument(
+        "--public",
+        action="store_true",
+        help="hosted mode: HTTP on 0.0.0.0:$PORT, stateless, rate-limited, no access log",
+    )
     args = parser.parse_args()
     # stderr only: stdout is the MCP channel in stdio mode.
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     load()
     from . import web_api  # noqa: F401  registers /api/* routes for HTTP mode
 
-    if args.transport == "stdio":
+    if args.public:
+        import uvicorn
+
+        per_minute = int(os.environ.get("RULEWISE_RATE_LIMIT", "60"))
+        port = int(os.environ.get("PORT", args.port))
+        # access_log=False: access logs would store client IP addresses (brief D6).
+        uvicorn.run(public_app(per_minute), host="0.0.0.0", port=port, access_log=False)
+    elif args.transport == "stdio":
         mcp.run("stdio")
     else:
         mcp.run("streamable-http", host=args.host, port=args.port)

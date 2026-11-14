@@ -37,6 +37,10 @@ uv run --group sources python scripts/fetch_sources.py   # download the law sour
 claude mcp add rulewise -- uv run --directory /path/to/legal-check rulewise   # use your local copy
 ```
 
+## Host it
+
+See [docs/DEPLOY-AZURE.md](docs/DEPLOY-AZURE.md) (Docker, Azure Container Apps).
+
 ## Website
 
 See [web/README.md](web/README.md). For now it is a home page with setup steps; the guided check is hidden (brief D21).
