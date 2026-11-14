@@ -167,3 +167,20 @@ def test_country_codes_accept_what_ai_clients_send():
 def test_bad_country_is_still_an_error():
     with pytest.raises(FactError):
         check(LIB, build_facts(["LK"], [], "Sri Lanka"))
+
+
+def test_facts_accept_what_ai_clients_send():
+    # Seen in a real VS Code session: facts arrived as a JSON yes/no table.
+    want = {"users_in:LK", "collects_personal_data", "data:contact"}
+    for value in [
+        ["collects_personal_data", "data:contact"],
+        '["collects_personal_data", "data:contact"]',
+        {"collects_personal_data": True, "data:contact": True, "data:health": False},
+        '{"collects_personal_data": true, "data:contact": true, "data:health": false}',
+    ]:
+        assert build_facts(["LK"], value) == want, value
+
+
+def test_unknown_fact_in_a_table_is_still_an_error():
+    with pytest.raises(FactError):
+        check(LIB, build_facts(["LK"], {"collects_nic_number": True}))

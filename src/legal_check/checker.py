@@ -52,13 +52,30 @@ def country_codes(value: str | list[str] | None) -> list[str]:
     return out
 
 
+def fact_list(value: str | list[str] | dict[str, bool] | None) -> list[str]:
+    """Facts from what AI clients really send: a list, JSON text of a list, or a
+    yes/no table such as {"collects_personal_data": true}. Only true facts count."""
+    if value is None:
+        return []
+    if isinstance(value, str):
+        try:
+            value = json.loads(value)
+        except ValueError:
+            return [value]
+    if isinstance(value, dict):
+        return [str(k) for k, v in value.items() if v is True]
+    if isinstance(value, list):
+        return [str(f) for f in value]
+    return [str(value)]
+
+
 def build_facts(
     users_in: str | list[str],
-    facts: list[str],
+    facts: str | list[str] | dict[str, bool],
     company_in: str | list[str] | None = None,
     processing_in: str | list[str] | None = None,
 ) -> set[str]:
-    out = {f.strip() for f in facts if f.strip()}
+    out = {f.strip() for f in fact_list(facts) if f.strip()}
     out |= {f"users_in:{c}" for c in country_codes(users_in)}
     out |= {f"company_in:{c}" for c in country_codes(company_in)}
     out |= {f"processing_in:{c}" for c in country_codes(processing_in)}

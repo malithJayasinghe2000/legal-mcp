@@ -130,7 +130,8 @@ handled). They move to a "done" list with a `done_check` reminder; never verifie
 this in its answer; `done` is used on later checks once rule ids are known.)
 **New-user install tested (2026-11-13):** `uvx --from git+https://github.com/malithJayasinghe2000/legal-mcp rulewise`
 (empty cache, empty folder) works; rules ship inside the package. A real VS Code session sent
-`company_in` as `'["LK"]'`, so country inputs now accept a code, a list or JSON text. The AI
+`company_in` as `'["LK"]'` and facts as a yes/no table (`{"fact": true}`), so inputs now accept a list,
+JSON text, or (for facts) a table where only `true` counts. Unknown facts are still errors. The AI
 now asks for the country when it isn't given (D22).
 Not done yet: HTTP hosting (Step 6 / launch), API keys.
 

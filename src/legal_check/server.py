@@ -19,7 +19,7 @@ from mcp.types import ToolAnnotations
 from pydantic import Field
 
 from . import __version__
-from .checker import FactError, build_facts, check
+from .checker import FactError, build_facts, check, fact_list
 from .library import Library, LibraryError, load_library
 
 log = logging.getLogger("legal_check")
@@ -107,7 +107,10 @@ def check_legal_risks(
         list[str] | str,
         Field(description="ISO country codes where users are, as the user said, e.g. ['LK']"),
     ],
-    facts: Annotated[list[str], Field(description="Facts that are true, from get_fact_questions")],
+    facts: Annotated[
+        list[str] | dict[str, bool] | str,
+        Field(description="List of the facts that are true, from get_fact_questions"),
+    ],
     company_in: Annotated[
         str | list[str] | None,
         Field(description="ISO country code where the company (or maker) is, e.g. 'LK'"),
@@ -117,7 +120,7 @@ def check_legal_risks(
         Field(description="ISO country codes where data is stored or processed"),
     ] = None,
     done: Annotated[
-        list[str] | None,
+        list[str] | str | None,
         Field(
             description="rule_id values of warnings the user says are already handled. "
             "Only when the user says so; they are listed as 'done', not verified."
@@ -127,7 +130,7 @@ def check_legal_risks(
     library = _get_library()
     all_facts = build_facts(users_in, facts, company_in, processing_in)
     try:
-        result = check(library, all_facts, set(done or []))
+        result = check(library, all_facts, set(fact_list(done)))
     except FactError as exc:
         log.info("check rejected: %d unknown fact(s)", str(exc).count("'") // 2)
         raise ToolError(str(exc)) from exc
