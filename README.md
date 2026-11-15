@@ -9,18 +9,20 @@ It gives legal information, not legal advice.
 
 ## Use it
 
-1. Install [uv](https://docs.astral.sh/uv/getting-started/installation/) (once):
-   - Mac / Linux: `curl -LsSf https://astral.sh/uv/install.sh | sh`
-   - Windows: `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`
-2. Add Rulewise to your AI tool. It installs straight from GitHub; no need to download the code.
-   - **Claude Code:**
-     ```sh
-     claude mcp add rulewise -- uvx --from git+https://github.com/malithJayasinghe2000/legal-mcp rulewise
-     ```
-   - **Cursor** (`~/.cursor/mcp.json`), **VS Code** (`.vscode/mcp.json`, key `servers`),
-     **Codex** (`~/.codex/config.toml`): command `uvx`, args
-     `["--from", "git+https://github.com/malithJayasinghe2000/legal-mcp", "rulewise"]`.
-3. Restart the tool. The first start takes about 30 seconds while it downloads.
+Nothing to install. Add the hosted server to your AI tool:
+
+- **Claude Code:**
+  ```sh
+  claude mcp add --transport http rulewise https://rulewise.victoriousdune-a7b660c5.centralindia.azurecontainerapps.io/mcp
+  ```
+- **Cursor** (`~/.cursor/mcp.json`, `{"mcpServers": {"rulewise": {"url": "<address>"}}}`),
+  **VS Code** (`.vscode/mcp.json`, `{"servers": {"rulewise": {"type": "http", "url": "<address>"}}}`),
+  **Codex** (`~/.codex/config.toml`, `[mcp_servers.rulewise]` with `url = "<address>"`).
+
+Prefer to run it on your own computer? Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:
+```sh
+claude mcp add rulewise -- uvx --from git+https://github.com/malithJayasinghe2000/legal-mcp rulewise
+```
 
 Then just describe what you're building and where your users are. Claude calls the `check_legal_risks` tool
 when you plan a feature for a product used in Sri Lanka. The server receives only

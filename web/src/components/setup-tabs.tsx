@@ -3,16 +3,16 @@
 import { useState } from "react";
 import { Tabs } from "radix-ui";
 
-// Installs straight from GitHub; the rules ship inside the package (tested 2026-11-13).
-const SOURCE = "git+https://github.com/malithJayasinghe2000/legal-mcp";
-const ARGS = `["--from", "${SOURCE}", "rulewise"]`;
+// The hosted server (Azure Container Apps, brief D23). Nothing to install.
+const URL =
+  "https://rulewise.victoriousdune-a7b660c5.centralindia.azurecontainerapps.io/mcp";
 
 const TOOLS = [
   {
     id: "claude-code",
     name: "Claude Code",
     where: "Run in your terminal:",
-    code: `claude mcp add rulewise -- uvx --from ${SOURCE} rulewise`,
+    code: `claude mcp add --transport http rulewise ${URL}`,
   },
   {
     id: "cursor",
@@ -21,8 +21,7 @@ const TOOLS = [
     code: `{
   "mcpServers": {
     "rulewise": {
-      "command": "uvx",
-      "args": ${ARGS}
+      "url": "${URL}"
     }
   }
 }`,
@@ -32,8 +31,7 @@ const TOOLS = [
     name: "Codex",
     where: "Add to ~/.codex/config.toml:",
     code: `[mcp_servers.rulewise]
-command = "uvx"
-args = ${ARGS}`,
+url = "${URL}"`,
   },
   {
     id: "vscode",
@@ -42,9 +40,8 @@ args = ${ARGS}`,
     code: `{
   "servers": {
     "rulewise": {
-      "type": "stdio",
-      "command": "uvx",
-      "args": ${ARGS}
+      "type": "http",
+      "url": "${URL}"
     }
   }
 }`,

@@ -31,16 +31,18 @@ test("home page", async ({ page }) => {
 test("setup shows each AI tool", async ({ page }) => {
   await page.goto("/");
   const tabs = page.getByRole("tablist", { name: "AI tool" });
-  await expect(page.getByLabel("Claude Code setup", { exact: true })).toContainText(
-    "uvx --from git+https://github.com/malithJayasinghe2000/legal-mcp rulewise",
-  );
+  await expect(
+    page.getByLabel("Claude Code setup", { exact: true }),
+  ).toContainText("claude mcp add --transport http rulewise https://rulewise.");
   await page.context().grantPermissions(["clipboard-read", "clipboard-write"]);
   await page.getByRole("button", { name: "Copy Claude Code setup" }).click();
   await expect(
     page.getByRole("button", { name: "Copy Claude Code setup" }),
   ).toHaveText("Copied");
   await tabs.getByRole("tab", { name: "Cursor" }).click();
-  await expect(page.getByLabel("Cursor setup", { exact: true })).toContainText('"mcpServers"');
+  await expect(page.getByLabel("Cursor setup", { exact: true })).toContainText(
+    '"mcpServers"',
+  );
   await tabs.getByRole("tab", { name: "Codex" }).click();
   await expect(page.getByLabel("Codex setup", { exact: true })).toContainText(
     "[mcp_servers.rulewise]",

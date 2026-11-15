@@ -134,8 +134,11 @@ this in its answer; `done` is used on later checks once rule ids are known.)
 JSON text, or (for facts) a table where only `true` counts. Unknown facts are still errors. The AI
 now asks for the country when it isn't given (D22).
 **Hosted mode ready (2026-11-14, D23):** `rulewise --public` + `Dockerfile`; tested in Docker with a
-real Claude Code session over HTTP. Deploy steps: [DEPLOY-AZURE.md](DEPLOY-AZURE.md). Not done yet:
-the Azure deploy itself (needs Malith's account), then switch the site's setup tabs to the web address.
+real Claude Code session over HTTP. Deploy steps: [DEPLOY-AZURE.md](DEPLOY-AZURE.md).
+**Live on Azure (2026-11-15):** `https://rulewise.victoriousdune-a7b660c5.centralindia.azurecontainerapps.io/mcp`,
+verified with a real Claude Code session over HTTP (0 errors, logs show counts only). The site's
+setup tabs and README now use this address (nothing to install); the GitHub `uvx` install is the
+"run it yourself" option. Not done yet: website hosting, custom domain, pay-as-you-go subscription.
 
 Original plan:
 - Tool `check_legal_risks`: input = feature/idea text + facts + users' countries.

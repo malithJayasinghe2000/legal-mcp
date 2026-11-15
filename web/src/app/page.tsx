@@ -222,8 +222,8 @@ export default function Home() {
                   never your idea or your code.
                 </p>
                 <p>
-                  It runs on your own computer, and nothing is saved: no
-                  account, no cookies, no analytics.
+                  Nothing is saved: no account, no cookies, no analytics, and no
+                  record of who asked what.
                 </p>
               </>
             )}
@@ -243,15 +243,8 @@ export default function Home() {
               and explains the result.
             </p>
             <p className="mt-4 max-w-md text-ink-muted">
-              First install{" "}
-              <a
-                href="https://docs.astral.sh/uv/getting-started/installation/"
-                className="text-orange-deep underline underline-offset-2"
-              >
-                uv
-              </a>
-              , a small tool that runs Rulewise. Then add Rulewise to your AI
-              tool. The first start takes about 30 seconds while it downloads.
+              Nothing to install: add the Rulewise address to your AI tool, then
+              restart it.
             </p>
             <p className="mt-4 max-w-md text-ink-muted">
               Then describe what you&apos;re building and where your users are.
