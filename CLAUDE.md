@@ -51,20 +51,17 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
 - **No referral fees or payment per client** if the product ever links to lawyers
   (Sri Lankan fee-sharing and touting rules; see law-finder).
 
-## Working with Malith (the owner)
-- He's a **software engineer, not a lawyer.** Do the legal reasoning yourself,
+## How we work
+- The maintainers are software engineers, not lawyers. Do the legal reasoning carefully,
   pick the conservative defensible option, and explain it in plain language.
   Put truly unresolvable points in a "questions for a lawyer" list rather than blocking.
-- **Explain short and simple, always.** Direct answer first, a few short bullets,
-  no long tables. English is not his first language.
 - **Verify by running, not reading.** Prove a feature works by running it for real
   (e.g. connect the MCP server to a real Claude Code session), not only by tests passing.
-- **Don't start long local AI model runs** on his MacBook (it overheats). Ask first, prefer hosted.
 - Launch-deferred features go **behind a one-line switch**, not deleted.
 - In anything users see on the site: use "-", never the long dash "—".
 - Git: remote `origin` = https://github.com/malithJayasinghe2000/legal-mcp (branch `main`).
-  **Don't commit or push** (2026-11-16): Malith commits and pushes himself. Run the checks,
-  then tell him which files changed.
+  CI (`.github/workflows/ci.yml`) runs lint, tests and the website build on every push.
+- Personal working preferences live in `CLAUDE.local.md` (not in git).
 
 ## Related project
 `~/Developer/law-finder` is Malith's live Sri Lankan legal platform

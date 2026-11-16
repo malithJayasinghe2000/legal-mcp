@@ -17,3 +17,6 @@ sources/raw/
 data/generated/
 
 .DS_Store
+
+# Personal Claude notes (kept out of the public repo)
+CLAUDE.local.md
