@@ -19,20 +19,22 @@ export function SiteHeader() {
           className="hidden items-center gap-7 text-sm md:flex"
         >
           {NAV.map((item) => (
-            <Link
+            <a
               key={item.href}
               href={item.href}
               className="text-ink-muted no-underline hover:text-ink"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
         <Button asChild size="lg" className="h-10 px-4 text-sm font-semibold">
           {SHOW_SITE_CHECK ? (
             <Link href="/check">Check my product</Link>
           ) : (
-            <Link href="/#setup">Add to your AI tool</Link>
+            // Plain <a> on purpose: next/link ignores a repeat click on the same #hash.
+            // eslint-disable-next-line @next/next/no-html-link-for-pages
+            <a href="/#setup">Add to your AI tool</a>
           )}
         </Button>
       </div>

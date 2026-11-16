@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Logo } from "@/components/logo";
 
 export function SiteFooter() {
@@ -9,12 +10,21 @@ export function SiteFooter() {
         </div>
         <div className="max-w-prose space-y-2">
           <p>
-            Rulewise gives legal information to help you spot issues. It is not legal advice and
-            does not make your product compliant. Ask a Sri Lankan lawyer before you decide.
+            Rulewise gives legal information to help you spot issues. It is not
+            legal advice and does not make your product compliant. Ask a Sri
+            Lankan lawyer before you decide.
           </p>
           <p>
-            Covers Sri Lankan law only. Rules marked draft are not yet reviewed by a lawyer. We
-            store nothing you enter.
+            Covers Sri Lankan law only. Rules marked draft are not yet reviewed
+            by a lawyer. We store nothing you enter.
+          </p>
+          <p className="no-print">
+            <Link
+              href="/privacy"
+              className="text-ink underline underline-offset-2"
+            >
+              Privacy and terms
+            </Link>
           </p>
         </div>
       </div>

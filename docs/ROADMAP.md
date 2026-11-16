@@ -140,7 +140,11 @@ verified with a real Claude Code session over HTTP (0 errors, logs show counts o
 setup tabs and README now use this address (nothing to install); the GitHub `uvx` install is the
 "run it yourself" option. **Website live (2026-11-16):** https://legal-mcp.vercel.app (Vercel, root `web`;
 e2e passed against it, security headers present, no analytics, /check returns 404).
-Not done yet: custom domain, pay-as-you-go subscription, licence, privacy/terms page.
+**Privacy and terms page** `/privacy` (2026-11-16): first person, plain words; what the server receives
+(facts and country codes only), what is kept (nothing; counts-only logs, in-memory rate limit), no
+cookies/analytics, hosting (Azure India, Vercel), not legal advice, contact via GitHub issues. Linked
+in the footer. In-page "Add to your AI tool" links are plain `<a>`: next/link ignored a repeat click.
+Not done yet: custom domain, pay-as-you-go subscription, licence.
 
 Original plan:
 - Tool `check_legal_risks`: input = feature/idea text + facts + users' countries.

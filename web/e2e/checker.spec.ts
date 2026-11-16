@@ -50,6 +50,45 @@ test("setup shows each AI tool", async ({ page }) => {
   await noA11yViolations(page);
 });
 
+test("'Add to your AI tool' scrolls to setup every time", async ({ page }) => {
+  // Next.js Link ignored a repeat click once the URL already ended in #setup.
+  await page.goto("/");
+  const setupTop = () =>
+    page.locator("#setup").evaluate((e) => e.getBoundingClientRect().top);
+  const buttons = [
+    page.getByRole("main").getByRole("link", { name: "Add to your AI tool" }),
+    page.getByRole("banner").getByRole("link", { name: "Add to your AI tool" }),
+  ];
+  for (const button of [...buttons, ...buttons]) {
+    await page.evaluate(() => window.scrollTo(0, 0));
+    if (!(await button.isVisible())) continue;
+    await button.click();
+    await expect.poll(setupTop).toBeLessThan(400);
+  }
+});
+
+test("privacy and terms page", async ({ page }) => {
+  await page.goto("/");
+  await page
+    .getByRole("contentinfo")
+    .getByRole("link", { name: "Privacy and terms" })
+    .click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "Privacy and terms",
+  );
+  await expect(
+    page.getByRole("heading", { name: "What I keep: nothing" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "This is not legal advice" }),
+  ).toBeVisible();
+  const text = await page.locator("main").innerText();
+  expect(text).not.toContain("\u2014"); // project rule: "-", never the long dash
+  expect(text.toLowerCase()).not.toContain("compliant");
+  await shot(page, "privacy");
+  await noA11yViolations(page);
+});
+
 test("the site check is hidden while switched off", async ({ page }) => {
   test.skip(SHOW_SITE_CHECK, "site check is on");
   const res = await page.goto("/check");

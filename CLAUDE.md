@@ -63,7 +63,8 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
 - Launch-deferred features go **behind a one-line switch**, not deleted.
 - In anything users see on the site: use "-", never the long dash "—".
 - Git: remote `origin` = https://github.com/malithJayasinghe2000/legal-mcp (branch `main`).
-  Malith allowed committing and pushing there when a piece of work is done (2026-11-11).
+  **Don't commit or push** (2026-11-16): Malith commits and pushes himself. Run the checks,
+  then tell him which files changed.
 
 ## Related project
 `~/Developer/law-finder` is Malith's live Sri Lankan legal platform

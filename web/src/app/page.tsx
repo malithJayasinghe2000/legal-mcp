@@ -136,7 +136,7 @@ export default function Home() {
               variant={SHOW_SITE_CHECK ? "outline" : "default"}
               className="h-12 px-6 text-base font-semibold"
             >
-              <Link href="#setup">Add to your AI tool</Link>
+              <a href="#setup">Add to your AI tool</a>
             </Button>
           </div>
           <p className="mt-6 text-sm text-ink-muted">
