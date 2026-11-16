@@ -138,7 +138,9 @@ real Claude Code session over HTTP. Deploy steps: [DEPLOY-AZURE.md](DEPLOY-AZURE
 **Live on Azure (2026-11-15):** `https://rulewise.victoriousdune-a7b660c5.centralindia.azurecontainerapps.io/mcp`,
 verified with a real Claude Code session over HTTP (0 errors, logs show counts only). The site's
 setup tabs and README now use this address (nothing to install); the GitHub `uvx` install is the
-"run it yourself" option. Not done yet: website hosting, custom domain, pay-as-you-go subscription.
+"run it yourself" option. **Website live (2026-11-16):** https://legal-mcp.vercel.app (Vercel, root `web`;
+e2e passed against it, security headers present, no analytics, /check returns 404).
+Not done yet: custom domain, pay-as-you-go subscription, licence, privacy/terms page.
 
 Original plan:
 - Tool `check_legal_risks`: input = feature/idea text + facts + users' countries.
