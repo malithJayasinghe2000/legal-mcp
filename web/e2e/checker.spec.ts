@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, type Page, test } from "@playwright/test";
-import { SHOW_SITE_CHECK } from "../src/lib/features";
+import { SHOW_CURSOR, SHOW_SITE_CHECK } from "../src/lib/features";
 
 const shot = (page: Page, name: string) =>
   page.screenshot({
@@ -39,9 +39,9 @@ test("setup shows each AI tool", async ({ page }) => {
   await expect(
     page.getByRole("button", { name: "Copy Claude Code setup" }),
   ).toHaveText("Copied");
-  await tabs.getByRole("tab", { name: "Cursor" }).click();
-  await expect(page.getByLabel("Cursor setup", { exact: true })).toContainText(
-    '"mcpServers"',
+  // Cursor is hidden until tested (SHOW_CURSOR).
+  await expect(tabs.getByRole("tab", { name: "Cursor" })).toHaveCount(
+    SHOW_CURSOR ? 1 : 0,
   );
   await tabs.getByRole("tab", { name: "Codex" }).click();
   await expect(page.getByLabel("Codex setup", { exact: true })).toContainText(

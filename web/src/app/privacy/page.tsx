@@ -43,9 +43,9 @@ export default function PrivacyPage() {
 
       <Section title="Your idea never reaches me">
         <p>
-          Rulewise works inside your AI tool, like Claude Code or Cursor. Your
-          AI reads what you&apos;re building on your side. It then sends
-          Rulewise only a short list of facts, for example &ldquo;collects phone
+          Rulewise works inside your AI tool, like Claude Code or Codex. Your AI
+          reads what you&apos;re building on your side. It then sends Rulewise
+          only a short list of facts, for example &ldquo;collects phone
           numbers&rdquo; or &ldquo;takes card payments&rdquo;, and the countries
           involved, like &ldquo;LK&rdquo;.
         </p>

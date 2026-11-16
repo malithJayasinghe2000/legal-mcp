@@ -148,7 +148,10 @@ in the footer. In-page "Add to your AI tool" links are plain `<a>`: next/link ig
 errors), but Codex does not act on the server's instructions, so it only called Rulewise when asked.
 One line in `AGENTS.md` fixes it (then it asked for the country by itself, D22). The site's Codex tab
 and README now show that line.
-Not done yet: custom domain, pay-as-you-go subscription, licence.
+**Cursor hidden (2026-11-16):** not tested yet, so its setup tab and mentions are behind
+`SHOW_CURSOR = false` in `web/src/lib/features.ts` (README and privacy page say Claude Code, Codex,
+VS Code). Turn it on after a real Cursor test.
+Not done yet: custom domain, pay-as-you-go subscription, licence, Cursor test.
 
 Original plan:
 - Tool `check_legal_risks`: input = feature/idea text + facts + users' countries.

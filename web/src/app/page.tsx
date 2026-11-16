@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SetupTabs } from "@/components/setup-tabs";
 import { Button } from "@/components/ui/button";
-import { SHOW_SITE_CHECK } from "@/lib/features";
+import { SHOW_CURSOR, SHOW_SITE_CHECK } from "@/lib/features";
 
 // Steps for the website's own check (hidden for now, D21).
 const SITE_STEPS = [
@@ -22,7 +22,7 @@ const SITE_STEPS = [
 const MCP_STEPS = [
   {
     title: "Add Rulewise to your AI tool",
-    text: "Claude Code, Cursor, Codex, VS Code or any tool that supports MCP. It takes one line of setup.",
+    text: `${SHOW_CURSOR ? "Claude Code, Cursor, Codex or VS Code" : "Claude Code, Codex or VS Code"}. It takes one line of setup.`,
   },
   {
     title: "Plan or build as usual",

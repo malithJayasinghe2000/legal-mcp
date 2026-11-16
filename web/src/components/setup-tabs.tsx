@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Tabs } from "radix-ui";
+import { SHOW_CURSOR } from "@/lib/features";
 
 // The hosted server (Azure Container Apps, brief D23). Nothing to install.
 const URL =
@@ -20,7 +21,7 @@ type Tool = {
   then?: { where: string; code: string };
 };
 
-const TOOLS: Tool[] = [
+const ALL_TOOLS: Tool[] = [
   {
     id: "claude-code",
     name: "Claude Code",
@@ -65,6 +66,8 @@ url = "${URL}"`,
 }`,
   },
 ];
+
+const TOOLS = ALL_TOOLS.filter((t) => SHOW_CURSOR || t.id !== "cursor");
 
 export function SetupTabs() {
   return (
