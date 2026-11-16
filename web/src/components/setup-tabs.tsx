@@ -7,7 +7,20 @@ import { Tabs } from "radix-ui";
 const URL =
   "https://rulewise.victoriousdune-a7b660c5.centralindia.azurecontainerapps.io/mcp";
 
-const TOOLS = [
+// Codex doesn't act on the server's own instructions, so without this line it only uses
+// Rulewise when asked. Tested 2026-11-16: with it, Codex checks new features by itself.
+const AGENTS_LINE =
+  "Before planning or building a product or feature, check it with the Rulewise MCP tools (get_fact_questions, then check_legal_risks).";
+
+type Tool = {
+  id: string;
+  name: string;
+  where: string;
+  code: string;
+  then?: { where: string; code: string };
+};
+
+const TOOLS: Tool[] = [
   {
     id: "claude-code",
     name: "Claude Code",
@@ -32,6 +45,11 @@ const TOOLS = [
     where: "Add to ~/.codex/config.toml:",
     code: `[mcp_servers.rulewise]
 url = "${URL}"`,
+    then: {
+      where:
+        "Then add this line to AGENTS.md (in your project, or ~/.codex/AGENTS.md for all projects), so Codex checks new features by itself:",
+      code: AGENTS_LINE,
+    },
   },
   {
     id: "vscode",
@@ -68,20 +86,45 @@ export function SetupTabs() {
           value={t.id}
           className="mt-4 focus-visible:outline-none"
         >
-          <div className="flex items-end justify-between gap-3">
-            <p className="text-sm text-ink-muted">{t.where}</p>
-            <CopyButton text={t.code} label={`Copy ${t.name} setup`} />
-          </div>
-          <pre
-            tabIndex={0}
-            aria-label={`${t.name} setup`}
-            className="mt-2 rounded-lg bg-ink p-5 text-sm leading-relaxed whitespace-pre-wrap text-paper [overflow-wrap:anywhere] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
-          >
-            <code>{t.code}</code>
-          </pre>
+          <CodeBlock label={`${t.name} setup`} where={t.where} code={t.code} />
+          {t.then && (
+            <div className="mt-6">
+              <CodeBlock
+                label={`${t.name} AGENTS.md line`}
+                where={t.then.where}
+                code={t.then.code}
+              />
+            </div>
+          )}
         </Tabs.Content>
       ))}
     </Tabs.Root>
+  );
+}
+
+function CodeBlock({
+  label,
+  where,
+  code,
+}: {
+  label: string;
+  where: string;
+  code: string;
+}) {
+  return (
+    <>
+      <div className="flex items-end justify-between gap-3">
+        <p className="text-sm text-ink-muted">{where}</p>
+        <CopyButton text={code} label={`Copy ${label}`} />
+      </div>
+      <pre
+        tabIndex={0}
+        aria-label={label}
+        className="mt-2 rounded-lg bg-ink p-5 text-sm leading-relaxed whitespace-pre-wrap text-paper [overflow-wrap:anywhere] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
+      >
+        <code>{code}</code>
+      </pre>
+    </>
   );
 }
 

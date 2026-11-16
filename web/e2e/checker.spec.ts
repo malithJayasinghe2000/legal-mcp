@@ -47,6 +47,9 @@ test("setup shows each AI tool", async ({ page }) => {
   await expect(page.getByLabel("Codex setup", { exact: true })).toContainText(
     "[mcp_servers.rulewise]",
   );
+  await expect(
+    page.getByLabel("Codex AGENTS.md line", { exact: true }),
+  ).toContainText("check it with the Rulewise MCP tools");
   await noA11yViolations(page);
 });
 

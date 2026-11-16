@@ -144,6 +144,10 @@ e2e passed against it, security headers present, no analytics, /check returns 40
 (facts and country codes only), what is kept (nothing; counts-only logs, in-memory rate limit), no
 cookies/analytics, hosting (Azure India, Vercel), not legal advice, contact via GitHub issues. Linked
 in the footer. In-page "Add to your AI tool" links are plain `<a>`: next/link ignored a repeat click.
+**Codex tested (2026-11-16, gpt-6-luna, hosted URL):** connects and the tools work (19 issues, no
+errors), but Codex does not act on the server's instructions, so it only called Rulewise when asked.
+One line in `AGENTS.md` fixes it (then it asked for the country by itself, D22). The site's Codex tab
+and README now show that line.
 Not done yet: custom domain, pay-as-you-go subscription, licence.
 
 Original plan:
