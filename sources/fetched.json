@@ -127,6 +127,30 @@
     "bytes": 369653,
     "file": "sources/raw/lk-medical-ordinance.pdf"
   },
+  "lk-nmw-2016": {
+    "title": "National Minimum Wage of Workers Act, No. 3 of 2016",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6010.pdf",
+    "downloaded": "2026-11-18",
+    "sha256": "357235fac383087649c79a32dfed1fe16cd6a036681ac1704b6dca37bffaf3d1",
+    "bytes": 64171,
+    "file": "sources/raw/lk-nmw-2016.pdf"
+  },
+  "lk-nmw-amendment-2021": {
+    "title": "National Minimum Wage of Workers (Amendment) Act, No. 16 of 2021",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6214.pdf",
+    "downloaded": "2026-11-18",
+    "sha256": "9ab7170c8eab20a2acf4a4fa0e77c92435d6c6792c7c5666a98c9725e2344a26",
+    "bytes": 132666,
+    "file": "sources/raw/lk-nmw-amendment-2021.pdf"
+  },
+  "lk-nmw-amendment-2025": {
+    "title": "National Minimum Wage of Workers (Amendment) Act, No. 11 of 2025",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6388.pdf",
+    "downloaded": "2026-11-18",
+    "sha256": "f225c61e7844299f5afc60dfd704e5fa27f6046d9fc3453e2442a6885e5b0ca9",
+    "bytes": 333135,
+    "file": "sources/raw/lk-nmw-amendment-2025.pdf"
+  },
   "lk-osa-2024": {
     "title": "Online Safety Act, No. 9 of 2024",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6311.pdf",
@@ -139,7 +163,7 @@
     "title": "Online Safety (Repeal) Bill (private member's bill, presented 8 May 2025)",
     "url_used": "https://www.parliament.lk/en/business-of-parliament/bill-details/P1585",
     "downloaded": "2026-11-18",
-    "sha256": "bc703fe7e851b54110db3554244f45de5881672eeff7b072bda85fa55d8dd676",
+    "sha256": "98fa5fe78ed06b720d7777414a8bbc4eda34ac454f5b02b286275a007326a061",
     "bytes": 248959,
     "file": "sources/raw/lk-osa-repeal-bill.html"
   },

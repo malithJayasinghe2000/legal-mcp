@@ -15,7 +15,7 @@ not spelling. For each rule, open the PDF at the page shown and ask:
 Done? In the rule file set `review_status: checked_by_owner`, `reviewed_by: Malith Jayasinghe`
 and `last_checked` to today. Unsure? Add the point to `lawyer_questions` instead of guessing.
 
-**Progress: 0 of 59 rules checked.**
+**Progress: 0 of 61 rules checked.**
 
 ## 1. Consumer Affairs Authority Act, No. 9 of 2003 (6 rules)
 
@@ -317,7 +317,23 @@ Source: http://www.commonlii.org/lk/legis/consol_act/iws40367/
   `s.2(a); see also s.2(c)`, [page 1](http://www.commonlii.org/lk/legis/consol_act/iws40367/#page=1) - [lk-intermeddlers-payment-for-clients](../rules/regulated-professions/lk-intermeddlers-payment-for-clients.yaml)  
   > "solicits or receives from any legal practitioner any gratification in consideration of procuring or having procured him employment as such legal practitioner"
 
-## 17. Sri Lanka Medical Council, Instructions on Serious Professional Misconduct (July 2009) (1 rules)
+## 17. National Minimum Wage of Workers Act, No. 3 of 2016 (1 rules)
+
+Source: https://www.parliament.lk/uploads/acts/gbills/english/6010.pdf
+
+- [ ] **Check with a lawyer** - People who work through your platform may count as "workers" under labour law  
+  `s.14 (definition of "worker")`, [page 11](https://www.parliament.lk/uploads/acts/gbills/english/6010.pdf#page=11) - [lk-nmw-platform-workers](../rules/employment/lk-nmw-platform-workers.yaml)  
+  > ""worker" means, any person who has entered into or works under a contract with an employer in any capacity, whether the contract is expressed or implied, oral or in writing and whether it is a contract of service or of apprenticeship"
+
+## 18. National Minimum Wage of Workers (Amendment) Act, No. 11 of 2025 (1 rules)
+
+Source: https://www.parliament.lk/uploads/acts/gbills/english/6388.pdf
+
+- [ ] **Must** - Wages must not go below the national minimum wage (Rs. 30,000 a month, Rs. 1,200 a day)  
+  `s.2, replacing s.3(1) of the National Minimum Wage of Workers Act, No. 3 of 2016`, [page 2](https://www.parliament.lk/uploads/acts/gbills/english/6388.pdf#page=2) - [lk-nmw-minimum-wage](../rules/employment/lk-nmw-minimum-wage.yaml)  
+  > "With effect from January 1, 2026, the national minimum monthly wage for all workers in any industry or service shall be thirty thousand rupees, and the national minimum daily wage of a worker shall be one thousand two hundred rupees."
+
+## 19. Sri Lanka Medical Council, Instructions on Serious Professional Misconduct (July 2009) (1 rules)
 
 Source: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679630.pdf
 

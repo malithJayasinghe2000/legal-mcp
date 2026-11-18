@@ -54,7 +54,7 @@ marked; **verify each one** on the official source before use.
 | Lawyers | Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules 1988 (Gazette 535/7): Rules 39, 40, 45, 49; Intermeddlers with Suitors Ordinance (Cap. 40) s.2; BASL note June 2021 | Already researched in law-finder (`law-finder/lawyer-finder-web/docs/`) |
 | Doctors / health | Medical Ordinance; Sri Lanka Medical Council rules | Advertising, telemedicine |
 | Education / universities | UGC National AI Policy Framework for State Universities (2026) | Policy, not law. Four AI risk tiers. |
-| Employment | Shop and Office Employees Act; others | Later |
+| Employment | National Minimum Wage of Workers Act No. 3 of 2016 (amended 2021, 2025); Shop and Office Employees Act; EPF, ETF, gratuity, termination | **2 rules written 2026-11-18** (`rules/employment/`): minimum wage Rs. 30,000 / Rs. 1,200 (s.3(1) as replaced 2025), platform workers may be "workers" (s.14). Others not collected yet |
 | Children | Children and Young Persons Ordinance; others | Later |
 | Gambling | Casino Business (Regulation) Act; betting laws | Later |
 | Tax | Inland Revenue Act; VAT on digital services | Later |

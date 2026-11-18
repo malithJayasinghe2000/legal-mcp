@@ -94,6 +94,13 @@ sections:
           - {fact: issues_payment_cards, label: "We issue debit, credit, prepaid or virtual cards"}
           - {fact: transfers_money, label: "Users can send money to other people"}
 
+      - id: work_and_wages
+        kind: choose
+        label: Work and wages - which of these are true?
+        options:
+          - {fact: runs_payroll, label: "We set, calculate or pay workers' wages (payroll, HR, shift pay)"}
+          - {fact: platform_workers, label: "People do paid work through our platform (drivers, riders, cleaners, freelancers)"}
+
       - id: consumer_sales
         kind: choose
         label: Do you sell to the public?

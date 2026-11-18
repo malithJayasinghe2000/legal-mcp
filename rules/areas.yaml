@@ -31,6 +31,9 @@ covered:
   telecom:
     label: Telecommunications (Sri Lanka Telecommunications Act)
     gaps: Mostly about operators. TRCSL rules listing licensed services, the scanned 1991 Act and 1996 amendment not quoted yet; no official text found for SMS opt-out or sender ID rules.
+  employment:
+    label: Employment (National Minimum Wage of Workers Act)
+    gaps: Minimum wage only. Shop and Office Employees Act (hours, leave), EPF, ETF, gratuity, termination and child employment not collected yet.
   regulated-professions:
     label: Regulated professions
     gaps: Doctors and lawyers only. BASL note on online legal advice known only from the press.
@@ -38,7 +41,6 @@ covered:
 not_covered:
   - Trademarks and patents
   - Cyber security (no Act found yet)
-  - Employment
   - Education
   - Gambling
   - Crypto and virtual assets

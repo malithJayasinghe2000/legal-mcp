@@ -1,0 +1,42 @@
+id: lk-nmw-platform-workers
+jurisdiction: LK
+area: employment
+title: People who work through your platform may count as "workers" under labour law
+severity: lawyer
+triggers:
+  all:
+    - platform_workers
+    - [users_in:LK, company_in:LK]
+why: >
+  The minimum wage law defines a "worker" widely: anyone working under a contract with
+  an employer, written or not, including a contract to do work personally. So drivers,
+  riders, cleaners or freelancers who personally do the work you sell may count as
+  workers, even if you call them partners or contractors. Then minimum wage, and
+  possibly other labour laws (EPF, ETF, termination rules), could apply.
+what_to_do:
+  - Write down how much you control the work (prices, hours, ratings, deactivation) - more control looks more like employment.
+  - Make sure what people earn per hour or day worked is not below the national minimum wage.
+  - Get legal advice on how to classify them before launch.
+lawyer_questions:
+  - Are the people working through our platform "workers" of ours under the National Minimum Wage of Workers Act s.14, or of our customers?
+  - Do EPF, ETF, gratuity or termination laws also apply to them?
+law:
+  name: National Minimum Wage of Workers Act, No. 3 of 2016
+  section: "s.14 (definition of \"worker\")"
+  source_id: lk-nmw-2016
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6010.pdf
+  quote: >-
+    "worker" means, any person who has entered into or works
+    under a contract with an employer in any capacity,
+    whether the contract is expressed or implied, oral
+    or in writing and whether it is a contract of service
+    or of apprenticeship
+done_check: Check a lawyer has confirmed how platform workers are classified.
+in_force: true
+starts_on: null
+last_checked: 2026-11-18
+review_status: draft
+reviewed_by: null
+notes: >-
+  The same definition continues: "or a contract personally to execute any work or labour" and
+  excludes domestic servants. Sri Lanka has no gig-work law; EPF/ETF/termination Acts not collected yet.

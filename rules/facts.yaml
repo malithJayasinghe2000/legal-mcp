@@ -68,6 +68,10 @@ copyright:
 telecom:
   provides_telecom_service: Do you run a telecom service for others yourself (your own SMS gateway or bulk-SMS service for other businesses, calls to normal phone numbers, internet or Wi-Fi access for the public)? Not just sending your own messages through an SMS API.
 
+employment:
+  runs_payroll: Does the product set, calculate or pay workers' wages (payroll, HR, shift pay, staffing)?
+  platform_workers: Do people personally do paid work through your platform (drivers, riders, cleaners, freelancers, home services)?
+
 regulated_professions:
   profession:medicine: Does the product involve doctors or dentists (listing, booking, consulting)?
   profession:law: Does the product involve lawyers (listing, booking, consulting, legal help)?

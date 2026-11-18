@@ -110,7 +110,14 @@ Progress:
   rules listing licensed services were not found, and SMS opt-out / sender ID rules have no official text
   (only a 2020 news report and SMS providers' guides). Real sessions: a bulk-SMS gateway got both rules
   (licence first); a shop sending promo SMS through Twilio got the nuisance rule only, not the licence.
-- **Total: 59 rules in 10 areas.**
+- [x] **Employment: 2 rules** in `rules/employment/` (2026-11-18), from the National Minimum Wage of Workers
+  Act No. 3 of 2016 as amended by No. 11 of 2025 (text PDFs): minimum wage Rs. 30,000 a month / Rs. 1,200 a
+  day from 1 Jan 2026 ("must"), platform workers may be "workers" under s.14 ("check with a lawyer"). New facts
+  `runs_payroll`, `platform_workers`. Not collected yet: Shop and Office Employees Act (about 15 amendments,
+  several not online; 2018 maternity leave, 2024 night work for women in IT/BPO), EPF, ETF, gratuity,
+  termination, child employment (min. age 16 since 2021; fines raised 2026). Real session: a food delivery
+  app (rider payouts, rating-based deactivation) got both rules; Claude added an earnings floor check.
+- **Total: 61 rules in 11 areas.**
 
 ### Step 3. Fact questions (first draft)
 Machine-readable list: [rules/facts.yaml](../rules/facts.yaml) (grows as areas are added).

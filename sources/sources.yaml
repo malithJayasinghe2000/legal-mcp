@@ -269,3 +269,30 @@
   title: Sri Lanka Telecommunications (Amendment) Act, No. 39 of 2024
   url: https://www.parliament.lk/uploads/acts/gbills/english/6349.pdf
   verified: "2026-11-18: certified 17th of July, 2024 (text PDF); adds s.17B (provider licences), replaces s.59(1)"
+
+# ---------- 11. Employment ----------
+# Not collected yet (gaps): Shop and Office Employees Act (Chapter 129, about 15 amendments, several
+# with no copy on Parliament's site), EPF / ETF Acts, Payment of Gratuity, Termination of Employment of
+# Workmen Act, Employment of Women, Young Persons and Children Act. Parliament's copy of Termination
+# (Amendment) No. 29 of 2021 (6236.pdf) is the text of No. 23 of 2022 (checked 2026-11-18).
+- id: lk-nmw-2016
+  parliament_name: National Minimum Wage of Workers
+  area: employment
+  kind: act
+  title: National Minimum Wage of Workers Act, No. 3 of 2016
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6010.pdf
+  verified: "2026-11-18: Act No. 3 of 2016 (text PDF); s.3 minimum wage, s.14 'worker' definition"
+
+- id: lk-nmw-amendment-2021
+  area: employment
+  kind: act
+  title: National Minimum Wage of Workers (Amendment) Act, No. 16 of 2021
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6214.pdf
+  verified: "2026-11-18: replaced s.3(1); itself replaced by No. 11 of 2025"
+
+- id: lk-nmw-amendment-2025
+  area: employment
+  kind: act
+  title: National Minimum Wage of Workers (Amendment) Act, No. 11 of 2025
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6388.pdf
+  verified: "2026-11-18: certified 23rd of July, 2025; replaces s.3(1): Rs. 30,000 a month / Rs. 1,200 a day from 1 January 2026"

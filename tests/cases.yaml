@@ -104,10 +104,10 @@
   users_in: [LK]
   company_in: LK
   facts: [collects_personal_data, data:contact, data:national_id, data:financial,
-          uses_processors]
-  must_include: [lk-pdpa-scope, lk-pdpa-security, lk-pdpa-processors, lk-pdpa-retention]
-  must_exclude: [lk-pdpa-special-categories, lk-pdpa-children]
-  not_covered_includes: [Employment]
+          uses_processors, runs_payroll]
+  must_include: [lk-pdpa-scope, lk-pdpa-security, lk-pdpa-processors, lk-pdpa-retention,
+                 lk-nmw-minimum-wage]
+  must_exclude: [lk-pdpa-special-categories, lk-pdpa-children, lk-nmw-platform-workers]
 
 - name: "#12 loan app with AI credit scoring"
   # Known gap: lending licences (Finance Business Act, Microfinance) not covered yet.
@@ -161,8 +161,10 @@
   users_in: [LK]
   company_in: LK
   facts: [collects_personal_data, data:contact, data:location, takes_payments,
-          automated_decisions, profiling]
-  must_include: [lk-pdpa-automated-decisions, lk-payments-card-gateway, lk-pdpa-impact-assessment]
+          automated_decisions, profiling, platform_workers]
+  must_include: [lk-pdpa-automated-decisions, lk-payments-card-gateway, lk-pdpa-impact-assessment,
+                 lk-nmw-platform-workers]
+  must_exclude: [lk-nmw-minimum-wage]
   not_covered_includes: [Transport]
 
 - name: "#20 bulk SMS marketing platform"

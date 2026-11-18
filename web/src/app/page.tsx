@@ -52,6 +52,7 @@ const AREAS = [
   ],
   ["Cybercrime", "Computer Crime Act No. 24 of 2007"],
   ["Copyright", "Intellectual Property Act No. 36 of 2003"],
+  ["Employment", "National Minimum Wage of Workers Act, as amended in 2025"],
   [
     "Telecom",
     "Sri Lanka Telecommunications Act, as amended in 2024 (licences, nuisance calls and messages)",
