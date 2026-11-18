@@ -192,6 +192,16 @@ read by Claude Code, Codex, Copilot and others. Install: `npx skills add malithJ
 country called `get_fact_questions` then `check_legal_risks` and explained the PDPA warnings. The site's
 Codex tab now shows the skill install instead of the AGENTS.md line (README keeps the line for users
 without Node.js). `tests/test_skill.py` keeps the skill's tool names and safety rules in step.
+**Project check (2026-11-18):** "check my whole project" writes `RULEWISE-REPORT.md` (Must / Should /
+lawyer items with the code file each applies to, fix first, lawyer questions, facts with evidence,
+not covered). One text, [skills/rulewise/check-project.md](../skills/rulewise/check-project.md), used by the
+skill, the server prompt `check_project` and the Claude Code plugin (`.claude-plugin/`, `/rulewise:check`).
+Real tests on a fake clinic app (AI "doctor" prompt, per-booking doctor fee, NIC and health data, promo
+SMS, a fake `.env` secret): Claude Code plugin (`--plugin-dir`), Claude Code with the server prompt
+(local server) and Codex with the skill all wrote the report; fix-first named the AI doctor prompt and
+the per-booking fee; the `.env` was never read. First run added a "not covered" area of its own, so the
+steps now say to copy that list exactly. Docker image tested: the prompt is served. Not tested yet:
+installing the plugin from GitHub (needs the push), Cursor and VS Code Copilot.
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:

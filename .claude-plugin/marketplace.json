@@ -1,0 +1,14 @@
+{
+  "name": "rulewise",
+  "description": "Rulewise: legal issue-spotting for people who build software, starting with Sri Lankan law.",
+  "owner": { "name": "Malith Jayasinghe", "url": "https://github.com/malithJayasinghe2000" },
+  "plugins": [
+    {
+      "name": "rulewise",
+      "source": "./",
+      "description": "Rulewise MCP server, the Rulewise skill and /rulewise:check (project report).",
+      "category": "legal",
+      "tags": ["legal", "sri-lanka", "privacy", "compliance"]
+    }
+  ]
+}

@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import logging
 import os
+from pathlib import Path
 from typing import Annotated, Any
 
 from mcp.server.mcpserver import MCPServer
@@ -177,6 +178,25 @@ def get_rule(
         "review_status": rule["review_status"],
         "notes": rule.get("notes", ""),
     }
+
+
+def check_project_text() -> str:
+    """The project-check steps, shared with the skill (skills/rulewise/check-project.md)."""
+    packaged = Path(__file__).resolve().parent / "check-project.md"
+    repo = Path(__file__).resolve().parents[2] / "skills" / "rulewise" / "check-project.md"
+    return (packaged if packaged.is_file() else repo).read_text()
+
+
+@mcp.prompt(
+    name="check_project",
+    title="Check my project with Rulewise",
+    description=(
+        "Read the whole project, find the facts, run the Rulewise check and write "
+        "RULEWISE-REPORT.md with the warnings, the code they apply to and questions for a lawyer."
+    ),
+)
+def check_project() -> str:
+    return check_project_text()
 
 
 def public_app(per_minute: int):

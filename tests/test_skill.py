@@ -47,3 +47,32 @@ def test_skill_keeps_the_safety_rules():
     for must_say in ["never guessed", "compliant", "check failed", "not yet reviewed by a lawyer"]:
         assert must_say in body, f"skill lost the rule: {must_say!r}"
     assert "—" not in body, "use '-' not the long dash"
+
+
+def test_server_prompt_is_the_skill_project_check():
+    """The MCP prompt and the skill share one text: skills/rulewise/check-project.md."""
+    from mcp import Client
+
+    async def run():
+        async with Client(server.mcp) as client:
+            return await client.get_prompt("check_project", {})
+
+    text = asyncio.run(run()).messages[0].content.text
+    assert text == (SKILL.parent / "check-project.md").read_text()
+    for must_say in ["Never guess", "check failed", "Never open secret files", "compliant"]:
+        assert must_say in text, f"project check lost the rule: {must_say!r}"
+
+
+def test_claude_code_plugin():
+    import json
+
+    root = SKILL.parents[2]
+    plugin = json.loads((root / ".claude-plugin" / "plugin.json").read_text())
+    market = json.loads((root / ".claude-plugin" / "marketplace.json").read_text())
+    assert plugin["name"] == market["plugins"][0]["name"] == "rulewise"
+    assert market["plugins"][0]["source"] == "./"
+    # Same hosted address as the website's setup tabs (see docs/DEPLOY-AZURE.md).
+    site = (root / "web" / "src" / "components" / "setup-tabs.tsx").read_text()
+    assert plugin["mcpServers"]["rulewise"]["url"] in site
+    command = (root / "commands" / "check.md").read_text()
+    assert "skills/rulewise/check-project.md" in command

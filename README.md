@@ -35,6 +35,24 @@ facts and country codes, never your idea text or code, and stores nothing.
 
 Tools: `check_legal_risks`, `get_fact_questions`, `get_rule` (exact law quote + link).
 
+### Check a whole project
+
+Already built something? Ask your AI tool to check the whole project. It reads your code on
+your computer, sends Rulewise only the facts it found, and writes `RULEWISE-REPORT.md`: Must,
+Should and Check with a lawyer items, the file each one applies to, what to fix first and
+questions for a lawyer.
+
+- **Claude Code plugin** (the server, the skill and `/rulewise:check` in one install; use it
+  instead of the `claude mcp add` line above):
+  ```
+  /plugin marketplace add malithJayasinghe2000/legal-mcp
+  /plugin install rulewise@rulewise
+  ```
+  Then run `/rulewise:check`.
+- **Codex, Copilot and others with the Rulewise skill:** say "check my project with Rulewise".
+- **Tools that show MCP prompts:** the server's `check_project` prompt does the same.
+- **Any tool with the server:** "Check this project with Rulewise and write a report" works too.
+
 ## Develop
 
 ```sh

@@ -69,7 +69,8 @@ Cursor / VS Code / Codex: an MCP server with that `url` (VS Code: `"type": "http
 Checked 2026-11-18. Update every place below in the same change:
 1. [web/src/components/setup-tabs.tsx](../web/src/components/setup-tabs.tsx) - the address shown on the site's setup tabs.
 2. [README.md](../README.md) - the "Use it" section.
-3. [server.json](../server.json) - raise `version`, then `mcp-publisher publish` (MCP Registry, live since 2026-11-18).
+3. [.claude-plugin/plugin.json](../.claude-plugin/plugin.json) - the Claude Code plugin's server address (a test checks it matches the site).
+4. [server.json](../server.json) - raise `version`, then `mcp-publisher publish` (MCP Registry, live since 2026-11-18).
 4. Vercel project settings - env `RULEWISE_API_URL` (the site's `/api` goes to the server), then redeploy.
 5. This file (top line, "Users add it", the `curl` check) and the "Live on Azure" line in [ROADMAP.md](ROADMAP.md).
 6. Directories added by hand (see [LISTING.md](LISTING.md)): Smithery, Glama, PulseMCP, Agensi.
