@@ -51,7 +51,8 @@ Progress:
   Part I/III start 1 Jan 2027 (verified in Gazette 2498/16); Part II rights and Part IV marketing have no date.
 - [ ] Malith: check the 16 personal data rules against the Act, set `review_status: checked_by_owner`.
 - **Review checklist (2026-11-18):** [REVIEW-CHECKLIST.md](REVIEW-CHECKLIST.md) lists all rules by law, with the
-  PDF page of each quote and 4 questions per rule. Start with the CAA typed copy. Regenerate after
+  PDF page of each quote and 4 questions per rule. Start with the CAA typed copy. **Postponed by Malith
+  (2026-11-18):** rules stay drafts (shown as "not yet reviewed by a lawyer"); review later. Regenerate after
   changing `review_status`: `uv run --group sources python scripts/review_checklist.py`.
 - [x] **Payments: 4 rules** in `rules/payments/` (2026-11-11): card gateway, wallet/cards licence,
   marketplace payouts, money transfer. Not covered yet: lending (Finance Business Act),
