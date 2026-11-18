@@ -1,0 +1,30 @@
+name: Check for new amendments
+
+# Once a month, look on Parliament's Acts list for amendments to the laws in
+# sources/sources.yaml. If one is missing, this run fails and GitHub emails the
+# repo owner. It only reports; adding a source and updating rules is a reviewed,
+# manual change (brief D9).
+
+on:
+  schedule:
+    - cron: "0 3 1 * *" # 03:00 UTC on the 1st of every month
+  workflow_dispatch: # run it by hand from the Actions tab
+
+permissions:
+  contents: read
+
+jobs:
+  amendments:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: uv sync --locked
+
+      - name: Find amendments not yet in sources.yaml
+        run: uv run python scripts/find_amendments.py
