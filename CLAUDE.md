@@ -57,7 +57,9 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
   Put truly unresolvable points in a "questions for a lawyer" list rather than blocking.
 - **Verify by running, not reading.** Prove a feature works by running it for real
   (e.g. connect the MCP server to a real Claude Code session), not only by tests passing.
-- Launch-deferred features go **behind a one-line switch**, not deleted.
+- A big feature deferred to later (like the site check, `SHOW_SITE_CHECK`) goes **behind a
+  one-line switch**, not deleted. Small things get no switch: show them or remove them
+  (Malith, 2026-11-18).
 - In anything users see on the site: use "-", never the long dash "—".
 - Git: remote `origin` = https://github.com/malithJayasinghe2000/legal-mcp (branch `main`).
   CI (`.github/workflows/ci.yml`) runs lint, tests and the website build on every push.

@@ -322,8 +322,9 @@ In priority order:
 ## 15. Open questions (decide in the next chats)
 
 - Domain for Rulewise.
-- Hosting: the same Azure student VM as law-finder (credit until about Feb 2027)
-  or separate. Stateless and small either way.
+- Moving hosting from the Azure student subscription (not Malith's own; credit until
+  about Feb 2027) to Malith's own pay-as-you-go account, with budget and uptime alerts.
 - Which lawyer reviews the rules, and how they are paid or credited.
-- Open-source licence (e.g. Apache-2.0 for code). Should the rule library be open too?
 - Exact list of fact questions (first draft in ROADMAP).
+
+Decided since: hosting on Azure Container Apps (D23); MIT licence for code and rules (D24).

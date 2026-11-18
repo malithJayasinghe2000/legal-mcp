@@ -26,7 +26,7 @@ gets correct warnings. law-finder's story is the first test.
   2. ~~PDPA commencement Gazette No. 2498/16~~ done 2026-11-11 (found on dpa.gov.lk; start date verified).
   3. BASL note (June 2021): no copy online. Ask BASL or the lawyer reviewer.
   4. ~~Intermeddlers Ordinance from CommonLII~~ done 2026-11-11 (manual browser download).
-- Official sources only, same rule as law-finder: never lankalaw.net or other private sites.
+- Rules quote and link official sources only (D14). Private sites like lankalaw.net may be used to *find* laws, never as a rule's source.
 - [x] Automatic amendment search: `uv run python scripts/find_amendments.py` searches
   Parliament's acts listing for every main law and fails if an amendment is missing. 2026-11-11 result:
   nothing missing. Payment Act No. 28 of 2005 has **no amendments**. Medical Ordinance:
@@ -153,6 +153,14 @@ and README now show that line.
 VS Code). Turn it on after a real Cursor test.
 **Cursor tested by Malith (2026-11-18): works.** Shown normally again; the `SHOW_CURSOR` switch was removed (Malith: per-tool switches are not needed).
 **Licence added (2026-11-18, D24):** MIT, `LICENSE` at the repo root.
+**Switches (2026-11-18, Malith):** keep `SHOW_SITE_CHECK` (the site check comes back later, D21);
+it is the only switch. Small things get no switch (rule in CLAUDE.md).
+**Monthly amendment check (2026-11-18):** `.github/workflows/amendments.yml` runs
+`find_amendments.py` on the 1st of each month; a missing amendment fails the run and GitHub
+emails the owner. Updating rules stays manual (D9). It covers Parliament Acts only, not
+Central Bank or Data Protection Authority documents.
+**LankaLaw.net** (private, Chat2Find) may be used to *find* missing laws, gazettes and
+consolidated texts; rules still quote and link only official copies (D14). Don't scrape it.
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:
@@ -225,7 +233,7 @@ Original plan:
   questions that depend on the product type.
 - **Next for the MCP server (agreed 2026-11-12):** (1) more general areas: consumer rights (done
   2026-11-12), e-commerce and online contracts (done 2026-11-12), cybercrime (done 2026-11-13), copyright (done 2026-11-13); (2) Malith reviews the
-  36 draft rules; (3) remote hosting with a usage limit, so it works by web address in
+  draft rules (57 as of 2026-11-18); (3) remote hosting with a usage limit, so it works by web address in
   Claude, ChatGPT, Cursor, Codex; (4) setup guide per tool; (5) lawyer review before launch.
 - Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.
 
