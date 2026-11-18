@@ -39,7 +39,13 @@ docker buildx build --platform linux/amd64 -t "$IMAGE" --load .
 say "2/4 Push"
 "${AZ[@]}" az acr login --name "$REGISTRY" --expose-token --query accessToken -o tsv \
   | docker login "$REGISTRY.azurecr.io" -u 00000000-0000-0000-0000-000000000000 --password-stdin
-docker push "$IMAGE"
+# The upload sometimes times out on a slow connection (2026-11-18); layers already sent are kept.
+for try in 1 2 3; do
+  docker push "$IMAGE" && break
+  [ "$try" = 3 ] && { echo "Upload failed 3 times. Check the internet connection and run again."; exit 1; }
+  echo "Upload failed, trying again ($try/3)..."
+  sleep 10
+done
 
 say "3/4 Switch the app to $TAG"
 "${AZ[@]}" az containerapp update --name "$APP" --resource-group "$GROUP" --image "$IMAGE" -o none
