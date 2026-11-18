@@ -86,7 +86,7 @@ def search(name: str) -> list[dict]:
 
 def belongs_to(title: str, name: str) -> bool:
     """'Personal Data Protection (Amendment)' belongs to 'Personal Data Protection'."""
-    t = re.sub(r"\s+", " ", title).strip().lower()
+    t = re.sub(r"\s*\(", " (", re.sub(r"\s+", " ", title)).strip().lower()  # "Act(Amendment)" too
     n = name.strip().lower()
     return t == n or (t.startswith(n + " (") and t.endswith(")"))
 

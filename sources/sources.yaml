@@ -241,3 +241,31 @@
   title: Intellectual Property (Amendment) Act, No. 8 of 2022
   url: https://www.parliament.lk/uploads/acts/gbills/english/6251.pdf
   verified: "2026-11-13: geographical indications (s.4, 101, 160-172, 186A)"
+
+# ---------- 10. Telecommunications ----------
+# TRCSL also hosts copies (trc.gov.lk/legislation/pages_e.php?id=34); the 1991 and 1996 copies there
+# are scans too. TRCSL licence guidelines: Gazette 2355/28 (2023), amended by 2494/12 (2026) -
+# about operator licences (fees, shareholding), not quoted by rules yet.
+- id: lk-tsa-1991
+  parliament_name: Sri Lanka Telecommunications
+  area: telecom
+  kind: act
+  title: Sri Lanka Telecommunications Act, No. 25 of 1991
+  url: https://www.parliament.lk/uploads/acts/gbills/english/3500.pdf
+  # Scanned PDF (no text layer). No rule quotes it yet.
+  verified: "2026-11-18: certified 3rd July, 1991 (page image)"
+
+- id: lk-tsa-amendment-1996
+  area: telecom
+  kind: act
+  title: Sri Lanka Telecommunications (Amendment) Act, No. 27 of 1996
+  url: https://www.parliament.lk/uploads/acts/gbills/english/3309.pdf
+  # Scanned PDF (no text layer). No rule quotes it yet.
+  verified: "2026-11-18: on Parliament's acts listing, endorsed 1996-10-23"
+
+- id: lk-tsa-amendment-2024
+  area: telecom
+  kind: act
+  title: Sri Lanka Telecommunications (Amendment) Act, No. 39 of 2024
+  url: https://www.parliament.lk/uploads/acts/gbills/english/6349.pdf
+  verified: "2026-11-18: certified 17th of July, 2024 (text PDF); adds s.17B (provider licences), replaces s.59(1)"

@@ -103,7 +103,14 @@ Progress:
   (s.7(1)(b), s.8). New facts `uses_others_content`, `trains_ai_on_others_content`.
   Real session showed `uses_third_party_data` was read too widely (own Pinterest downloads);
   its wording now says "collected by someone else".
-- **Total: 57 rules in 9 areas.**
+- [x] **Telecom: 2 rules** in `rules/telecom/` (2026-11-18), from the Sri Lanka Telecommunications
+  (Amendment) Act No. 39 of 2024 (text PDF): provider licence for telecom services (s.17B, "check with a
+  lawyer"), nuisance calls and messages (s.59(1), "should"). New fact `provides_telecom_service`. The 1991
+  Act and 1996 amendment are scans (no rule quotes them yet). The Act is mostly about operators; the TRCSL
+  rules listing licensed services were not found, and SMS opt-out / sender ID rules have no official text
+  (only a 2020 news report and SMS providers' guides). Real sessions: a bulk-SMS gateway got both rules
+  (licence first); a shop sending promo SMS through Twilio got the nuisance rule only, not the licence.
+- **Total: 59 rules in 10 areas.**
 
 ### Step 3. Fact questions (first draft)
 Machine-readable list: [rules/facts.yaml](../rules/facts.yaml) (grows as areas are added).

@@ -168,9 +168,10 @@
 - name: "#20 bulk SMS marketing platform"
   users_in: [LK]
   company_in: LK
-  facts: [collects_personal_data, data:contact, sends_marketing_messages, uses_processors]
-  must_include: [lk-pdpa-marketing-messages, lk-pdpa-processors]
-  not_covered_includes: [Telecommunications]
+  facts: [collects_personal_data, data:contact, sends_marketing_messages, uses_processors,
+          provides_telecom_service]
+  must_include: [lk-pdpa-marketing-messages, lk-pdpa-processors, lk-tsa-provider-licence,
+                 lk-tsa-nuisance-calls-messages]
 
 - name: "#21 remittance app: workers abroad send money home"
   users_in: [AE, LK]

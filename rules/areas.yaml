@@ -28,6 +28,9 @@ covered:
   copyright:
     label: Copyright (Intellectual Property Act)
     gaps: Trademarks, patents, designs and performers' rights not covered.
+  telecom:
+    label: Telecommunications (Sri Lanka Telecommunications Act)
+    gaps: Mostly about operators. TRCSL rules listing licensed services, the scanned 1991 Act and 1996 amendment not quoted yet; no official text found for SMS opt-out or sender ID rules.
   regulated-professions:
     label: Regulated professions
     gaps: Doctors and lawyers only. BASL note on online legal advice known only from the press.
@@ -35,7 +38,6 @@ covered:
 not_covered:
   - Trademarks and patents
   - Cyber security (no Act found yet)
-  - Telecommunications
   - Employment
   - Education
   - Gambling

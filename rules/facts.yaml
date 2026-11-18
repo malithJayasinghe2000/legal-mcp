@@ -65,6 +65,9 @@ copyright:
   uses_others_content: Does the product use or show content made by others (images, music, videos, articles, fonts, code libraries)?
   trains_ai_on_others_content: Do you train or fine-tune AI on content made by others (scraped text, images, books, music, code)?
 
+telecom:
+  provides_telecom_service: Do you run a telecom service for others yourself (your own SMS gateway or bulk-SMS service for other businesses, calls to normal phone numbers, internet or Wi-Fi access for the public)? Not just sending your own messages through an SMS API.
+
 regulated_professions:
   profession:medicine: Does the product involve doctors or dentists (listing, booking, consulting)?
   profession:law: Does the product involve lawyers (listing, booking, consulting, legal help)?

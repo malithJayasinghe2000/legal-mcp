@@ -125,6 +125,9 @@ sections:
       - id: hosts_user_content
         kind: yesno
         label: Can users post things that others see (posts, comments, reviews, group chats, uploads)?
+      - id: provides_telecom_service
+        kind: yesno
+        label: Do you run a telecom service for others yourself (your own SMS gateway, calls to normal phone numbers, public Wi-Fi or internet)? Not just sending your own messages through an SMS API.
 
   - id: professions
     title: Professions

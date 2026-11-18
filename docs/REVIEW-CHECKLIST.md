@@ -15,7 +15,7 @@ not spelling. For each rule, open the PDF at the page shown and ask:
 Done? In the rule file set `review_status: checked_by_owner`, `reviewed_by: Malith Jayasinghe`
 and `last_checked` to today. Unsure? Add the point to `lawyer_questions` instead of guessing.
 
-**Progress: 0 of 57 rules checked.**
+**Progress: 0 of 59 rules checked.**
 
 ## 1. Consumer Affairs Authority Act, No. 9 of 2003 (6 rules)
 
@@ -289,7 +289,19 @@ Source: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679713.pdf
   `Advertising by Doctors and Institutions, para 4.3`, [page 47](https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679713.pdf#page=47) - [lk-slmc-no-paid-doctor-promotion](../rules/regulated-professions/lk-slmc-no-paid-doctor-promotion.yaml)  
   > "4.3.1 Doctors may not advertise in newspapers or the electronic media 4.3.2 Institutions may advertise the services they offer in newspapers without the names of service providers. 4.3.3 Institutions may advertise the services they offer in the electronic media without the names of service providers."
 
-## 14. Money or Value Transfer Service Providers Regulations No. 1 of 2024 (1 rules)
+## 14. Sri Lanka Telecommunications (Amendment) Act, No. 39 of 2024 (2 rules)
+
+Source: https://www.parliament.lk/uploads/acts/gbills/english/6349.pdf
+
+- [ ] **Should** - Don't keep calling or messaging people who don't want it, or publish their numbers  
+  `s.32, replacing s.59(1) of the Sri Lanka Telecommunications Act, No. 25 of 1991`, [page 40](https://www.parliament.lk/uploads/acts/gbills/english/6349.pdf#page=40) - [lk-tsa-nuisance-calls-messages](../rules/telecom/lk-tsa-nuisance-calls-messages.yaml)  
+  > "(a) persistently makes telephone calls, or sends or transmits messages using a telephone; or (b) publishes, sends or transmits telephone numbers of other subscribers, without reasonable excuse for the purpose of causing annoyance, inconvenience or needless anxiety to any telecommunication officer or any person, commits an offence"
+
+- [ ] **Check with a lawyer** - Running your own telecom service for others may need a TRCSL licence  
+  `s.13, inserting s.17B into the Sri Lanka Telecommunications Act, No. 25 of 1991`, [page 15](https://www.parliament.lk/uploads/acts/gbills/english/6349.pdf#page=15) - [lk-tsa-provider-licence](../rules/telecom/lk-tsa-provider-licence.yaml)  
+  > "A person shall not engage in the following activities except under the authority of a licence issued by the Commission in that behalf:- (a) providing infrastructure services specified by rules, required for operating a telecommunication system; (b) providing telecommunication services specified by rules; or"
+
+## 15. Money or Value Transfer Service Providers Regulations No. 1 of 2024 (1 rules)
 
 Source: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/psd_reg_2024__1_e.pdf
 
@@ -297,7 +309,7 @@ Source: https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/p
   `reg 4 (definition in reg 3 as replaced by Regulations No. 1 of 2025)`, [page 2](https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/psd_reg_2024__1_e.pdf#page=2) - [lk-payments-money-transfer](../rules/payments/lk-payments-money-transfer.yaml)  
   > "No person shall engage in the business of or function as a MVTS provider except under the authority and in accordance with the terms and conditions of a Certificate of Registration issued by the Central Bank."
 
-## 15. Intermeddlers with Suitors Ordinance (Cap. 40) (1 rules)
+## 16. Intermeddlers with Suitors Ordinance (Cap. 40) (1 rules)
 
 Source: http://www.commonlii.org/lk/legis/consol_act/iws40367/
 
@@ -305,7 +317,7 @@ Source: http://www.commonlii.org/lk/legis/consol_act/iws40367/
   `s.2(a); see also s.2(c)`, [page 1](http://www.commonlii.org/lk/legis/consol_act/iws40367/#page=1) - [lk-intermeddlers-payment-for-clients](../rules/regulated-professions/lk-intermeddlers-payment-for-clients.yaml)  
   > "solicits or receives from any legal practitioner any gratification in consideration of procuring or having procured him employment as such legal practitioner"
 
-## 16. Sri Lanka Medical Council, Instructions on Serious Professional Misconduct (July 2009) (1 rules)
+## 17. Sri Lanka Medical Council, Instructions on Serious Professional Misconduct (July 2009) (1 rules)
 
 Source: https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679630.pdf
 

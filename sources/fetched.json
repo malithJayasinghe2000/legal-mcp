@@ -2,7 +2,7 @@
   "lk-caa-2003": {
     "title": "Consumer Affairs Authority Act, No. 9 of 2003",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/5802.pdf",
-    "downloaded": "2026-11-12",
+    "downloaded": "2026-11-18",
     "sha256": "f138e4ee0c4797592dcc83cb11fd9ebc0c99093abf77a098c9a3ad2cebd75000",
     "bytes": 95135015,
     "file": "sources/raw/lk-caa-2003.pdf"
@@ -10,7 +10,7 @@
   "lk-caa-amendment-2021": {
     "title": "Consumer Affairs Authority (Amendment) Act, No. 20 of 2021",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6225.pdf",
-    "downloaded": "2026-11-12",
+    "downloaded": "2026-11-18",
     "sha256": "d946a987ff82b063dce8af7e1e0acd7a41b97e25a52539bbd872a8283216a52a",
     "bytes": 131525,
     "file": "sources/raw/lk-caa-amendment-2021.pdf"
@@ -18,7 +18,7 @@
   "lk-cbsl-ecommerce-acquiring-direction-2018": {
     "title": "Direction No. 01/2018: Acquiring Payment Card based Electronic Commerce Transactions through Service Providers",
     "url_used": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/Payment_Cards_%26_Mobile_Payment_Systems_Regulations_Direction_No_1_of_2018_e.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "fd4828e1b144eb061d5d390bf659926d9704e59c04f1edfa7afbcb84d791061c",
     "bytes": 969085,
     "file": "sources/raw/lk-cbsl-ecommerce-acquiring-direction-2018.pdf"
@@ -26,7 +26,7 @@
   "lk-cbsl-mvts-regs-2024": {
     "title": "Money or Value Transfer Service Providers Regulations No. 1 of 2024 (Gazette Extraordinary No. 2382/11 of 30 April 2024)",
     "url_used": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/psd_reg_2024__1_e.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "f1c2137366e717cf99fcbf1ac4119732e3fc02864b14220d58f59e8aaa26348c",
     "bytes": 248495,
     "file": "sources/raw/lk-cbsl-mvts-regs-2024.pdf"
@@ -34,7 +34,7 @@
   "lk-cbsl-mvts-regs-2025": {
     "title": "Money or Value Transfer Service Providers Regulations No. 01 of 2025 (Gazette Extraordinary No. 2468/06 of 23 December 2025)",
     "url_used": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/psd_reg_2025__1_e.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "453757e9393a63ddef3c03a9c91443ca8b33a156fbfea567745dc4073299a136",
     "bytes": 246088,
     "file": "sources/raw/lk-cbsl-mvts-regs-2025.pdf"
@@ -42,7 +42,7 @@
   "lk-cbsl-payment-cards-mobile-regs-2013": {
     "title": "Payment Cards and Mobile Payment Systems Regulations No. 1 of 2013",
     "url_used": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/cdg/Reg_2013_1_e_0.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "d17b075ea3cf44f3dc5d7f6d1a1627d8bebd29aac134c1b31de61793e96ef424",
     "bytes": 40805,
     "file": "sources/raw/lk-cbsl-payment-cards-mobile-regs-2013.pdf"
@@ -50,7 +50,7 @@
   "lk-cca-2007": {
     "title": "Computer Crime Act, No. 24 of 2007",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/4684.pdf",
-    "downloaded": "2026-11-13",
+    "downloaded": "2026-11-18",
     "sha256": "25d4aaeaf3d641440751587b5e9d2de79ffcdd8608331baa51da6c97f43d12f0",
     "bytes": 49857,
     "file": "sources/raw/lk-cca-2007.pdf"
@@ -58,7 +58,7 @@
   "lk-eta-2006": {
     "title": "Electronic Transactions Act, No. 19 of 2006",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/5722.pdf",
-    "downloaded": "2026-11-12",
+    "downloaded": "2026-11-18",
     "sha256": "ac0c5fabdea3551c511630ce8c274f2669d3f2b8f23ffca2963fa570bbd87fb0",
     "bytes": 47444,
     "file": "sources/raw/lk-eta-2006.pdf"
@@ -66,7 +66,7 @@
   "lk-eta-amendment-2017": {
     "title": "Electronic Transactions (Amendment) Act, No. 25 of 2017",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6053.pdf",
-    "downloaded": "2026-11-12",
+    "downloaded": "2026-11-18",
     "sha256": "6b38b83a380ab3c3447e535e303853ada6b573de0425873d3b1256e03a27269c",
     "bytes": 91426,
     "file": "sources/raw/lk-eta-amendment-2017.pdf"
@@ -82,7 +82,7 @@
   "lk-ipa-2003": {
     "title": "Intellectual Property Act, No. 36 of 2003",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/3726.pdf",
-    "downloaded": "2026-11-13",
+    "downloaded": "2026-11-18",
     "sha256": "7471b7c40c7eaf6a47e7db9f87d50f2ce9e95fde7dfd6cca6c0affa9730b8b41",
     "bytes": 429774,
     "file": "sources/raw/lk-ipa-2003.pdf"
@@ -90,7 +90,7 @@
   "lk-ipa-amendment-2018": {
     "title": "Intellectual Property (Amendment) Act, No. 7 of 2018",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6077.pdf",
-    "downloaded": "2026-11-13",
+    "downloaded": "2026-11-18",
     "sha256": "ed156b4e6f0f94341f928eadf5d805563b1cd809ec7e285deaafd58468d7358f",
     "bytes": 83131,
     "file": "sources/raw/lk-ipa-amendment-2018.pdf"
@@ -98,7 +98,7 @@
   "lk-ipa-amendment-2021": {
     "title": "Intellectual Property (Amendment) Act, No. 8 of 2021",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6208.pdf",
-    "downloaded": "2026-11-13",
+    "downloaded": "2026-11-18",
     "sha256": "24093acf88d3954cb2b5f150a0cb2b00ff3ccffc8021a4c33ee787585e317d7e",
     "bytes": 104416,
     "file": "sources/raw/lk-ipa-amendment-2021.pdf"
@@ -106,7 +106,7 @@
   "lk-ipa-amendment-2022": {
     "title": "Intellectual Property (Amendment) Act, No. 8 of 2022",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6251.pdf",
-    "downloaded": "2026-11-13",
+    "downloaded": "2026-11-18",
     "sha256": "fe8ecd059440fc62404da3373976964c0b5220cad14f02814412841ed19fd3ec",
     "bytes": 67002,
     "file": "sources/raw/lk-ipa-amendment-2022.pdf"
@@ -114,7 +114,7 @@
   "lk-medical-amendment-2024": {
     "title": "Medical (Amendment) Act, No. 46 of 2024",
     "url_used": "https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783675368.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "a5f2ed4d04015c7897dca4e803b995681938f021b95c8df8f801d80466026a30",
     "bytes": 122503,
     "file": "sources/raw/lk-medical-amendment-2024.pdf"
@@ -122,7 +122,7 @@
   "lk-medical-ordinance": {
     "title": "Medical Ordinance (Chapter 105)",
     "url_used": "https://slmc.gov.lk/public/website/docs/acts-reg/doc-1779866826.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "d68ff33f5432d5ead3148e3ca25ebb8ab9bd532331af39a2204eb06f326f8257",
     "bytes": 369653,
     "file": "sources/raw/lk-medical-ordinance.pdf"
@@ -130,7 +130,7 @@
   "lk-osa-2024": {
     "title": "Online Safety Act, No. 9 of 2024",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6311.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "aa0a1b9aff5f0440f91154007d5e5d2becc0eb091847d866fbc0f88977df3767",
     "bytes": 217145,
     "file": "sources/raw/lk-osa-2024.pdf"
@@ -138,15 +138,15 @@
   "lk-osa-repeal-bill": {
     "title": "Online Safety (Repeal) Bill (private member's bill, presented 8 May 2025)",
     "url_used": "https://www.parliament.lk/en/business-of-parliament/bill-details/P1585",
-    "downloaded": "2026-11-11",
-    "sha256": "2d3b7ed9cf5039f905e01bf8aa4706b5cae925d7695d42597b998f2980364101",
-    "bytes": 248659,
+    "downloaded": "2026-11-18",
+    "sha256": "bc703fe7e851b54110db3554244f45de5881672eeff7b072bda85fa55d8dd676",
+    "bytes": 248959,
     "file": "sources/raw/lk-osa-repeal-bill.html"
   },
   "lk-pdpa-2022": {
     "title": "Personal Data Protection Act, No. 9 of 2022",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6242.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "6fcdf94fe219d9f7cd18c4790a2c6332568c65eb72846790480e65834012ef46",
     "bytes": 159327,
     "file": "sources/raw/lk-pdpa-2022.pdf"
@@ -154,7 +154,7 @@
   "lk-pdpa-amendment-2025": {
     "title": "Personal Data Protection (Amendment) Act, No. 22 of 2025",
     "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6384.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "6186f402309b19987e2a0ff759e9085b369357b0230f5034b0a6523d72b9760e",
     "bytes": 240773,
     "file": "sources/raw/lk-pdpa-amendment-2025.pdf"
@@ -162,7 +162,7 @@
   "lk-pdpa-commencement-2498-16": {
     "title": "PDPA commencement order, Gazette Extraordinary No. 2498/16 of 22 July 2026",
     "url_used": "https://www.dpa.gov.lk/Gazet/2498-16_E.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "f25195fe858458a92963951d6661e1f5c0800ab747d884102c2296fcf1eda276",
     "bytes": 182536,
     "file": "sources/raw/lk-pdpa-commencement-2498-16.pdf"
@@ -170,7 +170,7 @@
   "lk-pssa-2005": {
     "title": "Payment and Settlement Systems Act, No. 28 of 2005",
     "url_used": "https://www.cbsl.gov.lk/sites/default/files/cbslweb_documents/laws/acts/en/Payment_setttlement_sys_act.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "60e1c640b5ee622d07834dd8a296ab87615c86eb22680ff26abb216fdb835cb4",
     "bytes": 59294,
     "file": "sources/raw/lk-pssa-2005.pdf"
@@ -186,7 +186,7 @@
   "lk-slmc-ethical-conduct": {
     "title": "SLMC Guidelines on Ethical Conduct for Medical and Dental Practitioners",
     "url_used": "https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679713.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "5f0f292daf8642ab95d52c06775cd7d35e6f0fa4d7a20a40fd05f560abdc3081",
     "bytes": 612141,
     "file": "sources/raw/lk-slmc-ethical-conduct.pdf"
@@ -194,9 +194,33 @@
   "lk-slmc-serious-misconduct": {
     "title": "SLMC Instructions on Serious Professional Misconduct for Medical Practitioners and Dentists",
     "url_used": "https://slmc.gov.lk/public/website/docs/acts-reg/doc-1783679630.pdf",
-    "downloaded": "2026-11-11",
+    "downloaded": "2026-11-18",
     "sha256": "897a4d97ced930af9ba580718526dbe4f03d63d3c17d90dd6c193edc82c6ada0",
     "bytes": 187952,
     "file": "sources/raw/lk-slmc-serious-misconduct.pdf"
+  },
+  "lk-tsa-1991": {
+    "title": "Sri Lanka Telecommunications Act, No. 25 of 1991",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/3500.pdf",
+    "downloaded": "2026-11-18",
+    "sha256": "d28aaaa626dd4aa2f630cb2b0b90daed0cb09d5e3dbce6790176139cdb2defc3",
+    "bytes": 95319016,
+    "file": "sources/raw/lk-tsa-1991.pdf"
+  },
+  "lk-tsa-amendment-1996": {
+    "title": "Sri Lanka Telecommunications (Amendment) Act, No. 27 of 1996",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/3309.pdf",
+    "downloaded": "2026-11-18",
+    "sha256": "49b8d3e071e9e264d414883756e32c8db1bdda8d61b0c27c70e5abed69e13021",
+    "bytes": 55571380,
+    "file": "sources/raw/lk-tsa-amendment-1996.pdf"
+  },
+  "lk-tsa-amendment-2024": {
+    "title": "Sri Lanka Telecommunications (Amendment) Act, No. 39 of 2024",
+    "url_used": "https://www.parliament.lk/uploads/acts/gbills/english/6349.pdf",
+    "downloaded": "2026-11-18",
+    "sha256": "c455e3d9f59e9ed0f5aeb66c3c89fbbb4983c91d4b7412bedf8d12bc1dff404d",
+    "bytes": 207723,
+    "file": "sources/raw/lk-tsa-amendment-2024.pdf"
   }
 }

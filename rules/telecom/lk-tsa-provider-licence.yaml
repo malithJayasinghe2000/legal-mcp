@@ -1,0 +1,49 @@
+id: lk-tsa-provider-licence
+jurisdiction: LK
+area: telecom
+title: Running your own telecom service for others may need a TRCSL licence
+severity: lawyer
+triggers:
+  all:
+    - provides_telecom_service
+    - [users_in:LK, company_in:LK]
+why: >
+  Since 2024, providing telecommunication services specified by TRCSL rules needs a
+  licence from the Telecommunications Regulatory Commission (TRCSL), and doing it
+  without one is an offence. This can cover running your own SMS gateway or bulk-SMS
+  service for other businesses, calls to normal phone numbers, or internet or Wi-Fi
+  access for the public. An app that only sends its own messages through a licensed
+  provider (for example an SMS API) is usually not providing a telecom service itself.
+what_to_do:
+  - Write down exactly which part of the service you run yourself and which a licensed operator or provider runs.
+  - Where you can, build on a licensed operator or provider instead of running the telecom part yourself.
+  - Before launch, ask TRCSL or a lawyer whether your service is a "telecommunication service specified by rules".
+lawyer_questions:
+  - Which services has TRCSL specified by rules under s.17B(1)(b), and is our service one of them?
+  - Do we need a provider licence (s.17B) or an operator licence (s.17), and what are the conditions (company, foreign shareholding)?
+law:
+  name: Sri Lanka Telecommunications (Amendment) Act, No. 39 of 2024
+  section: "s.13, inserting s.17B into the Sri Lanka Telecommunications Act, No. 25 of 1991"
+  source_id: lk-tsa-amendment-2024
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6349.pdf
+  quote: >-
+    A person shall not engage in the
+    following activities except under the authority
+    of a licence issued by the Commission in that
+    behalf:-
+    (a)  providing infrastructure services
+    specified by rules, required for
+    operating a telecommunication
+    system;
+    (b) providing telecommunication
+    services specified by rules; or
+done_check: Check TRCSL or a lawyer confirmed in writing whether the service needs a licence.
+in_force: true
+starts_on: null
+last_checked: 2026-11-18
+review_status: draft
+reviewed_by: null
+notes: >-
+  s.17B(5): engaging in (a) or (b) without a licence is an offence. The rules that list the
+  services were not found on trc.gov.lk (checked 2026-11-18); its licence guidelines (Gazette
+  2355/28, 2494/12) cover operator licences only.

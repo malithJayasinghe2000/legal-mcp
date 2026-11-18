@@ -50,7 +50,7 @@ See [docs/DEPLOY-AZURE.md](docs/DEPLOY-AZURE.md) (Docker, Azure Container Apps).
 
 See [web/README.md](web/README.md). For now it is a home page with setup steps; the guided check is hidden (brief D21).
 
-Status: Phase 1. 57 draft rules in 9 areas (not yet reviewed by a lawyer). Website: https://legal-mcp.vercel.app. MCP server hosted on Azure. See [docs/PROJECT-BRIEF.md](docs/PROJECT-BRIEF.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
+Status: Phase 1. 59 draft rules in 10 areas (not yet reviewed by a lawyer). Website: https://legal-mcp.vercel.app. MCP server hosted on Azure. See [docs/PROJECT-BRIEF.md](docs/PROJECT-BRIEF.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Licence
 

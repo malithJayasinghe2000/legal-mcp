@@ -1,0 +1,44 @@
+id: lk-tsa-nuisance-calls-messages
+jurisdiction: LK
+area: telecom
+title: Don't keep calling or messaging people who don't want it, or publish their numbers
+severity: should
+triggers:
+  all:
+    - sends_marketing_messages
+    - [users_in:LK, company_in:LK]
+why: >
+  Persistently calling or messaging people by phone, or publishing other people's phone
+  numbers, without reasonable excuse to cause annoyance, inconvenience or needless
+  anxiety is an offence (fine up to Rs. 100,000). Normal marketing is not meant to annoy,
+  but repeated calls or messages to people who asked you to stop come close to it.
+what_to_do:
+  - Limit how often the same person is called or messaged, and stop auto-dialers from redialling again and again.
+  - Stop calls and messages as soon as someone opts out.
+  - Never show or share users' phone numbers publicly unless they chose that.
+lawyer_questions:
+  - Could our call or message frequency be seen as "persistently" calling or messaging under s.59(1)?
+law:
+  name: Sri Lanka Telecommunications (Amendment) Act, No. 39 of 2024
+  section: "s.32, replacing s.59(1) of the Sri Lanka Telecommunications Act, No. 25 of 1991"
+  source_id: lk-tsa-amendment-2024
+  source_url: https://www.parliament.lk/uploads/acts/gbills/english/6349.pdf
+  quote: >-
+    (a) persistently makes telephone calls, or
+    sends or transmits messages using a
+    telephone; or
+    (b) publishes, sends or transmits telephone
+    numbers of other subscribers,
+    without reasonable excuse for the purpose of
+    causing annoyance, inconvenience  or needless
+    anxiety to any telecommunication officer or
+    any person, commits an offence
+done_check: Check there is a frequency limit and that opt-outs stop calls and messages at once.
+in_force: true
+starts_on: null
+last_checked: 2026-11-18
+review_status: draft
+reviewed_by: null
+notes: >-
+  The offence needs the purpose of causing annoyance, so it is a "should", not a "must".
+  Consent and opt-out for marketing are in lk-pdpa-marketing-messages (PDPA s.27).
