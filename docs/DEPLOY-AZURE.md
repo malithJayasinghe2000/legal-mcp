@@ -21,6 +21,12 @@ Cost: the app sleeps when unused (about USD 0 at small use); the registry (Basic
 
 ## Update after a change (from the repo root)
 
+**One command (2026-11-18):** `./scripts/deploy_azure.sh` does the steps below. It refuses uncommitted
+changes in `src/`, `rules/` or build files and failing tests, tags the image `vYYYYMMDD-HHMM`, and at the
+end waits until `/api/health` on the live server shows the same rule count as the repo.
+
+By hand:
+
 ```sh
 TAG=v2   # new tag each time
 R=caf42ef2eb61acr
