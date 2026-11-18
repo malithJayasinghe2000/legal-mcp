@@ -1,7 +1,7 @@
 # Rulewise
 
 Legal issue-spotting for people who build software. Connect it to your AI
-coding tool (Claude Code, Codex, VS Code) as an MCP server. While you build, it
+coding tool (Claude Code, Cursor, Codex, VS Code) as an MCP server. While you build, it
 tells you which laws apply to what you're building, how serious each one is, and
 what to ask a lawyer. Starts with Sri Lankan law.
 
@@ -15,7 +15,8 @@ Nothing to install. Add the hosted server to your AI tool:
   ```sh
   claude mcp add --transport http rulewise https://rulewise.victoriousdune-a7b660c5.centralindia.azurecontainerapps.io/mcp
   ```
-- **VS Code** (`.vscode/mcp.json`, `{"servers": {"rulewise": {"type": "http", "url": "<address>"}}}`),
+- **Cursor** (`~/.cursor/mcp.json`, `{"mcpServers": {"rulewise": {"url": "<address>"}}}`),
+  **VS Code** (`.vscode/mcp.json`, `{"servers": {"rulewise": {"type": "http", "url": "<address>"}}}`),
   **Codex** (`~/.codex/config.toml`, `[mcp_servers.rulewise]` with `url = "<address>"`).
   Codex doesn't follow the server's own instructions, so also add this line to `AGENTS.md`
   (project, or `~/.codex/AGENTS.md`), or it only uses Rulewise when asked:
