@@ -48,8 +48,8 @@ test("setup shows each AI tool", async ({ page }) => {
     "[mcp_servers.rulewise]",
   );
   await expect(
-    page.getByLabel("Codex AGENTS.md line", { exact: true }),
-  ).toContainText("check it with the Rulewise MCP tools");
+    page.getByLabel("Codex next step", { exact: true }),
+  ).toContainText("npx skills add malithJayasinghe2000/legal-mcp");
   await noA11yViolations(page);
 });
 

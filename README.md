@@ -18,8 +18,10 @@ Nothing to install. Add the hosted server to your AI tool:
 - **Cursor** (`~/.cursor/mcp.json`, `{"mcpServers": {"rulewise": {"url": "<address>"}}}`),
   **VS Code** (`.vscode/mcp.json`, `{"servers": {"rulewise": {"type": "http", "url": "<address>"}}}`),
   **Codex** (`~/.codex/config.toml`, `[mcp_servers.rulewise]` with `url = "<address>"`).
-  Codex doesn't follow the server's own instructions, so also add this line to `AGENTS.md`
-  (project, or `~/.codex/AGENTS.md`), or it only uses Rulewise when asked:
+  Codex doesn't follow the server's own instructions, so also add the Rulewise skill
+  ([skills/rulewise/SKILL.md](skills/rulewise/SKILL.md)), or it only uses Rulewise when asked:
+  `npx skills add malithJayasinghe2000/legal-mcp` (asks which AI tools to install it into).
+  Without Node.js, add this line to `AGENTS.md` instead (project, or `~/.codex/AGENTS.md`):
   `Before planning or building a product or feature, check it with the Rulewise MCP tools (get_fact_questions, then check_legal_risks).`
 
 Prefer to run it on your own computer? Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:

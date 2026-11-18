@@ -7,10 +7,11 @@ import { Tabs } from "radix-ui";
 const URL =
   "https://rulewise.victoriousdune-a7b660c5.centralindia.azurecontainerapps.io/mcp";
 
-// Codex doesn't act on the server's own instructions, so without this line it only uses
-// Rulewise when asked. Tested 2026-11-16: with it, Codex checks new features by itself.
-const AGENTS_LINE =
-  "Before planning or building a product or feature, check it with the Rulewise MCP tools (get_fact_questions, then check_legal_risks).";
+// Codex doesn't act on the server's own instructions, so without the Rulewise skill
+// (skills/rulewise/SKILL.md) it only uses Rulewise when asked. Tested 2026-11-18: with the
+// skill, Codex asks for the country and checks new features by itself. The installer asks
+// which AI tools to install it into.
+const SKILL_INSTALL = "npx skills add malithJayasinghe2000/legal-mcp";
 
 type Tool = {
   id: string;
@@ -47,8 +48,8 @@ const TOOLS: Tool[] = [
 url = "${URL}"`,
     then: {
       where:
-        "Then add this line to AGENTS.md (in your project, or ~/.codex/AGENTS.md for all projects), so Codex checks new features by itself:",
-      code: AGENTS_LINE,
+        "Then add the Rulewise skill (needs Node.js), so Codex checks new features by itself:",
+      code: SKILL_INSTALL,
     },
   },
   {
@@ -90,7 +91,7 @@ export function SetupTabs() {
           {t.then && (
             <div className="mt-6">
               <CodeBlock
-                label={`${t.name} AGENTS.md line`}
+                label={`${t.name} next step`}
                 where={t.then.where}
                 code={t.then.code}
               />

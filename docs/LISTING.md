@@ -25,6 +25,11 @@ Some of these copy from the official registry; check each one after step 1 befor
 - **PulseMCP** (pulsemcp.com): submit form.
 - **Agensi**: list free. Don't sell it before a lawyer reviews the Must rules.
 
+## 3. The Rulewise skill
+[skills/rulewise/SKILL.md](../skills/rulewise/SKILL.md). Users install it with
+`npx skills add malithJayasinghe2000/legal-mcp`. Skill directories (Agensi, skills.sh) list skills;
+list it free there too.
+
 Use the same short text everywhere:
 > Rulewise warns developers which Sri Lankan laws apply to what they build (personal data,
 > payments, AI, online content, consumer, e-commerce, cybercrime, copyright, lawyers and

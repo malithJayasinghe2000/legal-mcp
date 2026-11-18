@@ -185,6 +185,13 @@ directories: [LISTING.md](LISTING.md). **Published to the official MCP Registry 
   as `io.github.malithJayasinghe2000/rulewise` v0.1.0. If the server address changes, follow the list in
   [DEPLOY-AZURE.md](DEPLOY-AZURE.md) ("When the server address changes"). A stable address (custom domain
   or a `/mcp` pass-through on the website) was discussed and postponed: MVP, free credits used for now.
+**Rulewise skill (2026-11-18):** [skills/rulewise/SKILL.md](../skills/rulewise/SKILL.md), the agent-skill format
+read by Claude Code, Codex, Copilot and others. Install: `npx skills add malithJayasinghe2000/legal-mcp`
+(the installer found it from the repo). Real Codex test (gpt-6-luna, no AGENTS.md line, skill in
+`.agents/skills/`): Codex loaded the skill by itself, asked for the country when not given, and with the
+country called `get_fact_questions` then `check_legal_risks` and explained the PDPA warnings. The site's
+Codex tab now shows the skill install instead of the AGENTS.md line (README keeps the line for users
+without Node.js). `tests/test_skill.py` keeps the skill's tool names and safety rules in step.
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:
