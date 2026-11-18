@@ -15,7 +15,7 @@ ENV PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1 PYTHONDONTWRITEBYTECODE=1
 WORKDIR /app
 COPY --from=lock /lock/requirements.txt .
 RUN pip install -r requirements.txt
-COPY pyproject.toml README.md ./
+COPY pyproject.toml README.md LICENSE ./
 COPY src ./src
 COPY rules ./rules
 RUN pip install --no-deps . && rm -rf /app/src

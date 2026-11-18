@@ -152,7 +152,8 @@ and README now show that line.
 `SHOW_CURSOR = false` in `web/src/lib/features.ts` (README and privacy page say Claude Code, Codex,
 VS Code). Turn it on after a real Cursor test.
 **Cursor tested by Malith (2026-11-18): works.** Shown normally again; the `SHOW_CURSOR` switch was removed (Malith: per-tool switches are not needed).
-Not done yet: custom domain, pay-as-you-go subscription, licence.
+**Licence added (2026-11-18, D24):** MIT, `LICENSE` at the repo root.
+Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:
 - Tool `check_legal_risks`: input = feature/idea text + facts + users' countries.

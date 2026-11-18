@@ -3,6 +3,8 @@ name = "legal-check"
 version = "0.1.0"
 description = "Legal issue-spotting for people who build software (MCP server). Starts with Sri Lankan law."
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.12"
 dependencies = [
     "mcp>=2.3.0",
