@@ -29,6 +29,7 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
 - `sources/sources.yaml` - official law sources; `sources/fetched.json` - what was downloaded and when
 - `sources/raw/` - downloaded law files (not in git)
 - `scripts/fetch_sources.py` - downloads the sources: `uv run --group sources python scripts/fetch_sources.py`
+- `scripts/review_checklist.py` - writes `docs/REVIEW-CHECKLIST.md` (owner review, page of each quote): `uv run --group sources python scripts/review_checklist.py`
 - `scripts/find_amendments.py` - checks Parliament for amendments not yet in sources.yaml: `uv run python scripts/find_amendments.py`
 - Tests: `uv run pytest`. Lint/format: `uv run ruff check . && uv run ruff format .`
 
