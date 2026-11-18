@@ -4,7 +4,7 @@ Free listings only (brief D10). Every result already says the rules are drafts, 
 reviewed by a lawyer, so listing doesn't wait for the review. Malith submits with his own
 accounts; nothing here is automated.
 
-## 1. Official MCP Registry (do this first)
+## 1. Official MCP Registry - done 2026-11-18 (v0.1.0)
 File: [server.json](../server.json) (schema 2025-12-11, checked against the schema 2026-11-18).
 It lists the hosted address only (`remotes`), so users install nothing.
 

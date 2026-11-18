@@ -167,7 +167,10 @@ Central Bank or Data Protection Authority documents.
 consolidated texts; rules still quote and link only official copies (D14). Don't scrape it.
 **Directory listings prepared (2026-11-18):** `server.json` for the official MCP Registry (valid
 against the schema; hosted address answered the MCP handshake). Steps for Malith and the other
-directories: [LISTING.md](LISTING.md). Not submitted yet.
+directories: [LISTING.md](LISTING.md). **Published to the official MCP Registry by Malith (2026-11-18)**
+  as `io.github.malithJayasinghe2000/rulewise` v0.1.0. If the server address changes, follow the list in
+  [DEPLOY-AZURE.md](DEPLOY-AZURE.md) ("When the server address changes"). A stable address (custom domain
+  or a `/mcp` pass-through on the website) was discussed and postponed: MVP, free credits used for now.
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:
