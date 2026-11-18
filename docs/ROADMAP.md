@@ -161,6 +161,9 @@ emails the owner. Updating rules stays manual (D9). It covers Parliament Acts on
 Central Bank or Data Protection Authority documents.
 **LankaLaw.net** (private, Chat2Find) may be used to *find* missing laws, gazettes and
 consolidated texts; rules still quote and link only official copies (D14). Don't scrape it.
+**Directory listings prepared (2026-11-18):** `server.json` for the official MCP Registry (valid
+against the schema; hosted address answered the MCP handshake). Steps for Malith and the other
+directories: [LISTING.md](LISTING.md). Not submitted yet.
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:

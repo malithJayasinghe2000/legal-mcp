@@ -1,0 +1,31 @@
+# Listing Rulewise in MCP directories
+
+Free listings only (brief D10). Every result already says the rules are drafts, not yet
+reviewed by a lawyer, so listing doesn't wait for the review. Malith submits with his own
+accounts; nothing here is automated.
+
+## 1. Official MCP Registry (do this first)
+File: [server.json](../server.json) (schema 2025-12-11, checked against the schema 2026-11-18).
+It lists the hosted address only (`remotes`), so users install nothing.
+
+```sh
+brew install mcp-publisher
+mcp-publisher login github      # as malithJayasinghe2000 (the name must start io.github.<that login>)
+mcp-publisher publish           # from the repo root
+curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.malithJayasinghe2000/rulewise"
+```
+
+When the server address or version changes, raise `version` in `server.json` and publish again.
+The registry checks the GitHub login, not the address, so a moved Azure address only needs a new publish.
+
+## 2. Other directories
+Some of these copy from the official registry; check each one after step 1 before adding by hand.
+- **Smithery** (smithery.ai): add a remote server by its address.
+- **Glama** (glama.ai/mcp/servers): finds GitHub repos; claim or add the repo.
+- **PulseMCP** (pulsemcp.com): submit form.
+- **Agensi**: list free. Don't sell it before a lawyer reviews the Must rules.
+
+Use the same short text everywhere:
+> Rulewise warns developers which Sri Lankan laws apply to what they build (personal data,
+> payments, AI, online content, consumer, e-commerce, cybercrime, copyright, lawyers and
+> doctors). Legal information, not legal advice. Rules are drafts, not yet reviewed by a lawyer.

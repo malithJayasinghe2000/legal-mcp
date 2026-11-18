@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.malithJayasinghe2000/rulewise",
+  "title": "Rulewise",
+  "description": "Warns developers which Sri Lankan laws apply to what they build. Legal information, not advice.",
+  "version": "0.1.0",
+  "websiteUrl": "https://legal-mcp.vercel.app",
+  "repository": {
+    "url": "https://github.com/malithJayasinghe2000/legal-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://rulewise.victoriousdune-a7b660c5.centralindia.azurecontainerapps.io/mcp"
+    }
+  ]
+}
