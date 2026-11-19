@@ -218,6 +218,10 @@ server on the fake shop app: called `get_checklist`, wrote the file, "3 of 10" w
 10" (Codex marked delete-account and security Missing: orders are not deleted, only password hashing seen).
 Known limit: AI reading varies between tools and runs; later add fixed patterns for common cases. A
 "can't tell" item appeared in "Top 3 to fix" once; the steps now allow only Missing items there.
+VS Code Copilot (2026-11-19, Malith): `/mcp.rulewise.pdpa_checklist` ran on law-finder and wrote the file, but
+Copilot chose `builds_for_client` (law-finder sells seats to firms), so all controller duties moved to
+"client's duties" and the headline said "0 of 1". The fact text and both step files now say: only for an
+agency or outsourcing project for one client; your own product (even SaaS for firms) is not that; ask if unsure.
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:

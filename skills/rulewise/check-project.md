@@ -34,8 +34,9 @@ the evidence: the file path and line, field or function, for example
 `db/schema.sql:14 (patients.nic)`.
 - If a fact is likely but not clear from the code, ask the user in one short list (at most 5
   questions), or leave it out and list it under "Assumptions".
-- If the project is built for a client who decides how the data is used, use
-  `builds_for_client`.
+- Use `builds_for_client` only for an agency or outsourcing project built for one client who
+  decides how the data is used. Your own product is not that, even if businesses pay to use it
+  (a SaaS, a platform for firms). If you are not sure, ask the user.
 
 ## 4. Run the check
 Call `check_legal_risks` with the facts and country codes only. Never send code, file

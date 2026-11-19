@@ -21,8 +21,9 @@ vendored code. Never open secret files (`.env`, keys, credentials) and never cop
 
 ## 3. Choose the facts
 Call `get_fact_questions` once. Pick only the facts the project shows, with evidence (file and
-line). If the project is built for a client who decides how the data is used, use
-`builds_for_client`.
+line). Use `builds_for_client` only for an agency or outsourcing project built for one client
+who decides how the data is used. Your own product is not that, even if businesses pay to use
+it (a SaaS, a platform for firms). If you are not sure, ask the user.
 
 ## 4. Get the checklist
 Call `get_checklist` with the facts, the country codes and `law: "pdpa"`. Send only facts and
