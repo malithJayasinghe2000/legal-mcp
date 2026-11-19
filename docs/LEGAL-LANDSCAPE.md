@@ -51,7 +51,7 @@ marked; **verify each one** on the official source before use.
 | Consumer | Consumer Affairs Authority Act No. 9 of 2003 (amended by No. 20 of 2021, penalties only) | Misleading claims, pricing. **Rules written 2026-11-12** (`rules/consumer/`) |
 | Copyright / IP | Intellectual Property Act No. 36 of 2003 (amended 2018, 2021, 2022) | Training data, content ownership. **Copyright rules written 2026-11-13** (`rules/copyright/`); trademarks and patents not yet |
 | Telecom | Sri Lanka Telecommunications Act No. 25 of 1991 (amended No. 27 of 1996, No. 39 of 2024) | SMS, calls, telecom services. **2 rules written 2026-11-18** (`rules/telecom/`): provider licence (s.17B), nuisance calls/messages (s.59(1)). Mostly about operators. No official text found for TRCSL SMS opt-out or sender ID rules |
-| Lawyers | Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules 1988 (Gazette 535/7): Rules 39, 40, 45, 49; Intermeddlers with Suitors Ordinance (Cap. 40) s.2; BASL note June 2021 | Already researched in law-finder (`law-finder/lawyer-finder-web/docs/`) |
+| Lawyers | Supreme Court (Conduct of and Etiquette for Attorneys-at-Law) Rules 1988 (Gazette 535/7): Rules 39, 40, 45, 49; Intermeddlers with Suitors Ordinance (Cap. 40) s.2; BASL note June 2021 | Rules written 2026-11-11 (`rules/regulated-professions/`) |
 | Doctors / health | Medical Ordinance; Sri Lanka Medical Council rules | Advertising, telemedicine |
 | Education / universities | UGC National AI Policy Framework for State Universities (2026) | Policy, not law. Four AI risk tiers. |
 | Employment | National Minimum Wage of Workers Act No. 3 of 2016 (amended 2021, 2025); Shop and Office Employees Act; EPF, ETF, gratuity, termination | **2 rules written 2026-11-18** (`rules/employment/`): minimum wage Rs. 30,000 / Rs. 1,200 (s.3(1) as replaced 2025), platform workers may be "workers" (s.14). Others not collected yet |
@@ -117,4 +117,4 @@ Sources: casrai.org, steg.ai, thebriefscript.com, numonic.ai.
 ### Laws that aren't "AI laws" but apply to AI
 Data protection (GDPR, Sri Lanka PDPA), copyright (training data, output
 ownership), consumer protection (misleading AI claims), professional rules (AI
-giving legal or medical advice; this is what hit law-finder).
+giving legal or medical advice).

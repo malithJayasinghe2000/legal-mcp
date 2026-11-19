@@ -3,10 +3,10 @@
     uv run python scripts/find_amendments.py
 
 For each main law with `parliament_name`, it searches Parliament's acts listing
-(https://www.parliament.lk/en/business-of-parliament/acts-listing, the same
-source law-finder uses) and lists the law and its amendments. Any Act found
-that is not yet in sources.yaml is printed as MISSING, and the exit code is 1,
-so a rule is never written from a law without its latest amendments.
+(https://www.parliament.lk/en/business-of-parliament/acts-listing) and lists
+the law and its amendments. Any Act found that is not yet in sources.yaml is
+printed as MISSING, and the exit code is 1, so a rule is never written from a law
+without its latest amendments.
 
 If the main law's copy is a consolidated text (`consolidated_to: <year>`),
 amendments up to that year are already inside it and shown as "in text".

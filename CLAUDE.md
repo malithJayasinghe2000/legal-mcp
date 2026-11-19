@@ -45,7 +45,7 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
 - **Never say "compliant" or "all clear".** Say "no issues found in the areas we
   cover" and list the areas not covered.
 - **A failure is an error, never "no issues found".** If rules didn't load or a
-  check couldn't run, return an error. (law-finder once reported an outage as
+  check couldn't run, return an error. (An earlier project once reported an outage as
   "this law doesn't exist".)
 - **Store nothing from users.** No ideas, no code, no request bodies in logs. Log counts and errors only.
 - **Every rule has an official source link, an exact quote, a `last_checked`
@@ -55,7 +55,7 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
   data is processed when a law says so (PDPA s.2 does). See brief D11.
 - **Don't help evade laws.** Explain the law and the risk instead.
 - **No referral fees or payment per client** if the product ever links to lawyers
-  (Sri Lankan fee-sharing and touting rules; see law-finder).
+  (Sri Lankan fee-sharing and touting rules).
 
 ## How we work
 - The maintainers are software engineers, not lawyers. Do the legal reasoning carefully,
@@ -71,10 +71,8 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
   CI (`.github/workflows/ci.yml`) runs lint, tests and the website build on every push.
 - Personal working preferences live in `CLAUDE.local.md` (not in git).
 
-## Related project
-`~/Developer/law-finder` is Malith's live Sri Lankan legal platform
-(thelawyr.fiveneurals.com). It is the origin of this idea and **test case #1**.
-Its law corpus (`lawyer-rag/data/acts/`) is mostly land, civil and criminal law, so
-it barely overlaps with what this tool needs. Its legal research on Bar rules,
-fee-sharing and AI advice is in `law-finder/lawyer-finder-web/docs/`.
-**Don't modify law-finder from this project.**
+## Private notes
+Details about the related project (test case #1, the lawyer directory app) and test results
+on real projects are kept out of this public repo: see `CLAUDE.local.md` and `docs/private/`
+(both not in git). Never write a real product's name, its legal problems or its test results
+into tracked files.

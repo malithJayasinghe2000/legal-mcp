@@ -8,7 +8,7 @@ Decisions behind this plan: [PROJECT-BRIEF.md](PROJECT-BRIEF.md).
 ## Phase 1 - First working version (Sri Lanka, 4-5 areas)
 
 Goal: a developer connects the MCP server in Claude Code, describes a feature, and
-gets correct warnings. law-finder's story is the first test.
+gets correct warnings. A lawyer directory app is the first test (case #1).
 
 - [x] Language decided: Python + official MCP SDK v2 + uv (brief D12). 2026-11-11
 - [x] Project structure set up (see CLAUDE.md "Code layout"). 2026-11-11
@@ -20,7 +20,7 @@ gets correct warnings. law-finder's story is the first test.
   11 of 15 download from official sites and were checked (title, number, date). Record in `sources/fetched.json`.
 - [x] Decided: PDFs stay **out of git** (`sources/raw/`); git keeps the URL, date
   and sha256, so anyone can re-download the same version.
-- [x] law-finder's `24-2007_E.pdf` is the Computer Crime Act No. 24 of 2007 (checked). Not in the first 5 areas.
+- [x] The Computer Crime Act No. 24 of 2007 was identified early (checked). Not in the first 5 areas.
 - [ ] **Malith, manual (4 items):**
   1. ~~Attorneys-at-Law Rules 1988~~ done 2026-11-11 (manual browser download).
   2. ~~PDPA commencement Gazette No. 2498/16~~ done 2026-11-11 (found on dpa.gov.lk; start date verified).
@@ -75,7 +75,7 @@ Progress:
   no practice particulars (Rule 49), no paid promotion (Rule 39(2)), no fee per client
   (Rule 39(1)), Intermeddlers s.2(a) (criminal, applies to the platform), online/AI legal advice
   (Rule 39 + BASL note, "check with a lawyer"). The 1988 Rules have **no separate fee-sharing
-  rule**: law-finder's fee-sharing problem comes from Rule 39(1) and Intermeddlers s.2.
+  rule**: the fee-sharing risk for lawyer platforms comes from Rule 39(1) and Intermeddlers s.2.
 - [x] **Consumer rights: 6 rules** in `rules/consumer/` (2026-11-12): misleading conduct (s.30),
   false claims and fake discounts (s.31), implied warranty and refunds (s.32), receipts (s.28),
   tied selling (s.16(b)), trader registration (s.27, "check with a lawyer"). New facts
@@ -212,16 +212,14 @@ Real Claude Code runs (local server): fake clinic app "0 of 12" (top fixes: prom
 health data without consent, no privacy notice); fake good shop app "5 of 10" (it also caught that the
 notice doesn't mention Twilio sending numbers abroad, and that consent time is never saved); `.env`
 never read. The hints are legal judgements: on the lawyer review list with the rules.
-Live tests (2026-11-19, after deploy): Claude Code plugin `/rulewise:pdpa` on law-finder "6 of 9" (9 = the
-PDPA items that apply to law-finder's facts; the count differs per app). Codex with the skill and the live
-server on the fake shop app: called `get_checklist`, wrote the file, "3 of 10" where Claude Code said "5 of
-10" (Codex marked delete-account and security Missing: orders are not deleted, only password hashing seen).
-Known limit: AI reading varies between tools and runs; later add fixed patterns for common cases. A
-"can't tell" item appeared in "Top 3 to fix" once; the steps now allow only Missing items there.
-VS Code Copilot (2026-11-19, Malith): `/mcp.rulewise.pdpa_checklist` ran on law-finder and wrote the file, but
-Copilot chose `builds_for_client` (law-finder sells seats to firms), so all controller duties moved to
-"client's duties" and the headline said "0 of 1". The fact text and both step files now say: only for an
-agency or outsourcing project for one client; your own product (even SaaS for firms) is not that; ask if unsure.
+Live tests (2026-11-19, after deploy) on a real project with Claude Code (plugin `/rulewise:pdpa`), Codex
+(skill) and VS Code Copilot (`/mcp.rulewise.pdpa_checklist`): all ran and wrote the file. The count Y differs
+per app (only the PDPA items that apply). On the same fake shop app Codex said "3 of 10" and Claude Code "5 of
+10" (Codex stricter on delete-account and security). Known limit: AI reading varies between tools and runs;
+later add fixed patterns for common cases. Fixes from these tests: "Top 3 to fix" allows only Missing items;
+Copilot once read a SaaS sold to firms as `builds_for_client`, so the fact text and both step files now say
+it is only for an agency or outsourcing project for one client, and to ask if unsure.
+Real-project details are in `docs/private/` (not in git).
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:
@@ -237,7 +235,7 @@ Original plan:
 - **A failure returns an error, never "no issues found".**
 
 ### Step 5. Test set (started 2026-11-11)
-`tests/cases.yaml` has 5 cases (law-finder #1 marked pending until lawyer rules exist;
+`tests/cases.yaml` has 5 cases (#1 lawyer directory, marked pending until lawyer rules exist;
 #2 doctor booking, #3 student chatbot, #4 Sri Lankan company with EU users,
 #5 foreign-only), plus #6-#25 added 2026-11-11 (shop, wallet, marketplace, teen social app,
 school system, HR SaaS, loan app, AI symptom checker, telemedicine, clinic directory, chatbot
@@ -258,14 +256,14 @@ Findings to decide:
     -> all 5 called check_legal_risks with sensible facts; "centre the header CSS" -> no call.
     The AI symptom chat request was paused for the user's decision (Medical Ordinance s.38)
     with a safer design; the NIC request was built, with the relevant PDPA warnings.
-    Not tested yet: projects with no hint of Sri Lanka in the files (layer 3 asks then). Case #1 (law-finder, original and fixed design) passes, and **passed in a
+    Not tested yet: projects with no hint of Sri Lanka in the files (layer 3 asks then). Case #1 (lawyer directory, original and fixed design) passes, and **passed in a
 real Claude Code session** (2026-11-11): it flagged the per-enquiry fee (Rule 39(1) +
 Intermeddlers s.2), featured slots (Rule 39(2)), past cases/ratings (Rule 49) and the AI
 legal chat (BASL note), then designed the schema without them. Run: `uv run pytest tests/test_server.py`. Grow it to 20-30.
 
 Original plan:
 - 20-30 example ideas with expected warnings, run with one command.
-- **Test case #1: law-finder** (lawyer directory + client chat + AI legal Q&A +
+- **Test case #1: a lawyer directory app** (lawyer directory + client chat + AI legal Q&A +
   subscriptions, users in Sri Lanka). Must catch:
   - Supreme Court Rules 1988: Rule 45 (directories allowed), Rule 49 (practice details), Rule 39 (touting)
   - Fee-sharing: no charging per client / enquiry / message

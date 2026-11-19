@@ -12,22 +12,22 @@ Related docs:
 
 ## 1. Where the idea came from
 
-Malith built **law-finder** (a Sri Lankan legal platform, live at
-thelawyr.fiveneurals.com, repo `~/Developer/law-finder`) on his own. When lawyers
-looked at it, they found laws and restrictions he did not know about. He had to
-research again and change the project scope and features.
+Malith built an earlier Sri Lankan legal platform on his own. When lawyers reviewed
+the plans, they pointed out laws and professional rules that apply to that kind of
+platform, which a developer would not know about. That meant new research and a
+changed scope before launch.
 
-Examples of what was found late on law-finder:
+Examples of rules that apply to a platform for lawyers:
 - **Bar rules on lawyer directories and advertising.** Supreme Court (Conduct of
   and Etiquette for Attorneys-at-Law) Rules 1988: Rule 45 allows directories,
   Rule 49 limits publishing details of a lawyer's practice, Rule 39 bans touting.
-- **Fee-sharing.** Charging per client, enquiry or message counts as sharing a
-  lawyer's fees. law-finder had to change to selling software seats to firms only.
+- **Fee-sharing.** Charging lawyers per client, enquiry or message can count as
+  sharing a lawyer's fees; selling software seats to firms avoids it.
 - **Intermeddlers with Suitors Ordinance.** Taking payment for bringing clients to
   a lawyer is an offence.
 - **AI giving legal advice.** A BASL (Bar Association) note from June 2021 says legal
-  advice through public non-lawyer online platforms can be touting. The AI chat
-  had to be restricted and controlled on the server.
+  advice through public non-lawyer online platforms can be touting, so an AI legal
+  chat needs limits.
 - **Personal data** law applies to user and client data.
 
 **The problem in general:** many people now build systems with AI, and most of
@@ -66,7 +66,7 @@ Parts of the idea exist. The whole idea does not.
 - Covers **all legal areas** (professional rules, payments, data, AI, consumer, content...),
   not one law.
 - Covers **Sri Lanka**, which no tool covers. None of the tools above would have
-  caught law-finder's Bar rules or fee-sharing problems.
+  caught the Bar rules or fee-sharing rules above.
 
 Code scanning is easy for others to copy. The local law knowledge is the hard part and the edge.
 
@@ -78,10 +78,10 @@ artificialintelligenceact.eu, aguardic.com.
 
 | # | Decision | Why |
 |---|---|---|
-| D1 | **Separate repo** (`~/Developer/legal-check`), not inside law-finder | Different product, different users. law-finder is live and must not be risked. Can be open-sourced on its own. |
+| D1 | **Separate repo** (`~/Developer/legal-check`), not inside the earlier legal platform | Different product, different users. The earlier platform is live and must not be risked. Can be open-sourced on its own. |
 | D2 | **Sri Lanka law only** for the first version | The gap is there, and we have the local knowledge. Other countries come later. |
 | D3 | **Rules first, AI second** (not plain RAG) | See section 6. Plain RAG search misses laws the idea doesn't "sound like". |
-| D4 | **Reuse only law *text* from law-finder, not its RAG design** | law-finder answers questions about law. This tool must find *every* law that applies to an idea. Different problem. |
+| D4 | **Reuse only law *text* from the earlier platform, not its RAG design** | The earlier platform answers questions about law. This tool must find *every* law that applies to an idea. Different problem. |
 | D5 | **Start without lawyers**: AI drafts rules from official sources, Malith checks them against the source text, and every rule is marked "not yet reviewed by a lawyer". **A lawyer reviews the main areas before public launch.** | Lawyers are needed because acts don't say when they apply to an app, and many restrictions are outside acts (Bar rules, Central Bank directions, practice). But that shouldn't block starting. |
 | D6 | **Store nothing** from users: no ideas, no code, no request bodies | Trust. Developers send unreleased ideas. |
 | D7 | **First delivery: MCP server + simple website**, sharing one backend | The website brings people in; the MCP server is what makes it different. |
@@ -91,16 +91,16 @@ artificialintelligenceact.eu, aguardic.com.
 | D11 | **Where the users are decides which laws apply** - and also where the company is and where data is processed, when a law says so | That's how the EU AI Act and GDPR work. The tool must ask "where are your users?" **Correction (2026-11-11):** PDPA s.2(1) also applies when processing happens in Sri Lanka, or the company is incorporated, domiciled or resident in Sri Lanka, even if all users are abroad. So the tool also asks where the company is and where data is processed. |
 | D12 | **Python, official MCP Python SDK (v2), managed with `uv`** | Law-processing tools (PDF text, scripts) are Python. The server is small, deterministic matching, so speed doesn't matter. The official SDK v2 includes the old FastMCP as `MCPServer` (`from mcp.server.mcpserver import MCPServer`). TypeScript would only win for a browser extension, which isn't planned. |
 | D13 | **Only software-relevant laws, never all Sri Lankan law** (2026-11-11). MVP: 5 areas, about 15 documents; later 15-20 areas. Land, family and most criminal law are out. | The tool spots risks for apps. Laws are read to **write rules**; they are not fed into an AI or kept as a library. |
-| D14 | **Any site for research; official text for rules** (2026-11-11). Private copies (lankalaw.net etc.) may be used to find and read laws. A rule's `quote` and `source_url` must come from an official copy (Parliament, regulator, Gazette, CommonLII, LawNet). | Unlike law-finder, we don't republish law files, so copyright isn't the issue. But users see the link and quote, so they must be trustworthy; private copies can be old or have scan errors. |
-| D15 | **Automate source collection for the MVP** (2026-11-11). Claude finds and downloads main laws and their amendments by script (Parliament's acts listing), and reads main law + amendments together. Malith only fetches files that sites block or that aren't online, and checks each rule against its source (D5). | No manual library work like law-finder. No government site has an up-to-date consolidated text, so we combine main law + amendments ourselves. |
+| D14 | **Any site for research; official text for rules** (2026-11-11). Private copies (lankalaw.net etc.) may be used to find and read laws. A rule's `quote` and `source_url` must come from an official copy (Parliament, regulator, Gazette, CommonLII, LawNet). | Unlike a legal library, we don't republish law files, so copyright isn't the issue. But users see the link and quote, so they must be trustworthy; private copies can be old or have scan errors. |
+| D15 | **Automate source collection for the MVP** (2026-11-11). Claude finds and downloads main laws and their amendments by script (Parliament's acts listing), and reads main law + amendments together. Malith only fetches files that sites block or that aren't online, and checks each rule against its source (D5). | No manual library work. No government site has an up-to-date consolidated text, so we combine main law + amendments ourselves. |
 | D16 | **The server takes only facts and country codes, never the idea text or code** (2026-11-11). | Matching needs only facts, so asking for text would collect user data for nothing (D6). Claude on the developer's side reads the idea and picks the facts. An unknown fact is an error, not ignored, because ignoring it could hide a law. |
 | D17 | **Website: guided questions, no AI** (paused by D21) (2026-11-11). Visitors answer the fact questions instead of typing their idea. | Nothing about the idea reaches our server, no AI cost, same answer every time. AI "describe your idea" can come later behind a switch. |
 | D18 | **Website look: light, calm base with fiveneurals orange `#F57E22` as the signature colour** (2026-11-11). Font from the same family as fiveneurals (Space Grotesk) is a candidate. | Long legal reports read better on light. Orange only for actions/highlights (small orange text fails contrast); severity colours (Must / Should / Lawyer) must stay distinct from the brand orange. |
 | D19 | **Website stack: Next.js + TypeScript, Tailwind CSS (design tokens), shadcn/ui (Radix), React Hook Form + Zod, Lucide icons, self-hosted fonts; ESLint, Prettier, Playwright + axe.** It calls the same Python checker through a small API (D7). | Industry standard, consistent, accessible. Self-hosted fonts and no trackers fit "store nothing". |
 | D20 | **Product name: Rulewise** (2026-11-11, Malith; replaced "Neura Guard" the same day). | Says what it does (knows the rules) without sounding like a law firm; no words like "lawyer", "counsel" or "legal advice" (Bar rules risk). Web search 2026-11-11 found no product called Rulewise. "Neura Guard" was dropped: a cybersecurity startup "NeuraGuard" and a US "NEURALGUARD" trademark filing exist. Before launch: check the Sri Lanka trademark register (NIPO) and ask the lawyer. |
-| D21 | **MCP server first; the website's own check is hidden for now** (2026-11-12, Malith). The site becomes a home page that explains Rulewise and shows how to add it to an AI tool (Claude Code, Cursor, Codex, VS Code). `/check` stays in the code behind `SHOW_SITE_CHECK` in `web/src/lib/features.ts`. The home example is a general one (online shop sending promo SMS), not law-finder. | The 6-step questions are the same for every idea, so most people get asked things that don't fit (doctors, lawyers). In MCP the user's own AI reads the idea and asks only what fits, with no AI cost or key for us and the idea never reaches us. Later the site check comes back in a simpler form: a "describe your idea" box (needs our own LLM key, cost per check, privacy policy naming the AI provider) and/or questions that depend on the product type. Remote MCP hosting would also let people add Rulewise to ChatGPT, Claude.ai or Gemini. |
+| D21 | **MCP server first; the website's own check is hidden for now** (2026-11-12, Malith). The site becomes a home page that explains Rulewise and shows how to add it to an AI tool (Claude Code, Cursor, Codex, VS Code). `/check` stays in the code behind `SHOW_SITE_CHECK` in `web/src/lib/features.ts`. The home example is a general one (online shop sending promo SMS), not a lawyer platform. | The 6-step questions are the same for every idea, so most people get asked things that don't fit (doctors, lawyers). In MCP the user's own AI reads the idea and asks only what fits, with no AI cost or key for us and the idea never reaches us. Later the site check comes back in a simpler form: a "describe your idea" box (needs our own LLM key, cost per check, privacy policy naming the AI provider) and/or questions that depend on the product type. Remote MCP hosting would also let people add Rulewise to ChatGPT, Claude.ai or Gemini. |
 | D22 | **Never guess the country** (2026-11-13, Malith). If the user hasn't said where the users or company are, the AI asks one short question first ("Rulewise checks Sri Lankan law. Will your users or your company be in Sri Lanka?"). If neither is in Sri Lanka, it says the country isn't covered yet, never "no issues". Set in the server instructions and tool description. | A real session guessed "LK" for an idea with no country, so a user elsewhere would get warnings that don't apply. Verified 2026-11-13: no country, it asked; "for Sri Lanka", it checked straight away. |
-| D23 | **Host the MCP server on Azure Container Apps** (2026-11-14, Malith chose Azure). Users then add Rulewise by web address with nothing to install; the GitHub `uvx` install stays as an option for running it locally. Hosted mode (`rulewise --public`): stateless HTTP, per-client limit (60 requests/minute, memory only), no access log. Guide: [DEPLOY-AZURE.md](DEPLOY-AZURE.md). Live 2026-11-15 in centralindia (student subscription allows only 5 regions and blocks cloud builds, so the image is built on the Mac). | Installing uv was the biggest step for new users. Container Apps sleeps when unused (cheap) and gives HTTPS. Access logs are off because they would store IP addresses (D6). Tested 2026-11-14: Docker image + real Claude Code over HTTP, 0 errors, logs show counts only. |
+| D23 | **Host the MCP server on Azure Container Apps** (2026-11-14, Malith chose Azure). Users then add Rulewise by web address with nothing to install; the GitHub `uvx` install stays as an option for running it locally. Hosted mode (`rulewise --public`): stateless HTTP, per-client limit (60 requests/minute, memory only), no access log. Guide: [DEPLOY-AZURE.md](DEPLOY-AZURE.md). Live 2026-11-15 in centralindia (the current subscription allows only 5 regions and blocks cloud builds, so the image is built on the Mac). | Installing uv was the biggest step for new users. Container Apps sleeps when unused (cheap) and gives HTTPS. Access logs are off because they would store IP addresses (D6). Tested 2026-11-14: Docker image + real Claude Code over HTTP, 0 errors, logs show counts only. |
 | D24 | **Licence: MIT for everything, code and rules** (2026-11-18, Malith). Copyright holder: Malith Jayasinghe for now; may move to Five Neurals later through a signed written transfer (IP Act s.16(2)), then the `LICENSE` line changes. | Simplest, widely understood; the "as is, no warranty" clause matters for a legal-information tool. Accepted trade-off: others may reuse the rules commercially. |
 
 ## 5. How it works (simple)
@@ -179,7 +179,7 @@ attorneys", so search can miss it. In this product, **a missed law is the worst 
    cite rules from the library.
 4. **RAG only for proof**: show the exact law text behind a rule.
 5. **Test set**: 20-30 example ideas with known correct answers, run on every
-   change. law-finder is test case #1 (see ROADMAP).
+   change. Test case #1 is a lawyer directory app (see ROADMAP).
 
 So whether a law is caught depends on reviewed rules, not search luck, and every
 warning can be traced to a source.
@@ -228,7 +228,7 @@ Rules for the output:
   and list the areas not covered.
 - **"No rules matched" must never be returned when the check failed.** If the
   rule library didn't load or the server errored, return an error, not "no issues".
-  (Lesson from law-finder: an outage was once reported as "this law doesn't exist".)
+  (Lesson from an earlier project: an outage was once reported as "this law doesn't exist".)
 
 ## 10. Our own legal position
 
@@ -240,7 +240,7 @@ Rules for the output:
 - **Misuse**: if someone asks how to avoid or get around a law, explain the law
   and the risk. Don't help evade it.
 - If it ever links to lawyers: **no referral fees or payment per client** (the
-  same fee-sharing and Intermeddlers risk as law-finder).
+  same fee-sharing and Intermeddlers risk as any lawyer platform).
 
 ## 11. Jurisdiction
 
@@ -275,11 +275,9 @@ Rules for the output:
    practice, which need a lawyer's eye.
 8. **Language.** Many laws are official in Sinhala and Tamil. If an English
    translation differs from the official text, the official text wins.
-9. **law-finder's law data barely covers this tool.** law-finder's corpus
-   (`lawyer-rag/data/acts/`, 13 PDFs) is mostly land, civil and criminal law
-   (Penal Code, Civil Procedure, Partition, Notaries, Companies Act...). The only
-   overlap is the Companies Act and probably the Computer Crime Act (file
-   `24-2007_E.pdf`). The tech-relevant laws must be **collected new**.
+9. **Existing law collections barely cover this tool.** Collections built for legal
+   research are mostly land, civil and criminal law. The tech-relevant laws must be
+   **collected new**.
 10. **Lawyer time is needed** for review before launch. It costs money or a partnership.
 11. **Big players could copy it** for big markets (US/EU). Unlikely for Sri Lanka.
 
@@ -288,11 +286,11 @@ Rules for the output:
 **Yes, worth building, as a small free version first.**
 
 Why it's good:
-- The problem is real (Malith lived it with law-finder).
+- The problem is real (Malith lived it with an earlier legal platform).
 - More people build with AI without legal knowledge every month.
 - Timing: Sri Lanka's data protection law is starting, and AI laws are spreading worldwide.
 - There's a real gap: nobody covers Sri Lanka or the idea stage.
-- We have a head start: experience and the law-finder story.
+- We have a head start: experience building a legal platform.
 
 Will it be popular in Sri Lanka? As a free tool among students, universities and
 startups, **moderately**. To become really popular, it needs the growth features below.
@@ -306,7 +304,7 @@ In priority order:
 2. **Foreign laws (GDPR, EU AI Act, UK, Australia)** for Sri Lankan software
    companies that build for foreign clients. **This is where the money is.**
 3. **"Send to lawyer" report**: a clear summary to take to a lawyer, which saves
-   them time and cost. Links naturally to law-finder (no referral fees).
+   them time and cost. Could link to lawyer directories (no referral fees).
 4. **University partnerships**: a legal check for final-year projects and student startups.
 5. **Code scanning + GitHub check + VS Code extension.**
 6. **Other South Asian countries** after Sri Lanka.
@@ -322,8 +320,7 @@ In priority order:
 ## 15. Open questions (decide in the next chats)
 
 - Domain for Rulewise.
-- Moving hosting from the Azure student subscription (not Malith's own; credit until
-  about Feb 2027) to Malith's own pay-as-you-go account, with budget and uptime alerts.
+- Moving hosting to a pay-as-you-go subscription with budget and uptime alerts.
 - Which lawyer reviews the rules, and how they are paid or credited.
 - Exact list of fact questions (first draft in ROADMAP).
 

@@ -2,7 +2,7 @@
 # `must_include`: rule ids that have to appear. `must_exclude`: rules that must not.
 # `max_warnings`: upper bound, to catch noise. Run: uv run pytest tests/test_cases.py
 
-- name: "#1 law-finder as first designed: lawyer directory, featured slots, per-enquiry fees, client chat, AI legal Q&A"
+- name: "#1 lawyer directory as first designed: lawyer directory, featured slots, per-enquiry fees, client chat, AI legal Q&A"
   users_in: [LK]
   company_in: LK
   facts: [collects_personal_data, data:contact, profession:law, lists_professionals,
@@ -13,7 +13,7 @@
                  lk-intermeddlers-payment-for-clients, lk-bar-online-legal-advice,
                  lk-pdpa-scope, lk-pdpa-privacy-notice]
 
-- name: "#1b law-finder as fixed: seats sold to firms, no featured slots, no per-client fees"
+- name: "#1b lawyer directory as fixed: seats sold to firms, no featured slots, no per-client fees"
   users_in: [LK]
   company_in: LK
   facts: [collects_personal_data, data:contact, profession:law, lists_professionals,

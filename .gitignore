@@ -20,3 +20,6 @@ data/generated/
 
 # Personal Claude notes (kept out of the public repo)
 CLAUDE.local.md
+
+# Private notes: related project details, real-project test results (kept out of the public repo)
+docs/private/

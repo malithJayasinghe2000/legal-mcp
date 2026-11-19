@@ -1,7 +1,7 @@
 # Deploy the Rulewise MCP server to Azure
 
 **Live (2026-11-15):** https://rulewise.victoriousdune-a7b660c5.centralindia.azurecontainerapps.io/mcp
-(health: `/api/health`). Subscription "Azure for Students", resource group `rulewise`, region
+(health: `/api/health`). Resource group `rulewise`, region
 **centralindia**, registry `caf42ef2eb61acr`, app `rulewise` (0-2 replicas, 0.25 CPU, 0.5 GiB).
 Verified with a real Claude Code session over HTTP, 0 errors; Azure logs show counts only.
 
@@ -11,7 +11,7 @@ IP addresses), logs counts only (brief D23).
 
 Cost: the app sleeps when unused (about USD 0 at small use); the registry (Basic) is about USD 5/month.
 
-## Limits of the student subscription (found 2026-11-15)
+## Limits of the current subscription (found 2026-11-15)
 - Only these regions are allowed: centralindia, koreacentral, indiasouthcentral, malaysiawest, uaenorth.
 - **ACR Tasks are blocked**, so `az containerapp up --source .` fails (`TasksOperationsNotAllowed`).
   Build the image on the Mac and push it instead (below).
@@ -65,7 +65,7 @@ claude mcp add --transport http rulewise https://rulewise.victoriousdune-a7b660c
 ```
 Cursor / VS Code / Codex: an MCP server with that `url` (VS Code: `"type": "http"`).
 
-## When the server address changes (e.g. moving off the student account)
+## When the server address changes (e.g. moving to another subscription)
 Checked 2026-11-18. Update every place below in the same change:
 1. [web/src/components/setup-tabs.tsx](../web/src/components/setup-tabs.tsx) - the address shown on the site's setup tabs.
 2. [README.md](../README.md) - the "Use it" section.
@@ -81,5 +81,5 @@ Find any place this list missed: `grep -rn "azurecontainerapps.io" --exclude-dir
 ## Notes
 - After a sleep, the first request takes a few seconds (cold start).
 - The server receives only facts and country codes, never idea text, code or personal data, and stores nothing.
-- Before a public launch, consider moving to a normal pay-as-you-go subscription (student credit is for
-  learning and runs out) and a custom domain.
+- Before a public launch, consider moving to a normal pay-as-you-go subscription (the current credit
+  runs out) and a custom domain.
