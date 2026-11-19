@@ -1,7 +1,7 @@
 {
   "name": "rulewise",
   "displayName": "Rulewise",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Warns which Sri Lankan laws apply to what you build: the Rulewise MCP server, a skill that checks new features, and /rulewise:check for a report on a whole project. Legal information, not legal advice.",
   "author": { "name": "Malith Jayasinghe", "url": "https://github.com/malithJayasinghe2000" },
   "homepage": "https://legal-mcp.vercel.app",

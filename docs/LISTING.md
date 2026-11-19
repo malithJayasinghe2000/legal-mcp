@@ -34,3 +34,7 @@ Use the same short text everywhere:
 > Rulewise warns developers which Sri Lankan laws apply to what they build (personal data,
 > payments, AI, online content, consumer, e-commerce, cybercrime, copyright, lawyers and
 > doctors). Legal information, not legal advice. Rules are drafts, not yet reviewed by a lawyer.
+
+## Claude Code plugin versions
+Raise `version` in `.claude-plugin/plugin.json` whenever the plugin changes (a new command, skill text or
+server address). Users stay on the old version until it changes. 0.1.0: project check; 0.2.0: PDPA checklist.
