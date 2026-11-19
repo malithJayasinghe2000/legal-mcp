@@ -43,3 +43,6 @@ reviewed_by: null
 notes: >
   Part III, starts 1 January 2027. If you only write code and never touch the live
   data, you may not be a processor at all; your client still needs the full list.
+checklist:
+  look_for: "A way to delete or return all of one client's data when the work ends."
+  ask: "Do you have a written contract with your client covering their instructions, confidentiality, audits and deleting the data at the end?"

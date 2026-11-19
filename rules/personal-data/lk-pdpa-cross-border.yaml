@@ -39,3 +39,6 @@ notes: >
   The 2025 amendment removed the old "adequacy decision" system. Public authorities
   have extra limits (s.26(4)). s.26 is in Part III, which starts 1 January 2027
   (Gazette No. 2498/16, verified).
+checklist:
+  look_for: "The privacy notice says personal data is sent outside Sri Lanka and to which kinds of services (cloud, AI, email, SMS, analytics)."
+  ask: "Do you have contract terms for data transfers with each service outside Sri Lanka that receives personal data?"

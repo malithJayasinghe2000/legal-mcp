@@ -34,3 +34,5 @@ last_checked: 2026-11-11
 review_status: draft
 reviewed_by: null
 notes: "Part II (rights) has no start date yet. Original s.17 said twenty-one working days."
+checklist:
+  look_for: "Ways to export, correct and fully delete one user's data: account settings, export or delete endpoints, or an admin tool for these requests."

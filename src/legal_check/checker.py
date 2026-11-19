@@ -216,3 +216,89 @@ def check(library: Library, facts: set[str], done: set[str] | None = None) -> di
         "countries_not_covered": sorted(countries - jurisdictions),
         "disclaimer": DISCLAIMER,
     }
+
+
+# Checklists: the rules of one law that apply to the product, each with what to look for
+# in the code (`checklist.look_for`) or ask the user (`checklist.ask`). The AI marks each
+# item Found / Missing / Can't tell from code. Never a score, never "compliant".
+CHECKLISTS = {
+    "pdpa": {
+        "name": "PDPA 2027 checklist",
+        "law": "Personal Data Protection Act, No. 9 of 2022 (as amended by No. 22 of 2025)",
+        "source_prefix": "lk-pdpa",
+        "start_source": "Gazette No. 2498/16",
+    },
+}
+
+CHECKLIST_HOW = (
+    "For each item, look in the code for `look_for` and mark it: Found (give the file, line "
+    "and a short code excerpt; no evidence means not Found), Missing, or Can't tell from "
+    "code (then put the `ask` question to the user). Report 'X of Y found in your code', "
+    "never a score or a percentage, and never say compliant or ready. Found means seen in "
+    "the code, not verified."
+)
+
+
+def checklist(library: Library, facts: set[str], law: str = "pdpa") -> dict[str, Any]:
+    spec = CHECKLISTS.get(law)
+    if spec is None:
+        raise FactError(f"Unknown checklist {law!r}. Available: {sorted(CHECKLISTS)}.")
+    result = check(library, facts)  # same fact checks, country rules and client split
+    client_ids = {i["rule_id"] for i in (result["client_duties"] or {}).get("items", [])}
+    applies = {w["rule_id"] for w in result["warnings"]} | client_ids
+
+    def item(rule: dict[str, Any]) -> dict[str, Any]:
+        hint = rule["checklist"]
+        return {
+            "rule_id": rule["id"],
+            "title": rule["title"],
+            "severity": SEVERITY_LABEL[rule["severity"]],
+            "law": f"{rule['law']['name']}, {rule['law']['section']}",
+            "status": _status(rule),
+            "look_for": hint.get("look_for"),
+            "ask": hint.get("ask"),
+        }
+
+    rules = [
+        r
+        for r in library.rules.values()
+        if r["id"] in applies
+        and r["law"]["source_id"].startswith(spec["source_prefix"])
+        and r.get("checklist")
+    ]
+    rules.sort(key=lambda r: (SEVERITY_ORDER[r["severity"]], r["id"]))
+    items = [item(r) for r in rules if r["id"] not in client_ids]
+    client_items = [item(r) for r in rules if r["id"] in client_ids]
+
+    dates = sorted({r["starts_on"] for r in rules if not r["in_force"] and r["starts_on"]})
+    undated = sum(1 for r in rules if not r["in_force"] and not r["starts_on"])
+    starts = None
+    if dates:
+        d = dates[0]
+        starts = f"{d.year} ({d.day} {d:%B %Y}, {spec['start_source']})"
+    if not items and not client_items:
+        summary = (
+            f"No {spec['name']} items apply to these facts. This is not a statement that the "
+            "product is compliant."
+        )
+        if result["countries_not_covered"] and not applies:
+            summary += " " + result["summary"]
+    else:
+        summary = (
+            f"{len(items)} item(s) on your {spec['name']}"
+            + (f", plus {len(client_items)} that are your client's duties" if client_items else "")
+            + "."
+        )
+    last = max(str(r["last_checked"]) for r in library.rules.values())
+    return {
+        "checklist": spec["name"],
+        "law": spec["law"],
+        "summary": summary,
+        "starts": starts,
+        "items_without_start_date": undated,
+        "rules_version": f"Rulewise rules checked up to {last}",
+        "how_to_report": CHECKLIST_HOW,
+        "items": items,
+        "client_items": client_items,
+        "disclaimer": DISCLAIMER,
+    }

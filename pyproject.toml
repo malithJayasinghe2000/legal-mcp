@@ -36,7 +36,7 @@ packages = ["src/legal_check"]
 # Ship the rule library inside the package.
 [tool.hatch.build.targets.wheel.force-include]
 "rules" = "legal_check/rules"
-"skills/rulewise/check-project.md" = "legal_check/check-project.md"
+"skills/rulewise" = "legal_check/skill"
 
 [tool.ruff]
 line-length = 100

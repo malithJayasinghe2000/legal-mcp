@@ -39,3 +39,6 @@ reviewed_by: null
 notes: >
   Act No. 22 of 2025 replaced s.20(1)(b)(iii): risk-of-harm processing "as may be
   determined by the Authority by way of guidelines".
+checklist:
+  look_for: "Contact details for data protection questions in the privacy notice."
+  ask: "Have you named a person responsible for data protection (a Data Protection Officer if the law requires one for you)?"

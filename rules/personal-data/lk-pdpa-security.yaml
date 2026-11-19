@@ -33,3 +33,5 @@ last_checked: 2026-11-11
 review_status: draft
 reviewed_by: null
 notes: ""
+checklist:
+  look_for: "Passwords hashed (bcrypt, argon2), HTTPS only, encrypted storage or encrypted fields for personal data, access control on admin routes, and access logs."

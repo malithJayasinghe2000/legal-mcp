@@ -32,3 +32,5 @@ last_checked: 2026-11-11
 review_status: draft
 reviewed_by: null
 notes: ""
+checklist:
+  look_for: "Automatic deletion or anonymisation of old personal data: scheduled clean-up jobs, expiry (TTL) settings, or removal of data from deleted accounts."

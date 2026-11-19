@@ -36,3 +36,5 @@ last_checked: 2026-11-11
 review_status: draft
 reviewed_by: null
 notes: ""
+checklist:
+  ask: "Do you have a data processing agreement with each service that handles personal data for you (cloud, email, SMS, analytics, AI)?"

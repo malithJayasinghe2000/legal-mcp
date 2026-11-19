@@ -21,7 +21,7 @@ from mcp.types import ToolAnnotations
 from pydantic import Field
 
 from . import __version__
-from .checker import FactError, build_facts, check, fact_list
+from .checker import FactError, build_facts, check, checklist, fact_list
 from .library import Library, LibraryError, load_library
 
 log = logging.getLogger("legal_check")
@@ -180,10 +180,50 @@ def get_rule(
     }
 
 
-def check_project_text() -> str:
-    """The project-check steps, shared with the skill (skills/rulewise/check-project.md)."""
-    packaged = Path(__file__).resolve().parent / "check-project.md"
-    repo = Path(__file__).resolve().parents[2] / "skills" / "rulewise" / "check-project.md"
+@mcp.tool(
+    annotations=READ_ONLY,
+    description=(
+        "Get a law checklist for the product, for example the PDPA 2027 checklist: the rules "
+        "of that law that apply to these facts, each with what to look for in the code "
+        "(look_for) or ask the user (ask). Use it when the user asks whether their project "
+        "is ready for the PDPA. Send country codes and facts only. Mark each item Found "
+        "(with file and line), Missing or Can't tell from code; never give a score."
+    ),
+)
+def get_checklist(
+    users_in: Annotated[
+        list[str] | str,
+        Field(description="ISO country codes where users are, as the user said, e.g. ['LK']"),
+    ],
+    facts: Annotated[
+        list[str] | dict[str, bool] | str,
+        Field(description="List of the facts that are true, from get_fact_questions"),
+    ],
+    company_in: Annotated[
+        str | list[str] | None,
+        Field(description="ISO country code where the company (or maker) is, e.g. 'LK'"),
+    ] = None,
+    processing_in: Annotated[
+        list[str] | str | None,
+        Field(description="ISO country codes where data is stored or processed"),
+    ] = None,
+    law: Annotated[str, Field(description="Which checklist: 'pdpa'")] = "pdpa",
+) -> dict[str, Any]:
+    library = _get_library()
+    all_facts = build_facts(users_in, facts, company_in, processing_in)
+    try:
+        result = checklist(library, all_facts, law)
+    except FactError as exc:
+        log.info("checklist rejected")
+        raise ToolError(str(exc)) from exc
+    log.info("checklist: %d facts, %d items", len(all_facts), len(result["items"]))
+    return result
+
+
+def skill_text(name: str) -> str:
+    """Steps shared with the skill (skills/rulewise/<name>), shipped in the package."""
+    packaged = Path(__file__).resolve().parent / "skill" / name
+    repo = Path(__file__).resolve().parents[2] / "skills" / "rulewise" / name
     return (packaged if packaged.is_file() else repo).read_text()
 
 
@@ -196,7 +236,19 @@ def check_project_text() -> str:
     ),
 )
 def check_project() -> str:
-    return check_project_text()
+    return skill_text("check-project.md")
+
+
+@mcp.prompt(
+    name="pdpa_checklist",
+    title="PDPA 2027 checklist",
+    description=(
+        "Check how ready the project's code is for Sri Lanka's PDPA and write "
+        "RULEWISE-PDPA-CHECKLIST.md: X of Y items found in the code, top fixes, questions."
+    ),
+)
+def pdpa_checklist() -> str:
+    return skill_text("pdpa-checklist.md")
 
 
 def public_app(per_minute: int):

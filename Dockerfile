@@ -18,7 +18,7 @@ RUN pip install -r requirements.txt
 COPY pyproject.toml README.md LICENSE ./
 COPY src ./src
 COPY rules ./rules
-COPY skills/rulewise/check-project.md ./skills/rulewise/check-project.md
+COPY skills/rulewise ./skills/rulewise
 RUN pip install --no-deps . && rm -rf /app/src
 
 # Run as a normal user, not root.

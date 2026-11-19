@@ -42,6 +42,9 @@ last_checked: 2026-11-11
 review_status: draft             # draft | checked_by_owner | lawyer_reviewed
 reviewed_by: null
 notes: ""
+checklist:                       # PDPA rules: required (null if the rule is not a to-do)
+  look_for: "What in the code shows it is handled (a privacy page linked from sign-up...)"
+  ask: "What to ask the user when code can't show it (a signed contract...)"
 ```
 
 Rules for writing rules:
@@ -61,3 +64,6 @@ Rules for writing rules:
 - A rule with `review_status: draft` is shown to users as "not yet reviewed by a lawyer".
 - Triggers use only facts from `rules/facts.yaml`, so matching stays deterministic.
 - Placeholders like `<...>` are not allowed in a shipped rule (the test fails).
+- `checklist` (PDPA rules must have it; `null` for a rule that only says the Act applies) drives the
+  PDPA 2027 checklist (`get_checklist`): `look_for` is what counts as handled in code, `ask` is the
+  question when code can't show it. It is a legal judgement too, so it is reviewed with the rule.

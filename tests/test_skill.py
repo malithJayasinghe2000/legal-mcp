@@ -76,3 +76,20 @@ def test_claude_code_plugin():
     assert plugin["mcpServers"]["rulewise"]["url"] in site
     command = (root / "commands" / "check.md").read_text()
     assert "skills/rulewise/check-project.md" in command
+
+
+def test_server_prompt_is_the_skill_pdpa_checklist():
+    from mcp import Client
+
+    async def run():
+        async with Client(server.mcp) as client:
+            return await client.get_prompt("pdpa_checklist", {})
+
+    text = asyncio.run(run()).messages[0].content.text
+    assert text == (SKILL.parent / "pdpa-checklist.md").read_text()
+    flat = " ".join(text.split())
+    rules = ["Never guess", "check failed", "Never open secret files", "never give a score"]
+    for must_say in rules:
+        assert must_say in flat, f"PDPA checklist lost the rule: {must_say!r}"
+    command = (SKILL.parents[2] / "commands" / "pdpa.md").read_text()
+    assert "skills/rulewise/pdpa-checklist.md" in command

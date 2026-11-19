@@ -1,6 +1,6 @@
 ---
 name: rulewise
-description: Spot legal issues before building. Use whenever the user plans, designs or builds a product or feature (app, website, API, online service) that may have users or a company in Sri Lanka, or where the country is not known yet - for example collecting personal data, payments, AI features, messaging or SMS, user content, payroll, or doctors and lawyers. Checks Sri Lankan law with the Rulewise MCP tools. Also checks a whole existing project and writes a RULEWISE-REPORT.md when the user asks. Legal information, not legal advice.
+description: Spot legal issues before building. Use whenever the user plans, designs or builds a product or feature (app, website, API, online service) that may have users or a company in Sri Lanka, or where the country is not known yet - for example collecting personal data, payments, AI features, messaging or SMS, user content, payroll, or doctors and lawyers. Checks Sri Lankan law with the Rulewise MCP tools. Also checks a whole existing project (RULEWISE-REPORT.md) or its PDPA 2027 readiness (RULEWISE-PDPA-CHECKLIST.md) when the user asks. Legal information, not legal advice.
 license: MIT
 ---
 
@@ -36,6 +36,11 @@ field, a payment flow, an AI feature, messages to users. Not for pure styling or
 If the user asks to check their whole project, codebase or app with Rulewise, or asks for a
 Rulewise report, read [check-project.md](check-project.md) in this skill's folder and follow it.
 It reads the project, runs the check and writes `RULEWISE-REPORT.md`.
+
+## PDPA 2027 checklist
+If the user asks for the PDPA checklist, or whether their project is ready for Sri Lanka's PDPA
+or data protection law, read [pdpa-checklist.md](pdpa-checklist.md) in this skill's folder and
+follow it. It writes `RULEWISE-PDPA-CHECKLIST.md`.
 
 ## Errors and limits
 - If the tool returns an error, say the check failed. It is never "no issues found".

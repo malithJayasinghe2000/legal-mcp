@@ -30,6 +30,7 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
 - `sources/raw/` - downloaded law files (not in git)
 - `scripts/fetch_sources.py` - downloads the sources: `uv run --group sources python scripts/fetch_sources.py`
 - `skills/rulewise/SKILL.md` - the Rulewise agent skill (Claude Code, Codex, Copilot); `tests/test_skill.py` keeps it in step with the server
+- `skills/rulewise/pdpa-checklist.md` - PDPA 2027 checklist steps (server prompt `pdpa_checklist`, tool `get_checklist`, plugin `/rulewise:pdpa`); hints live in each PDPA rule's `checklist` field
 - `skills/rulewise/check-project.md` - the "check a whole project" steps, shared by the skill, the server's `check_project` prompt (shipped in the package and Docker image) and the Claude Code plugin command `commands/check.md`
 - `.claude-plugin/` - Claude Code plugin (`plugin.json`: server + skill + `/rulewise:check`) and its marketplace (`marketplace.json`, the repo root is the plugin)
 - `scripts/deploy_azure.sh` - redeploys the MCP server to Azure and checks the live rule count (needs Docker + Azure login)

@@ -35,3 +35,5 @@ last_checked: 2026-11-11
 review_status: draft
 reviewed_by: null
 notes: "Part IV has no start date yet."
+checklist:
+  look_for: "An opt-in for marketing that is off by default, a check of it before every promotional message is sent, and an opt-out in every message."

@@ -202,6 +202,16 @@ SMS, a fake `.env` secret): Claude Code plugin (`--plugin-dir`), Claude Code wit
 the per-booking fee; the `.env` was never read. First run added a "not covered" area of its own, so the
 steps now say to copy that list exactly. Docker image tested: the prompt is served. Not tested yet:
 installing the plugin from GitHub (needs the push), Cursor and VS Code Copilot.
+**PDPA 2027 checklist (2026-11-19):** "X of Y found in your code (Z can't tell from code)", never a score
+(a score reads as "compliant" and AI reading varies between runs). Each PDPA rule has a `checklist` hint
+(`look_for` in code / `ask` the user); new tool `get_checklist` (any law later, `pdpa` now) returns the
+items that apply, the start ("2027 (1 January 2027, Gazette No. 2498/16)", read from the rules) and the
+rules version. Steps in [skills/rulewise/pdpa-checklist.md](../skills/rulewise/pdpa-checklist.md): Found needs
+file, line and a code excerpt. Server prompt `pdpa_checklist`, plugin `/rulewise:pdpa`, skill section.
+Real Claude Code runs (local server): fake clinic app "0 of 12" (top fixes: promo SMS without consent,
+health data without consent, no privacy notice); fake good shop app "5 of 10" (it also caught that the
+notice doesn't mention Twilio sending numbers abroad, and that consent time is never saved); `.env`
+never read. The hints are legal judgements: on the lawyer review list with the rules.
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:

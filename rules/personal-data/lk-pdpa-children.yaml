@@ -34,3 +34,5 @@ last_checked: 2026-11-11
 review_status: draft
 reviewed_by: null
 notes: "s.56: \"child\" means a natural person who is below the age of sixteen years."
+checklist:
+  look_for: "An age or date-of-birth check at sign-up, and for users under 16 either a parent or guardian consent step that is recorded, or a block."

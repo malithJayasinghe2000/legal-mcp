@@ -184,3 +184,34 @@ def test_facts_accept_what_ai_clients_send():
 def test_unknown_fact_in_a_table_is_still_an_error():
     with pytest.raises(FactError):
         check(LIB, build_facts(["LK"], {"collects_nic_number": True}))
+
+
+def test_pdpa_checklist_items_and_start():
+    facts = ["collects_personal_data", "data:contact", "sends_marketing_messages"]
+    r = call("get_checklist", users_in=["LK"], company_in="LK", facts=facts).structured_content
+    ids = {i["rule_id"] for i in r["items"]}
+    assert {"lk-pdpa-privacy-notice", "lk-pdpa-marketing-messages"} <= ids
+    assert "lk-pdpa-scope" not in ids  # a statement, not a to-do
+    assert all(i["look_for"] or i["ask"] for i in r["items"])
+    assert r["starts"].startswith("2027 (1 January 2027, Gazette No. 2498/16)")
+    assert "never a score" in r["how_to_report"]
+    text = str(r).lower()
+    assert "score" not in text.replace("never a score", "")
+
+
+def test_pdpa_checklist_client_duties_kept_apart():
+    facts = ["collects_personal_data", "data:contact", "builds_for_client"]
+    r = call("get_checklist", users_in=["LK"], company_in="LK", facts=facts).structured_content
+    assert "lk-pdpa-processor-duties" in {i["rule_id"] for i in r["items"]}
+    assert "lk-pdpa-privacy-notice" in {i["rule_id"] for i in r["client_items"]}
+
+
+def test_pdpa_checklist_nothing_applies_is_not_compliant():
+    r = call("get_checklist", users_in=["LK"], facts=["sells_goods"]).structured_content
+    assert r["items"] == [] and "not a statement that the product is compliant" in r["summary"]
+
+
+def test_checklist_errors_are_errors():
+    bad_fact = call("get_checklist", users_in=["LK"], facts=["no_such_fact"])
+    bad_law = call("get_checklist", users_in=["LK"], facts=["collects_personal_data"], law="gdpr")
+    assert bad_fact.is_error and bad_law.is_error

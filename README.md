@@ -58,6 +58,14 @@ questions for a lawyer.
 - **Tools that show MCP prompts:** the server's `check_project` prompt does the same.
 - **Any tool with the server:** "Check this project with Rulewise and write a report" works too.
 
+### PDPA 2027 checklist
+
+Sri Lanka's data protection law (PDPA) starts in 2027. `/rulewise:pdpa` (Claude Code plugin), "run the
+Rulewise PDPA checklist" (skill) or the `pdpa_checklist` prompt checks your code against the PDPA rules
+that apply and writes `RULEWISE-PDPA-CHECKLIST.md`: "X of Y found in your code", each item with the file
+and line as proof, what is missing, and questions code can't answer. Found means seen in the code, not
+verified, and there is no score: it never says "compliant".
+
 ## Develop
 
 ```sh

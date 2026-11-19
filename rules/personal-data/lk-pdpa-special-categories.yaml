@@ -40,3 +40,5 @@ last_checked: 2026-11-11
 review_status: draft
 reviewed_by: null
 notes: ""
+checklist:
+  look_for: "An explicit consent step for sensitive data (for example health), recorded for each purpose, before the data is collected."

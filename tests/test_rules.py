@@ -131,3 +131,18 @@ def test_quote_is_in_source(path):
     if text is None:
         pytest.skip(f"{law['source_id']} not downloaded (run scripts/fetch_sources.py)")
     assert normalise(law["quote"]) in text, "quote not found word for word in the source"
+
+
+@pytest.mark.parametrize("path", rule_files(), ids=lambda p: p.stem)
+def test_pdpa_rules_have_a_checklist_hint(path):
+    """Every PDPA rule says what counts as handled in code (look_for) or what to ask the
+    user (ask), or `checklist: null` if it is not a to-do. The PDPA checklist uses these."""
+    r = RULES[path]
+    if not r["law"]["source_id"].startswith("lk-pdpa"):
+        assert r.get("checklist") is None or set(r["checklist"]) <= {"look_for", "ask"}
+        return
+    assert "checklist" in r, "PDPA rule needs a checklist: {look_for, ask} (or null)"
+    hint = r["checklist"]
+    if hint is not None:
+        assert set(hint) <= {"look_for", "ask"} and hint, "checklist takes look_for and/or ask"
+        assert all(isinstance(v, str) and len(v) > 20 for v in hint.values())
