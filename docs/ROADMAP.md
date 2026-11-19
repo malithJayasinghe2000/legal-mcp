@@ -212,6 +212,12 @@ Real Claude Code runs (local server): fake clinic app "0 of 12" (top fixes: prom
 health data without consent, no privacy notice); fake good shop app "5 of 10" (it also caught that the
 notice doesn't mention Twilio sending numbers abroad, and that consent time is never saved); `.env`
 never read. The hints are legal judgements: on the lawyer review list with the rules.
+Live tests (2026-11-19, after deploy): Claude Code plugin `/rulewise:pdpa` on law-finder "6 of 9" (9 = the
+PDPA items that apply to law-finder's facts; the count differs per app). Codex with the skill and the live
+server on the fake shop app: called `get_checklist`, wrote the file, "3 of 10" where Claude Code said "5 of
+10" (Codex marked delete-account and security Missing: orders are not deleted, only password hashing seen).
+Known limit: AI reading varies between tools and runs; later add fixed patterns for common cases. A
+"can't tell" item appeared in "Top 3 to fix" once; the steps now allow only Missing items there.
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:

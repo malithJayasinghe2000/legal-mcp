@@ -37,4 +37,4 @@ Use the same short text everywhere:
 
 ## Claude Code plugin versions
 Raise `version` in `.claude-plugin/plugin.json` whenever the plugin changes (a new command, skill text or
-server address). Users stay on the old version until it changes. 0.1.0: project check; 0.2.0: PDPA checklist.
+server address). Users stay on the old version until it changes. 0.1.0: project check; 0.2.0: PDPA checklist; 0.2.1: Top 3 lists only Missing items.

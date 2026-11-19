@@ -80,11 +80,13 @@ Run again after your fixes: ask "run the Rulewise PDPA checklist".
 ```
 
 - Use the headline exactly as above, with X, Y and Z filled in.
-- "Top 3 to fix" lists Missing Must items first, then Missing Should items. If nothing is
-  Missing, write "Nothing missing was found in the code" and still list the Please confirm
-  questions.
+- "Top 3 to fix" lists only items marked Missing (✘): Missing Must items first, then Missing
+  Should items. Never put a "Can't tell from code" item there; it goes under "Please confirm".
+  If nothing is Missing, write "Nothing missing was found in the code" and still list the
+  Please confirm questions.
 - Never write a score, a percentage, "compliant", "ready" or "100%".
 
 ## 7. Tell the user
-In the chat: the headline, the start line, the top 3 to fix and the file path. Don't change the
+In the chat: the headline, the start line, the top 3 to fix (Missing items only), the "Can't
+tell from code" items as questions, and the file path. Don't change the
 code in this step; offer to help fix the Missing items next.
