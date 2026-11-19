@@ -9,13 +9,26 @@ Decisions behind this plan: [PROJECT-BRIEF.md](PROJECT-BRIEF.md).
 - **Features:** warnings as you build; "check my whole project" (`RULEWISE-REPORT.md`); PDPA 2027
   checklist (`RULEWISE-PDPA-CHECKLIST.md`, "X of Y found in your code", never a score). Tested in Claude
   Code, Codex, Cursor (command-line agent `~/.local/bin/cursor-agent`) and VS Code Copilot.
-- **Pending:** redeploy Azure after 2026-11-19 server changes (strict checklist parts, clean rule notes);
+- **Usage counts + feedback link (2026-11-19, branch `usage-feedback`):** one `usage ...` log line per
+  tool call (tool, AI tool name from a fixed list, ok/error, numbers, matched areas; never facts,
+  countries or rule ids); `scripts/usage.py` prints the last 7/30 days from Azure (private, not on the
+  site). Every check and checklist result has a `feedback` line linking to the GitHub issue form; the
+  skill and both report files end with it. Real Claude Code sessions (local server): counts logged as
+  `client=claude-code`, answers ended with the link. Cursor sends no MCP client name in stateless mode,
+  so the User-Agent (`Cursor/1.0.0`) is used. Codex's name not seen yet (exec run stalled). Azure log
+  query tested (read-only). Public counter on the site: later, once numbers are good.
+- **Pending:** redeploy Azure after 2026-11-19 server changes (strict checklist parts, clean rule notes,
+  usage counts + feedback);
   LinkedIn post 2 (PDPA checklist); Malith's rule review (postponed); lawyer review; Azure move to own
   account (postponed, free credits for now); other directories (Smithery, Glama, PulseMCP, Agensi).
-- **Next-feature ideas discussed (not started):** usage counts + feedback link on results; demo on the
+- **Next-feature ideas discussed (not started):** GitHub Action / PR bot (comments on new NIC, phone,
+  location fields or new third-party APIs; fixed patterns, runs in the user's CI; liked 2026-11-19); demo on the
   home page; one public page per rule (search traffic); one-click install buttons / VS Code extension;
   fixed code patterns to make checklist marks even more repeatable; more laws (children, tax, Shop and
   Office Act, EPF/ETF); EU GDPR + AI Act later (as "Sri Lanka + EU", several EU AI Act MCP servers exist).
+  **Rejected 2026-11-19:** README badge with a score ("PDPA ✓ 87/100": reads as compliant, scores vary
+  between tools); "roast my app" mode (AI jokes may exaggerate or invent law; do funny posts by hand
+  from real output on the fake demo apps instead).
 - **Public repo:** never name a real product or its test results in tracked files; private notes live in
   `CLAUDE.local.md` and `docs/private/` (git-ignored).
 
@@ -332,7 +345,7 @@ Original plan:
 - Generate documents: privacy policy, consent text, terms, data protection checklist.
 - More Sri Lankan areas: consumer, e-commerce, copyright, telecom, children, employment, crypto, tax.
 - Daily watcher for Gazette / Parliament / Central Bank updates, flagging affected rules.
-- Feedback button on warnings.
+- ~~Feedback button on warnings~~ done 2026-11-19 as a `feedback` link on every result (GitHub issue form).
 - Local mode (rules downloaded, runs offline).
 
 ## Phase 3 - Paid and wider

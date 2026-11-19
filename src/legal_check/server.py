@@ -15,12 +15,12 @@ import os
 from pathlib import Path
 from typing import Annotated, Any
 
-from mcp.server.mcpserver import MCPServer
+from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
 from pydantic import Field
 
-from . import __version__
+from . import __version__, usage
 from .checker import FactError, build_facts, check, checklist, fact_list
 from .library import Library, LibraryError, load_library
 
@@ -53,6 +53,7 @@ When the user plans or builds a product or feature (an app, website or online se
    to check them. Never mark something done unless the user said so.
 6. Say that draft rules are not yet reviewed by a lawyer. If the tool returns an
    error, tell the user the check failed; do not treat it as "no issues".
+   End with the result's `feedback` line once (where to report a wrong or missed law).
 7. If the user asks how to avoid or get around a law, explain the law and the
    risk instead of helping to evade it.
 """
@@ -63,8 +64,9 @@ _library: Library | None = None
 _load_error: str | None = None
 
 
-def _get_library() -> Library:
+def _get_library(tool: str, ctx: Context | None = None) -> Library:
     if _library is None:
+        usage.record(tool, ctx, "error", reason="library")
         raise ToolError(
             f"Rulewise could not load its rule library ({_load_error}). "
             "The check did NOT run: this is not a 'no issues found' result."
@@ -128,15 +130,18 @@ def check_legal_risks(
             "Only when the user says so; they are listed as 'done', not verified."
         ),
     ] = None,
+    ctx: Context | None = None,
 ) -> dict[str, Any]:
-    library = _get_library()
+    library = _get_library("check_legal_risks", ctx)
     all_facts = build_facts(users_in, facts, company_in, processing_in)
     try:
         result = check(library, all_facts, set(fact_list(done)))
     except FactError as exc:
         log.info("check rejected: %d unknown fact(s)", str(exc).count("'") // 2)
+        usage.record("check_legal_risks", ctx, "error", reason="input")
         raise ToolError(str(exc)) from exc
     log.info("check: %d facts, %d warnings", len(all_facts), len(result["warnings"]))
+    usage.record("check_legal_risks", ctx, facts=len(all_facts), **usage.check_counts(result))
     return result
 
 
@@ -147,8 +152,9 @@ def check_legal_risks(
         "it answers. Call once before check_legal_risks."
     ),
 )
-def get_fact_questions() -> dict[str, Any]:
-    library = _get_library()
+def get_fact_questions(ctx: Context | None = None) -> dict[str, Any]:
+    library = _get_library("get_fact_questions", ctx)
+    usage.record("get_fact_questions", ctx)
     return {
         "country_facts": "Pass countries as users_in, company_in, processing_in (ISO codes).",
         "facts": {k: v for k, v in library.questions.items() if k != "where"},
@@ -164,11 +170,14 @@ def get_fact_questions() -> dict[str, Any]:
 )
 def get_rule(
     rule_id: Annotated[str, Field(description="rule_id from a check_legal_risks warning")],
+    ctx: Context | None = None,
 ) -> dict[str, Any]:
-    library = _get_library()
+    library = _get_library("get_rule", ctx)
     rule = library.rules.get(rule_id)
     if rule is None:
+        usage.record("get_rule", ctx, "error", reason="input")
         raise ToolError(f"No rule with id {rule_id!r}.")
+    usage.record("get_rule", ctx, area=rule["area"])
     return {
         **{k: rule[k] for k in ("id", "title", "severity", "area", "why", "what_to_do")},
         "law": rule["law"],
@@ -208,15 +217,21 @@ def get_checklist(
         Field(description="ISO country codes where data is stored or processed"),
     ] = None,
     law: Annotated[str, Field(description="Which checklist: 'pdpa'")] = "pdpa",
+    ctx: Context | None = None,
 ) -> dict[str, Any]:
-    library = _get_library()
+    library = _get_library("get_checklist", ctx)
     all_facts = build_facts(users_in, facts, company_in, processing_in)
     try:
         result = checklist(library, all_facts, law)
     except FactError as exc:
         log.info("checklist rejected")
+        usage.record("get_checklist", ctx, "error", reason="input")
         raise ToolError(str(exc)) from exc
     log.info("checklist: %d facts, %d items", len(all_facts), len(result["items"]))
+    usage.record(
+        "get_checklist", ctx, facts=len(all_facts), items=len(result["items"]),
+        client_items=len(result["client_items"]),
+    )  # fmt: skip
     return result
 
 
@@ -235,7 +250,8 @@ def skill_text(name: str) -> str:
         "RULEWISE-REPORT.md with the warnings, the code they apply to and questions for a lawyer."
     ),
 )
-def check_project() -> str:
+def check_project(ctx: Context | None = None) -> str:
+    usage.record("prompt_check_project", ctx)
     return skill_text("check-project.md")
 
 
@@ -247,7 +263,8 @@ def check_project() -> str:
         "RULEWISE-PDPA-CHECKLIST.md: X of Y items found in the code, top fixes, questions."
     ),
 )
-def pdpa_checklist() -> str:
+def pdpa_checklist(ctx: Context | None = None) -> str:
+    usage.record("prompt_pdpa_checklist", ctx)
     return skill_text("pdpa-checklist.md")
 
 
@@ -271,8 +288,11 @@ def main() -> None:
         help="hosted mode: HTTP on 0.0.0.0:$PORT, stateless, rate-limited, no access log",
     )
     args = parser.parse_args()
-    # stderr only: stdout is the MCP channel in stdio mode.
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    # stderr only: stdout is the MCP channel in stdio mode. force=True: MCPServer() already
+    # set up its own handler, which would drop the date that scripts/usage.py counts by day.
+    logging.basicConfig(
+        level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", force=True
+    )
     load()
     from . import web_api  # noqa: F401  registers /api/* routes for HTTP mode
 

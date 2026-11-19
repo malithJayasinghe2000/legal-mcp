@@ -70,10 +70,13 @@ export default function PrivacyPage() {
           sends back. There are no accounts, no sign-ups and no history.
         </p>
         <p>
-          The server log only holds counts, like &ldquo;9 facts, 20
-          warnings&rdquo;, and error messages when something breaks. I turned
-          off the usual web logs on purpose, because they would record your IP
-          address.
+          The server log only holds counts, like &ldquo;Claude Code, 9 facts,
+          20 warnings, areas: personal data, payments&rdquo;, and error
+          messages when something breaks. It never holds the facts themselves,
+          your countries or anything that identifies you. I use these counts to
+          see how much Rulewise is used, and the log is deleted after 30 days. I
+          turned off the usual web logs on purpose, because they would record
+          your IP address.
         </p>
         <p>
           To stop one person from overloading the server, it counts how many

@@ -84,6 +84,7 @@ yet reviewed by a lawyer. Ask a Sri Lankan lawyer before you rely on this checkl
 
 ---
 Run again after your fixes: ask "run the Rulewise PDPA checklist".
+<the result's `feedback` line, copied exactly>
 ```
 
 - Use the headline exactly as above, with X, Y and Z filled in. Leave out the "no start date"

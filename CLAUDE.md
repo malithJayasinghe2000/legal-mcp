@@ -36,6 +36,8 @@ Python 3.12+, official MCP Python SDK v2 (`MCPServer`), managed with `uv`.
 - `scripts/deploy_azure.sh` - redeploys the MCP server to Azure and checks the live rule count (needs Docker + Azure login)
 - `scripts/review_checklist.py` - writes `docs/REVIEW-CHECKLIST.md` (owner review, page of each quote): `uv run --group sources python scripts/review_checklist.py`
 - `scripts/find_amendments.py` - checks Parliament for amendments not yet in sources.yaml: `uv run python scripts/find_amendments.py`
+- `scripts/usage.py` - usage counts from the Azure log (calls per tool, AI tool, day, areas; never content): `uv run python scripts/usage.py` (needs Docker + Azure login). The server writes the lines in `src/legal_check/usage.py`
+- `.github/ISSUE_TEMPLATE/rule-feedback.yml` - "wrong warning or missed law" form; every result's `feedback` line links to it
 - Tests: `uv run pytest`. Lint/format: `uv run ruff check . && uv run ruff format .`
 
 ## Non-negotiable design rules

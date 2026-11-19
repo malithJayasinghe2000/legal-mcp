@@ -17,6 +17,13 @@ DISCLAIMER = (
     "Rules marked 'draft' are not yet reviewed by a lawyer. "
     "Ask a Sri Lankan lawyer before making decisions."
 )
+FEEDBACK_URL = (
+    "https://github.com/malithJayasinghe2000/legal-mcp/issues/new?template=rule-feedback.yml"
+)
+FEEDBACK = (
+    f"Wrong warning or a missed law? Tell us: {FEEDBACK_URL} "
+    "(please don't include private details of your project)."
+)
 
 
 FOR_CLIENT = "builds_for_client"
@@ -215,6 +222,7 @@ def check(library: Library, facts: set[str], done: set[str] | None = None) -> di
         "areas_not_covered": areas.get("not_covered", []),
         "countries_not_covered": sorted(countries - jurisdictions),
         "disclaimer": DISCLAIMER,
+        "feedback": FEEDBACK,
     }
 
 
@@ -303,4 +311,5 @@ def checklist(library: Library, facts: set[str], law: str = "pdpa") -> dict[str,
         "items": items,
         "client_items": client_items,
         "disclaimer": DISCLAIMER,
+        "feedback": FEEDBACK,
     }

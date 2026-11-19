@@ -153,6 +153,73 @@ def test_logs_never_contain_user_input(caplog):
         assert word not in logged, f"{word!r} leaked into logs"
 
 
+def test_usage_lines_hold_counts_only(caplog):
+    """Usage counts (scripts/usage.py reads them): tool, client, result, numbers, areas."""
+    import logging
+
+    caplog.set_level(logging.INFO)
+    facts = ["collects_personal_data", "data:health", "profession:medicine", "lists_professionals"]
+    call("check_legal_risks", users_in=["LK"], facts=facts)
+    call("get_checklist", users_in=["LK"], facts=facts)
+    call("get_rule", rule_id="secret_rule_id")
+    call("check_legal_risks", users_in=["MV"], facts=["collects_personal_data"])
+    lines = [r.getMessage() for r in caplog.records if r.getMessage().startswith("usage ")]
+    assert len(lines) == 4, lines
+    check_line, checklist_line, rule_line, foreign_line = lines
+    assert check_line.startswith("usage tool=check_legal_risks client=other result=ok facts=5 ")
+    assert "areas=cybercrime,personal-data,regulated-professions " in check_line
+    assert "covered=yes" in check_line
+    assert "tool=get_checklist" in checklist_line and "result=ok" in checklist_line
+    assert "result=error reason=input" in rule_line and "secret_rule_id" not in rule_line
+    assert "covered=no" in foreign_line and "MV" not in foreign_line
+    for line in lines:
+        assert not any(f in line for f in facts), line
+
+
+def test_usage_when_library_failed(caplog, tmp_path):
+    import logging
+
+    caplog.set_level(logging.INFO)
+    server.load(tmp_path / "missing")
+    call("check_legal_risks", users_in=["LK"], facts=["collects_personal_data"])
+    assert any("tool=check_legal_risks client=other result=error reason=library" in
+               r.getMessage() for r in caplog.records)  # fmt: skip
+
+
+def test_client_names_map_to_a_fixed_list():
+    from types import SimpleNamespace
+
+    from legal_check.usage import client_name
+
+    def ctx(name=None, ua=""):
+        info = SimpleNamespace(client_info=SimpleNamespace(name=name)) if name else None
+        request = SimpleNamespace(headers={"user-agent": ua})
+        session = SimpleNamespace(client_params=info)
+        return SimpleNamespace(request_context=SimpleNamespace(session=session, request=request))
+
+    # Names seen in real sessions (2026-11-19 probe): Claude Code sends "claude-code".
+    assert client_name(ctx("claude-code")) == "claude-code"
+    assert client_name(ctx("codex-mcp-client")) == "codex"
+    assert client_name(ctx("Visual Studio Code")) == "vscode"
+    assert client_name(ctx("cursor-vscode")) == "cursor"
+    assert client_name(ctx(ua="claude-code/2.1 (claude-vscode)")) == "claude-code"
+    # Anything else is one fixed word, never the raw text.
+    assert client_name(ctx("my secret app v1")) == "other"
+    assert client_name(ctx()) == "unknown"
+    assert client_name(None) == "unknown"
+
+
+def test_results_have_the_feedback_line():
+    from legal_check.checker import FEEDBACK_URL, checklist
+
+    facts = build_facts(["LK"], ["collects_personal_data"])
+    for result in (check(LIB, facts), checklist(LIB, facts)):
+        assert FEEDBACK_URL in result["feedback"]
+        assert "private details" in result["feedback"]
+    template = Path(__file__).parent.parent / ".github" / "ISSUE_TEMPLATE" / "rule-feedback.yml"
+    assert template.name in FEEDBACK_URL and template.is_file()
+
+
 def test_country_codes_accept_what_ai_clients_send():
     # Seen in a real VS Code session: company_in arrived as '["LK"]', then '"LK"'.
     for value in ["LK", "lk", ["LK"], '["LK"]', '"LK"', ' "lk" ']:

@@ -1,0 +1,40 @@
+name: Wrong warning or missed law
+description: Tell us when a Rulewise warning is wrong, or a law that applies was missed.
+title: "Rule feedback: "
+labels: ["rule-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. This issue is **public**. Please don't paste private details of your
+        project, your code or personal data. Describe the kind of feature instead
+        (for example "an app that sends promo SMS to customers").
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong?
+      options:
+        - A warning is wrong (it doesn't apply, or the law says something else)
+        - A law that applies was missed
+        - The law text, section or link is wrong or out of date
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: rule_id
+    attributes:
+      label: Rule id (if about a warning)
+      description: The rule_id from the result, for example lk-pdpa-privacy-notice.
+      placeholder: lk-pdpa-...
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What should Rulewise say instead, and why? A law name and section helps.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source (optional)
+      description: A link to the law on an official site (Parliament, Gazette, regulator).

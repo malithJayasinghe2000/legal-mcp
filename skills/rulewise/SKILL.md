@@ -28,6 +28,7 @@ field, a payment flow, an AI feature, messages to users. Not for pure styling or
    - Never say "compliant" or "all clear". Say "no issues found in the areas Rulewise covers"
      and list the areas not covered.
    - Say the rules are drafts, not yet reviewed by a lawyer.
+   - End with the result's `feedback` line once (where to report a wrong warning or a missed law).
 5. When the user says a warning is handled, pass its rule id in `done` on later checks. Done
    items are not verified: remind the user to check them.
 6. Check again when a later feature adds new facts (new data, payments, AI, messages).

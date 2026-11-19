@@ -96,6 +96,7 @@ Fix first: <up to 3 Must items, one line each, with the file they apply to>
 
 ---
 Re-run this check after big changes: ask "check my project with Rulewise".
+<the result's `feedback` line, copied exactly>
 ```
 
 - Must items first. Link each warning to the code by its `triggered_by` facts and your evidence.
