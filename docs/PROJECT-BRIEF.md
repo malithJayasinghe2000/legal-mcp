@@ -311,11 +311,7 @@ In priority order:
 7. **Feedback button**: "this warning is wrong / you missed something".
 8. **API keys and limits**: to stop abuse and measure use.
 
-### Money ideas (not decided)
-- Free for individuals, students and Sri Lankan-only use.
-- Paid for software companies: foreign laws, document generation, team features,
-  GitHub check.
-- Possibly a paid "lawyer-reviewed" tier or a partnership with a law firm for reviews.
+Money and pricing ideas are kept in private notes (`docs/private/`, not in git).
 
 ## 15. Open questions (decide in the next chats)
 
