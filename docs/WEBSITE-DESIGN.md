@@ -8,6 +8,11 @@ privacy text and header button switch with the same flag. Setup section: tabs pe
 each with the hosted address, wrapped lines and a Copy button. `/privacy`: privacy and terms in
 Malith's own voice (first person, short, honest), linked from the footer.
 Made with the `frontend-design` skill (plan, review against the brief, then build).
+**2026-11-19:** a "New: PDPA 2027 checklist" link above the headline, a `#pdpa` section with a
+sample checklist (from a test shop, never a real product), "Three ways to use it" (warnings,
+project check, PDPA checklist), and setup tabs as numbered steps that end with "what to type"
+for each tool (Claude Code plugin commands, Codex skill, Cursor plain words, VS Code
+`/mcp.rulewise.*`). Header links follow the sections.
 
 ## Brief
 - **Subject:** a tool that shows software builders which Sri Lankan laws apply before they build.

@@ -3,11 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
 import { SHOW_SITE_CHECK } from "@/lib/features";
 
-const NAV = [
-  { href: "/#how", label: "How it works" },
-  { href: "/#coverage", label: "What it covers" },
-  { href: "/#setup", label: "Set it up" },
-];
+const NAV = SHOW_SITE_CHECK
+  ? [
+      { href: "/#how", label: "How it works" },
+      { href: "/#coverage", label: "What it covers" },
+      { href: "/#setup", label: "Set it up" },
+    ]
+  : [
+      { href: "/#pdpa", label: "PDPA checklist" },
+      { href: "/#how", label: "How to use it" },
+      { href: "/#coverage", label: "What it covers" },
+      { href: "/#setup", label: "Set it up" },
+    ];
 
 export function SiteHeader() {
   return (

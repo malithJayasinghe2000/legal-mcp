@@ -301,6 +301,9 @@ Original plan:
   draft rules (57 as of 2026-11-18); (3) remote hosting with a usage limit, so it works by web address in
   Claude, ChatGPT, Cursor, Codex; (4) setup guide per tool; (5) lawyer review before launch.
 - Order agreed 2026-11-11: test set (Claude) + rule check (Malith, in parallel) -> website -> lawyer review of Must rules.
+- **Home page for the new features (2026-11-19):** PDPA 2027 checklist section with a sample, "Three ways to
+  use it", setup tabs with numbered steps and "then type" per tool, privacy text for project checks. e2e
+  (desktop + mobile, axe) passes; screenshots checked.
 
 ### Step 7. Before public launch
 - A lawyer reviews the Must rules in the 5 areas.

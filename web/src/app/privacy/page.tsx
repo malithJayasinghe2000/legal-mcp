@@ -54,6 +54,11 @@ export default function PrivacyPage() {
           no names, no files.
         </p>
         <p>
+          The project check and the PDPA checklist work the same way. Your AI
+          reads your code on your computer, sends Rulewise only those facts, and
+          saves the report as a file in your own project.
+        </p>
+        <p>
           Your AI tool itself does see your idea, of course. What happens there
           is covered by that tool&apos;s own privacy policy, not this one.
         </p>

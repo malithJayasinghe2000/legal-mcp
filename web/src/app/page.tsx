@@ -19,20 +19,99 @@ const SITE_STEPS = [
   },
 ];
 
+// Three ways to use Rulewise in an AI tool (MCP first, D21).
 const MCP_STEPS = [
   {
-    title: "Add Rulewise to your AI tool",
-    text: "Claude Code, Cursor, Codex or VS Code. It takes one line of setup.",
+    title: "Warnings as you build",
+    text: "Describe a feature as usual. Your AI checks it with Rulewise and shows which laws apply, Must items first, with what to do.",
   },
   {
-    title: "Plan or build as usual",
-    text: "When you describe a feature, your AI asks a few short questions and checks them against the Sri Lankan laws in Rulewise.",
+    title: "Check your whole project",
+    text: "Already built something? One command reads your project and writes a report: each issue, the file it applies to, what to fix first, and questions for a lawyer.",
   },
   {
-    title: "Get warnings with the law",
-    text: "Each warning shows how serious it is, the law and section behind it, what to do, and what to ask a lawyer.",
+    title: "PDPA 2027 checklist",
+    text: "See what your code already does for Sri Lanka's data protection law and what is missing, with the file and line as proof.",
   },
 ];
+
+// A sample result, from a test online shop (not a real product).
+const CHECKLIST_SAMPLE = [
+  {
+    mark: "found",
+    title: "Privacy notice",
+    text: "app/privacy/page.tsx, linked from sign-up",
+  },
+  {
+    mark: "found",
+    title: "Marketing SMS only with consent",
+    text: "Opt-in is off by default and checked before each message",
+  },
+  {
+    mark: "missing",
+    title: "Protect personal data",
+    text: "Seen: passwords hashed. Not seen: encryption, access logs",
+  },
+  {
+    mark: "missing",
+    title: "Be ready to report data breaches",
+    text: "No audit logs or alerts in the code",
+  },
+  {
+    mark: "unknown",
+    title: "Contracts with the services you use",
+    text: "Can't tell from code: do you have a data processing agreement?",
+  },
+] as const;
+
+const MARK = {
+  found: { symbol: "✔", label: "Found", className: "text-ink" },
+  missing: { symbol: "✘", label: "Missing", className: "text-must" },
+  unknown: { symbol: "?", label: "Can't tell", className: "text-ink-muted" },
+};
+
+function ChecklistSample() {
+  return (
+    <figure className="rounded-xl border border-rule bg-surface p-6 shadow-[0_1px_0_var(--rule)] sm:p-8">
+      <p className="font-mono text-xs text-ink-muted">
+        RULEWISE-PDPA-CHECKLIST.md
+      </p>
+      <p className="mt-3 text-xl leading-snug font-semibold">
+        PDPA 2027 checklist: 3 of 10 found in your code
+      </p>
+      <p className="mt-1 text-sm text-ink-muted">
+        The PDPA starts in 2027 (1 January 2027)
+      </p>
+      <ul className="mt-5 border-t border-rule">
+        {CHECKLIST_SAMPLE.map((item) => {
+          const m = MARK[item.mark];
+          return (
+            <li
+              key={item.title}
+              className="grid grid-cols-[6.5rem_1fr] gap-3 border-b border-rule py-3"
+            >
+              <span className={`text-sm font-medium ${m.className}`}>
+                <span aria-hidden>{m.symbol}</span> {m.label}
+              </span>
+              <span>
+                <span className="block text-sm font-semibold">
+                  {item.title}
+                </span>
+                <span className="block text-sm text-ink-muted">
+                  {item.text}
+                </span>
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+      <figcaption className="mt-4 text-sm text-ink-muted">
+        Sample from a test online shop. Found means seen in the code, not
+        verified. It never says &ldquo;compliant&rdquo;.
+      </figcaption>
+    </figure>
+  );
+}
 
 const AREAS = [
   [
@@ -117,13 +196,24 @@ export default function Home() {
     <>
       <section className="mx-auto grid max-w-6xl items-center gap-14 px-4 pt-16 pb-20 sm:px-6 md:pt-24 lg:grid-cols-[1.05fr_1fr]">
         <div>
+          {!SHOW_SITE_CHECK && (
+            <a
+              href="#pdpa"
+              className="mb-6 inline-flex rounded-full border border-rule bg-surface px-3 py-1 text-sm text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange"
+            >
+              <span className="mr-1.5 font-semibold text-orange-deep">
+                New:
+              </span>
+              PDPA 2027 checklist for your code
+            </a>
+          )}
           <h1 className="text-4xl leading-[1.08] font-semibold tracking-tight sm:text-[3.4rem]">
             Know the law before you build.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink-muted">
             {SHOW_SITE_CHECK
               ? "Answer a few questions about your product. Rulewise shows which Sri Lankan laws apply, how serious each one is, and what to ask a lawyer."
-              : "Rulewise works inside your AI coding tool. While you plan a product, it shows which Sri Lankan laws apply, how serious each one is, and what to ask a lawyer."}
+              : "Rulewise works inside your AI coding tool. It shows which Sri Lankan laws apply to what you build, how serious each one is, and what to ask a lawyer - while you build, or for a project you already have."}
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             {SHOW_SITE_CHECK && (
@@ -152,10 +242,66 @@ export default function Home() {
         <Example />
       </section>
 
+      {!SHOW_SITE_CHECK && (
+        <section id="pdpa" className="border-t border-rule">
+          <div className="mx-auto grid max-w-6xl items-start gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1fr_1.05fr]">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">
+                Is your app ready for the PDPA?
+              </h2>
+              <p className="mt-4 max-w-md text-ink-muted">
+                Sri Lanka&apos;s Personal Data Protection Act starts on 1
+                January 2027. Any app that keeps names, phone numbers or other
+                personal data must follow it.
+              </p>
+              <p className="mt-4 max-w-md text-ink-muted">
+                One command checks your code against the PDPA duties that apply
+                to your app:
+              </p>
+              <ul className="mt-3 max-w-md space-y-2">
+                <li>
+                  <span aria-hidden className="mr-2 font-semibold">
+                    ✔
+                  </span>
+                  What&apos;s already done, with the file and line
+                </li>
+                <li>
+                  <span aria-hidden className="mr-2 font-semibold text-must">
+                    ✘
+                  </span>
+                  What&apos;s missing, and the top 3 to fix
+                </li>
+                <li>
+                  <span
+                    aria-hidden
+                    className="mr-2 font-semibold text-ink-muted"
+                  >
+                    ?
+                  </span>
+                  Questions the code can&apos;t answer
+                </li>
+              </ul>
+              <p className="mt-6 max-w-md text-ink-muted">
+                Your code stays on your computer. The checklist is saved in your
+                project, so you can run it again after your fixes.
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="mt-8 h-12 px-6 text-base font-semibold"
+              >
+                <a href="#setup">Set it up</a>
+              </Button>
+            </div>
+            <ChecklistSample />
+          </div>
+        </section>
+      )}
+
       <section id="how" className="border-t border-rule bg-surface">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <h2 className="text-2xl font-semibold tracking-tight">
-            How it works
+            {SHOW_SITE_CHECK ? "How it works" : "Three ways to use it"}
           </h2>
           <ol className="mt-10 grid gap-10 md:grid-cols-3">
             {steps.map((s, i) => (
@@ -227,6 +373,10 @@ export default function Home() {
                   never your idea or your code.
                 </p>
                 <p>
+                  Project checks work the same way: your AI reads your code on
+                  your computer and writes the report into your project.
+                </p>
+                <p>
                   Nothing is saved: no account, no cookies, no analytics, and no
                   record of who asked what.
                 </p>
@@ -243,17 +393,16 @@ export default function Home() {
               Add it to your AI tool
             </h2>
             <p className="mt-4 max-w-md text-ink-muted">
-              Rulewise is an MCP server, so it works with any AI tool that
-              supports MCP. When you plan or build a feature, your AI checks it
-              and explains the result.
+              Pick your tool and follow the numbered steps. It takes about a
+              minute.
             </p>
             <p className="mt-4 max-w-md text-ink-muted">
-              Nothing to install: add the Rulewise address to your AI tool, then
-              restart it.
+              The last step shows what to type. You can also just describe what
+              you&apos;re building and where your users are.
             </p>
             <p className="mt-4 max-w-md text-ink-muted">
-              Then describe what you&apos;re building and where your users are.
-              That&apos;s all.
+              Rulewise is an MCP server, so other AI tools that support MCP work
+              too: add the same address.
             </p>
           </div>
           <SetupTabs />

@@ -33,6 +33,12 @@ test("setup shows each AI tool", async ({ page }) => {
   const tabs = page.getByRole("tablist", { name: "AI tool" });
   await expect(
     page.getByLabel("Claude Code setup", { exact: true }),
+  ).toContainText("claude plugin install rulewise@rulewise");
+  await expect(page.getByLabel("Claude Code try it")).toContainText(
+    "/rulewise:pdpa",
+  );
+  await expect(
+    page.getByLabel("Claude Code server only", { exact: true }),
   ).toContainText("claude mcp add --transport http rulewise https://rulewise.");
   await page.context().grantPermissions(["clipboard-read", "clipboard-write"]);
   await page.getByRole("button", { name: "Copy Claude Code setup" }).click();
@@ -43,14 +49,38 @@ test("setup shows each AI tool", async ({ page }) => {
   await expect(page.getByLabel("Cursor setup", { exact: true })).toContainText(
     '"mcpServers"',
   );
+  await expect(page.getByLabel("Cursor try it")).toContainText(
+    "Run the Rulewise PDPA checklist",
+  );
   await tabs.getByRole("tab", { name: "Codex" }).click();
   await expect(page.getByLabel("Codex setup", { exact: true })).toContainText(
     "[mcp_servers.rulewise]",
   );
-  await expect(
-    page.getByLabel("Codex next step", { exact: true }),
-  ).toContainText("npx skills add malithJayasinghe2000/legal-mcp");
+  await expect(page.getByLabel("Codex skill", { exact: true })).toContainText(
+    "npx skills add malithJayasinghe2000/legal-mcp",
+  );
+  await tabs.getByRole("tab", { name: "VS Code" }).click();
+  await expect(page.getByLabel("VS Code setup", { exact: true })).toContainText(
+    '"servers"',
+  );
+  await expect(page.getByLabel("VS Code try it")).toContainText(
+    "/mcp.rulewise.pdpa_checklist",
+  );
   await noA11yViolations(page);
+});
+
+test("PDPA checklist section", async ({ page }) => {
+  await page.goto("/");
+  await page
+    .getByRole("link", { name: /PDPA 2027 checklist for your code/ })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Is your app ready for the PDPA?" }),
+  ).toBeInViewport();
+  await expect(
+    page.getByText("PDPA 2027 checklist: 3 of 10 found in your code"),
+  ).toBeVisible();
+  await expect(page.getByText(/compliant/).first()).toContainText("never says");
 });
 
 test("'Add to your AI tool' scrolls to setup every time", async ({ page }) => {
