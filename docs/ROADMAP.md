@@ -2,6 +2,23 @@
 
 Decisions behind this plan: [PROJECT-BRIEF.md](PROJECT-BRIEF.md).
 
+## Status (2026-11-19) - read this first
+- **Live:** MCP server on Azure (61 rules, 11 areas), website on Vercel (PDPA section, setup per tool),
+  official MCP Registry listing (`io.github.malithJayasinghe2000/rulewise`), Claude Code plugin from this
+  repo (`.claude-plugin/`, v0.2.4), Rulewise skill (`skills/rulewise/`, `npx skills add`).
+- **Features:** warnings as you build; "check my whole project" (`RULEWISE-REPORT.md`); PDPA 2027
+  checklist (`RULEWISE-PDPA-CHECKLIST.md`, "X of Y found in your code", never a score). Tested in Claude
+  Code, Codex, Cursor (command-line agent `~/.local/bin/cursor-agent`) and VS Code Copilot.
+- **Pending:** redeploy Azure after 2026-11-19 server changes (strict checklist parts, clean rule notes);
+  LinkedIn post 2 (PDPA checklist); Malith's rule review (postponed); lawyer review; Azure move to own
+  account (postponed, free credits for now); other directories (Smithery, Glama, PulseMCP, Agensi).
+- **Next-feature ideas discussed (not started):** usage counts + feedback link on results; demo on the
+  home page; one public page per rule (search traffic); one-click install buttons / VS Code extension;
+  fixed code patterns to make checklist marks even more repeatable; more laws (children, tax, Shop and
+  Office Act, EPF/ETF); EU GDPR + AI Act later (as "Sri Lanka + EU", several EU AI Act MCP servers exist).
+- **Public repo:** never name a real product or its test results in tracked files; private notes live in
+  `CLAUDE.local.md` and `docs/private/` (git-ignored).
+
 ## Phase 0 - Setup (done 2026-11-11)
 - [x] New repo, project brief, roadmap, legal landscape, rule format, CLAUDE.md
 
