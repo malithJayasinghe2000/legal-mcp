@@ -57,7 +57,7 @@ Replace an earlier Rulewise checklist. Ask before overwriting any other file. La
 ```markdown
 # PDPA 2027 checklist: X of Y found in your code (Z can't tell from code)
 
-The PDPA starts in <starts, from the tool>
+Most of the PDPA starts in <starts, from the tool>. <items_without_start_date> item(s) have no start date yet.
 <rules_version, from the tool> | Checked on <YYYY-MM-DD> | Project: <name>
 
 Found in code, not verified. Legal information, not legal advice. The rules are drafts, not
@@ -86,7 +86,8 @@ yet reviewed by a lawyer. Ask a Sri Lankan lawyer before you rely on this checkl
 Run again after your fixes: ask "run the Rulewise PDPA checklist".
 ```
 
-- Use the headline exactly as above, with X, Y and Z filled in.
+- Use the headline exactly as above, with X, Y and Z filled in. Leave out the "no start date"
+  sentence when `items_without_start_date` is 0.
 - "Top 3 to fix" lists only items marked Missing (✘): Missing Must items first, then Missing
   Should items. Never put a "Can't tell from code" item there; it goes under "Please confirm".
   If nothing is Missing, write "Nothing missing was found in the code" and still list the

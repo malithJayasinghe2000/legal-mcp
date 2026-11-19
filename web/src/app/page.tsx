@@ -80,7 +80,7 @@ function ChecklistSample() {
         PDPA 2027 checklist: 3 of 10 found in your code
       </p>
       <p className="mt-1 text-sm text-ink-muted">
-        The PDPA starts in 2027 (1 January 2027)
+        Most of the PDPA starts on 1 January 2027
       </p>
       <ul className="mt-5 border-t border-rule">
         {CHECKLIST_SAMPLE.map((item) => {
@@ -250,9 +250,11 @@ export default function Home() {
                 Is your app ready for the PDPA?
               </h2>
               <p className="mt-4 max-w-md text-ink-muted">
-                Sri Lanka&apos;s Personal Data Protection Act starts on 1
-                January 2027. Any app that keeps names, phone numbers or other
-                personal data must follow it.
+                The main duties of Sri Lanka&apos;s Personal Data Protection Act
+                start on 1 January 2027. Some parts, like users&apos; rights and
+                marketing messages, have no start date yet. Any app that keeps
+                names, phone numbers or other personal data will have to follow
+                it.
               </p>
               <p className="mt-4 max-w-md text-ink-muted">
                 One command checks your code against the PDPA duties that apply

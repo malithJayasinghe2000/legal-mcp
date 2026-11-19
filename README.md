@@ -60,7 +60,8 @@ questions for a lawyer.
 
 ### PDPA 2027 checklist
 
-Sri Lanka's data protection law (PDPA) starts in 2027. `/rulewise:pdpa` (Claude Code plugin), "run the
+Most of Sri Lanka's data protection law (PDPA) starts on 1 January 2027 (Gazette 2498/16); users' rights and
+the marketing rule have no start date yet. `/rulewise:pdpa` (Claude Code plugin), "run the
 Rulewise PDPA checklist" (skill) or the `pdpa_checklist` prompt checks your code against the PDPA rules
 that apply and writes `RULEWISE-PDPA-CHECKLIST.md`: "X of Y found in your code", each item with the file
 and line as proof, what is missing, and questions code can't answer. Found means seen in the code, not
