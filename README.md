@@ -48,7 +48,12 @@ questions for a lawyer.
   /plugin marketplace add malithJayasinghe2000/legal-mcp
   /plugin install rulewise@rulewise
   ```
-  Then run `/rulewise:check`.
+  In the VS Code panel `/plugin` isn't available yet; run this in a terminal instead:
+  ```sh
+  claude plugin marketplace add malithJayasinghe2000/legal-mcp
+  claude plugin install rulewise@rulewise
+  ```
+  Then reload the window and run `/rulewise:check`.
 - **Codex, Copilot and others with the Rulewise skill:** say "check my project with Rulewise".
 - **Tools that show MCP prompts:** the server's `check_project` prompt does the same.
 - **Any tool with the server:** "Check this project with Rulewise and write a report" works too.
