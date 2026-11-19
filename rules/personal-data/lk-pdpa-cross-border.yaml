@@ -40,5 +40,7 @@ notes: >
   have extra limits (s.26(4)). s.26 is in Part III, which starts 1 January 2027
   (Gazette No. 2498/16, verified).
 checklist:
-  look_for: "The privacy notice says personal data is sent outside Sri Lanka and to which kinds of services (cloud, AI, email, SMS, analytics)."
+  look_for:            # every part must be seen in the code for Found
+    - "The privacy notice says personal data is sent outside Sri Lanka"
+    - "The privacy notice names the kinds of foreign services (cloud, AI, email, SMS, analytics), covering every foreign service the code sends personal data to"
   ask: "Do you have contract terms for data transfers with each service outside Sri Lanka that receives personal data?"

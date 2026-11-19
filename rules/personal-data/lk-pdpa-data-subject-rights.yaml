@@ -35,4 +35,7 @@ review_status: draft
 reviewed_by: null
 notes: "Part II (rights) has no start date yet. Original s.17 said twenty-one working days."
 checklist:
-  look_for: "Ways to export, correct and fully delete one user's data: account settings, export or delete endpoints, or an admin tool for these requests."
+  look_for:            # every part must be seen in the code for Found
+    - "A way to export one user's data"
+    - "A way to correct one user's data"
+    - "A way to fully delete one user's data, including linked records"

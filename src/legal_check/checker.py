@@ -231,11 +231,13 @@ CHECKLISTS = {
 }
 
 CHECKLIST_HOW = (
-    "For each item, look in the code for `look_for` and mark it: Found (give the file, line "
-    "and a short code excerpt; no evidence means not Found), Missing, or Can't tell from "
-    "code (then put the `ask` question to the user). Report 'X of Y found in your code', "
-    "never a score or a percentage, and never say compliant or ready. Found means seen in "
-    "the code, not verified."
+    "`look_for` lists parts that are all required. Mark each item: Found only if every part "
+    "is seen in the code (give file, line and a short excerpt for each; a column or setting "
+    "that no code fills or reads does not count); Missing if any part is not seen (list "
+    "'Seen:' and 'Not seen:' parts); Can't tell from code only if there is "
+    "no `look_for` (then put the `ask` question to the user). Report 'X of Y found in your "
+    "code', never a score or a percentage, and never say compliant or ready. Found means "
+    "seen in the code, not verified."
 )
 
 

@@ -32,13 +32,19 @@ failed and write no file. If it returns no items, say so with its summary; that 
 "compliant".
 
 ## 5. Check each item in the code
-For each item in `items`, look in the code for what `look_for` describes, then mark it:
-- **Found:** give the file and line and a short excerpt of the code (one line). No evidence
-  means not Found. "Probably exists somewhere" is not Found.
-- **Missing:** say what is missing and where it would go, for example "promo SMS sent to every
-  patient without checking consent (`src/routes/promo.js:6`)".
-- **Can't tell from code:** when the item has no `look_for`, or the code cannot show it. Put
-  the item's `ask` question to the user.
+`look_for` is a list of parts, and every part is required. For each item in `items`, look in
+the code for each part, then mark the item:
+- **Found:** every part is seen in the code. Give the file and line and a short excerpt (one
+  line) for each part. No evidence means not seen. "Probably exists somewhere" is not seen.
+  A part is seen only if the code actually does it: a database column, setting or field that
+  no code fills or reads does not count.
+- **Missing:** one or more parts are not seen, even if others are. Write "Seen:" with the
+  parts that are there (file and line) and "Not seen:" with the parts that are not, for
+  example "Seen: passwords hashed (`lib/auth.ts:2`). Not seen: HTTPS only, encrypted fields,
+  access control, access logs."
+- **Can't tell from code:** only when the item has no `look_for`. Put the item's `ask`
+  question to the user.
+Mark every item by these rules alone, so the same code gets the same result in any tool.
 If an item has both `look_for` and `ask`, mark it from the code and also list the `ask`
 question under "Please confirm".
 
@@ -64,7 +70,7 @@ yet reviewed by a lawyer. Ask a Sri Lankan lawyer before you rely on this checkl
 | | Item | Severity | In your code | Law |
 |---|---|---|---|---|
 | ✔ | <title> | Must | `<file>:<line>` `<short excerpt>` | <law and section> |
-| ✘ | <title> | Must | <what is missing, where> | <law and section> |
+| ✘ | <title> | Must | Seen: <parts, file:line>. Not seen: <parts> | <law and section> |
 | ? | <title> | Must | Can't tell from code | <law and section> |
 
 ## Please confirm

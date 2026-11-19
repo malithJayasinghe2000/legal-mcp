@@ -194,7 +194,8 @@ def test_pdpa_checklist_items_and_start():
     assert "lk-pdpa-scope" not in ids  # a statement, not a to-do
     assert all(i["look_for"] or i["ask"] for i in r["items"])
     assert r["starts"].startswith("2027 (1 January 2027, Gazette No. 2498/16)")
-    assert "never a score" in r["how_to_report"]
+    assert "never a score" in r["how_to_report"] and "every part" in r["how_to_report"]
+    assert all(isinstance(i["look_for"], list) for i in r["items"] if i["look_for"])
     text = str(r).lower()
     assert "score" not in text.replace("never a score", "")
 

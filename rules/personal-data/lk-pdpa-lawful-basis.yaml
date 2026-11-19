@@ -35,5 +35,8 @@ review_status: draft
 reviewed_by: null
 notes: ""
 checklist:
-  look_for: "Consent is asked separately and recorded: a checkbox that is not pre-ticked, a stored consent record with the time, and the service still works without consents it does not need."
+  look_for:            # every part must be seen in the code for Found
+    - "Consent is asked with a checkbox that is not pre-ticked"
+    - "A stored consent record with the time"
+    - "The service still works without consents it does not need"
   ask: "Have you written down the legal ground (consent, contract and so on) for each use of personal data?"

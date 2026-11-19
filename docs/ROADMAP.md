@@ -220,6 +220,12 @@ later add fixed patterns for common cases. Fixes from these tests: "Top 3 to fix
 Copilot once read a SaaS sold to firms as `builds_for_client`, so the fact text and both step files now say
 it is only for an agency or outsourcing project for one client, and to ask if unsure.
 Real-project details are in `docs/private/` (not in git).
+**Same result in every tool (2026-11-19):** on the fake shop app the first runs gave Codex 3, Claude Code 5 and
+Cursor 8 of 10: tools judged partly done items differently. Fix: `look_for` is now a list of required parts
+(Found only if every part is seen; otherwise Missing with "Seen:" / "Not seen:"), and a part counts only if
+the code does it (a column nothing fills does not count). Re-run with one local server and the same steps:
+Claude Code, Codex and Cursor (command-line agent) all "3 of 10" with the same mark on every item. Cursor also
+picks up the Rulewise skill from an installed Claude Code plugin.
 Not done yet: custom domain, pay-as-you-go subscription.
 
 Original plan:

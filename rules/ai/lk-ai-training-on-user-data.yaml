@@ -35,4 +35,6 @@ review_status: draft
 reviewed_by: null
 notes: "s.6(2) allows further processing for research and statistics, subject to s.10."
 checklist:
-  look_for: "The privacy notice names AI training as a purpose, and the training code uses anonymised data or only data from users who consented."
+  look_for:            # every part must be seen in the code for Found
+    - "The privacy notice names AI training as a purpose"
+    - "The training code uses anonymised data, or only data from users who consented"

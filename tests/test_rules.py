@@ -145,4 +145,7 @@ def test_pdpa_rules_have_a_checklist_hint(path):
     hint = r["checklist"]
     if hint is not None:
         assert set(hint) <= {"look_for", "ask"} and hint, "checklist takes look_for and/or ask"
-        assert all(isinstance(v, str) and len(v) > 20 for v in hint.values())
+        parts = hint.get("look_for", [])
+        assert isinstance(parts, list), "look_for is a list of required parts"
+        assert all(isinstance(x, str) and len(x) > 15 for x in parts)
+        assert isinstance(hint.get("ask", ""), str)

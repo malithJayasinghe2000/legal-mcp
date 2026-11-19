@@ -33,4 +33,5 @@ review_status: draft
 reviewed_by: null
 notes: ""
 checklist:
-  look_for: "Automatic deletion or anonymisation of old personal data: scheduled clean-up jobs, expiry (TTL) settings, or removal of data from deleted accounts."
+  look_for:            # every part must be seen in the code for Found
+    - "Automatic deletion or anonymisation of old personal data (scheduled clean-up jobs, expiry (TTL) settings, or removal of deleted accounts' data)"

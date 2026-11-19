@@ -38,4 +38,5 @@ notes: >
   Part II (rights) has no start date yet. Act No. 22 of 2025 changed the end of s.18(1)
   to "under the Constitution or any written law".
 checklist:
-  look_for: "A way for a person to ask for a human review of an automatic decision: a review or appeal button, a request form, or an admin screen where staff review and change decisions."
+  look_for:            # every part must be seen in the code for Found
+    - "A way for a person to ask for a human review of an automatic decision (a review or appeal button, a request form, or an admin screen where staff review and change decisions)"

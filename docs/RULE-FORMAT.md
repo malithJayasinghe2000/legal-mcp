@@ -43,7 +43,9 @@ review_status: draft             # draft | checked_by_owner | lawyer_reviewed
 reviewed_by: null
 notes: ""
 checklist:                       # PDPA rules: required (null if the rule is not a to-do)
-  look_for: "What in the code shows it is handled (a privacy page linked from sign-up...)"
+  look_for:                      # required parts: Found only if every part is seen
+    - "A privacy notice page"
+    - "A link to it where personal data is collected"
   ask: "What to ask the user when code can't show it (a signed contract...)"
 ```
 
@@ -66,4 +68,5 @@ Rules for writing rules:
 - Placeholders like `<...>` are not allowed in a shipped rule (the test fails).
 - `checklist` (PDPA rules must have it; `null` for a rule that only says the Act applies) drives the
   PDPA 2027 checklist (`get_checklist`): `look_for` is what counts as handled in code, `ask` is the
-  question when code can't show it. It is a legal judgement too, so it is reviewed with the rule.
+  question when code can't show it. `look_for` is a list of parts, all required, so every tool
+  marks the same code the same way ("Seen:" / "Not seen:" for partly done items). It is a legal judgement too, so it is reviewed with the rule.

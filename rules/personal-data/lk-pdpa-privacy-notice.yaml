@@ -37,4 +37,6 @@ review_status: draft
 reviewed_by: null
 notes: ""
 checklist:
-  look_for: "A privacy notice page, linked where personal data is collected (sign-up and other forms)."
+  look_for:            # every part must be seen in the code for Found
+    - "A privacy notice page"
+    - "A link to it where personal data is collected (sign-up and other forms)"

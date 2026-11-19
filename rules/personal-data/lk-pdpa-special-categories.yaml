@@ -41,4 +41,6 @@ review_status: draft
 reviewed_by: null
 notes: ""
 checklist:
-  look_for: "An explicit consent step for sensitive data (for example health), recorded for each purpose, before the data is collected."
+  look_for:            # every part must be seen in the code for Found
+    - "An explicit consent step for sensitive data (for example health) before it is collected"
+    - "The consent is recorded for each purpose"

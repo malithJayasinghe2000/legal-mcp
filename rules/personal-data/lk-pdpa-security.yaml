@@ -34,4 +34,9 @@ review_status: draft
 reviewed_by: null
 notes: ""
 checklist:
-  look_for: "Passwords hashed (bcrypt, argon2), HTTPS only, encrypted storage or encrypted fields for personal data, access control on admin routes, and access logs."
+  look_for:            # every part must be seen in the code for Found
+    - "Passwords hashed (for example bcrypt or argon2)"
+    - "HTTPS only (redirects or HSTS in the code or server config)"
+    - "Encrypted storage or encrypted fields for personal data"
+    - "Access control on admin routes"
+    - "Access logs for personal data"

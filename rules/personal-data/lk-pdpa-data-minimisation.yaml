@@ -31,4 +31,6 @@ review_status: draft
 reviewed_by: null
 notes: "Related: s.6 purpose limitation, s.8 accuracy."
 checklist:
-  look_for: "Every personal data field in forms and the database is used by the code for a clear purpose, and optional fields are marked optional. A field that is saved but never used counts as missing."
+  look_for:            # every part must be seen in the code for Found
+    - "Every personal data field in forms and the database is read by code for its purpose, not only stored, exported or deleted"
+    - "Optional fields are marked optional"

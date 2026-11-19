@@ -40,5 +40,6 @@ notes: >
   Act No. 22 of 2025 replaced s.24(5) (submit on the Authority's written request)
   and removed prior consultation in s.25(2)-(6).
 checklist:
-  look_for: "A written data protection impact assessment in the repository, for example in docs/."
+  look_for:            # every part must be seen in the code for Found
+    - "A written data protection impact assessment in the repository (for example in docs/)"
   ask: "Have you written a data protection impact assessment for the profiling or monitoring features?"

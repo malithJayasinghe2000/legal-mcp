@@ -33,5 +33,7 @@ review_status: draft
 reviewed_by: null
 notes: "Breach rules under s.23(2) not checked yet."
 checklist:
-  look_for: "Logging and alerts that would show a data leak: audit logs of access to personal data, security or error alerts."
+  look_for:            # every part must be seen in the code for Found
+    - "Audit logs of access to personal data"
+    - "Security or error alerts that would show a data leak"
   ask: "Do you have a written plan for who reports a data breach to the Data Protection Authority, and how fast?"
