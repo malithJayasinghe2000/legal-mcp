@@ -1,0 +1,1 @@
+Rulewise: legal warnings inside your AI coding tool, for apps built for Sri Lanka. Example warnings for an online shop sending offers by SMS, marked Must, Should and Check with a lawyer.

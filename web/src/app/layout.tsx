@@ -12,10 +12,22 @@ const serif = Source_Serif_4({
   style: ["normal", "italic"],
 });
 
+const DESCRIPTION =
+  "Rulewise works inside your AI coding tool. While you plan a product, it shows which Sri Lankan laws apply, how serious each one is, and what to ask a lawyer.";
+
 export const metadata: Metadata = {
+  // Absolute links for the share preview (src/app/opengraph-image.png), e.g. on LinkedIn.
+  metadataBase: new URL("https://legal-mcp.vercel.app"),
   title: { default: "Rulewise - know the law before you build", template: "%s - Rulewise" },
-  description:
-    "Rulewise works inside your AI coding tool. While you plan a product, it shows which Sri Lankan laws apply, how serious each one is, and what to ask a lawyer.",
+  description: DESCRIPTION,
+  openGraph: {
+    type: "website",
+    siteName: "Rulewise",
+    url: "/",
+    title: "Rulewise - know the law before you build",
+    description: DESCRIPTION,
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
