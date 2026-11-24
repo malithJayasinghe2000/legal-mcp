@@ -69,3 +69,24 @@ def test_lines_from_azure_and_undated_lines():
     events = parse(lines)
     assert [e["day"] for e in events] == ["2026-11-19", "undated"]
     assert "get_rule                        2" in summarize(events, 7, date(2026, 11, 19))
+
+
+def test_sessions_split_real_work_from_robots():
+    from usage import sessions
+
+    lines = [
+        # a person: fact list, then a check 2 minutes later
+        "2026-11-19 18:06:00 usage tool=get_fact_questions client=claude-code result=ok",
+        "2026-11-19 18:08:00 usage tool=check_legal_risks client=claude-code result=ok",
+        # robots: fact list or prompts only, hours apart
+        "2026-11-20 09:01:00 usage tool=get_fact_questions client=other result=ok",
+        "2026-11-20 16:30:00 usage tool=prompt_pdpa_checklist client=other result=ok",
+        "2026-11-20 16:30:05 usage tool=prompt_check_project client=other result=ok",
+        "2026-11-21 10:03:00 usage tool=get_fact_questions client=other result=ok",
+        # no time: left out
+        "usage tool=get_fact_questions client=other result=ok",
+    ]
+    events = parse(lines)
+    assert sessions(events) == (1, 3)
+    text = summarize(events, 7, date(2026, 11, 21))
+    assert "Sessions:    1 with a check or checklist; 3 only looked" in text
